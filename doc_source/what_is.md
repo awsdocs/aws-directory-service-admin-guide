@@ -1,0 +1,100 @@
+# What Is AWS Directory Service?<a name="what_is"></a>
+
+AWS Directory Service provides multiple ways to use Amazon Cloud Directory and Microsoft Active Directory \(AD\) with other AWS services\. Directories store information about users, groups, and devices, and administrators use them to manage access to information and resources\. AWS Directory Service provides multiple directory choices for customers who want to use existing Microsoft AD or Lightweight Directory Access Protocol \(LDAP\)–aware applications in the cloud\. It also offers those same choices to developers who need a directory to manage users, groups, devices, and access\.
+
+## Which to Choose<a name="choosing_an_option"></a>
+
+You can choose directory services with the features and scalability that best meets your needs\. Use the following table to help you determine which AWS Directory Service directory option works best for your organization\.
+
+
+****  
+
+| What do you need to do? | Recommended AWS Directory Service options | 
+| --- | --- | 
+| I need Active Directory or LDAP for my applications in the cloud |  Select [AWS Directory Service for Microsoft Active Directory](#microsoftad) \(Enterprise Edition\) if you need an actual Microsoft Active Directory in the AWS Cloud that supports Active Directory–aware workloads, or AWS applications and services such as Amazon WorkSpaces and Amazon QuickSight, or you need LDAP support for Linux applications\. Use [AD Connector](#adconnector) if you only need to allow your on\-premises users to log in to AWS applications and services with their Active Directory credentials\. You can also use AD Connector to join Amazon EC2 instances to your existing Active Directory domain\. Use [Simple AD](#simplead) if you need a low\-scale, low\-cost directory with basic Active Directory compatibility that supports Samba 4–compatible applications, or you need LDAP compatibility for LDAP\-aware applications\.  | 
+| I develop cloud applications that manage hierarchical data with complex relationships | Use [Amazon Cloud Directory](#clouddirectory) if you need a cloud\-scale directory to share and control access to hierarchical data between your applications\. | 
+| I develop SaaS applications | Use [Amazon Cognito](#cognito) if you develop high\-scale SaaS applications and need a scalable directory to manage and authenticate your subscribers and that works with social media identities\. | 
+
+## AWS Directory Service Options<a name="directoryoptions"></a>
+
+AWS Directory Service includes several directory types to choose from\. 
+
+### AWS Directory Service for Microsoft Active Directory<a name="microsoftad"></a>
+
+Also known as AWS Microsoft AD, AWS Directory Service for Microsoft Active Directory is powered by an actual Microsoft Windows Server Active Directory \(AD\) in the AWS Cloud\. It includes key features, such as schema extensions, with which you can migrate a broad range of Active Directory–aware applications to the AWS Cloud\. AWS Microsoft AD works with Microsoft SharePoint, Microsoft SQL Server Always On Availability Groups, and many \.NET applications\. It includes security features, such as fine\-grained password policy management, and LDAP encryption through Secure Socket Layer \(SSL\)/Transport Layer Security \(TLS\)\. It is also approved for applications in the AWS Cloud that are subject to [U\.S\. Health Insurance Portability and Accountability Act](http://www.hhs.gov/ocr/privacy/) \(HIPAA\) or [Payment Card Industry Data Security Standard](https://aws.amazon.com/compliance/pci-dss-level-1-faqs/) \(PCI DSS\) compliance\. AWS provides monitoring, daily snapshots, and recovery as part of the service\.
+
+You can use AWS Microsoft AD as a standalone Active Directory to administer users, groups, and computers in the AWS Cloud\. With AWS Microsoft AD, you can also set up trust relationships to extend authentication from your existing on\-premises Active Directory into the cloud\. When used with a trust, your on\-premises users can access Windows workloads running on Amazon EC2 with the same single sign\-on \(SSO\) experience as when they access workloads in your on\-premises network\. When used as a standalone directory, your users can access third\-party cloud applications such as Microsoft Office 365, through federation\.
+
+AWS Microsoft AD supports AWS applications and services including Amazon WorkSpaces, Amazon WorkDocs, Amazon QuickSight, Amazon Chime, Amazon Connect, and Amazon Relational Database Service for Microsoft SQL Server \(RDS for SQL Server\)\. You can also use your Active Directory credentials to authenticate to the AWS Management Console without having to set up a SAML authentication infrastructure\. Because Active Directory is an LDAP directory, you can also use AWS Microsoft AD for Linux Secure Shell \(SSH\) authentication and for other LDAP\-enabled applications\. 
+
+AWS Microsoft AD is also scalable\. You can increase the performance and redundancy of your directory by adding domain controllers\. This can help improve application performance by enabling directory clients to load balance their request across a larger number of domain controllers\. For more information, see [Deploy Additional Domain Controllers](ms_ad_deploy_additional_dcs.md)\.
+
+When deployed with AWS applications you use your existing RADIUS\-based multi\-factor authentication \(MFA\) infrastructure to provide an additional layer of security\. For more information, see [Multi\-Factor Authentication](mfa_ad.md)\. 
+
+AWS Microsoft AD is available in two editions: Standard and Enterprise\.
+
++ **Standard Edition: **AWS Microsoft AD \(Standard Edition\) is optimized to be a primary directory for small and midsize businesses with up to 5,000 employees\. It provides you enough storage capacity to support up to 30,000\* directory objects, such as users, groups, and computers\.
+
++ **Enterprise Edition: **AWS Microsoft AD \(Enterprise Edition\) is designed to support enterprise organizations with up to 500,000\* directory objects\.
+
+\* Upper limits are approximations\. Your directory may support more or less directory objects depending on the size of your objects and the behavior and performance needs of your applications\.
+
+***When to use***
+
+Microsoft AD is your best choice if you need actual Active Directory features to support AWS applications or Windows workloads, including Amazon Relational Database Service for Microsoft SQL Server\. It's also best if you want a standalone AD in the AWS Cloud that supports Office 365 or you need an LDAP directory to support your Linux applications\. For more information, see [Microsoft Active Directory](directory_microsoft_ad.md)\. 
+
+### AD Connector<a name="adconnector"></a>
+
+AD Connector is a proxy service that provides an easy way to connect compatible AWS applications, such as Amazon WorkSpaces and Amazon QuickSight, and Amazon EC2 for Windows Server instances, to your existing on\-premises Microsoft Active Directory\. With AD Connector , you can simply add one service account to your Active Directory\. AD Connector also eliminates the need of directory synchronization or the cost and complexity of hosting a federation infrastructure\.
+
+When you add users to AWS applications such as Amazon QuickSight, AD Connector reads your existing Active Directory to create lists of users and groups to select from\. When users log in to the AWS applications, AD Connector forwards sign\-in requests to your on\-premises Active Directory domain controllers for authentication\. AD Connector works with many AWS applications and services including as Amazon WorkSpaces, Amazon WorkDocs, Amazon QuickSight, Amazon Chime, Amazon Connect, and Amazon WorkMail\. You can also join your EC2 Windows instances to your on\-premises Active Directory domain through AD Connector using seamless domain join\. AD Connector also allows your users to access the AWS Management Console and manage AWS resources by logging in with their existing Active Directory credentials\. AD Connector is not compatible with RDS SQL Server\.
+
+You can also use AD Connector to enable multi\-factor authentication for your AWS application users by connecting it to your existing RADIUS\-based MFA infrastructure\. This provides an additional layer of security when users access AWS applications\. For more information, see [Enable Multi\-Factor Authentication for AD Connector](mfa.md)\. 
+
+With AD Connector, you continue to manage your Active Directory as you do now\. For example, you add new users and groups and update passwords using standard Active Directory administration tools in your on\-premises Active Directory\. This helps you consistently enforce your security policies, such as password expiration, password history, and account lockouts, whether users are accessing resources on premises or in the AWS Cloud\. 
+
+***When to use***
+
+AD Connector is your best choice when you want to use your existing on\-premises directory with compatible AWS services\. For more information, see [Active Directory Connector](directory_ad_connector.md)\. 
+
+### Simple AD<a name="simplead"></a>
+
+Simple AD is a Microsoft Active Directory–compatible directory from AWS Directory Service that is powered by Samba 4\. Simple AD supports basic Active Directory features such as user accounts, group memberships, joining a Linux domain or Windows based EC2 instances, Kerberos\-based SSO, and group policies\. AWS provides monitoring, daily snap\-shots, and recovery as part of the service\.
+
+Simple AD is a standalone directory in the cloud, where you create and manage user identities and manage access to applications\. You can use many familiar Active Directory–aware applications and tools that require basic Active Directory features\. Simple AD is compatible with following AWS applications: Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, and Amazon QuickSight\. You can also sign in to the AWS Management Console with Simple AD user accounts and to manage AWS resources\. 
+
+Simple AD does not support trust relationships, DNS dynamic update, schema extensions, multi\-factor authentication, communication over LDAPS, PowerShell AD cmdlets, or FSMO role transfer\. Simple AD is not compatible with RDS SQL Server\. Customers who require the features of an actual Microsoft Active Directory, or who envision using their directory with RDS SQL Server should use AWS Microsoft AD instead\. Please verify your required applications are fully compatible with Samba 4 before using Simple AD\. For more information, see [https://www\.samba\.org](https://www.samba.org)\. 
+
+***When to use***
+
+You can use Simple AD as a standalone directory in the cloud to support Windows workloads that need basic AD features, compatible AWS applications, or to support Linux workloads that need LDAP service\. For more information, see [Simple Active Directory](directory_simple_ad.md)\.
+
+### Amazon Cloud Directory<a name="clouddirectory"></a>
+
+Amazon Cloud Directory is a cloud\-native directory that can store hundreds of millions of application\-specific objects with multiple relationships and schemas\. Use Amazon Cloud Directory if you need a highly scalable directory store for your application’s hierarchical data\.
+
+***When to use***
+
+Amazon Cloud Directory is a great choice when you need to build application directories such as device registries, catalogs, social networks, organization structures, and network topologies\. For more information, see [Amazon Cloud Directory](directory_amazon_cd.md)\.
+
+### Amazon Cognito<a name="cognito"></a>
+
+Amazon Cognito is a user directory that adds sign\-up and sign\-in to your mobile app or web application using Amazon Cognito User Pools\.
+
+***When to use***
+
+You can also use Amazon Cognito when you need to create custom registration fields and store that metadata in your user directory\. This fully managed service scales to support hundreds of millions of users\. For more information, see [Creating and Managing User Pools](http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html)\.
+
+## Working with Amazon EC2<a name="new_to_ec2"></a>
+
+A basic understanding of Amazon EC2 is essential to using AWS Directory Service\. We recommend that you begin by reading the following topics: 
+
++ [What is Amazon EC2?](http://alpha-docs-aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+
++ [Launching EC2 Instances](http://alpha-docs-aws.amazon.com/AWSEC2/latest/WindowsGuide/LaunchingAndUsingInstances.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+
++ [Security Groups](http://alpha-docs-aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+
++ [What is Amazon VPC?](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) in the *Amazon VPC User Guide*\.
+
++ [Adding a Hardware Virtual Private Gateway to Your VPC](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html) in the *Amazon VPC User Guide*\. 
