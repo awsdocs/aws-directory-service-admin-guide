@@ -4,7 +4,7 @@ To create a Microsoft AD directory, you need a VPC with the following:
 
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
 
-+ The following ports must be open between the two subnets that you deploy your directory into\. This is necessary to allow the domain controllers that AWS Directory Service creates for you to communicate with each other\.
++ The following ports must be open between the two subnets that you deploy your directory into\. This is necessary to allow the domain controllers that AWS Directory Service creates for you to communicate with each other\. A Security Group will be created and attached to your directory to enable the communication between the domain controllers.
 
   + TCP/UDP 53 \- DNS
 
