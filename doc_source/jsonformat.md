@@ -35,9 +35,7 @@ Facets contain attributes\. Each attribute defines the type of value that can be
 You must provide either an attribute definition or an attribute reference\. See related subsections for more information about each\. 
 
 The required behavior field indicates whether this attribute is required or not\. You must provide this field\. Possible values are as follows:
-
 + `REQUIRED_ALWAYS`: This attribute must be provided when the object is created or a facet is added to the object\. You cannot remove this attribute\.
-
 + `NOT_REQUIRED`: This attribute may or may not be present\.
 
 ### Attribute Definition Subsection<a name="attributedefinitionsub"></a>

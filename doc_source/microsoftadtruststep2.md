@@ -1,11 +1,11 @@
 # Step 2: Create the Trusts<a name="microsoftadtruststep2"></a>
 
-In this section, you create two separate forest trusts\. One trust is created from the Active Directory domain on your EC2 instance and the other from your Microsoft AD in AWS\.
+In this section, you create two separate forest trusts\. One trust is created from the Active Directory domain on your EC2 instance and the other from your AWS Managed Microsoft AD in AWS\.
 
 **Note**  
 The AWS Directory Service, currently only supports forest trusts\.
 
-**To create the trust from your EC2 domain to your Microsoft AD in AWS**
+**To create the trust from your EC2 domain to your AWS Managed Microsoft AD in AWS**
 
 1. Log into **example\.local**\.
 
@@ -39,7 +39,7 @@ The AWS Directory Service, currently only supports forest trusts\.
 
 1. On the **Completing the New Trust Wizard** page, choose **Finish**\.
 
-**To create the trust from your Microsoft AD in AWS to your EC2 domain**
+**To create the trust from your AWS Managed Microsoft AD in AWS to your EC2 domain**
 
 1. Open the AWS Directory Service console\.
 
@@ -50,13 +50,9 @@ The AWS Directory Service, currently only supports forest trusts\.
 1. Choose **Add trust relationship**\.
 
 1. In the **Add a trust relationship** dialog box, do the following:
-
    + For **Remote domain name**, type **example\.local**\.
-
    + For **Trust password**, type the same password that you provided in the previous procedure\.
-
    + In **Trust direction**, select **Two\-way**\.
-
    + In **Conditional forwarder**, type the IP address of your DNS server in the **example\.local** forest \(which you noted in the previous procedure\)\. 
 
 1. Choose **Add**\. 

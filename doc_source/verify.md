@@ -2,7 +2,7 @@
 
 After you have finished the import process, it is important to verify that schema updates were applied to your directory\. This is especially critical before you migrate or update any application that relies on the schema update\. You can do this using a variety of different LDAP tools or by writing a test tool that issues the appropriate LDAP commands\. 
 
-This procedure uses the Active Directory Schema Snap\-in and/or PowerShell to verify that the schema updates were applied\. You must run these tools from a computer that is domain joined to your Microsoft AD\. This can be a Windows server running in your on\-premises network with access to your virtual private cloud \(VPC\) or through a virtual private network \(VPN\) connection\. You can also run these tools on an Amazon EC2 Windows instance \(see [How to launch a new EC2 instance with Seamless Domain Join](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html#join-domain-console)\)\.
+This procedure uses the Active Directory Schema Snap\-in and/or PowerShell to verify that the schema updates were applied\. You must run these tools from a computer that is domain joined to your AWS Managed Microsoft AD\. This can be a Windows server running in your on\-premises network with access to your virtual private cloud \(VPC\) or through a virtual private network \(VPN\) connection\. You can also run these tools on an Amazon EC2 Windows instance \(see [How to launch a new EC2 instance with Seamless Domain Join](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html#join-domain-console)\)\.
 
 **To verify using the Active Directory Schema Snap\-in**
 

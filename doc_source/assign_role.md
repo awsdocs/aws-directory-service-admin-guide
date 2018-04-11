@@ -20,7 +20,7 @@ You can assign an existing IAM role to an AWS Directory Service user or group\. 
 
 1. In the **Role Detail** page, choose **Add**\. 
 
-1. In the **Add Users and Groups to Role** page, next to **Select Forest**, choose either the Microsoft AD forest \(this forest\) or the on\-premises forest \(trusted forest\), whichever contains where the accounts that need access to the AWS Management Console\. For more information about how to set up a trusted forest, see [Tutorial: Create a Trust Relationship Between Your Microsoft AD and Your On\-Premises Domain](tutorial_setup_trust.md)\.
+1. In the **Add Users and Groups to Role** page, next to **Select Forest**, choose either the AWS Managed Microsoft AD forest \(this forest\) or the on\-premises forest \(trusted forest\), whichever contains where the accounts that need access to the AWS Management Console\. For more information about how to set up a trusted forest, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
 
 1. Next to **Search for**, choose either **User** or **Group**, and then type the name of the user or group\. In the list of possible matches, choose the user or group that you want to add\. 
 

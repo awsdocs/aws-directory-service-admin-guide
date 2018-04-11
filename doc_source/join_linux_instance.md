@@ -1,27 +1,23 @@
-# Manually Add a Linux Instance \(Simple AD and Microsoft AD\)<a name="join_linux_instance"></a>
+# Manually Join a Linux Instance<a name="join_linux_instance"></a>
 
 In addition to Amazon EC2 Windows instances, you can also join certain Amazon EC2 Linux instances to a Simple AD or AWS Directory Service for Microsoft Active Directory directory\. The following Linux instance distributions and versions are supported:
-
 + Amazon Linux AMI 2015\.03
-
 + Red Hat Enterprise Linux 7\.2
-
 + Ubuntu Server 14\.04 LTS
-
 + CentOS 7
 
 **Note**  
 Other Linux distributions and versions may work but have not been tested\.
 
-## Prerequisites for Joining an Instance to a Simple AD or Microsoft AD Directory<a name="join_linux_prereq"></a>
+## Prerequisites for Joining an Instance to a Simple AD or AWS Managed Microsoft AD Directory<a name="join_linux_prereq"></a>
 
-To join a Linux instance to your directory, the instance must be launched as specified in [Launching an Instance \(Simple AD and Microsoft AD\)](launching_instance.md)\. 
+To join a Linux instance to your directory, the instance must be launched as specified in [Seamlessly Join a Windows EC2 Instance](launching_instance.md)\. 
 
 **Important**  
 When using Simple AD, if you create a user account on a Linux instance with the option "Force user to change password at first login," that user will not be able to initially change their password using kpasswd\. In order to change the password the first time, a domain administrator must update the user password using the Active Directory Management Tools\.  
 Some of the following procedures, if not performed correctly, can render your instance unreachable or unusable\. Therefore, we strongly suggest you make a backup or take a snapshot of your instance before performing these procedures\.
 
-**To join a Linux instance to a Simple AD or Microsoft AD directory**
+**To join a Linux instance to a Simple AD or AWS Managed Microsoft AD directory**
 
 1. Connect to the instance using any SSH client\.
 
@@ -44,16 +40,15 @@ Ubuntu \- 64bit
 **Note**  
 Some of these packages may already be installed\.   
 As you install the packages, particularly in Ubuntu, you might be presented with several pop\-up configuration screens\. You can generally leave the fields in these screens blank\.  
-Amazon Linux \- 64bit/Red Hat \- 64bit  
+Amazon Linux 1  
 
    ```
    $ sudo yum -y install sssd realmd krb5-workstation
    ```  
-CentOS 7  
+Amazon Linux 2, Red Hat 7, CentOS 7  
 
    ```
-   $ sudo yum -y install sssd realmd krb5-workstation
-   $ sudo yum -y install samba-common-tools
+   $ sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```  
 Ubuntu \- 64bit  
 
@@ -67,7 +62,7 @@ Ubuntu \- 64bit
    $ sudo realm join -U join_account@example.com example.com --verbose
    ```  
 *join\_account@example\.com*  
-An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegating Directory Join Privileges \(Simple AD and Microsoft AD\)](directory_join_privileges.md)\.  
+An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully\-qualified DNS name of your directory\.
 
@@ -179,7 +174,7 @@ This is an additional domain component\. In this example, *com*\.
    ad_access_filter = (memberOf=cn=admins,ou=Testou,dc=example,dc=com)
    ```
 
-## Connecting to the Instance<a name="linux_connect"></a>
+## Connect to the Instance<a name="linux_connect"></a>
 
 When a user connects to the instance using an SSH client, they are prompted for their username\. The user can enter the username in either the `username@example.com` or `EXAMPLE\username` format\. The response will appear similar to the following:
 

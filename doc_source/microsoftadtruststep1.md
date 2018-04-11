@@ -17,33 +17,24 @@ Use the following procedure to create a Windows Server 2016 member server in Ama
 1. On the **Step 2** page, select **t2\.large**, and then choose **Next: Configure Instance Details**\.
 
 1. On the **Step 3** page, do the following:
-
-   + For **Network**, select **vpc\-*xxxxxxxx* AWS\-DS\-VPC** \(which you previously set up in the Base tutorial\)\.
-
-   + For **Subnet**, select **subnet\-*xxxxxxxx* | Public subnet2 | \(YourAZ\)**\.
-
+   + For **Network**, select **vpc\-*xxxxxxxx* AWS\-DS\-VPC** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createvpc)\)\.
+   + For **Subnet**, select **subnet\-*xxxxxxxx* \| Public subnet2 \| \(YourAZ\)**\.
    + For **Auto\-assign Public IP** list, choose **Enable** \(if the subnet setting is not set to **Enable** by default\)\.
-
    + Leave the rest of the settings at their defaults\.
-
    + Choose **Next: Add Storage**\.
 
 1. On the **Step 4** page, leave the default settings, and then choose **Next: Add Tags**\.
 
 1. On the **Step 5** page, choose **Add Tag**\. Under **Key** type **example\.local\-DC01**, and then choose **Next: Configure Security Group**\.
 
-1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS RDP Security Group** \(which you previously set up in the Base tutorial\), and then choose **Review and Launch** to review your instance\.
+1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS RDP Security Group** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createsecuritygroup)\), and then choose **Review and Launch** to review your instance\.
 
 1. On the **Step 7** page, review the page, and then choose **Launch**\.
 
 1. On the **Select an existing key pair or create a new key pair** dialog box, do the following:
-
    + Choose **Choose an existing key pair**\.
-
-   + Under **Select a key pair**, choose **AWS\-DS\-KP** \(which you previously set up in the Base tutorial\)\.
-
+   + Under **Select a key pair**, choose **AWS\-DS\-KP** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createkeypair2)\)\.
    + Select the **I acknowledge\.\.\.** check box\.
-
    + Choose **Launch Instances**\.
 
 1. Choose **View Instances** to return to the Amazon EC2 console and view the status of the deployment\.
@@ -90,11 +81,8 @@ If you want to create a domain controller in AWS that replicates with your on\-p
 1. On the **Deployment Configuration** page, choose **Add a new forest**\. In **Root domain name**, type **example\.local**, and then choose **Next**\.
 
 1. On the **Domain Controller Options** page, do the following:
-
    + In both **Forest functional level** and **Domain functional level**, choose **Windows Server 2016**\.
-
    + Under **Specify domain controller capabilities**, verify that both **Domain Name System \(DNS\) server** and **Global Catalog \(GC\)** are selected\.
-
    + Type and then confirm a Directory Services Restore Mode \(DSRM\) password\. Then choose **Next**\.
 
 1. On the **DNS Options** page, ignore the warning about delegation and choose **Next**\.
@@ -113,24 +101,20 @@ The following three procedures guide you through the steps to configure your VPC
 
 **To configure your VPC outbound rules**
 
-1. In the AWS Directory Service console, make a note of the Microsoft AD directory ID for corp\.example\.com that you previously created in the Base tutorial\.
+1. In the AWS Directory Service console, make a note of the AWS Managed Microsoft AD directory ID for corp\.example\.com that you previously created in the [Base tutorial](microsoftadbasestep2.md)\.
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
 1. In the navigation pane, choose **Security Groups**\.
 
-1. Search for your Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for d\-*xxxxxx***\.
+1. Search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for d\-*xxxxxx***\.
 **Note**  
 This security group was automatically created when you initially created your directory\.
 
 1. Choose the **Outbound Rules** tab under that security group\. Choose **Edit**, choose **Add another rule**, and then add the following values:
-
    + For **Type**, choose **All Traffic**\.
-
    + For **Destination**, type **0\.0\.0\.0/0**\.
-
    + Leave the rest of the settings at their defaults\.
-
    + Select **Save**\.
 
 **To verify Kerberos preauthentication is enabled**
@@ -145,13 +129,13 @@ This security group was automatically created when you initially created your di
 
 **To configure DNS conditional forwarders**
 
-1. First you must get some information about your AWS Microsoft AD\.
+1. First you must get some information about your AWS Managed Microsoft AD\.
 
    Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservice/](https://console.aws.amazon.com/directoryservice/)\.
 
 1. In the navigation pane, choose **Directories**\.
 
-1. Select the **directory ID** of your Microsoft AD\.
+1. Select the **directory ID** of your AWS Managed Microsoft AD\.
 
 1. Take note of the fully qualified domain name \(FQDN\), **corp\.example\.com**, and the DNS addresses of your directory\.
 
@@ -165,6 +149,6 @@ This security group was automatically created when you initially created your di
 
 1. In DNS domain, type **corp\.example\.com**\.
 
-1. Under **IP addresses of the master servers**, choose **<Click here to add \.\.\.>**, type the first DNS address of your Microsoft AD directory \(which you made note of in the previous procedure\), and then press **Enter**\. Do the same for the second DNS address\. After typing the DNS addresses, you might get a "timeout" or "unable to resolve" error\. You can generally ignore these errors\.
+1. Under **IP addresses of the master servers**, choose **<Click here to add \.\.\.>**, type the first DNS address of your AWS Managed Microsoft AD directory \(which you made note of in the previous procedure\), and then press **Enter**\. Do the same for the second DNS address\. After typing the DNS addresses, you might get a "timeout" or "unable to resolve" error\. You can generally ignore these errors\.
 
 1. Select the **Store this conditional forwarder in Active Directory, and replicate as follows** check box\. In the drop\-down menu, choose **All DNS servers in this Forest**, and then choose **OK**\.

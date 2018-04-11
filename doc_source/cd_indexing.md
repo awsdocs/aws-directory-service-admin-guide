@@ -24,7 +24,7 @@ You can use the following API calls to help with the development lifecycle of in
 
 1. Once you detach all objects from the index, you can delete the index with the `[DeleteObject](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteObject.html)` API call\.
 
-There is no limit on the number of indexes within a directory, other than the limit on the space used by all objects\. Indexes and their attachments do consume space, but it is similar to that consumed by nodes and parent–child links\. There is a limit on the number of indexes that can be attached to a given object\. For more information, see [AWS Directory Service Limits](limits.md)\.
+There is no limit on the number of indexes within a directory, other than the limit on the space used by all objects\. Indexes and their attachments do consume space, but it is similar to that consumed by nodes and parent–child links\. There is a limit on the number of indexes that can be attached to a given object\. For more information, see [Limits for Amazon Cloud Directory](cd_limits.md)\.
 
 **Facet\-Based Indexing**
 

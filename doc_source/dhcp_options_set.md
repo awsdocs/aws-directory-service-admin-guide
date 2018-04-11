@@ -1,8 +1,8 @@
-# DHCP Options Set<a name="dhcp_options_set"></a>
+# Create a DHCP Options Set<a name="dhcp_options_set"></a>
 
 AWS recommends that you create a DHCP options set for your AWS Directory Service directory and assign the DHCP options set to the VPC that your directory is in\. This allows any instances in that VPC to point to the specified domain and DNS servers to resolve their domain names\.
 
- For more information about DHCP options sets, see [DHCP Options Sets](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
+ For more information about DHCP options sets, see [DHCP Options Sets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
 
 **To create a DHCP options set for your directory**
 
@@ -16,7 +16,7 @@ An optional tag for the options set\.
 **Domain name**  
 The fully\-qualified name of your directory, such as `corp.example.com`\.  
 **Domain name servers**  
-The IP addresses of your directory's DNS servers\. These are the IP addresses of your AWS\-provided directory\. You can find these addresses by going to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, selecting **Directories** and then choosing the correct directory ID\.   
+The IP addresses of your directory's DNS servers\. These are the IP addresses of your AWS\-provided directory\. You can find these addresses by going to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, selecting **Directories** and then choosing the correct directory ID\.  
 **NTP servers**  
 Leave this field blank\.  
 **NetBIOS name servers**  

@@ -1,10 +1,10 @@
 # Supported Policy Settings<a name="supportedpolicysettings"></a>
 
-AWS Microsoft AD includes five fine\-grained policies with a non\-editable precedence value\. The policies have a number of properties you can configure to enforce the strength of passwords, and account lock\-out actions in the event of login failures\. You can assign the policies to zero or more Active Directory groups\. If an end\-user is a member of multiple groups and receives more than one password policy, Active Directory enforces the policy with the lowest precedence value\.
+AWS Managed Microsoft AD includes five fine\-grained policies with a non\-editable precedence value\. The policies have a number of properties you can configure to enforce the strength of passwords, and account lock\-out actions in the event of login failures\. You can assign the policies to zero or more Active Directory groups\. If an end\-user is a member of multiple groups and receives more than one password policy, Active Directory enforces the policy with the lowest precedence value\.
 
 ## AWS Pre\-Defined Password Policies<a name="supportedpwdpolicies"></a>
 
-The following table lists the five policies included in your AWS Microsoft AD directory and their assigned precedence value\. For more information, see [Precedence](#precedence)\.
+The following table lists the five policies included in your AWS Managed Microsoft AD directory and their assigned precedence value\. For more information, see [Precedence](#precedence)\.
 
 
 ****  
@@ -20,19 +20,12 @@ The following table lists the five policies included in your AWS Microsoft AD di
 ### Password Policy Properties<a name="passwordpolicyprop"></a>
 
 You may edit the following properties in your password policies to conform to the compliance standards that meet your business needs\.
-
 + Policy name
-
 + Password history
-
 + Minimum password length
-
 + Minimum password age
-
 + Maximum password age
-
 + Store password using reversible encryption
-
 + Password must meet complexity requirements
 
 You cannot modify the precedence values for these policies\. For more details about how these settings affect password enforcement, see [AD DS: Fine\-Grained Password Policies](https://technet.microsoft.com/en-us/library/cc770394(v=ws.10).aspx) on the *Microsoft TechNet* website\. For general information about these policies, see [Password Policy](https://technet.microsoft.com/en-us/library/hh994572(v=ws.11).aspx) on the *Microsoft TechNet* website\.
@@ -40,11 +33,8 @@ You cannot modify the precedence values for these policies\. For more details ab
 ## Account Lockout Policies<a name="supportedlockoutpolicies"></a>
 
 You may also modify the following properties of your password policies to specify if and how Active Directory should lockout an account after login failures:
-
 + Number of failed logon attempts allowed
-
 + Account lockout duration
-
 + Reset failed logon attempts after some duration
 
 For general information about these policies, see [Account Lockout Policy](https://technet.microsoft.com/en-us/library/hh994563(v=ws.11).aspx) on the *Microsoft TechNet* website\.

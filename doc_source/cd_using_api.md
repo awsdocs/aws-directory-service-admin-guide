@@ -3,17 +3,11 @@
 Amazon Cloud Directory includes a set of API operations that enable programmatic access to Cloud Directory capabilities\. You can use the [Amazon Cloud Directory API Reference Guide](http://docs.aws.amazon.com/directoryservice/latest/APIReference/welcome.html) to learn how to make requests to the Cloud Directory API for creating and managing the various elements\. It also covers the components of requests, the content of responses, and how to authenticate requests\.
 
 Cloud Directory provides all necessary API operations that enable developers to build new applications\. It provides the following categories of API calls:
-
 + Create, read, update, delete \(CRUD\) for schema
-
 + CRUD for facet
-
 + CRUD for directories
-
 + CRUD for objects \(nodes, policies, etc\.\)
-
 + CRUD for Index definition
-
 + Batch read, batch write
 
 ## How Billing Works With Cloud Directory APIs<a name="billingcdapis"></a>
@@ -59,6 +53,7 @@ The following table lists all of the Cloud Directory APIs and how they can impac
 | GetAppliedSchemaVersion |  |  |  | X | 
 | GetDirectory |  |  |  | X | 
 | GetFacet |  |  |  | X | 
+| GetObjectAttributes | X | X |  |  | 
 | GetObjectInformation | X | X |  |  | 
 | GetSchemaAsJson |  |  |  | X | 
 | GetTypedLinkFacetInformation |  |  |  | X | 

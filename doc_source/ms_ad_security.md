@@ -1,8 +1,9 @@
-# Security<a name="ms_ad_security"></a>
+# Secure Your AWS Managed Microsoft AD Directory<a name="ms_ad_security"></a>
 
-This section describes considerations for securing your Microsoft AD environment\.
+This section describes considerations for securing your AWS Managed Microsoft AD environment\.
 
-
-+ [Secure LDAP Communications](ms_ad_ldap.md)
-+ [Multi\-Factor Authentication](mfa_ad.md)
-+ [Manage Fine\-Grained Password Policies in Microsoft AD](ms_ad_password_policies.md)
+**Topics**
++ [Manage Password Policies for AWS Managed Microsoft AD](ms_ad_password_policies.md)
++ [Enable Multi\-Factor Authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)
++ [Enable Secure LDAP Communications for AWS Managed Microsoft AD](ms_ad_ldap.md)
++ [Manage Compliance for AWS Managed Microsoft AD](ms_ad_compliance.md)

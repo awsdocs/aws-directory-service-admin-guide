@@ -2,18 +2,15 @@
 
 The following sections demonstrate how to create and configure a VPC for use with AWS Directory Service\.
 
-
+**Topics**
 + [Create a New VPC](#create_vpc)
 + [Add a Second Subnet](#add_subnet)
 
 ## Create a New VPC<a name="create_vpc"></a>
 
 This tutorial uses one of the VPC creation wizards to create the following:
-
 + The VPC
-
 + One of the subnets
-
 + An Internet gateway
 
 **To create your VPC using the VPC wizard**

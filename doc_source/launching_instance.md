@@ -1,6 +1,8 @@
-# Launching an Instance \(Simple AD and Microsoft AD\)<a name="launching_instance"></a>
+# Seamlessly Join a Windows EC2 Instance<a name="launching_instance"></a>
 
-**To launch an instance to be manually joined to a directory in a VPC**
+This procedure will seamlessly join a Windows EC2 instance to your directory\.
+
+**To seamlessly join a Windows EC2 instance**
 
 1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
@@ -18,11 +20,11 @@
 
    1. For **Subnet**, select one of the public subnets in your VPC\. The subnet you select must have all external traffic routed to an Internet gateway\. If this is not the case, you won't be able to connect to the instance remotely\.
 
-   1. For **Auto\-assign Public IP**, choose **Enable** \(if the subnet setting is not set to enable by default\)\. Although a public IP address is not required to join the domain, in order to connect to the instance, the instance must have a public IP address\. Setting this to **Enable** assigns a public IP address automatically, or you can assign an Elastic IP address to the instance after it is launched\.
+   1. For **Auto\-assign Public IP**, choose **Enable** \(if the subnet setting is not set to enable by default\)\. For more information about public and private IP addressing, see [Amazon EC2 Instance IP Addressing](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
    1. For **Domain join directory**, select your domain from the **Domain join directory** list\. To seamlessly join the instance, you also need an IAM role that has the **AmazonEC2RoleforSSM** managed policy attached to it\. Select the IAM role that has permission from the IAM role list\. If you choose this option, you will not have to manually join the instance to the domain as that will be done for you when the instance is launched\.
 **Note**  
-This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Add a Linux Instance \(Simple AD and Microsoft AD\)](join_linux_instance.md)\.
+This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Join a Linux InstanceManually Join a Linux Instance](join_linux_instance.md)\.
 
    1. For **IAM role**, optionally choose the **Create new IAM role** link to create a new IAM role and attach the AmazonEC2RoleforSSM policy, and then on the **Roles** page, do the following:
 

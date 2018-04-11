@@ -1,6 +1,6 @@
 # Facets<a name="whatarefacets"></a>
 
-Facets are the most basic abstraction within a schema\. They represent a set of attributes that can be associated with an object in the directory and are similar in concept to LDAP object classes\. Each directory object may have up to a certain number of facets associated with it\. For more information, see [AWS Directory Service Limits](limits.md)\. 
+Facets are the most basic abstraction within a schema\. They represent a set of attributes that can be associated with an object in the directory and are similar in concept to LDAP object classes\. Each directory object may have up to a certain number of facets associated with it\. For more information, see [Limits for Amazon Cloud Directory](cd_limits.md)\. 
 
 Each facet maintains its own independent set of attributes\. Each facet consists of fundamental metadata, such as the facet name, version information, and behaviors\. The combination of schema ARNs, facets, and attributes define uniqueness on the object\. 
 

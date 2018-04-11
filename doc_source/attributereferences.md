@@ -78,11 +78,8 @@ The following example demonstrates the use of attribute references in a JSON mod
 ### Attribute reference considerations<a name="attributerefconsiderations"></a>
 
 Attribute references must target a preexisting attribute definition in the same schema\.
-
 + Attribute references may target a preexisting attribute definition in the same facet or a different facet\.
-
 + Attribute references may not target other attribute references\.
-
 + Facets containing attribute definitions that are the target of another facet's attribute reference cannot be deleted until all references have been deleted\.
 
 You can use attribute references the same way that you use traditional attribute definitions, by creating objects or applying facets to existing objects\.
@@ -112,9 +109,6 @@ For example, imagine you have an Index for facet User attribute FirstName\. You 
 ### Required Behavior for Attribute References<a name="requiredbehaviorattributeref"></a>
 
 An attribute references can have a required behavior that is different from its target attribute definition\. This allows a base definition to be optional, while a reference to that same definition can be required\. When an object has a base definition and one or more references to the same base definition, the base definition and all references must adhere to the strongest required behavior present across all related attributes\.
-
 + As with attribute definitions, you must provide values for any required attribute definitions when you create the object or when you add a facet to an existing object\.
-
 + As a convenience, when more than one attribute on an object refers to the same storage location, you only need to provide a value for one of the attributes for that storage location\.
-
 + Similarly, if you do provide multiple values for the same storage location, the values must be equal\.

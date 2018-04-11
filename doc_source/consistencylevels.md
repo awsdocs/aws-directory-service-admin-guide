@@ -5,16 +5,14 @@ Amazon Cloud Directory is a distributed directory store\. Data is distributed to
 ## Read Isolation Levels<a name="readisolationlevels"></a>
 
 When reading data from Cloud Directory, you must specify the isolation level you want to read from\. Different isolation levels have tradeoffs between latency and data freshness\.
-
 + **EVENTUAL \- **The snapshot isolation level reads whatever data is immediately available**\. **It provides the lowest latency of any isolation level\.** **It also provides a potentially old view of the data in the directory\. EVENTUAL isolation does not provide read\-after\-write consistency\. This means it is not guaranteed that you will be able to read data immediately after writing it\.
-
 + **SERIALIZABLE \- **The serializable isolation level provides the highest level of consistency offered by Cloud Directory\. Reads done at the SERIALIZABLE isolation level ensure that you receive data from any successful writes\. If a change has been made to the data that you requested and that change is not yet available, the system rejects your request with `RetryableConflictException`\. We recommend that you retry these exceptions \(see the following section\)\. When successfully retried, SERIALIZABLE reads offer read\-after\-write consistency\.
 
 ## Write Requests<a name="writerequests"></a>
 
 Cloud Directory ensures that multiple write requests are not concurrently updating the same object or objects\. If two write requests are found to be operating on the same objects, one of the operations fails with a `RetryableConflictException`\. We recommend that you retry these exceptions \(see the section below\)\.
 
-**Note**  
+**Note**  <a name="caution"></a>
 `RetryableConflictException` responses received during write operations cannot be used to detect race conditions\. Given a use case that has been shown to precipitate this situation, there is no guarantee that an exception will always occur\. Whether an exception occurs or not depends on the order of each request being processed internally\.
 
 ## RetryableConflictExceptions<a name="retryable"></a>

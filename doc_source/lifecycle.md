@@ -4,17 +4,16 @@ Cloud Directory offers a schema lifecycle to help with the development of schema
 
 The following diagram depicts possible transitions and verbiage\. All schema transitions are copy\-on\-write\. For example, publishing a development schema does not alter or remove the development schema\. 
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/cd_schema_lifecycle.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/cd_schema_lifecycle.png)
 
 You can delete a schema when it is in either the Development or Published state\. Deleting a schema cannot be undone nor can it be restored once it has been deleted\.
 
 Schemas in Development, Published and Applied states have ARNs that represent them\. These ARNs are used in API operations to describe the schema that the API operates on\. It is easy to discern the state of a schema by looking at a schema ARN\.
-
 + Development: `arn:aws:clouddirectory:us-east-1:1234567890:schema/development/SchemaName`
++ Published: `arn:aws:clouddirectory:us-east-1:1234567890:schema/published/SchemaName/Version/SchemaMinorVersion`
++ Applied: `arn:aws:clouddirectory:us-east-1:1234567890:directory/directoryid/schema/SchemaName/Version/SchemaMinorVersion`
 
-+ Published: `arn:aws:clouddirectory:us-east-1:1234567890:schema/published/SchemaName/Version`
-
-+ Applied: `arn:aws:clouddirectory:us-east-1:1234567890:directory/directoryid/schema/SchemaName/Version`
+For more information, see [Arn Examples](https://docs.aws.amazon.com/directoryservice/latest/APIReference/arns.html) in the *Amazon Cloud Directory API Reference Guide*\.
 
 ## Development State<a name="devstate"></a>
 
@@ -29,7 +28,5 @@ Published and applied schemas must have a version associated with them\. For mor
 ## Applied State<a name="appliedstate"></a>
 
 A published schema can be applied to data directories\. A schema that has been applied to a data directory is said to be applied\. Once you apply a schema to a data directory, you can use the schema's facets when creating objects\. You can apply multiple schemas to the same data directory\. Only the following changes are permitted on an applied schema\.
-
 +  Add a facet to an applied schema
-
 +  Add a non\-required attribute to an applied schema

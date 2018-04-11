@@ -1,4 +1,4 @@
-# How to Create a Simple AD Directory<a name="how_to_create_simple_ad"></a>
+# Create a Simple AD Directory<a name="how_to_create_simple_ad"></a>
 
 To create a new directory, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [Simple AD Prerequisites](prereq_simple.md)\.
 
@@ -19,14 +19,10 @@ The short name for the directory, such as `CORP`\.
 **Administrator password**  
 The password for the directory administrator\. The directory creation process creates an administrator account with the user name `Administrator` and this password\.  
 The directory administrator password is case\-sensitive and must be between 8 and 64 characters in length, inclusive\. It must also contain at least one character from three of the following four categories:  
-
    + Lowercase letters \(a\-z\)
-
    + Uppercase letters \(A\-Z\)
-
    + Numbers \(0\-9\)
-
-   + Non\-alphanumeric characters \(\~\!@\#$%^&\*\_\-\+=`|\\\(\)\{\}\[\]:;"'<>,\.?/\)  
+   + Non\-alphanumeric characters \(\~\!@\#$%^&\*\_\-\+=`\|\\\(\)\{\}\[\]:;"'<>,\.?/\)  
 **Confirm password**  
 Retype the administrator password\.  
 **Description**  

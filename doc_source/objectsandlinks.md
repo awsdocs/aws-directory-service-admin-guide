@@ -2,7 +2,7 @@
 
 This section describes objects and links and how the directory identifies them\.
 
-
+**Topics**
 + [Objects](#objects2)
 + [Links](#links)
 + [Range Filters](#rangefilters)
@@ -10,7 +10,7 @@ This section describes objects and links and how the directory identifies them\.
 
 ## Objects<a name="objects2"></a>
 
-An object is a basic element of Cloud Directory\. Each object has a globally unique identifier, which is specified by the object Identifier\. An object is a collection of zero or more facets with their attribute keys and values\. An object can be created from one or more facets within a single applied schema or from facets of multiple applied schemas\. During object creation, you must specify all required attribute values\. Objects can have a limited number of facets\. For more information, see [AWS Directory Service Limits](limits.md)\. 
+An object is a basic element of Cloud Directory\. Each object has a globally unique identifier, which is specified by the object Identifier\. An object is a collection of zero or more facets with their attribute keys and values\. An object can be created from one or more facets within a single applied schema or from facets of multiple applied schemas\. During object creation, you must specify all required attribute values\. Objects can have a limited number of facets\. For more information, see [Limits for Amazon Cloud Directory](cd_limits.md)\. 
 
 An object can be a regular object, a policy object, or an index object\. An object can also be a node object or a leaf node object\. The type of the object is inferred from the object type of the facets attached to it\.
 
@@ -18,7 +18,7 @@ An object can be a regular object, a policy object, or an index object\. An obje
 
 A link is a directed edge between two objects that define a relationship\. Cloud Directory currently supports the following link types\.
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/cd_objectlinks.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/cd_objectlinks.png)
 
 ### Child Links<a name="childlinks"></a>
 
@@ -39,23 +39,16 @@ Typed links are a special type of link\. With a typed link, you can attach any t
 As with objects, you must create a typed link facet using the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html) API to define the typed link structure and its attributes\. Typed link facets require a unique facet name and set of attributes that are associated with the link\. With Cloud Directory, the schema designer can define an ordered set of attributes on the typed link facet\. To view a typed links sample schema, see [Schema Document with Typed Links](completeexample.md#schematyped)\.
 
 Typed link attributes can be used when you need to do any of the following:
-
 + Represent the relationship between two objects\.
-
 + Allow for quick filtering of incoming or outgoing typed links\. For more information, see [Typed Link Listing](#typedlinklisting)\.
 
 Consider the following when deciding if typed links are right for your use case: 
-
 + Typed links cannot be used in path\-based object specification\. Instead, you must select typed links using the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html) or [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html) API operations\.
-
 + Typed links do not participate in [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_LookupPolicy.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_LookupPolicy.html) or [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectParentPaths.html) API operations\. 
-
 + Typed links between the same two objects and in the same direction may not have the same attribute values\. This can help avoid duplicated typed links between the same objects\.
-
-+ The combined size of all identity attribute values is limited to 64 bytes\. For more information, see [AWS Directory Service Limits](limits.md)\.
++ The combined size of all identity attribute values is limited to 64 bytes\. For more information, see [Limits for Amazon Cloud Directory](cd_limits.md)\.
 
 **Related Cloud Directory Blog Article**
-
 + [Use Amazon Cloud Directory Typed Links to Create and Search Relationships Across Hierarchies](https://aws.amazon.com/blogs/security/new-use-amazon-cloud-directory-typed-links-to-create-and-manage-relationships-in-your-directory/)
 
 #### Typed Link Identity<a name="typedlinkid"></a>
@@ -64,14 +57,10 @@ Identity is what uniquely defines whether a typed link can exist between two obj
 
 Typed links that are created from different typed link facets never conflict with each other\. For example, consider the following diagram:
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/cd_typedlinks.png)
-
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/cd_typedlinks.png)
 + Object `001` has typed links and attributes \(A1 and A2\) with the same attribute values \(x1 and x2\) going to different objects \(`002` and `003`\)\. This operation would succeed\.
-
 + Objects `002` and `003` have a typed link between them\. This operation would fail because two typed links in the same direction with the same attributes cannot exist between objects\.
-
 + Objects `001` and `003` have two typed links between them with the same attributes\. However, since the links go in different directions, this operation would succeed\.
-
 + Objects `002` and `003` have typed links between them with the same value for A1 but different values for A2\. Typed link identity considers all attributes so this operation would succeed\.
 
 #### Typed Link Rules<a name="typedlinkrules"></a>
@@ -86,38 +75,24 @@ You can filter typed links based on the order that the attributes are defined on
 
 For example, in the following diagram, consider a Cloud Directory that is used to store information about Employees and their Abilities\. 
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/cd_typedlinklisting.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/cd_typedlinklisting.png)
 
 Let’s say we model our employee’s capabilities with a typed link named `EmployeeCapability`, which is configured with two string attributes: `Status` and `Role`\. The following filters are supported on [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html) and [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html) API operations\.
-
 + Facet = `EmployeeCapability`, Status = `Active`, Role = `Driver`
-
   + Selects active employees who are drivers\. This filter includes two exact matches\.
-
 + Facet = `EmployeeCapability`, Status = `Active`
-
   + Selects all active employees\.
-
 + Facet = `EmployeeCapability`, Status = `Active`, Role = `A` to `M`
-
   + Selects active employees with roles starting with `A` through `M`\.
-
 + Facet = `EmployeeCapability`
-
   + This selects all typed links of the `EmployeeCapability` type\.
 
 The following filters would **NOT** be supported:
-
 + Facet = `EmployeeCapability`, Status between `A` to `C`, Role = `Driver`
-
   + This filter is not allowed because any ranges must appear at the end of the filter\.
-
 + Facet = `EmployeeCapability`, Role = `Driver`
-
   + This filter is not allowed because the implicit status range is not an exact match and does not appear at the end of the list of ranges\.
-
 + Status = `Active`
-
   + This filter is not allowed because the typed link facet is not specified\.
 
 #### Typed Link Schema<a name="typedlinkschema"></a>
@@ -127,9 +102,7 @@ You can create typed link facets in two ways\. You can manage your typed link fa
 The types of changes allowed at different phases of the schema development lifecycle are similar to changes that are allowed for object facet manipulation\. Schemas in the development state support any changes\. Schemas in the published state are immutable and no changes are supported\. Only certain changes are allowed to schemas that are applied to a data directory\. Once you set the order and attributes on an applied typed link facet, that order cannot be changed\.
 
 Two other API operations list facets and their attributes:
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html)
 
 #### Typed Link Interaction<a name="typedlinkinteraction"></a>
@@ -137,25 +110,15 @@ Two other API operations list facets and their attributes:
 Once a typed link facet has been created, you are ready to start creating and interacting with typed links\. To attach and detach typed links, use the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html) and [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html) API operations\.
 
 The `TypedLinkSpecifier` is a structure that contains all the information to uniquely identify a typed link\. Within that structure you can find `TypedLinkFacet`, `SourceObjectID`, `DestinationObjectID`, and `IdentityAttributeValues`\. These are used to uniquely specify the typed link being operated on\. The [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html) API operation returns a typed link specifier while the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html) API operation accepts one as input\. Similarly, the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html) and [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html) API operations provide typed link specifiers as output\. You can construct a typed link specifier from scratch as well\. The full list of typed link\-related API operations, include the following:
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AttachTypedLink.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateTypedLinkFacet.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteTypedLinkFacet.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DeleteTypedLinkFacet.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_DetachTypedLink.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetTypedLinkFacetInformation.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_GetTypedLinkFacetInformation.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListIncomingTypedLinks.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListOutgoingTypedLinks.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetNames.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListTypedLinkFacetAttributes.html)
-
 + [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateTypedLinkFacet.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_UpdateTypedLinkFacet.html)
 
 **Note**  
@@ -174,11 +137,8 @@ If you think of each attribute as defining an independent flat domain of values,
 The start point of a range must always precede or be equal to the end point\. Cloud Directory will return an error if EndValue precedes the StartValue\. The values must also be of the same primitive type as the attribute they are filtering, String values for a String attribute, Integer for an Integer attribute, and so on\. StartValue=“D”, StartMode=EXCLUSIVE, EndValue=“D”, EndMode=INCLUSIVE is invalid, for instance, because the end point includes the value while the start point follows the value\.
 
 There are three special modes that can be used by either start or end points\. The following modes do not require the corresponding value field to be specified, as they imply a position on their own\.
-
 + **FIRST \-** precedes all possible values in the domain\. When used for the start point, this matches all possible values from the beginning of the domain up to the end point\. When used for the end point, no values in the domain will match the range\.
-
 + **LAST \-** follows all possible values in the domain\. When used for the end point, this matches all possible values that follow the start point, including missing values\. When used for the start point, no values in the domain will match the range\.
-
 + **LAST\_BEFORE\_MISSING\_VALUES \-** This mode is only useful for optional attributes where the value may be omitted \(see [Missing values](#missingvalues)\)\. It corresponds to the point between the missing values and the actual domain values\. When used for the end point, this matches all non\-missing domain values that follow the start point\. When used for the start point, it excludes all non\-missing domain values\. If the attribute is a required one, this mode is equivalent to LAST, as there can be no missing values\.
 
 ### Multiple range limitations<a name="multiplerangelimits"></a>
@@ -233,11 +193,8 @@ String objectIdentifier = result.getObjectIdentifier()
 ### Populating Objects<a name="populatingobjects"></a>
 
 New facets can be added to an object using [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AddFacetToObject.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_AddFacetToObject.html) API call\. The type of the object is determined based on the facets attached to the object\. Object attachment in a directory works based on the type of the object\. When attaching an object, remember these rules:
-
 +  A leaf node object cannot have children\.
-
 +  A node object can have multiple children\.
-
 +  An object of the policy type cannot have children and can have zero or one parent\.
 
 ### Updating Objects<a name="updatingobjects"></a>
@@ -279,15 +236,10 @@ If the object is a leaf node, it can have multiple paths to the root\. This call
 #### Index Querying<a name="indexquerying"></a>
 
 Cloud Directory supports rich index querying functionality with the use of the following ranges:
-
 + **FIRST \- **Starts from the first indexed attribute value\. The start attribute value is optional\.
-
 + **LAST \- **Returns attribute values up to the end of the index, including the missing values\. The end attribute value is optional\.
-
 + **LAST\_BEFORE\_MISSING\_VALUES \- **Returns attribute values up to the end of index, excluding missing values\.
-
 + **INCLUSIVE \- **Includes the attribute value being specified\.
-
 + **EXCLUSIVE \- **Excludes the attribute value being specified\.
 
 #### Parent Path Listing<a name="parentpath"></a>
@@ -296,7 +248,7 @@ Using the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_L
 
 For an example on how this works, let's say a directory has an object hierarchy similar to the illustration shown below\. 
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/cd_parent_path.png)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/cd_parent_path.png)
 
 The numbered shapes represent the different objects\. The number of arrows between that object and the directory root \(`000`\) represent the complete path and would be expressed in the output\. The following table shows requests and responses from queries made to specific leaf node objects in the hierarchy\. 
 

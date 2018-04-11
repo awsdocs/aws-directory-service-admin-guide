@@ -31,21 +31,16 @@ Policy objects can also be attached to other objects via policy attachments\. Yo
 In order to start using policies, you must first add a facet to your schema that support creating policies\. To accomplish this, create a facet setting the `objectType` of the facet to POLICY\. Creating objects using a facet with the type POLICY ensures that the object has policy capabilities\.
 
 Policy facets inherit two attributes in addition to any attributes you add to the definition: 
-
 + **policy\_type** \(String, Required\) – This is an identifier you can provide to distinguish between different policy uses\. If your policies logically fall into clear categories, we encourage setting the policy type attribute appropriately\. The `LookupPolicy` API returns the policy type of attached policies \(see [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PolicyAttachment.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_PolicyAttachment.html)\)\. This allows easy filtering of the specific policy type that you are looking for\. It also allows you to use policy\_type to decide how the document should be processed or interpreted\. 
-
-+ **policy\_document** \(String, Required\) – You can store application specific data in this attribute, such as permission grants associated with the policy\. You can also store application\-related data in normal attributes on your facet, if you prefer\.
++ **policy\_document** \(Binary, Required\) – You can store application specific data in this attribute, such as permission grants associated with the policy\. You can also store application\-related data in normal attributes on your facet, if you prefer\.
 
 #### Policy API Overview<a name="policyapioverview"></a>
 
 A variety of specialized API actions are available for working with policies\. For a list of available operations, see [Amazon Cloud Directory Actions](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_Operations.html)\. 
 
 To create a policy object, use the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateObject.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_CreateObject.html) API action with an appropriate facet:
-
 + To attach or detach a policy from an object, use the actions `AttachPolicy` and `DetachPolicy` respectively\.
-
 + To find policies that are attached to objects up the tree, use the `LookupPolicy` API action\.
-
 + To list the policies that are attached to a particular object, use the [http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectPolicies.html](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_ListObjectPolicies.html) API action\.
 
 For a list of operations and the permissions required to perform each API action, see [Amazon Cloud Directory API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_CD_ResourcePermissions.md)\.
@@ -54,7 +49,7 @@ For a list of operations and the permissions required to perform each API action
 
 Data in a directory is structured hierarchically in a tree pattern consisting of nodes, leaf nodes, and links between the nodes, as shown in the following illustration\. This is useful in application development to model, store, and quickly traverse hierarchical data\.
 
-![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/)![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/)![\[Image NOT FOUND\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/)
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/)
 
 ### Root Node<a name="rootnode"></a>
 

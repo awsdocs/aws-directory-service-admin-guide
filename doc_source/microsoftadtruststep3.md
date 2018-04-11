@@ -16,4 +16,4 @@ In this section, you test whether the trusts were set up successfully between AW
 
 Once the verification has completed, you should see **Verified** displayed under the **Status** column\. 
 
-Congratulations on completing this tutorial\! You now have a fully functional multiforest Active Directory environment from which you can begin testing various scenarios\. Additional test lab tutorials are planned in 2017, so check back on occasion to see what's new\. 
+Congratulations on completing this tutorial\! You now have a fully functional multiforest Active Directory environment from which you can begin testing various scenarios\. Additional test lab tutorials are planned in 2018, so check back on occasion to see what's new\. 

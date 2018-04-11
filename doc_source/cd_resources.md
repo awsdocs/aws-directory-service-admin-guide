@@ -3,8 +3,16 @@
 The following tables list related resources that you'll find useful as you work with this service\.
 
 
+| Cloud Directory Getting Started | Link | 
+| --- | --- | 
+| Cloud Directory Webinar | [https://www.youtube.com/watch?v=UANm3DC_IxE](https://www.youtube.com/watch?v=UANm3DC_IxE) | 
+|  Cloud Directory Sample Java Code  | [https://github\.com/aws\-samples/AmazonCloudDirectory\-sample](https://github.com/aws-samples/AmazonCloudDirectory-sample) | 
+
+
 | Cloud Directory Blog Posts | Description | 
 | --- | --- | 
+| [How to Search More Efficiently in Amazon Cloud Directory](https://aws.amazon.com/blogs/security/how-to-search-more-efficiently-in-amazon-cloud-directory/) | This blog post explains about searching more efficiently using facet\-based indexing\. It also includes sample Java code\. | 
+| [How to Easily Apply Amazon Cloud Directory Schema Changes with In\-Place Schema Upgrades ](https://aws.amazon.com/blogs/security/how-to-easily-apply-amazon-cloud-directory-schema-changes-with-in-place-schema-upgrades/) | This blog post explains about performing an in\-place schema upgrade for any operational \(running\) Cloud Directory\. It also includes sample Java code\. | 
 | [Write and Read Multiple Objects in Amazon Cloud Directory by Using Batch Operations](https://aws.amazon.com/blogs/security/write-and-read-multiple-objects-in-amazon-cloud-directory-by-using-batch-operations/) | Explains about using Batch Read and Write\. It also includes sample Java code\. | 
 | [How to Use Batch References in Amazon Cloud Directory to Refer to New Objects in a Batch Request](https://aws.amazon.com/blogs/security/how-to-use-batch-references-in-amazon-cloud-directory-to-refer-to-new-objects-in-a-batch-request/) | Explains about using Batch Reference\. It also includes sample Java code\. | 
 | [Cloud Directory Update – Support for Typed Links](https://aws.amazon.com/blogs/aws/cloud-directory-update-support-for-typed-links/) | Explains about creating and searching relationships across hierarchies in Cloud Directory by using typed links\. It also includes sample Java code\.  | 
@@ -22,7 +30,5 @@ The following tables list related resources that you'll find useful as you work 
 
 | Cloud Directory Other | Link | 
 | --- | --- | 
-| Cloud Directory Webinar | [https://www.youtube.com/watch?v=UANm3DC_IxE](https://www.youtube.com/watch?v=UANm3DC_IxE) | 
-|  Cloud Directory Sample Java Code  | [https://github\.com/aws\-samples/AmazonCloudDirectory\-sample](https://github.com/aws-samples/AmazonCloudDirectory-sample) | 
 |  Cloud Directory Product Info  | [https://aws.amazon.com/cloud-directory/](https://aws.amazon.com/cloud-directory/) | 
 |  Cloud Directory Pricing  | [https://aws.amazon.com/cloud-directory/pricing/](https://aws.amazon.com/cloud-directory/pricing/) | 

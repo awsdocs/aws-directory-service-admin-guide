@@ -1,41 +1,26 @@
 # Simple AD Prerequisites<a name="prereq_simple"></a>
 
 To create a Simple AD directory, you need a VPC with the following: 
-
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
-
 + The following ports must be open between the two subnets that you deploy your directory into\. This is necessary to allow the domain controllers that AWS Directory Service creates for you to communicate with each other\.
-
   + TCP/UDP 53 \- DNS
-
   + TCP/UDP 88 \- Kerberos authentication
-
   + UDP 123 \- NTP
-
   + TCP 135 \- RPC
-
   + UDP 137\-138 \- Netlogon
-
   + TCP 139 \- Netlogon
-
   + TCP/UDP 389 \- LDAP
-
   + TCP/UDP 445 \- SMB
-
+  + TCP 636 \- LDAPS \(LDAP over TLS/SSL\)
   + TCP 873 \- Rsync
-
   + TCP 3268 \- Global Catalog
-
   + TCP/UDP 1024\-65535 \- Ephemeral ports for RPC
-
 + The VPC must have default hardware tenancy\.
-
++ If you require LDAPS support with Simple AD, we recommend that you configure it using an Elastic Load Balancer and HA Proxy running on EC2 instances\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single ELB IP address, and have automatic fail\-over through the HA Proxy\. For more information about how to configure LDAPS with Simple AD, see [How to Configure an LDAPS Endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-an-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.
 + The following encryption types must be enabled in the directory: 
-
   + RC4\_HMAC\_MD5
-
   + AES128\_HMAC\_SHA1
-
   + AES256\_HMAC\_SHA1
-
   + Future encryption types
+**Note**  
+Disabling these encryption types can cause communication issues with RSAT \(Remote Server Administration Tools\) and impact the availability or your directory\.

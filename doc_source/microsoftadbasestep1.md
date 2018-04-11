@@ -1,6 +1,6 @@
-# Step 1: Set Up Your AWS Environment for Microsoft AD<a name="microsoftadbasestep1"></a>
+# Step 1: Set Up Your AWS Environment for AWS Managed Microsoft AD<a name="microsoftadbasestep1"></a>
 
-Before you can create Microsoft AD in your AWS test lab, you first need to set up your Amazon EC2 key pair so that all login data is encrypted\.
+Before you can create AWS Managed Microsoft AD in your AWS test lab, you first need to set up your Amazon EC2 key pair so that all login data is encrypted\.
 
 ## Create a Key Pair<a name="createkeypair2"></a>
 
@@ -33,11 +33,8 @@ If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance t
 1. On the **Select Template** page, keep the default setting for the Amazon S3 template URL and then choose **Next**\.
 
 1. On the **Specify Details** page, set the stack name to **AWS\-DS\-VPC**\. Then do the following:
-
    + Under **Availability Zone Configuration** select two zones in your area\. Then for **Number of Availability Zones** select **2**\.
-
    + Under **Network Configuration**, set **Create private subnets** to **false**\. Then in **Create additional private subnets with dedicated network ACLs**, select **false**\.
-
    + Under **Amazon EC2 Configuration**, set **Key pair name** to **AWS\-DS\-KP** or use an existing key pair\.
 
 1. Review your information, and then choose **Next**\.
@@ -48,7 +45,7 @@ If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance t
 
 ## Create a Security Group for EC2 Instances<a name="createsecuritygroup"></a>
 
-By default, Microsoft AD creates a security group to manage traffic between its domain controllers\. In this procedure, you create a security group that manages traffic within your VPC for your EC2 instances\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 Security Groups for Windows Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
+By default, AWS Managed Microsoft AD creates a security group to manage traffic between its domain controllers\. In this procedure, you create a security group that manages traffic within your VPC for your EC2 instances\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 Security Groups for Windows Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
 
 **To create a security group for EC2 instances**
 
@@ -59,13 +56,9 @@ By default, Microsoft AD creates a security group to manage traffic between its 
 1. Choose **Create Security Group**\.
 
 1. In the **Create Security Group** dialog box provide the following values:
-
    + For **Name tag**, type **AWS DS RDP Security Group**\.
-
    + For **Group name**, type **AWS DS RDP Security Group**\.
-
    + For **Description**, type **AWS DS RDP Security Group**\.
-
    + For **VPC**, select the VPC that ends with **AWS\-DS\-VPC**\.
 
 1. Choose **Yes, Create**\.
@@ -77,23 +70,15 @@ By default, Microsoft AD creates a security group to manage traffic between its 
 1. Choose **Edit**, and then choose **Add another rule**\.
 
 1. In the table, add the following values:
-
    + For **Type**, choose **RDP \(3389\)**\.
-
    + For **Protocol**, verify that **TCP \(6\)** is displayed\.
-
    + For **Port Range**, verify that **3389** is displayed\.
-
-   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. This setting determines the traffic that can reach your EC2 instances\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](best_practices.md#understandsecuritygroup)\.
+   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. This setting determines the traffic that can reach your EC2 instances\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Choose **Add another rule**, and then provide the following values:
-
    + For **Type**, choose **All Traffic**\.
-
    + For **Protocol**, verify that **All** is displayed\.
-
    + For **Port Range**, verify that **All** is displayed\.
-
    + For **Source**, type **10\.0\.0\.0/16**\.
 
 1. Choose **Save**\.

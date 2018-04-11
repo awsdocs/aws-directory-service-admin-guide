@@ -4,20 +4,14 @@ To connect to your on\-premises directory with AD Connector, you need the follow
 
 **VPC**  
 Set up a VPC with the following:  
-
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
-
 + The VPC must be connected to your on\-premises network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
-
 + The VPC must have default hardware tenancy\.
 For more information, see the following topics in the *Amazon VPC User Guide*:  
-
-+ [What is Amazon VPC?](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
-
-+ [Subnets in your VPC](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPCSubnet)
-
-+ [Adding a Hardware Virtual Private Gateway to Your VPC](http://alpha-docs-aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html)
-For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](http://alpha-docs-aws.amazon.com/directconnect/latest/UserGuide/)\.
++ [What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
++ [Subnets in your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPCSubnet)
++ [Adding a Hardware Virtual Private Gateway to Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html)
+For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](http://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
 **On\-premises network**  
 You'll need an on\-premises network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
@@ -25,11 +19,8 @@ AD Connector does not support Read\-only domain controllers \(RODC\) when used i
 
 **Credentials**  
 You must have credentials for an account in the on\-premises directory with the following privileges\. For more information, see [Delegating Connect Privileges](#connect_delegate_privileges)\.   
-
 + Read users and groups
-
 + Create computer objects
-
 + Join computers to the domain
 
 **IP addresses**  
@@ -38,33 +29,30 @@ AD Connector obtains the `_ldap._tcp.<DnsDomainName>` and `_kerberos._tcp.<DnsDo
 
 **Ports for subnets**  
 For AWS Directory Service to communicate with your on\-premises directory, the firewall for your on\-premises network must have the following ports open to the CIDRs for both subnets in the VPC\.  
-
 + TCP/UDP 53 \- DNS
-
 + TCP/UDP 88 \- Kerberos authentication
-
 + TCP/UDP 389 \- LDAP
 These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
 
 **Kerberos preauthentication**  
 Your user accounts must have Kerberos preauthentication enabled\. For more information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
-**Encryption type**  
-Your on\-premises domain controller and user accounts must have RC4\-HMAC encryption enabled\.
+**Encryption types**  
+AD Connector supports the following encryption types when authenticating to your Active Directory domain controllers:  
++ AES\-256\-HMAC
++ AES\-128\-HMAC
++ RC4\-HMAC
 
 ## Multi\-factor Authentication Prerequisites<a name="mfa_prereqs"></a>
 
 To support multi\-factor authentication with your AD Connector directory, you need the following:
-
 + A [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in your on\-premises network that has two client endpoints\. The RADIUS client endpoints have the following requirements:
-
   + To create the endpoints, you need the IP addresses of the AWS Directory Service servers\. These IP addresses can be obtained from the **Directory IP Address** field of your directory details\. 
-
   + Both RADIUS endpoints must use the same shared secret code\.
-
 + Your on\-premises network must allow inbound traffic over the default RADIUS server port \(1812\) from the AWS Directory Service servers\.
-
 + The usernames between your RADIUS server and your on\-premises directory must be identical\.
+
+For more information about using AD Connector with MFA, see [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)\. 
 
 ## Delegating Connect Privileges<a name="connect_delegate_privileges"></a>
 
@@ -75,16 +63,16 @@ This procedure must be performed on a machine that is joined to your directory a
 **To delegate connect privileges**
 
 1. Open **Active Directory User and Computers** and select your domain root in the navigation tree\.  
-![\[Active Directory user and computers\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/aduc.png)
+![\[Active Directory user and computers\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc.png)
 
 1. In the list in the left\-hand pane, right\-click **Users**, select **New**, and then select **Group**\. 
 
 1. In the **New Object \- Group** dialog box, enter the following and click **OK**\.  
 ****    
-[\[See the AWS documentation website for more details\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html)
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html)
 
 1. In the **Active Directory User and Computers** navigation tree, select your domain root\. In the menu, select **Action**, and then **Delegate Control**\.  
-![\[Delegate Connector menu\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_menu.png)
+![\[Delegate Connector menu\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_menu.png)
 
 1. On the **Delegation of Control Wizard** page, click **Next**, then click **Add**\.
 
@@ -95,10 +83,10 @@ This procedure must be performed on a machine that is joined to your directory a
 1. Select **Only the following objects in the folder**, and then select **Computer objects** and **User objects**\.
 
 1. Select **Create selected objects in this folder** and **Delete selected objects in this folder**\. Then choose **Next**\.  
-![\[Object type\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_linux.png)
+![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_linux.png)
 
 1. Select **Read** and **Write**, and then choose **Next**\.  
-![\[Object type\]](http://alpha-docs-aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_permissions.png)
+![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_permissions.png)
 
 1. Verify the information on the **Completing the Delegation of Control Wizard** page, and click **Finish**\. 
 

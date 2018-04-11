@@ -1,16 +1,16 @@
-# Secure LDAP Communications<a name="ms_ad_ldap"></a>
+# Enable Secure LDAP Communications for AWS Managed Microsoft AD<a name="ms_ad_ldap"></a>
 
 Lightweight Directory Access Protocol \(LDAP\) is a standard communications protocol used to read and write data to and from Active Directory\. Some applications use LDAP to add, remove, or search users and groups in Active Directory or to transport credentials for authenticating users in Active Directory\. 
 
 By default, communications over LDAP are not encrypted\. This makes it possible for a malicious user to use network monitoring software to view data packets over the wire\. This is why many corporate security policies typically require that organizations encrypt all LDAP communication\. 
 
-To mitigate this form of data exposure, AWS Microsoft AD provides an option for you to enable LDAP over Secure Sockets Layer \(SSL\)/Transport Layer Security \(TLS\), also known as LDAPS\. With LDAPS, you can improve security across the wire and meet compliance requirements by encrypting all communications between your LDAP\-enabled applications and AWS Microsoft AD directory\.
+To mitigate this form of data exposure, AWS Managed Microsoft AD provides an option for you to enable LDAP over Secure Sockets Layer \(SSL\)/Transport Layer Security \(TLS\), also known as LDAPS\. With LDAPS, you can improve security across the wire and meet compliance requirements by encrypting all communications between your LDAP\-enabled applications and AWS Managed Microsoft AD directory\.
 
 ## Enable LDAPS<a name="enableldaps"></a>
 
-You must do most of the setup from the Amazon EC2 instance that you use to manage your AWS Microsoft AD domain controllers\. The following steps guide you through enabling LDAPS for your domain in the AWS Cloud\.
+You must do most of the setup from the Amazon EC2 instance that you use to manage your AWS Managed Microsoft AD domain controllers\. The following steps guide you through enabling LDAPS for your domain in the AWS Cloud\.
 
-
+**Topics**
 + [Step 1: Delegate Who Can Enable LDAPS](#grantpermsldaps)
 + [Step 2: Set Up Your Certificate Authority](#setupca)
 + [Step 3: Create a Certificate Template](#createcustomcert)
@@ -18,22 +18,20 @@ You must do most of the setup from the Amazon EC2 instance that you use to manag
 
 ### Step 1: Delegate Who Can Enable LDAPS<a name="grantpermsldaps"></a>
 
-To enable LDAPS, you must be a member of the Admins or AWS Delegated Enterprise Certificate Authority Administrators group in your AWS Microsoft AD directory or be the default administrative user \(Admin account\)\. If you prefer to have a user other than the Admin account setup LDAPS, then add this user to the Admins or AWS Delegated Enterprise Certificate Authority Administrators group in your AWS Microsoft AD directory\.
+To enable LDAPS, you must be a member of the Admins or AWS Delegated Enterprise Certificate Authority Administrators group in your AWS Managed Microsoft AD directory or be the default administrative user \(Admin account\)\. If you prefer to have a user other than the Admin account setup LDAPS, then add this user to the Admins or AWS Delegated Enterprise Certificate Authority Administrators group in your AWS Managed Microsoft AD directory\.
 
 ### Step 2: Set Up Your Certificate Authority<a name="setupca"></a>
 
-Before you can enable LDAPS, you must create a certificate issued by a Microsoft Enterprise Certificate Authority \(CA\) server that is joined to your AWS Microsoft AD domain\. Once created, the certificate must be installed on each of your domain controllers in that domain\. This certificate lets the LDAP service on the domain controllers listen for and automatically accept SSL connections from LDAP clients\. 
+Before you can enable LDAPS, you must create a certificate issued by a Microsoft Enterprise Certificate Authority \(CA\) server that is joined to your AWS Managed Microsoft AD domain\. Once created, the certificate must be installed on each of your domain controllers in that domain\. This certificate lets the LDAP service on the domain controllers listen for and automatically accept SSL connections from LDAP clients\. 
 
 **Note**  
-LDAPS with AWS Microsoft AD does not support certificates that are issued by a standalone CA\. 
+LDAPS with AWS Managed Microsoft AD does not support certificates that are issued by a standalone CA\. 
 
 Depending on your business need, you have the following options for setting up or connecting to a CA in your domain: 
-
 + **Create a subordinate Microsoft Enterprise CA** – \(Recommended\) With this option you can deploy a subordinate Microsoft Enterprise CA server in the AWS Cloud that uses EC2 so that it works with your existing root Microsoft CA\. For more information about how to set up a subordinate Microsoft Enterprise CA, see [Install a Subordinate Certification Authority](https://technet.microsoft.com/en-us/library/cc772192(v=ws.11).aspx) on the Microsoft TechNet website\.
++ **Create a root Microsoft Enterprise CA** – With this option you can create a root Microsoft Enterprise CA in the AWS Cloud using Amazon EC2 and join it to your AWS Managed Microsoft AD domain\. This root CA can issue the certificate to your domain controllers\. For more information about setting up a new root CA, see [Install a Root Certification Authority](https://technet.microsoft.com/en-us/library/cc731183(v=ws.11).aspx) on the Microsoft TechNet website\.
 
-+ **Create a root Microsoft Enterprise CA** – With this option you can create a root Microsoft Enterprise CA in the AWS Cloud using Amazon EC2 and join it to your AWS Microsoft AD domain\. This root CA can issue the certificate to your domain controllers\. For more information about setting up a new root CA, see [Install a Root Certification Authority](https://technet.microsoft.com/en-us/library/cc731183(v=ws.11).aspx) on the Microsoft TechNet website\.
-
-For more information about how to join your EC2 instance to the domain, see [Join an EC2 Instance to Your Directory \(Simple AD and Microsoft AD\)](join_instance.md)\.
+For more information about how to join your EC2 instance to the domain, see [Join an EC2 Instance to Your AWS Managed Microsoft AD Directory](ms_ad_join_instance.md)\.
 
 ### Step 3: Create a Certificate Template<a name="createcustomcert"></a>
 
@@ -78,30 +76,22 @@ Once both rules have been configured, your domain controllers request a certific
 1. Choose the **Inbound** tab, and then choose **Edit**\.
 
 1. In the **Edit inbound rules** dialog box, do the following:
-
    + Choose **Add Rule**\. 
-
    + Choose **All traffic** for **Type** and **Custom** for **Source**\. 
-
    + Type your CA’s AWS security group in the box next to **Source**\. 
-
    + Choose **Save**\.
 
-1. Now choose the AWS security group of your AWS Microsoft AD directory\. Choose the **Outbound** tab and then choose **Edit**\.
+1. Now choose the AWS security group of your AWS Managed Microsoft AD directory\. Choose the **Outbound** tab and then choose **Edit**\.
 
 1. In the **Edit outbound rules** dialog box, do the following:
-
    + Choose **Add Rule**\. 
-
    + Choose **All traffic** for **Type** and **Custom** for **Destination**\. 
-
    + Type your CA's AWS security group in the box next to **Destination**\. 
-
    + Choose **Save**\.
 
-You can test the LDAPS connection to the AWS Microsoft AD directory using the LDP tool\. The LDP tool comes with the Active Directory Administrative Tools\. For more information, see [Installing the Active Directory Administration Tools](install_ad_tools.md)\.
+You can test the LDAPS connection to the AWS Managed Microsoft AD directory using the LDP tool\. The LDP tool comes with the Active Directory Administrative Tools\. For more information, see [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md)\.
 
 **Note**  
 Before you test the LDAPS connection, you must wait up to 180 minutes for the subordinate CA to issue a certificate to your domain controllers\.
 
-For additional details about LDAPS and to see an example use case on how to set it up, see [How to Enable LDAPS for Your AWS Microsoft AD Directory](https://aws.amazon.com/blogs/security/how-to-enable-ldaps-for-your-aws-microsoft-ad-directory/) on the AWS Security Blog\.
+For additional details about LDAPS and to see an example use case on how to set it up, see [How to Enable LDAPS for Your AWS Managed Microsoft AD Directory](https://aws.amazon.com/blogs/security/how-to-enable-ldaps-for-your-aws-microsoft-ad-directory/) on the AWS Security Blog\.

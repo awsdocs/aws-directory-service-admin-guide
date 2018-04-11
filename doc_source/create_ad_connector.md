@@ -1,4 +1,4 @@
-# How to Create an AD Connector<a name="create_ad_connector"></a>
+# Create an AD Connector<a name="create_ad_connector"></a>
 
 To connect to your on\-premises directory with AD Connector, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [AD Connector Prerequisites](prereq_connector.md)\.
 

@@ -1,6 +1,6 @@
 # \(Optional\) Add a value to the new attribute<a name="addvalue"></a>
 
-Use this optional step when you have created a new attribute and want to add a new value to the attribute in your Microsoft AD directory\.
+Use this optional step when you have created a new attribute and want to add a new value to the attribute in your AWS Managed Microsoft AD directory\.
 
 **To add a value to an attribute**
 
