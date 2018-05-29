@@ -10,8 +10,7 @@ You must perform this procedure on a machine that is joined to your directory an
 
 **To delegate join privileges for Simple AD**
 
-1. Open **Active Directory User and Computers** and select your domain root in the navigation tree\.  
-![\[Active Directory user and computers\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc.png)
+1. Open **Active Directory User and Computers** and select your domain root in the navigation tree\.
 
 1. In the navigation tree on the left, open the context menu \(right\-click\) for **Users**, choose **New**, and then choose **Group**\. 
 
@@ -20,8 +19,7 @@ You must perform this procedure on a machine that is joined to your directory an
    + For **Group scope**, choose **Global**\.
    + For **Group type**, choose **Security**\.
 
-1. In the navigation tree, select your domain root\. From the **Action** menu, choose **Delegate Control**\.  
-![\[Delegate Connector menu\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_menu.png)
+1. In the navigation tree, select your domain root\. From the **Action** menu, choose **Delegate Control**\.
 
 1. On the **Delegation of Control Wizard** page, choose **Next**, and then choose **Add**\.
 

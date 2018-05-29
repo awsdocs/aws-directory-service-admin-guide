@@ -10,8 +10,7 @@ You must perform this procedure on a machine that is joined to your directory an
 
 **To delegate join privileges for AWS Managed Microsoft AD**
 
-1. Open **Active Directory User and Computers** and select the organizational unit \(OU\) that has your NetBIOS name in the navigation tree, then select the **Users** OU\.  
-![\[Active Directory user and computers\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc-managed.png)
+1. Open **Active Directory User and Computers** and select the organizational unit \(OU\) that has your NetBIOS name in the navigation tree, then select the **Users** OU\.
 **Important**  
 When you launch a AWS Directory Service for Microsoft Active Directory, AWS creates an organizational unit \(OU\) that contains all your directory’s objects\. This OU, which has the NetBIOS name that you typed when you created your directory, is located in the domain root\. The domain root is owned and managed by AWS\. You cannot make changes to the domain root itself, therefore, you must create the **Joiners** group within the OU that has your NetBIOS name\.
 
@@ -22,8 +21,7 @@ When you launch a AWS Directory Service for Microsoft Active Directory, AWS crea
    + For **Group scope**, choose **Global**\.
    + For **Group type**, choose **Security**\.
 
-1. In the navigation tree, select the **Computers** container under your NetBIOS name\. From the **Action** menu, choose **Delegate Control**\.  
-![\[Delegate Connector menu\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_menu.png)
+1. In the navigation tree, select the **Computers** container under your NetBIOS name\. From the **Action** menu, choose **Delegate Control**\.
 
 1. On the **Delegation of Control Wizard** page, choose **Next**, and then choose **Add**\.
 

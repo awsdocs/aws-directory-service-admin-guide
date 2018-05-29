@@ -130,6 +130,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Step 2: Create the Trusts](microsoftadtruststep2.md)
          + [Step 3: Verify the Trust](microsoftadtruststep3.md)
    + [Troubleshooting AWS Managed Microsoft AD](ms_ad_troubleshooting.md)
+      + [DNS Troubleshooting](ms_ad_troubleshooting_dns.md)
       + [Schema Extension Errors](ms_ad_troubleshooting_schema.md)
       + [Trust Creation Status Reasons](ms_ad_troubleshooting_trusts.md)
 + [Active Directory Connector](directory_ad_connector.md)

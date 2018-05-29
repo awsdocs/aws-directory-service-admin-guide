@@ -25,7 +25,7 @@ The following table describes the important changes since the last release of th
 | Authorization and Authentication | Added additional documentation for using IAM with Directory Services\. | February 25, 2016 | 
 | SNS notifications | Added documentation for SNS notifications\. For more information, see [Configure Directory Status Notifications](ms_ad_enable_notifications.md)\.  | February 25, 2016 | 
 | AWS Managed Microsoft AD | Added documentation for AWS Managed Microsoft AD, and combined guides into a single guide\. | November 17, 2015 | 
-| Allow Linux instances to be joined to a Simple AD directory | Added documentation for joining a Linux instance to a Simple AD directory\. For more information, see [Manually Join a Linux InstanceManually Join a Linux Instance](join_linux_instance.md)\. | July 23, 2015 | 
+| Allow Linux instances to be joined to a Simple AD directory | Added documentation for joining a Linux instance to a Simple AD directory\. For more information, see [Manually Join a Linux Instance](join_linux_instance.md)\. | July 23, 2015 | 
 | Guide separation  | The AWS Directory Service administration guide is split into separate guides, the Simple AD guide and the AD Connector guide\. | July 14, 2015 | 
 | Single sign\-on support | Added single sign\-on documentation\. For more information, see [Single Sign\-On](ms_ad_single_sign_on.md)\. | March 31, 2015 | 
 | New guide | This is the first release of the AWS Directory Service Administration Guide\.  |  October 21, 2014  | 

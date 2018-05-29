@@ -24,7 +24,7 @@ This procedure will seamlessly join a Windows EC2 instance to your directory\.
 
    1. For **Domain join directory**, select your domain from the **Domain join directory** list\. To seamlessly join the instance, you also need an IAM role that has the **AmazonEC2RoleforSSM** managed policy attached to it\. Select the IAM role that has permission from the IAM role list\. If you choose this option, you will not have to manually join the instance to the domain as that will be done for you when the instance is launched\.
 **Note**  
-This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Join a Linux InstanceManually Join a Linux Instance](join_linux_instance.md)\.
+This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Join a Linux Instance](join_linux_instance.md)\.
 
    1. For **IAM role**, optionally choose the **Create new IAM role** link to create a new IAM role and attach the AmazonEC2RoleforSSM policy, and then on the **Roles** page, do the following:
 

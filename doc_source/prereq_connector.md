@@ -35,7 +35,7 @@ For AWS Directory Service to communicate with your on\-premises directory, the f
 These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
 
 **Kerberos preauthentication**  
-Your user accounts must have Kerberos preauthentication enabled\. For more information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
+Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure That Kerberos Pre\-authentication Is Enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
 **Encryption types**  
 AD Connector supports the following encryption types when authenticating to your Active Directory domain controllers:  

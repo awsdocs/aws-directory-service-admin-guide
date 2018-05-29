@@ -13,7 +13,7 @@ At its core, Cloud Directory is a specialized graph\-based directory store that 
 
 Cloud Directory includes a set of API operations to access various objects and policies stored in your Cloud Directory\-based directories\. For a list of available operations, see [Amazon Cloud Directory API Actions](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_Operations.html)\. For a list of operations and the permissions required to perform each API action, see [Amazon Cloud Directory API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_CD_ResourcePermissions.md)\.
 
-## What Cloud Directory Is Not<a name="whatamazoncdisnot"></a>
+**What Cloud Directory Is Not**
 
 Cloud Directory is not a directory service for IT Administrators who want to manage or migrate their directory infrastructure\.
 
@@ -22,3 +22,13 @@ Read the topics in this section to get started creating directories, managing sc
 For additional resources, see [Cloud Directory Resources](cd_resources.md)\.
 
 **Topics**
++ [Understanding Key Cloud Directory Concepts](cd_key_concepts.md)
++ [Using the Console](cd_using_console.md)
++ [Directory Objects](cd_directory_objects.md)
++ [Schemas](cd_schemas.md)
++ [Indexing and Search](cd_indexing.md)
++ [Using the Cloud Directory APIs](cd_using_api.md)
++ [Amazon Cloud Directory Compliance](cd_compliance.md)
++ [Advanced Features](cd_advanced.md)
++ [Limits for Amazon Cloud Directory](cd_limits.md)
++ [Cloud Directory Resources](cd_resources.md)

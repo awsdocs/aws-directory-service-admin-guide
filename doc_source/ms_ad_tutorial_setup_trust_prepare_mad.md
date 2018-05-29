@@ -2,7 +2,7 @@
 
 Now let's get your AWS Managed Microsoft AD ready for the trust relationship\. Many of the following steps are almost identical to what you just completed for your on\-premises domain\. This time, however, you are working with your AWS Managed Microsoft AD\.
 
-## Configure Your VPN Subnets and Security Groups<a name="tutorial_setup_trust_open_vpc"></a>
+## Configure Your VPC Subnets and Security Groups<a name="tutorial_setup_trust_open_vpc"></a>
 
 You must allow traffic from your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. To do this, configure the VPC access control list \(ACL\) to allow both incoming and outgoing traffic from your on\-premises directory for the following ports:
 + TCP/UDP 53 \- DNS
@@ -21,13 +21,11 @@ Similarly, your AWS Managed Microsoft AD domain controller must have the appropr
 
 **To configure your AWS Managed Microsoft AD domain controller outbound and inbound rules**
 
-1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) at https://console\.aws\.amazon\.com/directoryservice/\. On the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.  
-![\[Choose directory for rules\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/choose_directory_for_rules.png)
+1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\. In the list of directories, take note the directory ID for your AWS Managed Microsoft AD directory\.
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, choose **Security Groups**\.  
-![\[Choose security groups\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/choose_security_groups.png)
+1. In the navigation pane, choose **Security Groups**\.
 
 1. Use the search box to search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for <yourdirectoryID> directory controllers**\.  
 ![\[Search for security group\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/search_for_security_group.png)
@@ -58,7 +56,7 @@ Now you want to confirm that users in your AWS Managed Microsoft AD also have Ke
 
 **To view user Kerberos settings**
 
-1. Log in to an instance that is a member of your AWS Managed Microsoft AD using an account that has domain administrative privileges\.
+1. Log in to an instance that is a member of your AWS Managed Microsoft AD using either the [Admin Account](ms_ad_getting_started_admin_account.md) or an account that has been delegated Admin permissions\.
 
 1. If they are not already installed, install the Active Directory Users and Computers tool and the DNS tool\. Learn how to install these tools in [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md)\.
 

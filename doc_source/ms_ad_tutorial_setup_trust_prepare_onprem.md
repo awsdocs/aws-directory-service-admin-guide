@@ -23,8 +23,7 @@ User accounts in both directories must have Kerberos preauthentication enabled\.
 
 1. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
-1. Choose the **Users** folder and open the context \(right\-click\) menu for a user account listed in the right pane\. Choose **Properties**\.   
-![\[User properties\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/UserProperties.png)
+1. Choose the **Users** folder and open the context \(right\-click\) menu for a user account listed in the right pane\. Choose **Properties**\. 
 
 1.  Choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is *not* checked\.   
 ![\[Enable Kerberos\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/kerberos_enabled.png)
@@ -35,15 +34,13 @@ You must set up DNS conditional forwarders on each domain\. Before doing this on
 
 **To configure conditional forwarders on your on\-premises domain**
 
-1.  Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) at https://console\.aws\.amazon\.com/directoryservice/\.
+1. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) at https://console\.aws\.amazon\.com/directoryservice/\.
 
 1. In the navigation pane, select **Directories**\.
 
-1. Choose the directory ID of your AWS Managed Microsoft AD\.  
-![\[Choose your directory\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/choose_directory_2.png)
+1. Choose the directory ID of your AWS Managed Microsoft AD\.
 
-1. Take note of the fully qualified domain name \(FQDN\) and the DNS addresses of your directory\.  
-![\[Directory information\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/dir_info_2.png)
+1. On the **Details** page, take note of the values in **Directory name** and the **DNS address** of your directory\.
 
 1. Now, return to your on\-premises domain controller\. Open Server Manager\.
 
@@ -51,11 +48,9 @@ You must set up DNS conditional forwarders on each domain\. Before doing this on
 
 1. In the console tree, expand the DNS server of the domain for which you are setting up the trust\. Our server is WIN\-5V70CN7VJ0\.corp\.example\.com\.
 
-1. In the console tree, choose **Conditional Forwarders**\.  
-![\[Choose Conditional Forwarder\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/dns_mgr_cond_forwarder.png)
+1. In the console tree, choose **Conditional Forwarders**\.
 
-1. On the **Action** menu, choose **New conditional forwarder**\.   
-![\[New Conditional Forwarder\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/new_cond_forwarder.png)
+1. On the **Action** menu, choose **New conditional forwarder**\. 
 
 1. In **DNS domain**, type the fully qualified domain name \(FQDN\) of your AWS Managed Microsoft AD, which you noted earlier\. In this example, the FQDN is MyManagedAD\.example\.com\.
 

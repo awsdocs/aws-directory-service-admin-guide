@@ -32,7 +32,7 @@ An optional description for the directory\.
 **VPC**  
 The VPC for the directory\.  
 **Subnets**  
-Choose the subnets for the directory servers\. The two subnets must be in different Availability Zones\. 
+Choose the subnets for the domain controllers\. The two subnets must be in different Availability Zones\. 
 
 1. Review the directory information and make any necessary changes\. When the information is correct, choose **Create AWS Managed Microsoft AD**\.
 

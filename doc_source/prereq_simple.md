@@ -1,7 +1,7 @@
 # Simple AD Prerequisites<a name="prereq_simple"></a>
 
 To create a Simple AD directory, you need a VPC with the following: 
-+ At least two subnets\. Each of the subnets must be in a different Availability Zone\.
++ At least two subnets\. For Simple AD to install correctly, you must install your two domain controllers in separate subnets that must be in a different Availability Zone\. In addition, the subnets must be in the same Classless Inter\-Domain Routing \(CIDR\) range\. If you want to extend or resize the VPC for your directory, then make sure to select both of the domain controller subnets for the extended VPC CIDR range\.
 + The following ports must be open between the two subnets that you deploy your directory into\. This is necessary to allow the domain controllers that AWS Directory Service creates for you to communicate with each other\.
   + TCP/UDP 53 \- DNS
   + TCP/UDP 88 \- Kerberos authentication
