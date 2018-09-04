@@ -32,23 +32,25 @@ In this tutorial, you configure a two\-way trust\. However, if you create a one\
 
 ## Configure Your AWS Managed Microsoft AD Trust<a name="tutorial_setup_trust_mad_trust"></a>
 
-Finally, you configure the trust relationship for your AWS Managed Microsoft AD\. Because you created a two\-way trust on the on\-premises domain, you also create a two\-way trust on our AWS Managed Microsoft AD\.
+Finally, you configure the trust relationship for your AWS Managed Microsoft AD\. Because you created a two\-way trust on the on\-premises domain, you also create a two\-way trust on your AWS Managed Microsoft AD\.
 
 **To configure your AWS Managed Microsoft AD trust relationship**
 
-1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\. On the **Directory Details** page, choose your AWS Managed Microsoft AD ID\.
+1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\. 
 
-1. Choose the **Trust relationships** tab\.
+1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. Choose **Add trust relationship**\.
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Type the FQDN of your on\-premises domain \(in this tutorial **corp\.example\.com**\)\. Type the same trust password that you used when creating the trust on your on\-premises domain\. Specify the direction\. In this case we choose **Two\-way**\. 
+1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
+
+1. On the **Add a trust relationship** page, Type the FQDN of your on\-premises domain \(in this tutorial **corp\.example\.com**\)\. Type the same trust password that you used when creating the trust on your on\-premises domain\. Specify the direction\. In this case we choose **Two\-way**\. 
 
 1. In the **Conditional forwarder** field, enter the IP address of your on\-premises DNS server\. In this example, enter 172\.16\.10\.153\.
 
-1. \(Optional\) Choose **Add IP address** and enter a second IP address your on\-premises DNS server\. You can specify up to a total of four DNS servers\.
+1. \(Optional\) Choose **Add another IP address** and enter a second IP address for your on\-premises DNS server\. You can specify up to a total of four DNS servers\.
 
-1. Choose **Create**\.
+1. Choose **Add**\.
 
 Congratulations\. You now have a trust relationship between your on\-premises domain \(corp\.example\.com\) and your AWS Managed Microsoft AD \(MyManagedAD\.example\.com\)\. Only one relationship can be set up between these two domains\. If for example, you want to change the trust direction to one\-way, you would first need to delete this existing trust relationship and create a new one\.
 

@@ -9,13 +9,13 @@ Single sign\-on only works when used on a computer that is joined to the AWS Dir
 
 **To enable or disable single sign\-on with Amazon WorkDocs**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
-1. Choose the directory ID link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Apps & Services** tab\.
+1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under **Access URL**, choose **Enable** to enable single sign\-on for Amazon WorkDocs\. 
+1. In the **Application access URL** section, choose **Enable** to enable single sign\-on for Amazon WorkDocs\. 
 
    If you do not see the **Enable** button, you may need to first create an Access URL before this option will be displayed\. For more information about how to create an access URL, see [Creating an Access URL](ms_ad_create_access_url.md)\. 
 

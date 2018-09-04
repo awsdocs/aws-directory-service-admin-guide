@@ -19,13 +19,15 @@ If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additi
 
 **To add or remove additional domain controllers**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the directory ID link for your AWS Managed Microsoft AD directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Details** page, choose the **Domain controllers** tab, and then choose **Modify**\.
+1. On the **Directory details** page, select the **Scale** tab\.
 
-1. Specify the number of domain controllers to add or remove from your directory, and then choose **Apply**\. 
+1. In the **Domain controllers** section, choose **Edit**\.
+
+1. Specify the number of domain controllers to add or remove from your directory, and then choose **Modify**\. 
 
 1. When AWS Managed Microsoft AD completes the deployment process, all domain controllers show **Active** status, and both the assigned Availability Zone and VPC subnets appear\. New domain controllers are equally distributed across the Availability Zones and subnets where your directory is already deployed\.
 

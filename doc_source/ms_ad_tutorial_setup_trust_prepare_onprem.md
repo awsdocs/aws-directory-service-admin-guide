@@ -34,7 +34,7 @@ You must set up DNS conditional forwarders on each domain\. Before doing this on
 
 **To configure conditional forwarders on your on\-premises domain**
 
-1. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) at https://console\.aws\.amazon\.com/directoryservice/\.
+1. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) at https://console\.aws\.amazon\.com/directoryservicev2/\.
 
 1. In the navigation pane, select **Directories**\.
 

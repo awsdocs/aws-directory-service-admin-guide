@@ -21,7 +21,7 @@ Similarly, your AWS Managed Microsoft AD domain controller must have the appropr
 
 **To configure your AWS Managed Microsoft AD domain controller outbound and inbound rules**
 
-1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\. In the list of directories, take note the directory ID for your AWS Managed Microsoft AD directory\.
+1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\. In the list of directories, take note the directory ID for your AWS Managed Microsoft AD directory\.
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -62,8 +62,10 @@ Now you want to confirm that users in your AWS Managed Microsoft AD also have Ke
 
 1. Open Server Manager\. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
-1. Choose the **Users** folder in your domain\. Note that this is the **Users** folder under your NetBIOS name, not the **Users ** folder under the fully qualified domain name \(FQDN\)\.Open the context \(right\-click\) menu for a user account and choose **Properties**\.   
+1. Choose the **Users** folder in your domain\. Note that this is the **Users** folder under your NetBIOS name, not the **Users ** folder under the fully qualified domain name \(FQDN\)\.  
 ![\[Correct users folder\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/correct_users_folder.png)
+
+1. In the list of users, right\-click on a user, and then choose **Properties**\.
 
 1.  Choose the **Account** tab\. In the **Account options** list, ensure that **Do not require Kerberos preauthentication** is *not* checked\. 
 

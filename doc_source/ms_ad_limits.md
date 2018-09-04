@@ -8,8 +8,10 @@ The following are the default limits for AWS Managed Microsoft AD\. Each limit i
 | Resource | Default Limit | 
 | --- | --- | 
 | AWS Managed Microsoft AD directories | 10 | 
-| Manual snapshots | 5 per AWS Managed Microsoft AD | 
+| Manual snapshots \* | 5 per AWS Managed Microsoft AD | 
 | Maximum number of domain controllers per directory | 20 | 
+
+\* The manual snapshot limit cannot be changed\.
 
 For information regarding application design and load distribution, see [Programming Your Applications](ms_ad_best_practices.md#program_apps)\.
 

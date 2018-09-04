@@ -8,5 +8,3 @@ To be able to connect remotely to these instances, you must have IP connectivity
 
 **Topics**
 + [Seamlessly Join a Windows EC2 Instance](ad_connector_launching_instance.md)
-+ [Manually Join a Windows Instance](ad_connector_join_windows_instance.md)
-+ [Manually Join a Linux Instance](ad_connector_join_linux_instance.md)

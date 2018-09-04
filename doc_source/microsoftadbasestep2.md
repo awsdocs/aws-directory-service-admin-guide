@@ -4,32 +4,26 @@ You can use three different methods to create your directory\. You can use the A
 
 **Method 1: To create your AWS Managed Microsoft AD directory \(AWS Management Console\)**
 
-1. Open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservice/](https://console.aws.amazon.com/directoryservice//)\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories** and then choose **Set up directory**\.
 
-1. In the AWS Directory Service console navigation pane, choose **Directories**\.
+1. On the **Select directory type** page, choose **AWS Managed Microsoft AD**, and then choose **Next**\.
 
-1. Choose **Set up directory**, and then choose **AWS Managed Microsoft AD**\.
-
-1. On the **Directory details** page, provide the following information:
-   + For **Edition**, select either **Standard** or **Enterprise** edition\. For more information about editions, see [AWS Directory Service for Microsoft Active Directory](what_is.md#microsoftad)\. 
-   + For **Directory DNS**, type **corp\.example\.com**\.
-   + For **NetBIOS name**, type **corp**\.
+1. On the **Enter directory information** page, provide the following information, and then choose **Next**\.
+   + For **Edition**, select either **Standard Edition** or **Enterprise Edition**\. For more information about editions, see [AWS Directory Service for Microsoft Active Directory](what_is.md#microsoftad)\. 
+   + For **Directory DNS name**, type **corp\.example\.com**\.
+   + For **Directory NetBIOS name**, type **corp**\.
+   + For **Directory description**, type **AWS DS Managed**\.
    + For **Admin password**, type the password you want to use for this account and type the password again in **Confirm password**\. This **Admin** account is automatically created during the directory creation process\. The password cannot include the word *admin*\. The directory administrator password is case sensitive and must be between 8 and 64 characters in length, inclusive\. It must also contain at least one character from three of the following four categories:
      + Lowercase letters \(a\-z\)
      + Uppercase letters \(A\-Z\)
      + Numbers \(0\-9\)
      + Non\-alphanumeric characters \(\~\!@\#$%^&\*\_\-\+=`\|\\\(\)\{\}\[\]:;"'<>,\.?/\)
-   + For **Description**, type **AWS DS Managed**\.
+
+1. On the **Choose VPC and subnets** page, provide the following information, and then choose **Next**\.
    + For **VPC**, choose the option that begins with **AWS\-DS\-VPC** and ends with **\(10\.0\.0\.0/16\)**\.
    + For **Subnets**, choose the **10\.0\.128\.0/20** and **10\.0\.144\.0/20** public subnets\.
 
-1. Choose **Next Step**\.
-
-1. Review the directory information and make any necessary changes\. If the information is correct, choose **Create AWS Managed Microsoft AD**\.
-
-1. Creating the directory takes 20 to 40 minutes\. Once created, the **Status** value changes to **Active**\.
-
-1. Choose **Done**\.
+1. On the **Review & create** page, review the directory information and make any necessary changes\. When the information is correct, choose **Create directory**\. Creating the directory takes 20 to 40 minutes\. Once created, the **Status** value changes to **Active**\.
 
 **Method 2: To create your AWS Managed Microsoft AD \(Windows PowerShell\) \(Optional\)**
 

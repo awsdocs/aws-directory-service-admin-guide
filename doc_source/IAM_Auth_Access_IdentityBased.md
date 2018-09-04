@@ -7,7 +7,7 @@ We recommend that you first review the introductory topics that explain the basi
 
 The sections in this topic cover the following:
 + [Permissions Required to Use the AWS Directory Service Console](#UsingWithDS_IAM_RequiredPermissions_Console)
-+ [AWS Managed \(Predefined\) Policies for Amazon Cloud Directory and AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)
++ [AWS Managed \(Predefined\) Policies for AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)
 + [Customer Managed Policy Examples](#IAMPolicyExamples_DS)
 
 The following shows an example of a permissions policy\.
@@ -63,21 +63,17 @@ The policy includes the following:
 
 The policy doesn't specify the `Principal` element because in an identity\-based policy you don't specify the principal who gets the permission\. When you attach policy to a user, the user is the implicit principal\. When you attach a permission policy to an IAM role, the principal identified in the role's trust policy gets the permissions\.
 
-For a table showing all of the Amazon Cloud Directory or AWS Directory Service API actions and the resources that they apply to, see [Amazon Cloud Directory API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_CD_ResourcePermissions.md) or [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)\. 
+For a table showing all of the AWS Directory Service API actions and the resources that they apply to, see [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)\. 
 
 ## Permissions Required to Use the AWS Directory Service Console<a name="UsingWithDS_IAM_RequiredPermissions_Console"></a>
 
-For a user to work with the AWS Directory Service console, that user must have permissions listed in the policy above or the permissions granted by the Directory Service Full Access Role or Directory Service Read Only role, described in [AWS Managed \(Predefined\) Policies for Amazon Cloud Directory and AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)\.
+For a user to work with the AWS Directory Service console, that user must have permissions listed in the policy above or the permissions granted by the Directory Service Full Access Role or Directory Service Read Only role, described in [AWS Managed \(Predefined\) Policies for AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)\.
 
 If you create an IAM policy that is more restrictive than the minimum required permissions, the console won't function as intended for users with that IAM policy\. 
 
-## AWS Managed \(Predefined\) Policies for Amazon Cloud Directory and AWS Directory Service<a name="IAM_Auth_Access_ManagedPolicies"></a>
+## AWS Managed \(Predefined\) Policies for AWS Directory Service<a name="IAM_Auth_Access_ManagedPolicies"></a>
 
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
-
-The following AWS managed policies, which you can attach to users in your account, are specific to Amazon Cloud Directory:
-+ **AmazonCloudDirectoryReadOnlyAccess** – Grants a user or group read\-only access to all Amazon Cloud Directory resources\. For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
-+ **AmazonCloudDirectoryFullAccess** – Grants a user or group full access to Amazon Cloud Directory\. For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS Directory Service:
 + **AWSDirectoryServiceReadOnlyAccess** – Grants a user or group read\-only access to all AWS Directory Service resources, EC2 subnets, EC2 network interfaces, and AWS SNS topics and subscriptions for the root AWS account\. For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
@@ -89,7 +85,7 @@ The following AWS managed policies, which you can attach to users in your accoun
 
   For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
 
-In addition, there are other AWS\-managed policies that are suitable for use with other IAM roles\. These policies are assigned to the roles associated with users in your Amazon Cloud Directory or other AWS Directory Service directory and are required in order for those users to have access to other AWS resources, such as Amazon EC2\. For more information, see [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)\.
+In addition, there are other AWS\-managed policies that are suitable for use with other IAM roles\. These policies are assigned to the roles associated with users in your AWS Directory Service directory and are required in order for those users to have access to other AWS resources, such as Amazon EC2\. For more information, see [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)\.
 
 You can also create custom IAM policies that allow users to access the required API actions and resources\. You can attach these custom policies to the IAM users or groups that require those permissions\.
 

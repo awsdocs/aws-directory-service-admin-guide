@@ -107,7 +107,7 @@ The following three procedures guide you through the steps to configure your VPC
 
 1. In the navigation pane, choose **Security Groups**\.
 
-1. Search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for d\-*xxxxxx***\.
+1. Search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for d\-*xxxxxx* directory controllers**\.
 **Note**  
 This security group was automatically created when you initially created your directory\.
 
@@ -131,7 +131,7 @@ This security group was automatically created when you initially created your di
 
 1. First you must get some information about your AWS Managed Microsoft AD\.
 
-   Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservice/](https://console.aws.amazon.com/directoryservice/)\.
+   Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservicev2/](https://console.aws.amazon.com/directoryservicev2/)\.
 
 1. In the navigation pane, choose **Directories**\.
 

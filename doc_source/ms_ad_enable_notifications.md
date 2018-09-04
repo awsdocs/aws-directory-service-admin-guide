@@ -10,34 +10,38 @@ You can associate multiple directories as publishers to a single topic\. You can
 
 **To enable SNS messaging for your directory**
 
-1. Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservice/](https://console.aws.amazon.com/directoryservice/)\.
+1. Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservicev2/](https://console.aws.amazon.com/directoryservicev2/)\.
 
 1.  On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Monitoring** tab and then **Create Notification**\.
+1. Select the **Maintenance** tab\.
 
-1. Choose **Create a new notification**\. Alternatively, if you already have an existing SNS topic, you can choose **Associate with existing SNS topic** to send status messages from this directory to that topic\.
+1. In the **Directory monitoring** section, choose **Actions**, and then select **Create notification**\.
+
+1. On the **Create notification** page, select **Choose a notification type**, and then choose **Create a new notification**\. Alternatively, if you already have an existing SNS topic, you can choose **Associate existing SNS topic** to send status messages from this directory to that topic\.
 **Note**  
 If you choose **Create a new notification** but then use the same topic name for an SNS topic that already exists, Amazon SNS does not create a new topic, but just adds the new subscription information to the existing topic\.  
-If you choose **Associate with existing SNS topic**, you will only be able to choose an SNS topic that is in the same region as the directory\.
+If you choose **Associate existing SNS topic**, you will only be able to choose an SNS topic that is in the same region as the directory\.
 
 1. Choose the **Recipient type** and enter the **Recipient** contact information\. If you enter a phone number for SMS, use numbers only\. Do not include dashes, spaces, or parentheses\.
 
-1. \(Optional\) Choose **Advanced options** and type a name for your topic and an SNS display name\. The display name is a short name up to 10 characters that is included in all SMS messages from this topic\. When using the SMS option, the display name is required\. 
+1. \(Optional\) Provide a name for your topic and an SNS display name\. The display name is a short name up to 10 characters that is included in all SMS messages from this topic\. When using the SMS option, the display name is required\. 
 **Note**  
 If you are logged in using an IAM user or role that has only the [DirectoryServiceFullAccess](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/role_ds_full_access.html) managed policy, your topic name must start with “DirectoryMonitoring”\. If you’d like to further customize your topic name you’ll need additional privileges for SNS\.
 
-1. Choose **Add**\.
+1. Choose **Create**\.
 
 If you want to designate additional SNS subscribers, such as an additional email address, Amazon SQS queues or AWS Lambda, you can do this from the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v2/home](https://console.aws.amazon.com/sns/v2/home)\.
 
 **To remove directory status messages from a topic**
 
-1. Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservice/](https://console.aws.amazon.com/directoryservice/)\.
+1. Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservicev2/](https://console.aws.amazon.com/directoryservicev2/)\.
 
 1.  On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Monitoring** tab and then choose an **SNS topic name**\.
+1. Select the **Maintenance** tab\.
+
+1. In the **Directory monitoring** section, select an SNS topic name in the list, choose **Actions**, and then select **Remove**\.
 
 1. Choose **Remove**\.
 

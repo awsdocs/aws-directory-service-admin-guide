@@ -22,7 +22,7 @@ You can run the following from a command prompt on the instance to open the Acti
    %SystemRoot%\system32\dsa.msc
    ```
 
-1. In the directory tree, open your directory and select the **Users** folder\.
+1. In the directory tree, select an OU under your directory's NetBIOS name OU where you want to store your user \(for example, Corp\\Users\)\. For more information about the OU structure used by directories in AWS, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
 
 1. On the **Action** menu, click **New**, and then click **User** to open the new user wizard\.
 
@@ -48,7 +48,7 @@ You can run the following from a command prompt on the instance to open the Acti
    %SystemRoot%\system32\dsa.msc
    ```
 
-1. In the directory tree, open your directory and select the **Users** folder\.
+1. In the directory tree, select an OU under your directory's NetBIOS name OU where you want to store your group \(for example, Corp\\Users\)\. For more information about the OU structure used by directories in AWS, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
 
 1. On the **Action** menu, click **New**, and then click **Group** to open the new group wizard\.
 
@@ -64,7 +64,7 @@ You can run the following from a command prompt on the instance to open the Acti
    %SystemRoot%\system32\dsa.msc
    ```
 
-1. In the directory tree, open your directory, select the **Users** folder, and select the **Division Managers** group\.
+1. In the directory tree, select the OU under your directory's NetBIOS name OU where you stored your group, and select the **Division Managers** group\.
 
 1. On the **Action** menu, click **Properties** to open the properties dialog box for the **Division Managers** group\.
 

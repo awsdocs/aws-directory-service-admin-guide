@@ -1,6 +1,6 @@
 # DNS Troubleshooting<a name="ms_ad_troubleshooting_dns"></a>
 
-You can audit your AWS Managed Microsoft AD DNS events, making it easier to identify and troubleshoot DNS issues\. For example, if a DNS record is missing, you can use the DNS aAudit event log to help identify the root cause and fix the issue\. You can also use DNS audit event logs to improve security by detecting and blocking requests from suspicious IP addresses\.
+You can audit your AWS Managed Microsoft AD DNS events, making it easier to identify and troubleshoot DNS issues\. For example, if a DNS record is missing, you can use the DNS audit event log to help identify the root cause and fix the issue\. You can also use DNS audit event logs to improve security by detecting and blocking requests from suspicious IP addresses\.
 
 To do that, you must be logged on with the **Admin** account or with an account that is a member of the **AWS Domain Name System Administrators** group\. For more information about this group, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
 

@@ -1,6 +1,6 @@
 # Tutorial: Creating a Trust from AWS Managed Microsoft AD to a Self\-Managed Active Directory Installation on Amazon EC2<a name="ms_ad_tutorial_test_lab_trust"></a>
 
-In this tutorial, you learn how to create a trust between the AWS Directory Service for Microsoft Active Directory forest you that created in the [Base tutorial](ms_ad_tutorial_test_lab_base.md)\. You also learn to create a new native Active Directory forest on a Windows Server in Amazon EC2\. As shown in the following illustration, the lab that you create from this tutorial is the second building block necessary when setting up a complete AWS Managed Microsoft AD test lab\. You can use the test lab to test your pure cloud or hybrid cloud–based AWS solutions\. 
+In this tutorial, you learn how to create a trust between the AWS Directory Service for Microsoft Active Directory forest that you created in the [Base tutorial](ms_ad_tutorial_test_lab_base.md)\. You also learn to create a new native Active Directory forest on a Windows Server in Amazon EC2\. As shown in the following illustration, the lab that you create from this tutorial is the second building block necessary when setting up a complete AWS Managed Microsoft AD test lab\. You can use the test lab to test your pure cloud or hybrid cloud–based AWS solutions\. 
 
 You should only need to create this tutorial once\. After that you can add optional tutorials when necessary for more experience\.
 

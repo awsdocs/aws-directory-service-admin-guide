@@ -17,16 +17,18 @@ Multi\-factor authentication is not available for Simple AD\. However, MFA can b
 
 1. Edit your Virtual Private Cloud \(VPC\) security groups to enable communications over port 1812 between your AWS Managed Microsoft AD IP end points and your RADIUS MFA server\.
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
 1. Choose the directory ID link for your AWS Managed Microsoft AD directory\.
 
-1. Select the **Multi\-Factor Authentication** tab\.
+1. Select the **Networking & security** tab\.
 
-1. Enter the following values, and then choose **Update Directory**\.   
-**Enable Multi\-Factor Authentication**  
-Check to enable multi\-factor authentication\.  
-**RADIUS server IP address\(es\)**  
+1. In the **Multi\-factor authentication** section, choose **Actions**, and then select **Enable**\.
+
+1. On the **Enable multi\-factor authentication \(MFA\)** page, provide the following values:   
+**Display label**  
+Provide a label name\.  
+**RADIUS server DNS name or IP addresses**  
 The IP addresses of your RADIUS server endpoints, or the IP address of your RADIUS server load balancer\. You can enter multiple IP addresses by separating them with a comma \(e\.g\., `192.0.0.0,192.0.0.12`\)\.  
 RADIUS MFA is applicable only to authenticate access to the AWS Management Console, or to Amazon Enterprise applications and services such as Amazon WorkSpaces, Amazon QuickSight, or Amazon Chime\. AWS Directory Service does not support RADIUS Challenge/Response authentication\. Users must have their MFA code at the time they enter their username and password\. Alternatively, you must use a solution that performs MFA out\-of\-band such as SMS text verification for the user\.  
 **Port**  
@@ -37,12 +39,14 @@ The shared secret code that was specified when your RADIUS endpoints were create
 Confirm the shared secret code for your RADIUS endpoints\.  
 **Protocol**  
 Select the protocol that was specified when your RADIUS endpoints were created\.  
-**Server timeout**  
+**Server timeout \(in seconds\)**  
 The amount of time, in seconds, to wait for the RADIUS server to respond\. This must be a value between 1 and 50\.  
-**Max retries**  
+**Max RADIUS request retries**  
 The number of times that communication with the RADIUS server is attempted\. This must be a value between 0 and 10\.
 
    Multi\-factor authentication is available when the **RADIUS Status** changes to **Enabled**\. 
+
+1. Choose **Enable**\. 
 
 ## Supported Amazon Enterprise Applications<a name="supportedamazonapps"></a>
 

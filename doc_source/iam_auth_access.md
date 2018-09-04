@@ -1,6 +1,6 @@
 # IAM Authentication and Access Control for AWS Directory Service<a name="iam_auth_access"></a>
 
-Access to AWS Directory Service requires credentials that AWS can use to authenticate your requests\. Those credentials must have permissions to access AWS resources, such as an [Amazon Cloud Directory](directory_amazon_cd.md) or other AWS Directory Service directory\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS Directory Service to help secure your resources by controlling who can access them:
+Access to AWS Directory Service requires credentials that AWS can use to authenticate your requests\. Those credentials must have permissions to access AWS resources, such as an AWS Directory Service directory\. The following sections provide details on how you can use [AWS Identity and Access Management \(IAM\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) and AWS Directory Service to help secure your resources by controlling who can access them:
 + [Authentication](#authentication)
 + [Access Control](#access_control)
 
@@ -28,10 +28,9 @@ You can access AWS as any of the following types of identities:
 
 ## Access Control<a name="access_control"></a>
 
-You can have valid credentials to authenticate your requests, but unless you have permissions you cannot create or access AWS Directory Service resources\. For example, you must have permissions to create an Amazon Cloud Directory or other AWS Directory Service directory or to create a directory snapshot\.
+You can have valid credentials to authenticate your requests, but unless you have permissions you cannot create or access AWS Directory Service resources\. For example, you must have permissions to create an AWS Directory Service directory or to create a directory snapshot\.
 
 The following sections describe how to manage permissions for AWS Directory Service\. We recommend that you read the overview first\.
 + [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)
 +  [Using Identity\-Based Policies \(IAM Policies\) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md) 
-+  [Amazon Cloud Directory API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_CD_ResourcePermissions.md) 
 +  [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md) 

@@ -20,13 +20,13 @@ By default, console access is not enabled for any directory\. To enable console 
 
 **To enable console access**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the directory ID for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. In the **Directory Details** page, choose the **Apps & services** tab\. 
+1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under **AWS apps & services**, choose **AWS Management Console**\. 
+1. In the **AWS apps & services** section, choose **AWS Management Console**\. 
 
 1. In the **Enable AWS Management Console** dialog box, choose **Enable Access**\. Console access is now enabled for your directory\.
 
@@ -43,13 +43,13 @@ To disable console access for your directory users and groups, perform the follo
 
 **To disable console access**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the directory ID for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. In the **Directory Details** page, choose the **Apps & services** tab\. 
+1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under **AWS apps & services**, choose **AWS Management Console**\. 
+1. Under the **AWS apps & services** section, choose **AWS Management Console**\. 
 
 1. If any IAM roles have been assigned to users or groups in the directory, the **Disable Access** button in the **Manage access to AWS Resources** dialog box is unavailable\. In this case, you must choose **Continue** and remove all IAM role assignments for the directory before proceeding, including assignments for users or groups in your directory that have been deleted, which will show as **Deleted User** or **Deleted Group**\.
 
@@ -61,13 +61,13 @@ By default, users have 1 hour to use their session after successfully signing in
 
 **To set login session length**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the directory ID for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. In the **Directory Details** page, choose the **Apps & services** tab\. 
+1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under **AWS apps & services**, choose **AWS Management Console**\. 
+1. Under the **AWS apps & services** section, choose **AWS Management Console**\. 
 
 1. In the **Manage Access to AWS Resource** dialog box, choose **Continue**\.
 

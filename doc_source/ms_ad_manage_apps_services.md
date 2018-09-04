@@ -16,7 +16,7 @@ Amazon WorkMail
 For more information, see the [Amazon WorkMail Administrator Guide](http://docs.aws.amazon.com/workmail/latest/adminguide/)\.
 
 Amazon Relational Database Service  
-For more information, see the [Amazon Relational Database Service User Guide](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\.
+For more information, see the [Amazon RDS User Guide](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\.
 
 AWS Management Console  
 For more information, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
@@ -25,11 +25,13 @@ Once enabled, you manage access to your directories in the console of the applic
 
 **To display the applications and services for a directory**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the directory ID link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Apps & Services** tab\. 
+1. On the **Directory details** page, select the **Application management** tab\.
+
+1. Review the list under the **AWS apps & services** section\.
 
 **Topics**
 + [Creating an Access URL](ms_ad_create_access_url.md)

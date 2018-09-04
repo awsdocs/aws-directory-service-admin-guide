@@ -27,7 +27,7 @@ The VPC that contains your AWS Managed Microsoft AD must have the appropriate ou
 
 **To configure your VPC outbound rules**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/), on the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/), on the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -46,7 +46,7 @@ The selected security group is a security group that is automatically created wh
 
 **To configure your VPC inbound rules**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/), on the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/), on the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
@@ -84,7 +84,7 @@ To perform the following steps, you must have access to following Windows Server
 
 **To configure conditional forwarders on your on\-premises domain**
 
-1. First you must get some information about your AWS Managed Microsoft AD\. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) at https://console\.aws\.amazon\.com/directoryservice/\.
+1. First you must get some information about your AWS Managed Microsoft AD\. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) at https://console\.aws\.amazon\.com/directoryservicev2/\.
 
 1. In the navigation pane, select **Directories**\.
 
@@ -120,27 +120,27 @@ You are now ready to create the trust relationship on your AWS Managed Microsoft
 
 **To create a trust relationship with your AWS Managed Microsoft AD**
 
-1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\.
+1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\.
 
-1. Choose the directory you want to configure\.
+1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Details** page, choose the **Trusts** tab\. 
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Choose **Add Trust Relationship**\.
+1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
 
-1. Provide the required information, including the fully qualified domain name \(FQDN\) of your trusted domain, the trust password and the trust direction\.
+1. On the **Add a trust relationship** page, provide the required information, including the fully qualified domain name \(FQDN\) of your trusted domain, the trust password and the trust direction\.
 
 1. For **Conditional forwarder**, type the IP address of your on\-premises DNS server\. If you have previously created conditional forwarders, you can type the fully qualified domain name \(FQDN\) of your on\-premises domain instead of a DNS IP address\. 
 
-1. \(Optional\) Choose **Add IP address** and type the IP address of an additional on\-premises DNS server\. You can repeat this step for each applicable DNS server address for a total of four addresses\.
+1. \(Optional\) Choose **Add another IP address** and type the IP address of an additional on\-premises DNS server\. You can repeat this step for each applicable DNS server address for a total of four addresses\.
 
-1.  Choose **Create**\. 
+1.  Choose **Add**\. 
 
-1. If the DNS server or the network for your on\-premises domain uses a public \(non\-RFC 1918\) IP address space, choose the **IP routing** tab and choose **Add route**\. Type the IP address block of your DNS server or on\-premises network using CIDR format, for example 203\.0\.113\.0/24\. This step is not necessary if both your DNS server and your on\-premises network are using RFC 1918 IP address spaces\.
+1. If the DNS server or the network for your on\-premises domain uses a public \(non\-RFC 1918\) IP address space, go to the **IP routing** section, choose **Actions**, and then choose **Add route**\. Type the IP address block of your DNS server or on\-premises network using CIDR format, for example 203\.0\.113\.0/24\. This step is not necessary if both your DNS server and your on\-premises network are using RFC 1918 IP address spaces\.
 **Note**  
 When using a public IP address space, make sure that you do not use any of the [AWS IP address ranges](https://ip-ranges.amazonaws.com/ip-ranges.json) as these cannot be used\.
 
-1. \(Optional\) We recommend that you also select **Add routes to the security group for this directory's VPC**\. This will configure the security groups as detailed above in the "Configure your VPC\." These security rules impact an internal network interface that is not exposed publicly\. If this option is not available, you will instead see a message indicating that you have already customized your security groups\. 
+1. \(Optional\) We recommend that while you are on the **Add routes** page that you also select **Add routes to the security group for this directory's VPC**\. This will configure the security groups as detailed above in the "Configure your VPC\." These security rules impact an internal network interface that is not exposed publicly\. If this option is not available, you will instead see a message indicating that you have already customized your security groups\. 
 
 You must set up the trust relationship on both domains\. The relationships must be complementary\. For example, if you create an outgoing trust on one domain, you must create an incoming trust on the other\.
 
@@ -150,28 +150,24 @@ You can create multiple trusts between your AWS Managed Microsoft AD and various
 
 **To verify an outgoing trust relationship**
 
-1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\.
+1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\.
 
-1. Choose the directory you wish to configure\.
+1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Details** page, choose the **Trusts** tab\. 
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Choose the trust relationship to verify\.
-
-1. For **Actions**, choose **Verify**\.
+1. In the **Trust relationships** section, select the trust you want to verify, choose **Actions**, and then select **Verify trust relationship**\.
 
 This process verifies only the outgoing direction of a two\-way trust\. AWS does not support verification of an incoming trusts\. For more information on how to verify a trust to or from your on\-premises Active Directory, refer to [Verify a Trust](https://technet.microsoft.com/en-us/library/cc753821.aspx) on Microsoft Technet\.
 
 **To delete an existing trust relationship**
 
-1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/)\.
+1. Open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\.
 
-1. Choose the directory you wish to configure\.
+1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Details** page, choose the **Trusts** tab\. 
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Choose the trust relationship to delete\.
+1. In the **Trust relationships** section, select the trust you want to delete, choose **Actions**, and then select **Delete trust relationship**\.
 
-1. For **Actions**, choose **Delete**\.
-
-**Topics**
+1. Choose **Delete**\.

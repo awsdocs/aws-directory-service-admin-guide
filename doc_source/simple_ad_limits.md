@@ -10,7 +10,9 @@ The following are the default limits for Simple AD\. Each limit is per region un
 | Resource | Default Limit | 
 | --- | --- | 
 | Simple AD directories | 10 | 
-| Manual snapshots | 5 per Simple AD | 
+| Manual snapshots \* | 5 per Simple AD | 
+
+\* The manual snapshot limit cannot be changed\.
 
 ## Increase Your Limit<a name="increase_limit"></a>
 

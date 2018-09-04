@@ -7,7 +7,7 @@ If single sign\-on is enabled for the directory, AWS Directory Service must tran
 
 **To modify your account credentials for AD Connector**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
 1. Click the directory ID link for your directory\.
 

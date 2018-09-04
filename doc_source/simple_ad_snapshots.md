@@ -19,13 +19,15 @@ You are limited to 5 manual snapshots for each directory\. If you have already r
 
 **To create a manual snapshot**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
-1. In the **Directory ID** column, choose the link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Snapshots** tab, and then choose **Create Snapshot**\.
+1. On the **Directory details** page, select the **Maintenance** tab\.
 
-1. In the **Create directory snapshot** dialog box, provide a description of the snapshot, if desired\. When ready, choose **Create Snapshot**\.
+1. In the **Snapshots** section, choose **Actions**, and then select **Create snapshot**\.
+
+1. In the **Create directory snapshot** dialog box, provide a name for the snapshot, if desired\. When ready, choose **Create**\.
 
 Depending on the size of your directory, it may take several minutes to create the snapshot\. When the snapshot is ready, the **Status** value changes to `Completed`\.
 
@@ -40,13 +42,15 @@ To restore your directory from a snapshot, perform the following steps\.
 
 **To restore a directory from a snapshot**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
-1. In the **Directory ID** column, choose the link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Snapshots** tab, and then select the snapshot to restore from\.
+1. On the **Directory details** page, select the **Maintenance** tab\.
 
-1. Choose **Restore**, review the information in the dialog box, and choose **Restore**\.
+1. In the **Snapshots** section, select a snapshot in the list, choose **Actions**, and then select **Restore snapshot**\.
+
+1. Review the information in the **Restore directory snapshot** dialog box, and choose **Restore**\.
 
 For a Simple AD directory, it may take several minutes for the directory to be restored\. For a AWS Managed Microsoft AD directory, it can take from two to three hours\. When it has been successfully restored, the **Status** value of the directory changes to `Active`\. Any changes made to the directory after the snapshot date are overwritten\. 
 
@@ -54,10 +58,12 @@ For a Simple AD directory, it may take several minutes for the directory to be r
 
 **To delete a snapshot**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
-1. In the **Directory ID** column, choose the link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Choose the **Snapshots** tab, and then select the snapshot to delete\.
+1. On the **Directory details** page, select the **Maintenance** tab\.
 
-1. Choose **Delete**, verify that you want to delete the snapshot, and choose **Delete**\.
+1. In the **Snapshots** section, choose **Actions**, and then select **Delete snapshot**\.
+
+1. Verify that you want to delete the snapshot, and then choose **Delete**\.

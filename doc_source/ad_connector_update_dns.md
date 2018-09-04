@@ -7,7 +7,7 @@ If you have an update in progress, you must wait until it is complete before sub
 
 **To update your DNS settings for AD Connector**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, choose **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
 1. Choose the name of the directory to be updated\.
 

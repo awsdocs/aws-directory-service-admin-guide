@@ -6,19 +6,19 @@ When an AD Connector directory is deleted, your on\-premises directory remains i
 
 **To delete a directory**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
 1. Ensure that no AWS applications are enabled for the directory\.
 
-   1. Click the directory ID link for your directory\.
+   1. On the **Directories** page, choose your directory ID\.
 
-   1. Select the **Apps & Services** tab\. In the Apps & Services section, you see which AWS applications are enabled for your directory\.
+   1. On the **Directory details** page, select the **Application management** tab\. In the **AWS apps & services** section, you see which AWS applications are enabled for your directory\.
       + To disable Amazon WorkSpaces, you must deregister the service from the directory in the Amazon WorkSpaces console\. For more information, see [Deregistering From a Directory](http://docs.aws.amazon.com/workspaces/latest/adminguide/registration.html#deregister_directory) in the *Amazon WorkSpaces Administration Guide*\.
       + To disable Amazon WorkSpaces Application Manager, you must remove all application assignments in the Amazon WAM console\. For more information, see [Removing All Application Assignments](http://docs.aws.amazon.com/wam/latest/adminguide/remove_all_assignments.html) in the *Amazon WAM Administration Guide*\.
       + To disable Amazon WorkDocs, you must delete the Amazon WorkDocs site in the Amazon WorkDocs console\. For more information, see [Delete a Site](http://docs.aws.amazon.com/workdocs/latest/adminguide/admin_console.html#manage_deactivate) in the *Amazon WorkDocs Administration Guide*\.
       + To disable Amazon WorkMail, you must remove the Amazon WorkMail organization in the Amazon WorkMail console\. For more information, see [Remove an Organization](http://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html) in the *Amazon WorkMail Administrator Guide*\.
       + Disable AWS Management Console access\.
-      + To disable Amazon Relational Database Service, you must remove the Amazon RDS instance from the domain\. For more information, see [Managing a DB Instance in a Domain](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html#USER_SQLServerWinAuth.Managing) in the *Amazon Relational Database Service User Guide*\.
+      + To disable Amazon Relational Database Service, you must remove the Amazon RDS instance from the domain\. For more information, see [Managing a DB Instance in a Domain](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html#USER_SQLServerWinAuth.Managing) in the *Amazon RDS User Guide*\.
       + To disable Amazon QuickSight, you must unsubscribe from Amazon QuickSight\. For more information, see [Closing Your Amazon QuickSight Account](http://docs.aws.amazon.com/quicksight/latest/user/closing-account.html) in the *Amazon QuickSight User Guide*\.
       + To disable Amazon Connect, you must delete the Amazon Connect Instance\. For more information, see [Deleting an Amazon Connect Instance](http://docs.aws.amazon.com/connect/latest/adminguide/gettingstarted.html#delete-instance) in the *Amazon Connect Administration Guide*\.
 **Note**  

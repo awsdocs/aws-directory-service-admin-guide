@@ -10,11 +10,13 @@ Before the update process begins, AWS Managed Microsoft AD takes a snapshot to p
 
 **To import your LDIF file**
 
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservice/) navigation pane, select **Directories**\.
+1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
-1. In the **Directory ID** column, choose the link for your directory\.
+1. On the **Directories** page, choose your directory ID\.
 
-1. Under the **Schema extensions** tab, choose **Upload and update schema**\.
+1. On the **Directory details** page, select the **Maintenance** tab\.
+
+1. In the **Schema extensions** section, choose **Actions**, and then select **Upload and update schema**\.
 
 1. In the dialog box, click **Browse**, select a valid LDIF file, type a description, and then choose **Update Schema**\.
 **Important**  

@@ -8,20 +8,21 @@ Set up a VPC with the following:
 + The VPC must be connected to your on\-premises network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
 + The VPC must have default hardware tenancy\.
 For more information, see the following topics in the *Amazon VPC User Guide*:  
-+ [What is Amazon VPC?](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)
-+ [Subnets in your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Subnets.html#VPCSubnet)
-+ [Adding a Hardware Virtual Private Gateway to Your VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html)
++ [What is Amazon VPC?](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
++ [Subnets in your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPCSubnet)
++ [Adding a Hardware Virtual Private Gateway to Your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html)
 For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](http://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
 **On\-premises network**  
 You'll need an on\-premises network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
 AD Connector does not support Read\-only domain controllers \(RODC\) when used in combination with the Amazon EC2 domain\-join feature\. 
 
-**Credentials**  
-You must have credentials for an account in the on\-premises directory with the following privileges\. For more information, see [Delegating Connect Privileges](#connect_delegate_privileges)\.   
+**Service account**  
+You must have credentials for a service account in the on\-premises directory which has been delegated the following privileges:  
 + Read users and groups
 + Create computer objects
 + Join computers to the domain
+For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
 
 **IP addresses**  
 Get the IP addresses of two DNS servers or domain controllers in your on\-premises directory\.  
@@ -54,16 +55,15 @@ To support multi\-factor authentication with your AD Connector directory, you ne
 
 For more information about using AD Connector with MFA, see [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)\. 
 
-## Delegating Connect Privileges<a name="connect_delegate_privileges"></a>
+## Delegate privileges to your service account<a name="connect_delegate_privileges"></a>
 
-To connect to your on\-premises directory, you must have the credentials for an account in the on\-premises directory that has certain privileges\. While members of the **Domain Admins** group have sufficient privileges to connect to the directory, as a best practice, you should use an account that only has the minimum privileges necessary to connect to the directory\. The following procedure demonstrates how to create a new group called `Connectors`, and delegate the privileges to this group that are needed to connect AWS Directory Service to the directory\. 
+To connect to your on\-premises directory, you must have the credentials for your AD Connector service account in the on\-premises directory that has been delegated certain privileges\. While members of the **Domain Admins** group have sufficient privileges to connect to the directory, as a best practice, you should use a service account that only has the minimum privileges necessary to connect to the directory\. The following procedure demonstrates how to create a new group called `Connectors`, delegate the necessary privileges that are needed to connect AWS Directory Service to this group, and then add a new service account to this group\. 
 
 This procedure must be performed on a machine that is joined to your directory and has the **Active Directory User and Computers** MMC snap\-in installed\. You must also be logged in as a domain administrator\.
 
-**To delegate connect privileges**
+**To delegate privileges to your service account**
 
-1. Open **Active Directory User and Computers** and select your domain root in the navigation tree\.  
-![\[Active Directory user and computers\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc.png)
+1. Open **Active Directory User and Computers** and select your domain root in the navigation tree\.
 
 1. In the list in the left\-hand pane, right\-click **Users**, select **New**, and then select **Group**\. 
 
@@ -71,8 +71,7 @@ This procedure must be performed on a machine that is joined to your directory a
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html)
 
-1. In the **Active Directory User and Computers** navigation tree, select your domain root\. In the menu, select **Action**, and then **Delegate Control**\.  
-![\[Delegate Connector menu\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_menu.png)
+1. In the **Active Directory User and Computers** navigation tree, select your domain root\. In the menu, select **Action**, and then **Delegate Control**\.
 
 1. On the **Delegation of Control Wizard** page, click **Next**, then click **Add**\.
 
@@ -90,13 +89,13 @@ This procedure must be performed on a machine that is joined to your directory a
 
 1. Verify the information on the **Completing the Delegation of Control Wizard** page, and click **Finish**\. 
 
-1. Create a user with a strong password and add that user to the `Connectors` group\. The user has sufficient privileges to connect AWS Directory Service to the directory\.
+1. Create a user account with a strong password and add that user to the `Connectors` group\. This user will be known as your AD Connector service account and since it is now a member of the `Connectors` group it now has sufficient privileges to connect AWS Directory Service to the directory\.
 
-## Connect Verification<a name="connect_verification"></a>
+## Test your AD Connector<a name="connect_verification"></a>
 
 For AD Connector to connect to your on\-premises directory, the firewall for your on\-premises network must have certain ports open to the CIDRs for both subnets in the VPC\. To test if these conditions are met, perform the following steps:
 
-**To verify the connection**
+**To test the connection**
 
 1. Launch a Windows instance in the VPC and connect to it over RDP\. The instance must be a member of your on\-premises domain\. The remaining steps are performed on this VPC instance\.
 

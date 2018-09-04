@@ -28,7 +28,7 @@ These resources have unique Amazon Resource Names \(ARNs\) associated with them 
 | Directory | `arn:aws:ds:region:account-id:directory/external-directory-id` | 
 | Snapshot | `arn:aws:ds:region:account-id:snapshot/external-snapshot-id` | 
 
-AWS Directory Service provides a set of operations to work with the appropriate resources\. For a list of available operations, see either [Amazon Cloud Directory Actions](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_Operations.html) or [Directory Service Actions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\.
+AWS Directory Service provides a set of operations to work with the appropriate resources\. For a list of available operations, see [Directory Service Actions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\.
 
 ## Understanding Resource Ownership<a name="IAM_Auth_Access_ResourceOwner"></a>
 
@@ -87,7 +87,7 @@ Other services, such as Amazon S3, also support resource\-based permissions poli
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="SpecifyingIAMPolicyActions_DS"></a>
 
-For each AWS Directory Service resource \(see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\), the service defines a set of API operations\. For a list of available API operations, see either [Amazon Cloud Directory Actions](http://docs.aws.amazon.com/directoryservice/latest/APIReference/API_Operations.html) or [Directory Service Actions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\. To grant permissions for these API operations, AWS Directory Service defines a set of actions that you can specify in a policy\. Note that, performing an API operation can require permissions for more than one action\. 
+For each AWS Directory Service resource \(see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\), the service defines a set of API operations\. For a list of available API operations, see [Directory Service Actions](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\. To grant permissions for these API operations, AWS Directory Service defines a set of actions that you can specify in a policy\. Note that, performing an API operation can require permissions for more than one action\. 
 
 The following are the basic policy elements:
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For AWS Directory Service resources, you always use the wildcard character \(\*\) in IAM policies\. For more information, see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\. 
@@ -97,7 +97,7 @@ The following are the basic policy elements:
 
 To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
-For a table showing all of the Amazon Cloud Directory or AWS Directory Service API actions and the resources that they apply to, see [Amazon Cloud Directory API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_CD_ResourcePermissions.md) or [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)\. 
+For a table showing all of the AWS Directory Service API actions and the resources that they apply to, see [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)\. 
 
 ## Specifying Conditions in a Policy<a name="SpecifyingIAMPolicyConditions_DS"></a>
 

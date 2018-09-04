@@ -23,4 +23,4 @@ If this does not solve the issue, it is possible that information for a previous
 
 ## General tool for testing trusts<a name="directoryserviceporttest"></a>
 
-The [DirectoryServicePortTest](samples/DirectoryServicePortTest.zip) testing tool can be helpful when troubleshooting trust creation issues between AWS Managed Microsoft AD and on\-premises Active Directory\. For an example on how the tool can be used, see [Connect Verification](prereq_connector.md#connect_verification)\.
+The [DirectoryServicePortTest](samples/DirectoryServicePortTest.zip) testing tool can be helpful when troubleshooting trust creation issues between AWS Managed Microsoft AD and on\-premises Active Directory\. For an example on how the tool can be used, see [Test your AD Connector](prereq_connector.md#connect_verification)\.
