@@ -4,5 +4,4 @@ This section describes how to maintain common administrative tasks for your AD C
 
 **Topics**
 + [Delete Your Directory](ad_connector_delete.md)
-+ [Snapshot or Restore Your Directory](ad_connector_snapshots.md)
 + [View Directory Information](ad_connector_view_directory_info.md)

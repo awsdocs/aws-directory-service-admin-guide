@@ -1,6 +1,6 @@
 # Limits for Simple AD<a name="simple_ad_limits"></a>
 
-Generally, you should not add more than 5,000 users to a Simple AD directory\. If you have more than 5,000 users, consider AWS Directory Service for Microsoft Active Directory instead\.
+Generally, you should not add more than 500 users to a Small Simple AD directory and no more than 5,000 users to a Large Simple AD directory\. For more flexible scaling options and additional Active Directory features, consider using AWS Directory Service for Microsoft Active Directory \(Standard Edition or Enterprise Edition\) instead\.
 
 The following are the default limits for Simple AD\. Each limit is per region unless otherwise noted\.
 

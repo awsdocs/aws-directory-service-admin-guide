@@ -1,6 +1,6 @@
 # Step 2: Import Your LDIF File<a name="import"></a>
 
-You can extend your schema by importing an LDIF file from either the AWS Directory Service console or by using the API\. For more information about how to do this with the schema extension APIs, see the [http://docs.aws.amazon.com/directoryservice/latest/devguide/](http://docs.aws.amazon.com/directoryservice/latest/devguide/)\. At this time, AWS does not support external applications, such as Microsoft Exchange, to perform schema updates directly\. 
+You can extend your schema by importing an LDIF file from either the AWS Directory Service console or by using the API\. For more information about how to do this with the schema extension APIs, see the [https://docs.aws.amazon.com/directoryservice/latest/devguide/](https://docs.aws.amazon.com/directoryservice/latest/devguide/)\. At this time, AWS does not support external applications, such as Microsoft Exchange, to perform schema updates directly\. 
 
 **Important**  
 When you make an update to your AWS Managed Microsoft AD directory schema, the operation is not reversible\. In other words, once you create a new class or attribute, Active Directory doesn’t allow you to remove it\. However, you can disable it\.   

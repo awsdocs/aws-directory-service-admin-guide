@@ -8,10 +8,10 @@ Set up a VPC with the following:
 + The VPC must be connected to your on\-premises network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
 + The VPC must have default hardware tenancy\.
 For more information, see the following topics in the *Amazon VPC User Guide*:  
-+ [What is Amazon VPC?](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
-+ [Subnets in your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPCSubnet)
-+ [Adding a Hardware Virtual Private Gateway to Your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html)
-For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](http://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
++ [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
++ [Subnets in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPCSubnet)
++ [Adding a Hardware Virtual Private Gateway to Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html)
+For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](https://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
 **On\-premises network**  
 You'll need an on\-premises network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  

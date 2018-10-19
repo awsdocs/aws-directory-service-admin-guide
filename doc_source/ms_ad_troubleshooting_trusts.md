@@ -10,7 +10,7 @@ Access was denied when trying to create the trust\. Either the trust password is
 + Verify that your local security policy is set correctly\. Specifically check `Local Security Policy > Local Policies > Security Options > Network access: Named Pipes that can be accessed anonymously` and ensure that it contains at least the following three named pipes:
   + netlogon
   + samr
-  + Isarpc
+  + lsarpc
 
 **Note**  
 By default, `Network access: Named Pipes that can be accessed anonymously` is not set and will display `Not Defined`\. This is normal, as the domain controller's effective default settings for `Network access: Named Pipes that can be accessed anonymously` is `netlogon`, `samr`, `lsarpc`\.

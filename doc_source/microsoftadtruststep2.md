@@ -3,7 +3,7 @@
 In this section, you create two separate forest trusts\. One trust is created from the Active Directory domain on your EC2 instance and the other from your AWS Managed Microsoft AD in AWS\.
 
 **Note**  
-The AWS Directory Service, currently only supports forest trusts\.
+AWS Managed Microsoft AD also supports external trusts\. However, for the purposes of this tutorial, you will create a two\-way forest trust\.
 
 **To create the trust from your EC2 domain to your AWS Managed Microsoft AD in AWS**
 

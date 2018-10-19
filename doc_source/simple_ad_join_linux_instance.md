@@ -310,15 +310,6 @@ The fully\-qualified DNS name of your directory\.
    ...
     * Successfully enrolled machine in realm
    ```
-**Note**  
-If you are using Ubuntu 14\.04, and encounter the following error:   
-**realm: Couldn't join realm: Failed to enroll machine in realm\. See diagnostics\.**\.   
-Complete the following additional steps, and then attempt a domain join to resolve the issue:   
-
-   ```
-   $ killall aptd
-   $ apt-get install packagekit adcli
-   ```
 
 1. Set the SSH service to allow password authentication\.
 
@@ -396,6 +387,7 @@ This is an additional domain component\. In this example, *com*\.
 You must manually add ad\_access\_filter to your /etc/sssd/sssd\.conf\. After you do this, your sssd\.conf might look like this:
 
 ```
+[sssd]
 domains = example.com
 config_file_version = 2 
 services = nss, pam 

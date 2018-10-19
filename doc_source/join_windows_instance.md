@@ -20,7 +20,7 @@ You can open **Network Connections** directly by running the following from a co
 
    1. In the connection properties dialog box, open \(double\-click\) **Internet Protocol Version 4**\.
 
-1. \(Optional\) Select **Use the following DNS server addresses**, change the **Preferred DNS server** and **Alternate DNS server** addresses to the IP addresses of the AWS Directory Service\-provided DNS servers, and choose **OK**\.  
+1. Select **Use the following DNS server addresses**, change the **Preferred DNS server** and **Alternate DNS server** addresses to the IP addresses of the AWS Directory Service\-provided DNS servers, and choose **OK**\.  
 ![\[Setting DNS server addresses\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/dns_server_addresses.png)
 
 1. Open the **System Properties** dialog box for the instance, select the **Computer Name** tab, and choose **Change**\.

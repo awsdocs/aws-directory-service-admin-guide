@@ -4,19 +4,19 @@ AWS Directory Service can give other AWS applications and services, such as Amaz
 
 Amazon WorkSpaces  
 You can create a Simple AD, AWS Managed Microsoft AD, or AD Connector directly from Amazon WorkSpaces\. Simply launch **Advanced Setup** when creating your Workspace\.  
-For more information, see the [Amazon WorkSpaces Administration Guide](http://docs.aws.amazon.com/workspaces/latest/adminguide/)\.
+For more information, see the [Amazon WorkSpaces Administration Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/)\.
 
 Amazon WorkSpaces Application Manager  
 For more information, see the [Amazon WAM Administration Guide](http://docs.aws.amazon.com/wam/latest/adminguide/)\.
 
 Amazon WorkDocs  
-For more information, see the [Amazon WorkDocs Administration Guide](http://docs.aws.amazon.com/workdocs/latest/adminguide/)\.
+For more information, see the [Amazon WorkDocs Administration Guide](https://docs.aws.amazon.com/workdocs/latest/adminguide/)\.
 
 Amazon WorkMail  
-For more information, see the [Amazon WorkMail Administrator Guide](http://docs.aws.amazon.com/workmail/latest/adminguide/)\.
+For more information, see the [Amazon WorkMail Administrator Guide](https://docs.aws.amazon.com/workmail/latest/adminguide/)\.
 
 Amazon Relational Database Service  
-For more information, see the [Amazon RDS User Guide](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\.
+For more information, see the [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\.
 
 AWS Management Console  
 For more information, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.

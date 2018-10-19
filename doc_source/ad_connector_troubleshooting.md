@@ -4,6 +4,10 @@ The following can help you troubleshoot some common issues you might encounter w
 
 Here are some common problems with AD Connector\.
 
+## I receive a "Authentication failed" error when querying users and groups in my domain through AD Connector<a name="query_domain"></a>
+
+This can occur if you have the **LDAP server signing requirements** policy enabled\. Consider disabling it and then trying your query again\. For general information about this policy, see [Domain controller: LDAP server signing requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/domain-controller-ldap-server-signing-requirements)\.
+
 ## I receive a "DNS unavailable" error when I try to connect to my on\-premises directory<a name="dns_unavailable"></a>
 
 You receive an error message similar to the following when connecting to your on\-premises directory:

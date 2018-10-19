@@ -4,20 +4,29 @@ Now let's get your AWS Managed Microsoft AD ready for the trust relationship\. M
 
 ## Configure Your VPC Subnets and Security Groups<a name="tutorial_setup_trust_open_vpc"></a>
 
-You must allow traffic from your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. To do this, configure the VPC access control list \(ACL\) to allow both incoming and outgoing traffic from your on\-premises directory for the following ports:
+You must allow traffic from your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. To do this, you will need to make sure that the ACLs associated with the subnets used to deploy your AWS Managed Microsoft AD and the security group rules configured on your domain controllers, both allow the requisite traffic to support trusts\. 
+
+Port requirements vary based on the version of Windows Server used by your domain controllers and the services or applications that will be leveraging the trust\. For the purposes of this tutorial, you will need to open the following ports: 
+
+**Inbound**
 + TCP/UDP 53 \- DNS
 + TCP/UDP 88 \- Kerberos authentication
-+ TCP/UDP 389 \- LDAP
-+ TCP 445 \- SMB
++ UDP 123 \- NTP 
++ TCP 135 \- RPC 
++ UDP 137\-138 \- Netlogon 
++ TCP 139 \- Netlogon 
++ TCP/UDP 389 \- LDAP 
++ TCP/UDP 445 \- SMB 
++ TCP 636 \- LDAPS \(LDAP over TLS/SSL\) 
++ TCP 873 \- Rsync 
++ TCP 3268 \- Global Catalog 
++ TCP/UDP 1024\-65535 \- Ephemeral ports for RPC 
+
+**Outbound**
++ ALL
 
 **Note**  
-These are the minimum ports that are needed to be able to connect the VPC and on\-premises directory\. Your specific configuration may require additional ports be open\. For this tutorial, we have opened up all ports to our on\-premises domain:  
-
-![\[VPN incoming rules\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/VPN_ACL_in.png)
-
-![\[VPN outgoing rules\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/VPN_ACL_out.png)
-
-Similarly, your AWS Managed Microsoft AD domain controller must have the appropriate outbound and inbound rules\.
+These are the minimum ports that are needed to be able to connect the VPC and on\-premises directory\. Your specific configuration may require additional ports be open\. 
 
 **To configure your AWS Managed Microsoft AD domain controller outbound and inbound rules**
 

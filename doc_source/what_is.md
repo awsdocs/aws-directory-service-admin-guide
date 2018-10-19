@@ -51,7 +51,7 @@ AD Connector is a proxy service that provides an easy way to connect compatible 
 
 When you add users to AWS applications such as Amazon QuickSight, AD Connector reads your existing Active Directory to create lists of users and groups to select from\. When users log in to the AWS applications, AD Connector forwards sign\-in requests to your on\-premises Active Directory domain controllers for authentication\. AD Connector works with many AWS applications and services including [Amazon WorkSpaces](https://aws.amazon.com/workspaces/), [Amazon WorkDocs](https://aws.amazon.com/workdocs/), [Amazon QuickSight](https://aws.amazon.com/quicksight/), [Amazon Chime](https://aws.amazon.com/chime/), [Amazon Connect](https://aws.amazon.com/connect/), and [Amazon WorkMail](https://aws.amazon.com/workmail/)\. You can also [join your EC2 Windows instances](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_join_windows_instance.html) to your on\-premises Active Directory domain through AD Connector using [seamless domain join](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_launching_instance.html)\. AD Connector also allows your users to access the AWS Management Console and manage AWS resources by logging in with their existing Active Directory credentials\. AD Connector is not compatible with RDS SQL Server\.
 
-You can also use AD Connector to [enable multi\-factor authentication](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_mfa.html) for your AWS application users by connecting it to your existing RADIUS\-based MFA infrastructure\. This provides an additional layer of security when users access AWS applications\.
+You can also use AD Connector to [enable multi\-factor authentication](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_mfa.html) \(MFA\) for your AWS application users by connecting it to your existing RADIUS\-based MFA infrastructure\. This provides an additional layer of security when users access AWS applications\.
 
 With AD Connector, you continue to manage your Active Directory as you do now\. For example, you add new users and groups and update passwords using standard Active Directory administration tools in your on\-premises Active Directory\. This helps you consistently enforce your security policies, such as password expiration, password history, and account lockouts, whether users are accessing resources on premises or in the AWS Cloud\. 
 
@@ -66,7 +66,7 @@ Simple AD is a Microsoft Active Directory–*compatible* directory from AWS Dire
 
 Simple AD is a standalone directory in the cloud, where you create and manage user identities and manage access to applications\. You can use many familiar Active Directory–aware applications and tools that require basic Active Directory features\. Simple AD is compatible with the following AWS applications: [Amazon WorkSpaces](https://aws.amazon.com/workspaces/), [Amazon WorkDocs](https://aws.amazon.com/workdocs/), [Amazon QuickSight](https://aws.amazon.com/quicksight/), and [Amazon WorkMail](https://aws.amazon.com/workmail/)\. You can also sign in to the AWS Management Console with Simple AD user accounts and to manage AWS resources\. 
 
-Simple AD does not support trust relationships, DNS dynamic update, schema extensions, multi\-factor authentication, communication over LDAPS, PowerShell AD cmdlets, or FSMO role transfer\. Simple AD is not compatible with RDS SQL Server\. Customers who require the features of an actual Microsoft Active Directory, or who envision using their directory with RDS SQL Server should use AWS Managed Microsoft AD instead\. Please verify your required applications are fully compatible with Samba 4 before using Simple AD\. For more information, see [https://www\.samba\.org](https://www.samba.org)\. 
+Simple AD does not support multi\-factor authentication \(MFA\), trust relationships, DNS dynamic update, schema extensions, communication over LDAPS, PowerShell AD cmdlets, or FSMO role transfer\. Simple AD is not compatible with RDS SQL Server\. Customers who require the features of an actual Microsoft Active Directory, or who envision using their directory with RDS SQL Server should use AWS Managed Microsoft AD instead\. Please verify your required applications are fully compatible with Samba 4 before using Simple AD\. For more information, see [https://www\.samba\.org](https://www.samba.org)\. 
 
 ***When to use***
 
@@ -97,8 +97,8 @@ See [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/ra
 ## Working with Amazon EC2<a name="new_to_ec2"></a>
 
 A basic understanding of Amazon EC2 is essential to using AWS Directory Service\. We recommend that you begin by reading the following topics: 
-+ [What is Amazon EC2?](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances*\.
-+ [Launching EC2 Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/LaunchingAndUsingInstances.html) in the *Amazon EC2 User Guide for Windows Instances*\.
-+ [Security Groups](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*\.
-+ [What is Amazon VPC?](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html) in the *Amazon VPC User Guide*\.
-+ [Adding a Hardware Virtual Private Gateway to Your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html) in the *Amazon VPC User Guide*\. 
++ [What is Amazon EC2?](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances*\.
++ [Launching EC2 Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/LaunchingAndUsingInstances.html) in the *Amazon EC2 User Guide for Windows Instances*\.
++ [Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*\.
++ [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html) in the *Amazon VPC User Guide*\.
++ [Adding a Hardware Virtual Private Gateway to Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html) in the *Amazon VPC User Guide*\. 

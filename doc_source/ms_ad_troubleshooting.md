@@ -4,5 +4,6 @@ The following topics help you troubleshoot some common issues you might encounte
 
 **Topics**
 + [DNS Troubleshooting](ms_ad_troubleshooting_dns.md)
++ [Linux Domain Join Errors](ms_ad_troubleshooting_join_linux.md)
 + [Schema Extension Errors](ms_ad_troubleshooting_schema.md)
 + [Trust Creation Status Reasons](ms_ad_troubleshooting_trusts.md)

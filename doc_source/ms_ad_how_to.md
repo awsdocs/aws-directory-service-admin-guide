@@ -5,6 +5,7 @@ This section lists all of the procedures for operating and maintaining an AWS Ma
 **Topics**
 + [Secure Your AWS Managed Microsoft AD Directory](ms_ad_security.md)
 + [Monitor Your AWS Managed Microsoft AD](ms_ad_monitor.md)
++ [Share Your Directory](ms_ad_directory_sharing.md)
 + [Join an EC2 Instance to Your AWS Managed Microsoft AD Directory](ms_ad_join_instance.md)
 + [Add Users and Groups to AWS Managed Microsoft AD](ms_ad_create_users_groups.md)
 + [Connect to Your Existing AD Infrastructure](ms_ad_connect_existing_infrastructure.md)

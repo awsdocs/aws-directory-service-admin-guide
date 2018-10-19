@@ -1,12 +1,12 @@
 # Configure Directory Status Notifications<a name="ms_ad_enable_notifications"></a>
 
-Using Amazon Simple Notification Service \(Amazon SNS\), you can receive email or text \(SMS\) messages when the status of your directory changes\. You get notified if your directory goes from an Active status to an [Impaired or Inoperable status](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_status.html)\. You also receive a notification when the directory returns to an Active status\.
+Using Amazon Simple Notification Service \(Amazon SNS\), you can receive email or text \(SMS\) messages when the status of your directory changes\. You get notified if your directory goes from an Active status to an [Impaired or Inoperable status](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_status.html)\. You also receive a notification when the directory returns to an Active status\.
 
 ## How It Works<a name="ds_sns_overview"></a>
 
 Amazon SNS uses “topics” to collect and distribute messages\. Each topic has one or more subscribers who receive the messages that have been published to that topic\. Using the steps below you can add AWS Directory Service as publisher to an Amazon SNS topic\. When AWS Directory Service detects a change in your directory’s status, it publishes a message to that topic, which is then sent to the topic's subscribers\. 
 
-You can associate multiple directories as publishers to a single topic\. You can also add directory status messages to topics that you’ve previously created in Amazon SNS\. You have detailed control over who can publish to and subscribe to a topic\. For complete information about Amazon SNS, see [What is Amazon SNS?](http://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
+You can associate multiple directories as publishers to a single topic\. You can also add directory status messages to topics that you’ve previously created in Amazon SNS\. You have detailed control over who can publish to and subscribe to a topic\. For complete information about Amazon SNS, see [What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 
 **To enable SNS messaging for your directory**
 
@@ -27,7 +27,7 @@ If you choose **Associate existing SNS topic**, you will only be able to choose 
 
 1. \(Optional\) Provide a name for your topic and an SNS display name\. The display name is a short name up to 10 characters that is included in all SMS messages from this topic\. When using the SMS option, the display name is required\. 
 **Note**  
-If you are logged in using an IAM user or role that has only the [DirectoryServiceFullAccess](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/role_ds_full_access.html) managed policy, your topic name must start with “DirectoryMonitoring”\. If you’d like to further customize your topic name you’ll need additional privileges for SNS\.
+If you are logged in using an IAM user or role that has only the [DirectoryServiceFullAccess](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/role_ds_full_access.html) managed policy, your topic name must start with “DirectoryMonitoring”\. If you’d like to further customize your topic name you’ll need additional privileges for SNS\.
 
 1. Choose **Create**\.
 

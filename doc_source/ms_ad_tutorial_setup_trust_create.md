@@ -2,11 +2,14 @@
 
 Now that the preparation work is complete, the final steps are to create the trusts\. First you create the trust on your on\-premises domain, and then finally on your AWS Managed Microsoft AD\. If you have any issues during the trust creation process, see [Trust Creation Status Reasons](ms_ad_troubleshooting_trusts.md) for assistance\.
 
-## Configure Your On\-Premises Trust<a name="tutorial_setup_trust_onprem_trust"></a>
+## Configure the Trust in Your On\-Premises Active Directory<a name="tutorial_setup_trust_onprem_trust"></a>
 
-In this tutorial, you configure a two\-way trust\. However, if you create a one\-way trust, be aware that the trust directions on each of your domains must be complementary\. For example, if you create a one\-way, outgoing trust on your on\-premises domain, you need to create a one\-way, incoming trust on your AWS Managed Microsoft AD\.
+In this tutorial, you configure a two\-way forest trust\. However, if you create a one\-way forest trust, be aware that the trust directions on each of your domains must be complementary\. For example, if you create a one\-way, outgoing trust on your on\-premises domain, you need to create a one\-way, incoming trust on your AWS Managed Microsoft AD\.
 
-**To configure your on\-premises trust relationship**
+**Note**  
+AWS Managed Microsoft AD also supports external trusts\. However, for the purposes of this tutorial, you will create a two\-way forest trust\.
+
+**To configure the trust in your on\-premises AD**
 
 1. Open Server Manager and on the **Tools** menu, choose **Active Directory Domains and Trusts**\.
 
@@ -30,11 +33,11 @@ In this tutorial, you configure a two\-way trust\. However, if you create a one\
 
 1. Choose **No, do not confirm the incoming trust**\. Choose **Next**\.
 
-## Configure Your AWS Managed Microsoft AD Trust<a name="tutorial_setup_trust_mad_trust"></a>
+## Configure the Trust in Your AWS Managed Microsoft AD Directory<a name="tutorial_setup_trust_mad_trust"></a>
 
-Finally, you configure the trust relationship for your AWS Managed Microsoft AD\. Because you created a two\-way trust on the on\-premises domain, you also create a two\-way trust on your AWS Managed Microsoft AD\.
+Finally, you configure the forest trust relationship with your AWS Managed Microsoft AD directory\. Because you created a two\-way forest trust on the on\-premises domain, you also create a two\-way trust using your AWS Managed Microsoft AD directory\.
 
-**To configure your AWS Managed Microsoft AD trust relationship**
+**To configure the trust in your AWS Managed Microsoft AD directory**
 
 1. Return to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/)\. 
 

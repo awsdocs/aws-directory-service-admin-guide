@@ -1,11 +1,11 @@
 # When to Create a Trust Relationship<a name="ms_ad_setup_trust"></a>
 
-You can configure one and two\-way forest trust relationships between your AWS Directory Service for Microsoft Active Directory and on\-premises directories, as well as between multiple AWS Managed Microsoft AD directories in the AWS cloud\. AWS Managed Microsoft AD supports all three trust relationship directions: Incoming, Outgoing and Two\-way \(Bi\-directional\)\.
+You can configure one and two\-way external and forest trust relationships between your AWS Directory Service for Microsoft Active Directory and on\-premises directories, as well as between multiple AWS Managed Microsoft AD directories in the AWS cloud\. AWS Managed Microsoft AD supports all three trust relationship directions: Incoming, Outgoing and Two\-way \(Bi\-directional\)\.
 
 **Note**  
 When setting up trust relationships, you must ensure that your on\-premises directory is and remains compatible with AWS Directory Services\. For more information on your responsibilities, please see our [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model)\.
 
-AWS Managed Microsoft AD supports forest trusts only\. External domain trusts and name suffix routing are not supported\. To walk through an example scenario showing how to create a trust, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
+AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
 
 ## Prerequisites<a name="trust_prereq"></a>
 
@@ -128,9 +128,11 @@ You are now ready to create the trust relationship on your AWS Managed Microsoft
 
 1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
 
-1. On the **Add a trust relationship** page, provide the required information, including the fully qualified domain name \(FQDN\) of your trusted domain, the trust password and the trust direction\.
+1. On the **Add a trust relationship** page, provide the required information, including the trust type, fully qualified domain name \(FQDN\) of your trusted domain, the trust password and the trust direction\.
 
-1. For **Conditional forwarder**, type the IP address of your on\-premises DNS server\. If you have previously created conditional forwarders, you can type the fully qualified domain name \(FQDN\) of your on\-premises domain instead of a DNS IP address\. 
+1. \(Optional\) If you want to allow only authorized users to access resources in your AWS Managed Microsoft AD directory, you can optionally choose the **Selective authentication** check box\. For general information about selective authentication, see [Security Considerations for Trusts](https://technet.microsoft.com/pt-pt/library/cc755321(v=ws.10).aspx) on Microsoft TechNet\.
+
+1. For **Conditional forwarder**, type the IP address of your on\-premises DNS server\. If you have previously created conditional forwarders, you can type the FQDN of your on\-premises domain instead of a DNS IP address\. 
 
 1. \(Optional\) Choose **Add another IP address** and type the IP address of an additional on\-premises DNS server\. You can repeat this step for each applicable DNS server address for a total of four addresses\.
 
@@ -158,7 +160,7 @@ You can create multiple trusts between your AWS Managed Microsoft AD and various
 
 1. In the **Trust relationships** section, select the trust you want to verify, choose **Actions**, and then select **Verify trust relationship**\.
 
-This process verifies only the outgoing direction of a two\-way trust\. AWS does not support verification of an incoming trusts\. For more information on how to verify a trust to or from your on\-premises Active Directory, refer to [Verify a Trust](https://technet.microsoft.com/en-us/library/cc753821.aspx) on Microsoft Technet\.
+This process verifies only the outgoing direction of a two\-way trust\. AWS does not support verification of an incoming trusts\. For more information on how to verify a trust to or from your on\-premises Active Directory, refer to [Verify a Trust](https://technet.microsoft.com/en-us/library/cc753821.aspx) on Microsoft TechNet\.
 
 **To delete an existing trust relationship**
 
