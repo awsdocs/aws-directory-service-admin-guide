@@ -15,7 +15,7 @@ These are the minimum ports that are needed to connect the VPC to the on\-premis
 
 ## Ensure That Kerberos Pre\-authentication Is Enabled<a name="tutorial_setup_trust_enable_kerberos"></a>
 
-User accounts in both directories must have Kerberos preauthentication enabled\. This is the default, but let's check to make sure nothing has changed\.
+User accounts in both directories must have Kerberos preauthentication enabled\. This is the default, but let's check the properties of any random user to make sure nothing has changed\.
 
 **To view user Kerberos settings**
 
@@ -23,9 +23,9 @@ User accounts in both directories must have Kerberos preauthentication enabled\.
 
 1. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
-1. Choose the **Users** folder and open the context \(right\-click\) menu for a user account listed in the right pane\. Choose **Properties**\. 
+1. Choose the **Users** folder and open the context \(right\-click\) menu\. Select any random user account listed in the right pane\. Choose **Properties**\. 
 
-1.  Choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is *not* checked\.   
+1. Choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is *not* checked\.   
 ![\[Enable Kerberos\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/kerberos_enabled.png)
 
 ## Configure DNS Conditional Forwarders for Your On\-premises Domain<a name="tutorial_setup_trust_onprem_forwarder"></a>

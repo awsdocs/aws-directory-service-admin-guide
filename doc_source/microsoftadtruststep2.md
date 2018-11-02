@@ -45,9 +45,9 @@ AWS Managed Microsoft AD also supports external trusts\. However, for the purpos
 
 1. Choose the **corp\.example\.com** directory\.
 
-1. On the **Details** page, choose the **Trust relationships** tab\.
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Choose **Add trust relationship**\.
+1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
 
 1. In the **Add a trust relationship** dialog box, do the following:
    + For **Remote domain name**, type **example\.local**\.

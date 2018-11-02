@@ -361,6 +361,39 @@ The fully\-qualified DNS name of your directory\.
 **Note**  
 When using Simple AD, if you create a user account on a Linux instance with the option "Force user to change password at first login," that user will not be able to initially change their password using kpasswd\. In order to change the password the first time, a domain administrator must update the user password using the Active Directory Management Tools\.
 
+## Manage Accounts from a Linux instance<a name="simple_ad_manage_accounts"></a>
+
+To manage accounts in Simple AD from a Linux instance, you must update specific configuration files on your Linux instance as follows:
+
+1. Set **krb5\_use\_kdcinfo** to **False** in the **/etc/sssd/sssd\.conf** file\. For example:
+
+   ```
+   [domain/example.com]
+       krb5_use_kdcinfo = False
+   ```
+
+1. In order for the configuration to take affect you need to restart the sssd service:
+
+   ```
+   $ sudo systemctl restart sssd.service
+   ```
+
+   Alternatively, you could use:
+
+   ```
+   $ sudo service sssd start
+   ```
+
+1. If you will be managing users from a CentOS Linux instance, you must also edit the file **/etc/smb\.conf** to include: 
+
+   ```
+   [global] 
+     workgroup = EXAMPLE.COM
+     realm = EXAMPLE.COM 
+     netbios name = EXAMPLE
+     security = ads
+   ```
+
 ## Restricting Account Login Access<a name="simple_ad_linux_filter"></a>
 
 Since all accounts are defined in Active Directory, by default, all the users in the directory can log in to the instance\. You can allow only specific users to log in to the instance with ad\_access\_filter in sssd\.conf\. For example:

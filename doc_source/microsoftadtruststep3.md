@@ -8,9 +8,9 @@ In this section, you test whether the trusts were set up successfully between AW
 
 1. Choose the **corp\.example\.com** directory\.
 
-1. On the **Details** page, choose the **Trust relationships** tab\.
+1. On the **Directory details** page, select the **Networking & security** tab\.
 
-1. Select the trust relationship you just created\.
+1. In the **Trust relationships** section, select the trust relationship you just created\.
 
 1. Choose **Actions**, and then choose **Verify trust relationship**\.
 

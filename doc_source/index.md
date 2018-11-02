@@ -49,6 +49,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Understanding Your Directory Status](ms_ad_directory_status.md)
          + [Configure Directory Status Notifications](ms_ad_enable_notifications.md)
          + [Review Your AWS Managed Microsoft AD Directory Logs](ms_ad_directory_logs.md)
+         + [Enable Log Forwarding](ms_ad_enable_log_forwarding.md)
       + [Share Your Directory](ms_ad_directory_sharing.md)
          + [Key Directory Sharing Concepts](ms_ad_directory_sharing_key_concepts.md)
          + [Tutorial: Sharing Your AWS Managed Microsoft AD Directory for Seamless EC2 Domain-Join](ms_ad_tutorial_directory_sharing.md)

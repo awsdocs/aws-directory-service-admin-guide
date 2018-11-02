@@ -1,6 +1,6 @@
 # Review Your AWS Managed Microsoft AD Directory Logs<a name="ms_ad_directory_logs"></a>
 
-Security logs from AWS Managed Microsoft AD domain controller instances are archived for a year\. In the event of an audit to investigate a breach or other security event, you can request a copy of your security logs by contacting [AWS Support](https://aws.amazon.com/premiumsupport/)\. 
+Security logs from AWS Managed Microsoft AD domain controller instances are archived for a year\. You can also configure your AWS Managed Microsoft AD directory to forward domain controller logs to Amazon CloudWatch Logs in near real time\. For more information, see [Enable Log Forwarding](ms_ad_enable_log_forwarding.md)\.
 
 AWS logs the following events for compliance\. 
 

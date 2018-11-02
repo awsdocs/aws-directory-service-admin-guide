@@ -12,7 +12,7 @@ This procedure seamlessly joins a Windows EC2 instance to your Simple AD directo
 
 1. On the **Step 1** page, choose **Select** for the appropriate AMI\.
 
-1. On the **Step 2** page, select the appropriate instance type, and then choose **Next: Configure Instance Details**\.
+1. On the **Step 2** page, select the appropriate instance type, and then choose **Next**\.
 
 1. On the **Step 3** page, do the following, and then choose **Next** :
 
@@ -34,12 +34,12 @@ This option is only available for Windows instances\. Linux instances must be ma
 
       1. Under **Select your use case**, choose **EC2**, and then choose **Next**\.
 
-      1. In the list of policies, select the **AmazonEC2RoleforSSM** policy, and then choose **Next**\.
+      1. In the list of policies, select the EC2 Role for Simple Systems Manager policy \(**AmazonEC2RoleforSSM**\), and then choose **Next**\.
 
       1. For **Role name**, enter a name for your new role \(such as **EC2DomainJoin**\)\. For **Role description**, enter a description \(optional\)\. Then choose **Create role**\.
 
 1. Go back to the **Step 3** page\. For **IAM role**, choose the refresh icon next to **IAM role**\. Your new role should be visible in the menu\. Choose it and leave the rest of the settings on this page with their default values\. Then choose **Next**\.
 
-1. Continue through the remaining pages in the wizard using your preferred settings\.
-**Note**  
-The security group that you select for the instance \(on the **Step 6** page\) must allow remote access to the instance from your network\.
+1. On both the **Step 4** and **Step 5** pages, leave the default settings or make changes as needed, and then choose **Next**\.
+
+1. On the **Step 6** page, select a security group for the instance that has been configured to allow remote access to the instance from your network, and then choose **Review and Launch**\.

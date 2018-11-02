@@ -3,12 +3,17 @@
 The following can help you troubleshoot some common issues you might encounter when creating or using your directory\.
 
 **Topics**
++ [I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD](#kdc_requested_option)
 + [I am not able to update the DNS name or IP address of an instance joined to my domain \(DNS dynamic update\)](#dns_dynamic_updates)
 + [I cannot log onto SQL Server using a SQL Server account](#sql_login_fail)
 + [My directory is stuck in the "Requested" state](#stuck_in_requested1)
 + [I receive an "AZ Constrained" error when I create a directory](#contrained_az1)
 + [Some of my users cannot authenticate with my directory](#kerberos_preauth1)
 + [Simple AD Directory Status Reasons](simple_ad_troubleshooting_reasons.md)
+
+## I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD<a name="kdc_requested_option"></a>
+
+This can occur when the Samba CLI client does not correctly send the 'net' commands to all domain controllers\. If you see this error message when using the 'net ads' command to add a user to your Simple AD directory, use the \-S argument and specify the IP address of one of your domain controllers\. If you still see the error, try the other domain controller\. You can also use the Active Directory Administration Tools to add users to your directory\. For more information, see [Installing the Active Directory Administration Tools](simple_ad_install_ad_tools.md)\.
 
 ## I am not able to update the DNS name or IP address of an instance joined to my domain \(DNS dynamic update\)<a name="dns_dynamic_updates"></a>
 
@@ -35,6 +40,7 @@ Your user accounts must have Kerberos preauthentication enabled\. This is the de
 The following topic helps you troubleshoot some common reasons you might encounter when creating or using your directory\.
 
 **Topics**
++ [I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD](#kdc_requested_option)
 + [I am not able to update the DNS name or IP address of an instance joined to my domain \(DNS dynamic update\)](#dns_dynamic_updates)
 + [I cannot log onto SQL Server using a SQL Server account](#sql_login_fail)
 + [My directory is stuck in the "Requested" state](#stuck_in_requested1)
