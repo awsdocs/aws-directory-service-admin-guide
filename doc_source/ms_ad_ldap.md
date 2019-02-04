@@ -78,7 +78,7 @@ Once both rules have been configured, your domain controllers request a certific
 1. In the **Edit inbound rules** dialog box, do the following:
    + Choose **Add Rule**\. 
    + Choose **All traffic** for **Type** and **Custom** for **Source**\. 
-   + Type your CA’s AWS security group in the box next to **Source**\. 
+   + Type your directory’s AWS security group \(for example, sg\-123456789\) in the box next to **Source**\. 
    + Choose **Save**\.
 
 1. Now choose the AWS security group of your AWS Managed Microsoft AD directory\. Choose the **Outbound** tab and then choose **Edit**\.

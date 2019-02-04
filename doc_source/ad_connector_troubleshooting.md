@@ -4,6 +4,22 @@ The following can help you troubleshoot some common issues you might encounter w
 
 Here are some common problems with AD Connector\.
 
+## Seamless domain join for EC2 instances stopped working<a name="seamless_stops"></a>
+
+If seamless domain join for EC2 instances was working and then stopped while the AD Connector was active, the credentials for your AD Connector service account may have expired\. Expired credentials can prevent AD Connector from creating computer objects in your Active Directory\. 
+
+To resolve this issue, update the service account passwords in the following order so that the passwords match:
+
+1. Update the password for the service account in your Active Directory
+
+1. Update the password for the service account in your AD Connector in AWS Directory Service
+
+Updating the password only in AWS Directory Service does NOT push the password change to your existing on\-premises Active Directory so it is important to do it in the order shown\.
+
+## I receive a “Unable to Authenticate” error when using AWS applications to search for users or groups<a name="fails_when_searching"></a>
+
+You may experience errors when searching for users while using AWS applications, such as Amazon WorkSpaces or Amazon QuickSight, even while the AD Connector status was active\. Expired credentials can prevent AD Connector from completing queries on objects in your Active Directory\. Update the password for the service account using the ordered steps provided above\.
+
 ## I receive a "Authentication failed" error when querying users and groups in my domain through AD Connector<a name="query_domain"></a>
 
 This can occur if you have the **LDAP server signing requirements** policy enabled\. Consider disabling it and then trying your query again\. For general information about this policy, see [Domain controller: LDAP server signing requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/domain-controller-ldap-server-signing-requirements)\.

@@ -5,8 +5,8 @@ AWS Directory Service provides the ability to give your directory users and grou
 For information about how to grant users access to the AWS Management Console, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
 
 **Topics**
-+ [Editing the Trust Relationship for an Existing Role](edit_trust.md)
 + [Creating a New Role](create_role.md)
++ [Editing the Trust Relationship for an Existing Role](edit_trust.md)
 + [Assigning Users or Groups to an Existing Role](assign_role.md)
 + [Viewing Users and Groups Assigned to a Role](view_role_details.md)
 + [Removing a User or Group from a Role](remove_role_users.md)

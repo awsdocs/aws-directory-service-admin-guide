@@ -3,6 +3,7 @@
 The following can help you troubleshoot some common issues you might encounter when creating or using your directory\.
 
 **Topics**
++ [Password recovery](#simple_ad_tshoot_password_recovery)
 + [I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD](#kdc_requested_option)
 + [I am not able to update the DNS name or IP address of an instance joined to my domain \(DNS dynamic update\)](#dns_dynamic_updates)
 + [I cannot log onto SQL Server using a SQL Server account](#sql_login_fail)
@@ -10,6 +11,12 @@ The following can help you troubleshoot some common issues you might encounter w
 + [I receive an "AZ Constrained" error when I create a directory](#contrained_az1)
 + [Some of my users cannot authenticate with my directory](#kerberos_preauth1)
 + [Simple AD Directory Status Reasons](simple_ad_troubleshooting_reasons.md)
+
+## Password recovery<a name="simple_ad_tshoot_password_recovery"></a>
+
+If a user forgets a password or is having trouble signing in to either your Simple AD or AWS Managed Microsoft AD directory, you can reset their password using either the AWS Management Console, Windows PowerShell or the AWS CLI\.
+
+For more information, see [Reset a User Password](simple_ad_manage_users_groups_reset_password.md)\.
 
 ## I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD<a name="kdc_requested_option"></a>
 
@@ -37,9 +44,8 @@ Some AWS accounts created before 2012 might have access to Availability Zones in
 
 Your user accounts must have Kerberos preauthentication enabled\. This is the default setting for new user accounts, and it should not be modified\. For more information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
-The following topic helps you troubleshoot some common reasons you might encounter when creating or using your directory\.
-
 **Topics**
++ [Password recovery](#simple_ad_tshoot_password_recovery)
 + [I receive a "KDC can't fulfill requested option" error when adding a user to Simple AD](#kdc_requested_option)
 + [I am not able to update the DNS name or IP address of an instance joined to my domain \(DNS dynamic update\)](#dns_dynamic_updates)
 + [I cannot log onto SQL Server using a SQL Server account](#sql_login_fail)

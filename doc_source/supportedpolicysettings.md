@@ -21,12 +21,12 @@ The following table lists the five policies included in your AWS Managed Microso
 
 You may edit the following properties in your password policies to conform to the compliance standards that meet your business needs\.
 + Policy name
-+ Password history
-+ Minimum password length
-+ Minimum password age
-+ Maximum password age
-+ Store password using reversible encryption
-+ Password must meet complexity requirements
++ [Enforce password history](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/enforce-password-history)
++ [Minimum password length](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/minimum-password-length)
++ [Minimum password age](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/minimum-password-age)
++ [Maximum password age](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/maximum-password-age)
++ [Store passwords using reversible encryption](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/store-passwords-using-reversible-encryption)
++ [Password must meet complexity requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements)
 
 You cannot modify the precedence values for these policies\. For more details about how these settings affect password enforcement, see [AD DS: Fine\-Grained Password Policies](https://technet.microsoft.com/en-us/library/cc770394(v=ws.10).aspx) on the *Microsoft TechNet* website\. For general information about these policies, see [Password Policy](https://technet.microsoft.com/en-us/library/hh994572(v=ws.11).aspx) on the *Microsoft TechNet* website\.
 

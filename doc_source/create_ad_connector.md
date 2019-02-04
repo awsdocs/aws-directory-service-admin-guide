@@ -1,6 +1,6 @@
 # Create an AD Connector<a name="create_ad_connector"></a>
 
-To connect to your on\-premises directory with AD Connector, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [AD Connector Prerequisites](prereq_connector.md)\.
+To connect to your existing directory with AD Connector, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [AD Connector Prerequisites](prereq_connector.md)\.
 
 **To connect with AD Connector**
 
@@ -22,16 +22,16 @@ Choose the subnets for the domain controllers\. The two subnets must be in diffe
 
 1. On the **Connect to AD** page, provide the following information:  
 **Directory DNS name**  
-The fully qualified name of your on\-premises directory, such as `corp.example.com`\.  
+The fully qualified name of your existing directory, such as `corp.example.com`\.  
 **Directory NetBIOS name**  
-The short name of your on\-premises directory, such as `CORP`\.  
+The short name of your existing directory, such as `CORP`\.  
 **DNS IP addresses**  
-The IP address of at least one DNS server in your on\-premises directory\. These servers must be accessible from each subnet specified in the next section\.  
+The IP address of at least one DNS server in your existing directory\. These servers must be accessible from each subnet specified in the next section\.  
 **Service account username**  
-The user name of a user in the on\-premises directory\. For more information about this account, see the [AD Connector Prerequisites](prereq_connector.md)\.  
+The user name of a user in the existing directory\. For more information about this account, see the [AD Connector Prerequisites](prereq_connector.md)\.  
 **Service account password**  
-The password for the on\-premises user account\.  
+The password for the existing user account\.  
 **Confirm password**  
-Retype the password for the on\-premises user account\.
+Retype the password for the existing user account\.
 
 1. On the **Review & create** page, review the directory information and make any necessary changes\. When the information is correct, choose **Create directory**\. It takes several minutes for the directory to be created\. Once created, the **Status** value changes to **Active**\.

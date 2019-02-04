@@ -49,4 +49,4 @@ To manage your directory from an EC2 Windows instance, you need to install the A
 
 1. In the **Features** tree, open **Remote Server Administration Tools**, **Role Administration Tools**, select **AD DS and AD LDS Tools**, scroll down and select **DNS Server Tools**, and then choose **Next**\.
 
-1. Review the information and choose **Install**\. When the feature installation is finished, the Active Directory Domain Services and Active Directory Lightweight Directory Services Tools are available on the Start screen in the **Administrative Tools** folder\.
+1. Review the information and choose **Install**\. When the feature installation is finished, the Active Directory tools are available on the Start screen in the **Administrative Tools** folder\.

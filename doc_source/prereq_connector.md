@@ -1,11 +1,11 @@
 # AD Connector Prerequisites<a name="prereq_connector"></a>
 
-To connect to your on\-premises directory with AD Connector, you need the following:
+To connect to your existing directory with AD Connector, you need the following:
 
 **VPC**  
 Set up a VPC with the following:  
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
-+ The VPC must be connected to your on\-premises network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
++ The VPC must be connected to your existing network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
 + The VPC must have default hardware tenancy\.
 For more information, see the following topics in the *Amazon VPC User Guide*:  
 + [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
@@ -13,27 +13,28 @@ For more information, see the following topics in the *Amazon VPC User Guide*:
 + [Adding a Hardware Virtual Private Gateway to Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html)
 For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](https://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
-**On\-premises network**  
-You'll need an on\-premises network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
+**Existing network**  
+You'll need to connect to an existing network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
 AD Connector does not support Read\-only domain controllers \(RODC\) when used in combination with the Amazon EC2 domain\-join feature\. 
 
 **Service account**  
-You must have credentials for a service account in the on\-premises directory which has been delegated the following privileges:  
+You must have credentials for a service account in the existing directory which has been delegated the following privileges:  
 + Read users and groups
 + Create computer objects
 + Join computers to the domain
 For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
 
 **IP addresses**  
-Get the IP addresses of two DNS servers or domain controllers in your on\-premises directory\.  
+Get the IP addresses of two DNS servers or domain controllers in your existing directory\.  
 AD Connector obtains the `_ldap._tcp.<DnsDomainName>` and `_kerberos._tcp.<DnsDomainName>` SRV records from these servers when connecting to your directory, so these servers must contain these SRV records\. The AD Connector attempts to find a common domain controller that will provide both LDAP and Kerberos services, so these SRV records must include at least one common domain controller\. For more information about SRV records, go to [SRV Resource Records](http://technet.microsoft.com/en-us/library/cc961719.aspx) on Microsoft TechNet\.
 
 **Ports for subnets**  
-For AWS Directory Service to communicate with your on\-premises directory, the firewall for your on\-premises network must have the following ports open to the CIDRs for both subnets in the VPC\.  
+For AWS Directory Service to communicate with your existing directory, the firewall for your existing network must have the following ports open to the CIDRs for both subnets in the VPC\.  
 + TCP/UDP 53 \- DNS
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
-These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
+These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.  
+If the DNS servers or Domain Controller servers for your existing Active Directory Domain are within the VPC, the security groups associated with those servers must have the above ports open to the CIDRs for both subnets in the VPC\. 
 
 **Kerberos preauthentication**  
 Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure That Kerberos Pre\-authentication Is Enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
@@ -47,17 +48,17 @@ AD Connector supports the following encryption types when authenticating to your
 ## Multi\-factor Authentication Prerequisites<a name="mfa_prereqs"></a>
 
 To support multi\-factor authentication with your AD Connector directory, you need the following:
-+ A [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in your on\-premises network that has two client endpoints\. The RADIUS client endpoints have the following requirements:
++ A [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in your existing network that has two client endpoints\. The RADIUS client endpoints have the following requirements:
   + To create the endpoints, you need the IP addresses of the AWS Directory Service servers\. These IP addresses can be obtained from the **Directory IP Address** field of your directory details\. 
   + Both RADIUS endpoints must use the same shared secret code\.
-+ Your on\-premises network must allow inbound traffic over the default RADIUS server port \(1812\) from the AWS Directory Service servers\.
-+ The usernames between your RADIUS server and your on\-premises directory must be identical\.
++ Your existing network must allow inbound traffic over the default RADIUS server port \(1812\) from the AWS Directory Service servers\.
++ The usernames between your RADIUS server and your existing directory must be identical\.
 
 For more information about using AD Connector with MFA, see [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)\. 
 
 ## Delegate privileges to your service account<a name="connect_delegate_privileges"></a>
 
-To connect to your on\-premises directory, you must have the credentials for your AD Connector service account in the on\-premises directory that has been delegated certain privileges\. While members of the **Domain Admins** group have sufficient privileges to connect to the directory, as a best practice, you should use a service account that only has the minimum privileges necessary to connect to the directory\. The following procedure demonstrates how to create a new group called `Connectors`, delegate the necessary privileges that are needed to connect AWS Directory Service to this group, and then add a new service account to this group\. 
+To connect to your existing directory, you must have the credentials for your AD Connector service account in the existing directory that has been delegated certain privileges\. While members of the **Domain Admins** group have sufficient privileges to connect to the directory, as a best practice, you should use a service account that only has the minimum privileges necessary to connect to the directory\. The following procedure demonstrates how to create a new group called `Connectors`, delegate the necessary privileges that are needed to connect AWS Directory Service to this group, and then add a new service account to this group\. 
 
 This procedure must be performed on a machine that is joined to your directory and has the **Active Directory User and Computers** MMC snap\-in installed\. You must also be logged in as a domain administrator\.
 
@@ -93,11 +94,11 @@ This procedure must be performed on a machine that is joined to your directory a
 
 ## Test your AD Connector<a name="connect_verification"></a>
 
-For AD Connector to connect to your on\-premises directory, the firewall for your on\-premises network must have certain ports open to the CIDRs for both subnets in the VPC\. To test if these conditions are met, perform the following steps:
+For AD Connector to connect to your existing directory, the firewall for your existing network must have certain ports open to the CIDRs for both subnets in the VPC\. To test if these conditions are met, perform the following steps:
 
 **To test the connection**
 
-1. Launch a Windows instance in the VPC and connect to it over RDP\. The instance must be a member of your on\-premises domain\. The remaining steps are performed on this VPC instance\.
+1. Launch a Windows instance in the VPC and connect to it over RDP\. The instance must be a member of your existing domain\. The remaining steps are performed on this VPC instance\.
 
 1. Download and unzip the [DirectoryServicePortTest](samples/DirectoryServicePortTest.zip) test application\. The source code and Visual Studio project files are included so you can modify the test application if desired\.
 **Note**  
@@ -111,7 +112,7 @@ This script is not supported on Windows Server 2003 or older operating systems\.
 *<domain\_name>*  
 The fully qualified domain name\. This is used to test the forest and domain functional levels\. If you exclude the domain name, the functional levels won't be tested\.  
 *<server\_IP\_address>*  
-The IP address of a domain controller in your on\-premises domain\. The ports will be tested against this IP address\. If you exclude the IP address, the ports won't be tested\.
+The IP address of a domain controller in your existing domain\. The ports will be tested against this IP address\. If you exclude the IP address, the ports won't be tested\.
 
    This test app determines if the necessary ports are open from the VPC to your domain, and also verifies the minimum forest and domain functional levels\.
 

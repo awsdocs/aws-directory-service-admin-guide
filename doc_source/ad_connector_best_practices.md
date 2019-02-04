@@ -25,15 +25,38 @@ If you are adding an instance to your domain, ensure that you have connectivity 
 
 Learn about the various limits for your specific directory type\. The available storage and the aggregate size of your objects are the only limitations on the number of objects you may store in your directory\. See either [Limits for AWS Managed Microsoft AD](ms_ad_limits.md), [Limits for AD Connector](ad_connector_limits.md), or [Limits for Simple AD](simple_ad_limits.md) for details about your chosen directory\.
 
+### Understand Your Directory’s AWS Security Group Configuration and Use<a name="ad_connector_understandsecgroup"></a>
+
+AWS creates a [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) and attaches it to your directory’s [elastic network interfaces](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html) that are accessible from within your peered or resized [VPCs](https://aws.amazon.com/vpc/)\. AWS configures the security group to block unnecessary traffic to the directory and allows necessary traffic\. 
+
+#### Modifying the Directory Security Group<a name="ad_connector_modifyingsecgroup"></a>
+
+If you want to modify the security of your directories’ security groups, you can do so\. Make such changes only if you fully understand how security group filtering works\. For more information, see [Amazon EC2 Security Groups for Linux Instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon EC2 User Guide*\. Improper changes can result in loss of communications to intended computers and instances\. AWS recommends that you do not attempt to open additional ports to your directory as this decreases the security of your directory\. Please carefully review the [AWS Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)\. 
+
+**Warning**  
+It is technically possible for you to associate the directory’s security group with other EC2 instances that you create\. However, AWS recommends against this practice\. AWS may have reasons to modify the security group without notice to address functional or security needs of the managed directory\. Such changes affect any instances with which you associate the directory security group and may disrupt operation of the associated instances\. Furthermore, associating the directory security group with your EC2 instances may create a potential security risk for your EC2 instances\.
+
 ### Configure On\-premises Sites and Subnets Correctly When Using AD Connector<a name="ad_connector_config_onprem"></a>
 
 If your on\-premises network has Active Directory sites defined, you must make sure the subnets in the VPC where your AD Connector resides are defined in an Active Directory site, and that no conflicts exist between the subnets in your VPC and the subnets in your other sites\.
 
 To discover domain controllers, AD Connector uses the Active Directory site whose subnet IP address ranges are close to those in the VPC that contain the AD Connector\. If you have a site whose subnets have the same IP address ranges as those in your VPC, AD Connector will discover the domain controllers in that site, which may not be physically close to your region\. 
 
+## Programming Your Applications<a name="ad_connector_program_apps"></a>
+
+Before you program your applications, consider the following:
+
+### Load Test Before Rolling Out to Production<a name="ad_connector_program_load_test"></a>
+
+Be sure to do lab testing with applications and requests that are representative of your production workload to confirm that the directory scales to the load of your application\. Should you require additional capacity, spread your loads across multiple AD Connector directories\.
+
 ## Using Your Directory<a name="ad_connector_bp_using_directory"></a>
 
 Here are some suggestions to keep in mind when using your directory\.
+
+### Rotate Admin Credentials Regularly<a name="rotate_admin_creds"></a>
+
+Change your AD Connector service account Admin password regularly, and make sure that the password is consistent with your existing Active Directory password policies\. For instructions on how to change the service account password, see [Update Your AD Connector Service Account Credentials in AWS Directory Service](ad_connector_update_creds.md)\.
 
 ### Use Unique AD Connectors for Each Domain<a name="ad_connector_use_unique_connector"></a>
 

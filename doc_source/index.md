@@ -1,7 +1,7 @@
 # AWS Directory Service Administration Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -63,8 +63,12 @@ Amazon's trademarks and trade dress may not be used in
          + [Manually Join a Linux Instance](join_linux_instance.md)
          + [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)
          + [Create a DHCP Options Set](dhcp_options_set.md)
-      + [Add Users and Groups to AWS Managed Microsoft AD](ms_ad_create_users_groups.md)
+      + [Manage Users and Groups in AWS Managed Microsoft AD](ms_ad_manage_users_groups.md)
          + [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md)
+         + [Create a User](ms_ad_manage_users_groups_create_user.md)
+         + [Reset a User Password](ms_ad_manage_users_groups_reset_password.md)
+         + [Create a Group](ms_ad_manage_users_groups_create_group.md)
+         + [Add a User to a Group](ms_ad_manage_users_groups_add_user_to_group.md)
       + [Connect to Your Existing AD Infrastructure](ms_ad_connect_existing_infrastructure.md)
          + [When to Create a Trust Relationship](ms_ad_setup_trust.md)
             + [Adding IP Routes When Using Public IP Addresses](ms_ad_adding_routes.md)
@@ -88,8 +92,8 @@ Amazon's trademarks and trade dress may not be used in
          + [Snapshot or Restore Your Directory](ms_ad_snapshots.md)
          + [View Directory Information](ms_ad_view_directory_info.md)
       + [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)
-         + [Editing the Trust Relationship for an Existing Role](edit_trust.md)
          + [Creating a New Role](create_role.md)
+         + [Editing the Trust Relationship for an Existing Role](edit_trust.md)
          + [Assigning Users or Groups to an Existing Role](assign_role.md)
          + [Viewing Users and Groups Assigned to a Role](view_role_details.md)
          + [Removing a User or Group from a Role](remove_role_users.md)
@@ -124,7 +128,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Create an AD Connector](create_ad_connector.md)
    + [How To Administer AD Connector](ad_connector_how_to.md)
       + [Secure Your AD Connector Directory](ad_connector_security.md)
-         + [Update Directory Credentials for Your AD Connector](ad_connector_update_creds.md)
+         + [Update Your AD Connector Service Account Credentials in AWS Directory Service](ad_connector_update_creds.md)
          + [Enable Multi-Factor Authentication for AD Connector](ad_connector_mfa.md)
       + [Monitor Your AD Connector Directory](ad_connector_monitor.md)
          + [Understanding Your Directory Status](ad_connector_directory_status.md)
@@ -146,8 +150,12 @@ Amazon's trademarks and trade dress may not be used in
       + [What Gets Created](create_details_simple.md)
       + [Configure DNS](simple_ad_dns.md)
    + [How To Administer Simple AD](simple_ad_how_to.md)
-      + [Add Users and Groups to Simple AD](simple_ad_create_users_groups.md)
+      + [Manage Users and Groups in Simple AD](simple_ad_manage_users_groups.md)
          + [Installing the Active Directory Administration Tools](simple_ad_install_ad_tools.md)
+         + [Create a User](simple_ad_manage_users_groups_create_user.md)
+         + [Reset a User Password](simple_ad_manage_users_groups_reset_password.md)
+         + [Create a Group](simple_ad_manage_users_groups_create_group.md)
+         + [Add a User to a Group](simple_ad_manage_users_groups_add_user_to_group.md)
       + [Monitor Your Simple AD Directory](simple_ad_monitor.md)
          + [Understanding Your Directory Status](simple_ad_directory_status.md)
          + [Configure Directory Status Notifications](simple_ad_enable_notifications.md)

@@ -3,7 +3,7 @@
 This section lists all of the procedures for operating and maintaining an Simple AD environment\.
 
 **Topics**
-+ [Add Users and Groups to Simple AD](simple_ad_create_users_groups.md)
++ [Manage Users and Groups in Simple AD](simple_ad_manage_users_groups.md)
 + [Monitor Your Simple AD Directory](simple_ad_monitor.md)
 + [Join an EC2 Instance to Your Simple AD Directory](simple_ad_join_instance.md)
 + [Maintain Your Simple AD Directory](simple_ad_maintain.md)

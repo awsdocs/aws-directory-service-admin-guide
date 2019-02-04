@@ -24,7 +24,7 @@ Follow the steps for your specific Linux instance using one of the following tab
 
 1. Connect to the instance using any SSH client\.
 
-1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-rhel-centos-amazon/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
+1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
 
 1. Make sure your Amazon Linux \- 64bit instance is up to date\.
 
@@ -112,7 +112,7 @@ The fully\-qualified DNS name of your directory\.
 
 1. Connect to the instance using any SSH client\.
 
-1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-rhel-centos-amazon/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
+1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
 
 1. Make sure your CentOS 7 instance is up to date\.
 
@@ -194,7 +194,7 @@ The fully\-qualified DNS name of your directory\.
 
 1. Connect to the instance using any SSH client\.
 
-1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-rhel-centos-amazon/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
+1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
 
 1. Make sure the Red Hat \- 64bit instance is up to date\.
 
@@ -276,7 +276,7 @@ The fully\-qualified DNS name of your directory\.
 
 1. Connect to the instance using any SSH client\.
 
-1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-rhel-centos-amazon/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
+1. Configure the Linux instance to use the DNS server IP addresses of the AWS Directory Service\-provided DNS servers\. You can do this either by setting it up in the DHCP Options set attached to the VPC or by setting it manually on the instance\. If you want to set it manually, see [How do I assign a static DNS server to a private Amazon EC2 instance](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-static-dns-ubuntu-debian/) in the AWS Knowledge Center for guidance on setting the persistent DNS server for your particular Linux distribution and version\.
 
 1. Make sure your Ubuntu \- 64bit instance is up to date\.
 
@@ -292,6 +292,14 @@ As you install the packages, you might be presented with several pop\-up configu
 
    ```
    $ sudo apt-get -y install sssd realmd krb5-user samba-common packagekit adcli
+   ```
+
+1. Disable Reverse DNS resolution\. Ubuntu Instances **must** be reverse\-resolvable in DNS before the realm will work\. Otherwise, you have to disable reverse DNS in /etc/krb5\.conf as follows:
+
+   ```
+   [libdefaults] 
+   default_realm = EXAMPLE.COM 
+   rdns = false
    ```
 
 1. Join the instance to the directory with the following command\. 

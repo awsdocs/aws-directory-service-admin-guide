@@ -1,10 +1,11 @@
 # Document History<a name="document_history"></a>
 
 The following table describes the important changes since the last release of the *AWS Directory Service Administrator Guide*\. 
-+ **Latest documentation update:** September 25, 2018
++ **Latest documentation update:** January 2, 2019
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Password reset](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_manage_users_groups_reset_password.html) | Added content on how to reset user passwords using the AWS Management Console, Windows PowerShell and AWS CLI\. | January 2, 2019 | 
 | [Directory sharing](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_directory_sharing.html) | Added documentation for using directory sharing with AWS Managed Microsoft AD\. | September 25, 2018 | 
 | [Migrated content to new Amazon Cloud Directory Developer Guide](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html) | The Amazon Cloud Directory content previously in this guide has been moved to the new *Amazon Cloud Directory Developer Guide*\. | June 21, 2018 | 
 | [Complete overhaul of the Admin Guide TOC](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html) | Reorganized the content to more directly map to customer needs and added new content where needed\. | April 5, 2018 | 

@@ -3,5 +3,5 @@
 This section describes considerations for securing your AD Connector environment\.
 
 **Topics**
-+ [Update Directory Credentials for Your AD Connector](ad_connector_update_creds.md)
++ [Update Your AD Connector Service Account Credentials in AWS Directory Service](ad_connector_update_creds.md)
 + [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)

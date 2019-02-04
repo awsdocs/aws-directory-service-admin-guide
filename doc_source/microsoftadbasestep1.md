@@ -56,18 +56,17 @@ By default, AWS Managed Microsoft AD creates a security group to manage traffic 
 1. Choose **Create Security Group**\.
 
 1. In the **Create Security Group** dialog box provide the following values:
-   + For **Name tag**, type **AWS DS RDP Security Group**\.
-   + For **Group name**, type **AWS DS RDP Security Group**\.
+   + For **Security group name**, type **AWS DS RDP Security Group**\.
    + For **Description**, type **AWS DS RDP Security Group**\.
    + For **VPC**, select the VPC that ends with **AWS\-DS\-VPC**\.
 
-1. Choose **Yes, Create**\.
+1. Choose **Create**\.
 
 1. Select **AWS DS RDP Security Group**\.
 
-1. Choose **Inbound Rules** below the list of security groups\.
+1. Choose the **Inbound Rules** tab below the list of security groups\.
 
-1. Choose **Edit**, and then choose **Add another rule**\.
+1. Choose **Edit rules**, and then choose **Add Rule**\.
 
 1. In the table, add the following values:
    + For **Type**, choose **RDP \(3389\)**\.
@@ -75,10 +74,10 @@ By default, AWS Managed Microsoft AD creates a security group to manage traffic 
    + For **Port Range**, verify that **3389** is displayed\.
    + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. This setting determines the traffic that can reach your EC2 instances\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
-1. Choose **Add another rule**, and then provide the following values:
+1. Choose **Add Rule**, and then provide the following values:
    + For **Type**, choose **All Traffic**\.
    + For **Protocol**, verify that **All** is displayed\.
    + For **Port Range**, verify that **All** is displayed\.
    + For **Source**, type **10\.0\.0\.0/16**\.
 
-1. Choose **Save**\.
+1. Choose **Save rules**\.
