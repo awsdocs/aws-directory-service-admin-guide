@@ -18,6 +18,7 @@ To create a AWS Managed Microsoft AD directory, you need a VPC with the followin
 + The VPC must have default hardware tenancy\.
 + You cannot create a AWS Managed Microsoft AD in a VPC using addresses in the 198\.19\.0\.0/16 address space\.
 + AWS Directory Service does not support using Network Address Translation \(NAT\) with Active Directory\. Using NAT can result in replication errors\.
++ AWS Managed Microsoft AD directory does not currently support running in a VPC with a CloudWatch Monitoring VPC Endpoint and Private DNS enabled\.
 
 ## Multi\-factor Authentication Prerequisites<a name="prereq_mfa_ad"></a>
 
