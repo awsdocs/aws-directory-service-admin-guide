@@ -15,6 +15,7 @@ For more information about directory sharing and how to extend the reach of your
 **Topics**
 + [Key Directory Sharing Concepts](ms_ad_directory_sharing_key_concepts.md)
 + [Tutorial: Sharing Your AWS Managed Microsoft AD Directory for Seamless EC2 Domain\-Join](ms_ad_tutorial_directory_sharing.md)
++ [Unshare Your Directory](ms_ad_directory_sharing_unshare.md)
 
 **Additional Resources**
 + [Use Case: Share Your Directory to Seamlessly Join Amazon EC2 Instances to a Domain Across AWS Accounts](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/usecase6.html)

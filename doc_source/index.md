@@ -57,6 +57,7 @@ Amazon's trademarks and trade dress may not be used in
             + [Step 2: Share Your Directory](step2_share_directory.md)
             + [Step 3: Accept Shared Directory Invite (Optional)](step3_accept_invite.md)
             + [Step 4: Test Seamlessly Joining EC2 to a Domain](step4_test_ec2_access.md)
+         + [Unshare Your Directory](ms_ad_directory_sharing_unshare.md)
       + [Join an EC2 Instance to Your AWS Managed Microsoft AD Directory](ms_ad_join_instance.md)
          + [Seamlessly Join a Windows EC2 Instance](launching_instance.md)
          + [Manually Join a Windows Instance](join_windows_instance.md)
