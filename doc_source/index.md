@@ -104,6 +104,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Single Sign-On](ms_ad_single_sign_on.md)
       + [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)
       + [Deploy Additional Domain Controllers](ms_ad_deploy_additional_dcs.md)
+      + [Migrate Users from Active Directory to AWS Managed Microsoft AD](ms_ad_migrate_users.md)
    + [Best Practices for AWS Managed Microsoft AD](ms_ad_best_practices.md)
    + [Limits for AWS Managed Microsoft AD](ms_ad_limits.md)
    + [Application Compatibility Policy for AWS Managed Microsoft AD](ms_ad_app_compatibility.md)
@@ -187,4 +188,5 @@ Amazon's trademarks and trade dress may not be used in
    + [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)
    + [Using Identity-Based Policies (IAM Policies) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)
    + [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)
++ [Region Availability for AWS Directory Service](regions.md)
 + [Document History](document_history.md)

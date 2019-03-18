@@ -15,3 +15,4 @@ This section lists all of the procedures for operating and maintaining an AWS Ma
 + [Enable Access to AWS Applications and Services](ms_ad_manage_apps_services.md)
 + [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)
 + [Deploy Additional Domain Controllers](ms_ad_deploy_additional_dcs.md)
++ [Migrate Users from Active Directory to AWS Managed Microsoft AD](ms_ad_migrate_users.md)

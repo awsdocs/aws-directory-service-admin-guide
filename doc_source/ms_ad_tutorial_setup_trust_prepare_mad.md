@@ -65,7 +65,7 @@ Now you want to confirm that users in your AWS Managed Microsoft AD also have Ke
 
 **To view user Kerberos settings**
 
-1. Log in to an instance that is a member of your AWS Managed Microsoft AD using either the [Admin Account](ms_ad_getting_started_admin_account.md) or an account that has been delegated Admin permissions\.
+1. Log in to an instance that is a member of your AWS Managed Microsoft AD directory using either the [Admin Account](ms_ad_getting_started_admin_account.md) for the domain or an account that has been delegated permissions to manage users in the domain\.
 
 1. If they are not already installed, install the Active Directory Users and Computers tool and the DNS tool\. Learn how to install these tools in [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md)\.
 

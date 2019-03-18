@@ -9,6 +9,7 @@ The sections in this topic cover the following:
 + [Permissions Required to Use the AWS Directory Service Console](#UsingWithDS_IAM_RequiredPermissions_Console)
 + [AWS Managed \(Predefined\) Policies for AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)
 + [Customer Managed Policy Examples](#IAMPolicyExamples_DS)
++ [Using Tags with IAM Policies](#using_tags_with_iam_policies)
 
 The following shows an example of a permissions policy\.
 
@@ -147,3 +148,113 @@ The following permissions policy grants permissions to allow a user to create a 
 23.    ]
 24. }
 ```
+
+## Using Tags with IAM Policies<a name="using_tags_with_iam_policies"></a>
+
+You can apply tag\-based resource\-level permissions in the IAM policies you use for most AWS Directory Service API actions\. This gives you better control over what resources a user can create, modify, or use\. You use the `Condition` element \(also called the `Condition` block\) with the following condition context keys and values in an IAM policy to control user access \(permissions\) based on a resource's tags:
++ Use `aws`:`ResourceTag`/**tag\-key**: **tag\-value** to allow or deny user actions on resources with specific tags\.
++ Use `aws`:`ResourceTag`/**tag\-key**: **tag\-value** to require that a specific tag be used \(or not used\) when making an API request to create or modify a resource that allows tags\.
++ Use `aws`:`TagKeys`: \[**tag\-key**, \.\.\.\] to require that a specific set of tag keys be used \(or not used\) when making an API request to create or modify a resource that allows tags\.
+
+**Note**  
+The condition context keys and values in an IAM policy apply only to those AWS Directory Service actions where an identifier for a resource capable of being tagged is a required parameter\. 
+
+[Controlling Access Using Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *AWS Identity and Access Management User Guide* has additional information on using tags\. The [IAM JSON Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) section of that guide has detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\.
+
+The following tag policy example allows all `ds` calls as long as it contains the tag key/pair "`fooKey`" or "`fooValue`"\.
+
+```
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Sid":"VisualEditor0",
+         "Effect":"Allow",
+         "Action":[
+            "ds:*"
+         ],
+         "Resource":"*",
+         "Condition":{
+            "StringEquals":{
+               "aws:ResourceTag/fooKey":"fooValue"
+            }
+         }
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "ec2:*"
+         ],
+         "Resource":"*"
+      }
+   ]
+}
+```
+
+The following resource policy example allows all `ds` calls as long as the resource contains the directory ID "`d-1234567890`"\.
+
+```
+{
+   "Version":"2012-10-17",
+   "Statement":[
+      {
+         "Sid":"VisualEditor0",
+         "Effect":"Allow",
+         "Action":[
+            "ds:*"
+         ],
+         "Resource":"arn:aws:ds:us-east-1:123456789012:directory/d-1234567890"
+      },
+      {
+         "Effect":"Allow",
+         "Action":[
+            "ec2:*"
+         ],
+         "Resource":"*"
+      }
+   ]
+}
+```
+
+For more information about ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
+
+The following list of AWS Directory Service APIs support tab\-based resource\-level permissions:
++ [AcceptSharedDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AcceptSharedDirectory.html)
++ [AddIpRoutes](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html)
++ [AddTagsToResource](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html)
++ [CancelSchemaExtension](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CancelSchemaExtension.html)
++ [CreateAlias](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateAlias.html)
++ [CreateComputer](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateComputer.html)
++ [CreateConditionalForwarder](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateConditionalForwarder.html)
++ [CreateSnapshot](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateSnapshot.html)
++ [CreateLogSubscription](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateLogSubscription.html)
++ [CreateTrust](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_CreateTrust.html)
++ [DeleteConditionalForwarder](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteConditionalForwarder.html)
++ [DeleteDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteDirectory.html)
++ [DeleteLogSubscription](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteLogSubscription.html)
++ [DeleteSnapshot](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteSnapshot.html)
++ [DeleteTrust](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeleteTrust.html)
++ [DeregisterEventTopic](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DeregisterEventTopic.html)
++ [DescribeConditionalForwarders](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html)
++ [DescribeDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDomainControllers.html)
++ [DescribeEventTopics](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html)
++ [DisableRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html)
++ [DisableSso](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html)
++ [EnableRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html)
++ [EnableSso](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableSso.html)
++ [GetSnapshotLimits](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_GetSnapshotLimits.html)
++ [ListIpRoutes](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListIpRoutes.html)
++ [ListSchemaExtensions](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListSchemaExtensions.html)
++ [ListTagsForResource](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ListTagsForResource.html)
++ [RegisterEventTopic](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RegisterEventTopic.html)
++ [RejectSharedDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RejectSharedDirectory.html)
++ [RemoveIpRoutes](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveIpRoutes.html)
++ [RemoveTagsFromResource](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html)
++ [ResetUserPassword](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html)
++ [RestoreFromSnapshot](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html)
++ [StartSchemaExtension](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html)
++ [UpdateConditionalForwarder](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html)
++ [UpdateNumberOfDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html)
++ [UpdateRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html)
++ [UpdateTrust](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateTrust.html)
++ [VerifyTrust](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_VerifyTrust.html)
