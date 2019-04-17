@@ -123,7 +123,7 @@ This security group was automatically created when you initially created your di
 
 1. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
-1. Navigate to the **Users** directory, right\-click on any user account listed in the right pane, and then choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is **not** selected\.
+1. Navigate to the **Users** directory, right\-click on any user and select **Properties**, and then choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is **not** selected\.
 
 1. Perform the same steps for the **corp\.example\.com** domain from the **corp\.example\.com\-mgmt **instance\.
 

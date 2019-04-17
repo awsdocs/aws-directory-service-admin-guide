@@ -6,6 +6,7 @@ The following is a list of compatible AWS applications and services:
 + Amazon Chime \- For detailed instructions, see [Connect to Your Active Directory](https://docs.aws.amazon.com/chime/latest/ag/active_directory.html)\.
 + Amazon Connect \- For more information, see [How Amazon Connect Works](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html#amazon-connect-fundamentals)\.
 + Amazon EC2 – For more information, see [Join an EC2 Instance to Your AWS Managed Microsoft AD Directory](ms_ad_join_instance.md)\.
++ Amazon FSx for Windows File Server – For more information, see [What is Amazon FSx for Windows File Server?](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)\.
 + AWS Management Console – For more information, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
 + Amazon QuickSight \- For more information, see [Managing User Accounts in Amazon QuickSight Enterprise Edition](https://docs.aws.amazon.com/quicksight/latest/user/managing-users-enterprise.html)\.
 + Amazon RDS for SQL Server \- For more information, see [Using Windows Authentication with a Microsoft SQL Server DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html)\.

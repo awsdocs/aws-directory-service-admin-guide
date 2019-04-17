@@ -188,5 +188,6 @@ Amazon's trademarks and trade dress may not be used in
    + [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)
    + [Using Identity-Based Policies (IAM Policies) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)
    + [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)
++ [Service Level Agreement for AWS Directory Service](sla.md)
 + [Region Availability for AWS Directory Service](regions.md)
 + [Document History](document_history.md)

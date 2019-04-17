@@ -24,6 +24,17 @@ You must have credentials for a service account in the existing directory which 
 + Join computers to the domain
 For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
 
+**User permissions**  
+All Active Directory users must have permissions to read their own attributes\. Specifically the following attributes:  
++ GivenName
++ SurName
++ Mail
++ SamAccountName
++ UserPrincipalName
++ UserAccountControl
++ MemberOf
+By default, Active Directory users do have read permission to these attributes\. However, Administrators can alter these permissions over time so you might want to verify your users have these read permissions prior to setting up AD Connector for the first time\.
+
 **IP addresses**  
 Get the IP addresses of two DNS servers or domain controllers in your existing directory\.  
 AD Connector obtains the `_ldap._tcp.<DnsDomainName>` and `_kerberos._tcp.<DnsDomainName>` SRV records from these servers when connecting to your directory, so these servers must contain these SRV records\. The AD Connector attempts to find a common domain controller that will provide both LDAP and Kerberos services, so these SRV records must include at least one common domain controller\. For more information about SRV records, go to [SRV Resource Records](http://technet.microsoft.com/en-us/library/cc961719.aspx) on Microsoft TechNet\.

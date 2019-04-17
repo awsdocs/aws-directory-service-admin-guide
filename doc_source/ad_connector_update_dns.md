@@ -9,8 +9,8 @@ If you have an update in progress, you must wait until it is complete before sub
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
-1. Choose the name of the directory to be updated\.
+1. Choose the directory ID link for your directory\.
 
-1. Select the **DNS settings** tab\.
+1. On the **Directory details** page, in the **Existing DNS settings** section, choose **Update**\.
 
-1. Type the updated DNS IP addresses and choose **Update directory**\.
+1. In the **Update existing DNS addresses** dialog, type the updated DNS IP addresses, and then choose **Update**\.
