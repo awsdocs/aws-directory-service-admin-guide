@@ -42,6 +42,15 @@ If your on\-premises network has Active Directory sites defined, you must make s
 
 To discover domain controllers, AD Connector uses the Active Directory site whose subnet IP address ranges are close to those in the VPC that contain the AD Connector\. If you have a site whose subnets have the same IP address ranges as those in your VPC, AD Connector will discover the domain controllers in that site, which may not be physically close to your region\. 
 
+### Understand Username Restrictions for AWS Applications<a name="ad_connector_usernamerestrictions"></a>
+
+AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
++ Spaces
++ \!"\#$%&'\(\)\*\+,/:;<=>?@\[\\\]^`\{\|\}\~
+
+**Note**  
+The @ symbol is allowed as long as it precedes a UPN suffix\. 
+
 ## Programming Your Applications<a name="ad_connector_program_apps"></a>
 
 Before you program your applications, consider the following:

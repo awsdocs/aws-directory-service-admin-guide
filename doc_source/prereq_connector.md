@@ -19,9 +19,9 @@ AD Connector does not support Read\-only domain controllers \(RODC\) when used i
 
 **Service account**  
 You must have credentials for a service account in the existing directory which has been delegated the following privileges:  
-+ Read users and groups
-+ Create computer objects
-+ Join computers to the domain
++ Read users and groups \- Required
++ Join computers to the domain \- Required
++ Create computer objects \- Required only when using Seamless Domain Join and Amazon WorkSpaces
 For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
 
 **User permissions**  
@@ -96,7 +96,9 @@ This procedure must be performed on a machine that is joined to your directory a
 1. Select **Create selected objects in this folder** and **Delete selected objects in this folder**\. Then choose **Next**\.  
 ![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_linux.png)
 
-1. Select **Read** and **Write**, and then choose **Next**\.  
+1. Select **Read**, and then choose **Next**\.
+**Note**  
+If you will be using Seamless Domain Join or Amazon WorkSpaces, you must also enable **Write** permissions so that AWS Managed Microsoft AD can create computer objects\.  
 ![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_permissions.png)
 
 1. Verify the information on the **Completing the Delegation of Control Wizard** page, and click **Finish**\. 

@@ -12,8 +12,10 @@ To create a AWS Managed Microsoft AD directory, you need a VPC with the followin
   + TCP/UDP 389 \- LDAP
   + TCP/UDP 445 \- SMB
   + TCP 636 \- LDAPS \(LDAP over TLS/SSL\)
+  + TCP/UDP 464 \- Kerberos password change/set
   + TCP 873 \- Rsync
   + TCP 3268 \- Global Catalog
+  + TCP 3269 \- Global Catalog SSL
   + TCP/UDP 1024\-65535 \- Ephemeral ports for RPC
 + The VPC must have default hardware tenancy\.
 + You cannot create a AWS Managed Microsoft AD in a VPC using addresses in the 198\.18\.0\.0/15 address space\.

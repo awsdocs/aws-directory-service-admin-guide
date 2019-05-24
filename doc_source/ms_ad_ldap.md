@@ -25,7 +25,7 @@ To enable LDAPS, you must be a member of the Admins or AWS Delegated Enterprise 
 Before you can enable LDAPS, you must create a certificate issued by a Microsoft Enterprise Certificate Authority \(CA\) server that is joined to your AWS Managed Microsoft AD domain\. Once created, the certificate must be installed on each of your domain controllers in that domain\. This certificate lets the LDAP service on the domain controllers listen for and automatically accept SSL connections from LDAP clients\. 
 
 **Note**  
-LDAPS with AWS Managed Microsoft AD does not support certificates that are issued by a standalone CA\. 
+LDAPS with AWS Managed Microsoft AD does not support certificates that are issued by a standalone CA\. It also does not support certificates issued by a 3rd party certification authority\.
 
 Depending on your business need, you have the following options for setting up or connecting to a CA in your domain: 
 + **Create a subordinate Microsoft Enterprise CA** – \(Recommended\) With this option you can deploy a subordinate Microsoft Enterprise CA server in the AWS Cloud that uses EC2 so that it works with your existing root Microsoft CA\. For more information about how to set up a subordinate Microsoft Enterprise CA, see [Install a Subordinate Certification Authority](https://technet.microsoft.com/en-us/library/cc772192(v=ws.11).aspx) on the Microsoft TechNet website\.

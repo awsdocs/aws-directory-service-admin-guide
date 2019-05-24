@@ -7,6 +7,8 @@ To manage your directory from an EC2 Windows instance, you need to install the A
 + [Install the Active Directory Administration Tools on Windows Server 2012](#install_ad_tools_win2012)
 + [Install the Active Directory Administration Tools on Windows Server 2016](#install_ad_tools_win2016)
 
+You can optionally choose to install the Active Directory administration tools using Windows PowerShell\. For example, you can install the Active Directory remote administration tools from a PowerShell prompt using `Install-WindowsFeature RSAD-ADDS`\. For more information, see [Install\-WindowsFeature](https://docs.microsoft.com/en-us/powershell/module/servermanager/install-windowsfeature?view=winserver2012r2-ps) on the Microsoft Website\.
+
 ## Install the Active Directory Administration Tools on Windows Server 2008<a name="install_ad_tools_win2008"></a>
 
 **To install the Active Directory administration tools on Windows Server 2008**

@@ -20,3 +20,11 @@ Only the actions listed here are allowed for the Admin account\. The Admin accou
 
 **Important**  
 AWS Domain Administrators have full administrative access to all domains hosted on AWS\. See your agreement with AWS and the [AWS Data Protection FAQ](https://aws.amazon.com/compliance/data-privacy-faq/) for more information about how AWS handles content, including directory information, that you store on AWS systems\.
+
+## Enterprise and Domain Administrator Privileged Accounts<a name="privileged_accounts"></a>
+
+To perform operational management of your directory, AWS has exclusive control of accounts with Enterprise Administrator and Domain Administrator privileges\. This includes exclusive control of the AD administrator account\. AWS protects this account by automating password management through the use of a password vault\. During automated rotation of the administrator password, AWS creates a temporary user account and grants it Domain Administrator privileges\. This temporary account is used as a back\-up in the event of password rotation failure on the administrator account\. After AWS successfully rotates the administrator password, AWS deletes the temporary administrator account\.
+
+Normally AWS operates the directory entirely through automation\. In the event that an automation process is unable to resolve an operational problem, AWS may need to have a support engineer sign in to your domain controller to perform diagnosis\. In these rare cases, AWS implements a request/notification system to grant access\. In this process, AWS automation creates a time\-limited user account in your directory that has Domain Administrator permissions\. AWS associates the user account with the engineer who is assigned to work on your directory\. AWS records this association in our log system and provides the engineer with the credentials to use\. All actions taken by the engineer are logged in the Windows event logs\. When the allocated time elapses, automation deletes the user account\.
+
+You can monitor administrative account actions by using the log forwarding feature of your directory\. This feature enables you to forward the AD Security events to your CloudWatch system where you can implement monitoring solutions\. For more information, see [Enable Log Forwarding](ms_ad_enable_log_forwarding.md)\.

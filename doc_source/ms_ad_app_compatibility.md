@@ -25,6 +25,7 @@ The following third\-party applications are compatible with AWS Managed Microsof
 + Remote Desktop Licensing Manager
 + SharePoint Server
 + SQL Server \(includes Always On Availability Groups\)
++ System Center Configuration Manager \(SCCM\) \- The user deploying SCCM must be a member of the AWS Delegated System Management Administrators group\.
 
 Note that not all configurations of these applications may be supported\.
 

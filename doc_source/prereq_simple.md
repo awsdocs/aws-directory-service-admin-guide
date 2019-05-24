@@ -12,8 +12,10 @@ To create a Simple AD directory, you need a VPC with the following:
   + TCP/UDP 389 \- LDAP
   + TCP/UDP 445 \- SMB
   + TCP 636 \- LDAPS \(LDAP over TLS/SSL\)
+  + TCP/UDP 464 \- Kerberos password change/set
   + TCP 873 \- Rsync
   + TCP 3268 \- Global Catalog
+  + TCP 3269 \- Global Catalog SSL
   + TCP/UDP 1024\-65535 \- Ephemeral ports for RPC
 + The VPC must have default hardware tenancy\.
 + If you require LDAPS support with Simple AD, we recommend that you configure it using an Elastic Load Balancer and HA Proxy running on EC2 instances\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single ELB IP address, and have automatic fail\-over through the HA Proxy\. For more information about how to configure LDAPS with Simple AD, see [How to Configure an LDAPS Endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-an-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.

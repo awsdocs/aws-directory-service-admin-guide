@@ -48,6 +48,15 @@ Here are some suggestions to consider as you create your directory\.
 
 When you set up your directory, you provide a password for the administrator account\. That account ID is *Administrator* for Simple AD\. Remember the password that you create for this account; otherwise you will not be able to add objects to your directory\.
 
+### Understand Username Restrictions for AWS Applications<a name="simple_ad_usernamerestrictions"></a>
+
+AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
++ Spaces
++ \!"\#$%&'\(\)\*\+,/:;<=>?@\[\\\]^`\{\|\}\~
+
+**Note**  
+The @ symbol is allowed as long as it precedes a UPN suffix\. 
+
 ## Programming Your Applications<a name="simple_ad_program_apps"></a>
 
 Before you program your applications, consider the following:

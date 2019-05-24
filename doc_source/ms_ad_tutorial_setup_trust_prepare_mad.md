@@ -17,10 +17,12 @@ Port requirements vary based on the version of Windows Server used by your domai
 + TCP 139 \- Netlogon 
 + TCP/UDP 389 \- LDAP 
 + TCP/UDP 445 \- SMB 
++ TCP/UDP 464 \- Kerberos authentication
 + TCP 636 \- LDAPS \(LDAP over TLS/SSL\) 
 + TCP 873 \- Rsync 
-+ TCP 3268 \- Global Catalog 
-+ TCP/UDP 1024\-65535 \- Ephemeral ports for RPC 
++ TCP 3268\-3269 \- Global Catalog 
++ TCP/UDP 1024\-65535 \- Ephemeral ports for RPC
++ ICMP All 
 
 **Outbound**
 + ALL
@@ -39,7 +41,7 @@ These are the minimum ports that are needed to be able to connect the VPC and on
 1. Use the search box to search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description **AWS created security group for <yourdirectoryID> directory controllers**\.  
 ![\[Search for security group\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/search_for_security_group.png)
 
-1. Go to the **Outbound Rules** tab for that security group\. Choose **Edit**, and then **Add another rule**\. For the new rule, enter the following values:
+1. Go to the **Outbound Rules** tab for that security group\. Choose **Edit**, and then **Add another rule**\. For the new rule, enter the following values: 
    + **Type**: ALL Traffic
    + **Protocol**: ALL
    + **Destination** determines the traffic that can leave your domain controllers and where it can go\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
@@ -47,7 +49,7 @@ These are the minimum ports that are needed to be able to connect the VPC and on
 1. Select **Save**\.  
 ![\[Edit security group\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/edit_security_group.png)
 
-1. Go to the **Inbound Rules** tab for that same security group\. Choose **Edit**, and then **Add another rule**\. For the new rule, enter the following values:
+1. Go to the **Inbound Rules** tab for that same security group\. Choose **Edit**, and then **Add another rule**\. For the new rule, enter the following values: 
    + **Type**: Custom UDP Rule
    + **Protocol**: UDP
    + **Port Range**: 445
@@ -55,7 +57,7 @@ These are the minimum ports that are needed to be able to connect the VPC and on
 
 1. Select **Save**\.
 
-1. Repeat these steps, adding each of the following rules:  
+1. Repeat steps 7 and 8, adding each of the following rules:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_tutorial_setup_trust_prepare_mad.html)
 

@@ -13,6 +13,18 @@ Simple AD offers many advantages:
 + You can manage AWS resources through IAM role–based access to the AWS Management Console\.
 + Daily automated snapshots enable point\-in\-time recovery\.
 
+Simple AD does not support any of the following:
++ Amazon AppStream 2\.0
++ Amazon Chime
++ Amazon RDS for SQL Server
++ AWS Single Sign\-On
++ Trust relationships with other domains
++ Active Directory Administrative Center
++ PowerShell
++ Active Directory recycle bin
++ Group managed service accounts
++ Schema extensions for POSIX and Microsoft applications
+
 Continue reading the topics in this section to learn how to create your own Simple AD\.
 
 **Topics**
