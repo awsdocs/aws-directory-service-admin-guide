@@ -1,0 +1,3 @@
+# What Gets Created<a name="create_details_ad_connector"></a>
+
+When you create an AD Connector, AWS Directory Service automatically associates an elastic network interface with each of your domain controllers\. Each of these network interfaces are essential to preserve connectivity between EC2 and AWS Directory Service and should never be deleted\. You can identify all network interfaces reserved for use with AWS Directory Service by the description: "AWS created network interface for directory *directory\-id*"\. For more information, see [Elastic Network Interfaces](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html) in the Amazon EC2 User Guide\.

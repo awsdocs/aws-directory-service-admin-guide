@@ -12,27 +12,29 @@ In this procedure, you set up a DHCP option scope so that EC2 instances in your 
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. Choose **DHCP Options Sets** in the navigation pane\. Then choose **Create DHCP options set**\.
+1. In the navigation pane, choose **DHCP Options Sets**, and then choose **Create DHCP options set**\.
 
-1. In the **Create DHCP options set** dialog box, provide the following values for your directory:
-   + For **Name tag**, type **AWS DS DHCP**\.
+1. On the **Create DHCP options set** page, provide the following values for your directory:
+   + For **Name**, type **AWS DS DHCP**\.
    + For **Domain name**, type **corp\.example\.com**\.
-   + For **Domain name servers**, type the IP addresses of your AWS provided directory's DNS servers\. To find these addresses, go to the AWS Directory Service console navigation pane, choose **Directories**, choose the applicable directory ID, and on the **Details** page use the IPs that are displayed in **DNS address**\.
+   + For **Domain name servers**, type the IP addresses of your AWS provided directory's DNS servers\. 
+**Note**  
+To find these addresses, go to the AWS Directory Service **Directories** page, and then choose the applicable directory ID, On the **Details** page, identify and use the IPs that are displayed in **DNS address**\.
    + Leave the settings blank for **NTP servers**, **NetBIOS name servers**, and **NetBIOS node type**\.
 
-1. Choose **Yes, Create**\. The new set of DHCP options appear in your list of DHCP options\.
+1. Choose **Create DHCP options set**, and then choose **Close**\. The new set of DHCP options appear in your list of DHCP options\.
 
-1. Make a note of the ID of the new set of DHCP options \(**dopt\-*xxxxxxxx***\)\. You need it at the end of this procedure when you associate the new options set with your VPC\.
+1. Make a note of the ID of the new set of DHCP options \(**dopt\-*xxxxxxxx***\)\. You use it at the end of this procedure when you associate the new options set with your VPC\.
 
-1. Choose **Your VPCs** in the navigation pane\.
+1. 6\. In the navigation pane, choose **Your VPCs**\.
 
-1. Select **AWS DS VPC**, choose **Actions**, and then choose **Edit DHCP Options Set**\.
+1. 7\. In the list of VPCs, select **AWS DS VPC**, choose **Actions**, and then choose **Edit DHCP options set**\.
 
-1. In the **Edit DHCP Options Set** dialog box, select the options set that you recorded in Step 5\. Then choose **Save**\.
+1. On the **Edit DHCP options set** page, select the options set that you recorded in Step 5, and then choose **Save**\.
 
 ## Create a Role to Join Windows Instances to Your AWS Managed Microsoft AD Domain<a name="configureec2"></a>
 
-Use this procedure to configure a role that joins an EC2 Windows instance to a domain\. For more information, see [Joining a Windows Instance to an AWS Directory Service Domain](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html)\.
+Use this procedure to configure a role that joins an EC2 Windows instance to a domain\. For more information, see [Seamlessly Join a Windows EC2 Instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 
 **To configure EC2 to join Windows instances to your domain**
 
@@ -40,13 +42,25 @@ Use this procedure to configure a role that joins an EC2 Windows instance to a d
 
 1. In the navigation pane of the IAM console, choose **Roles**, and then choose **Create role**\.
 
-1. Under **AWS service**, select the **EC2** link, and then click **Next**\.
+1. Under **Select type of trusted entity**, choose **AWS service**\.
 
-1. Under **Select your use case**, select **EC2**, and then select **Next**\.
+1. Immediately under **Choose the service that will use this role**, choose **EC2**, and then choose **Next: Permissions**\.
 
-1. In the list of polices, select the **AmazonEC2RoleforSSM** policy, and then select **Next**\.
+1. On the **Attached permissions policy** page, do the following:
+   + Select the box next to the **AmazonSSMManagedInstanceCore** managed policy\. This policy provides the minimum permissions necessary to use the Systems Manager service\.
+   + Select the box next to **AmazonSSMDirectoryServiceAccess** managed policy\. The policy provides the permissions to join instances to an Active Directory managed by AWS Directory Service\.
 
-1. In **Role name**, type a name for the role that describes that it is used for domain join\. In this case use **EC2DomainJoin**, and then select the **Create role** button\.
+   For information about these managed policies and other policies you can attach to an IAM instance profile for Systems Manager, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\. For information about managed policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
+
+1. Choose **Next: Tags**\.
+
+1. \(Optional\) Add one or more tag key\-value pairs to organize, track, or control access for this role, and then choose **Next: Review**\. 
+
+1. For **Role name**, enter a name for the role that describes that it is used to join instances to a domain, such as **EC2DomainJoin**\.
+
+1. \(Optional\) For **Role description**, enter a description\.
+
+1. Choose **Create role**\. The system returns you to the **Roles** page\.
 
 ## Create an EC2 Instance and Automatically Join the Directory<a name="deployec2instance"></a>
 
@@ -67,7 +81,7 @@ In this procedure you set up a Windows Server system in Amazon EC2 that can be u
    + For **Subnet** choose **Public subnet 1**, which should be preconfigured for your preferred Availability Zone \(for example, **subnet\-*xxxxxxxx* \| Public subnet1 \| *us\-west\-2a***\)\. 
    + For **Auto\-assign Public IP**, choose **Enable** \(if the subnet setting is not set to enable by default\)\.
    + For **Domain join directory**, choose **corp\.example\.com \(d\-*xxxxxxxxxx*\)**\.
-   + For **IAM role** choose **EC2DomainJoin**\.
+   + For **IAM role** choose the name you gave your instance role in [Create a Role to Join Windows Instances to Your AWS Managed Microsoft AD Domain](#configureec2), such as **EC2DomainJoin**\.
    + Leave the rest of the settings at their defaults\.
    + Choose **Next: Add Storage**\.
 
@@ -93,9 +107,9 @@ You can choose from two methods to install the Active Directory Domain Managemen
 
 **To install the Active Directory Tools on your EC2 instance \(Server Manager\)**
 
-1. In the Amazon EC2 Console, choose **Instances**, select the instance you just created, and then choose **Connect**\. 
+1. In the Amazon EC2 console, choose **Instances**, select the instance you just created, and then choose **Connect**\. 
 
-1. In the **Connect To Your Instance** dialog box, choose **Download Remote Desktop File**\. 
+1. In the **Connect To Your Instance** dialog box, choose **Get Password** to retrieve your password if you haven’t already, and then choose **Download Remote Desktop File**\. 
 
 1. In the **Windows Security** dialog box, type your local administrator credentials for the Windows Server computer to log in \(for example, **administrator**\)\.
 

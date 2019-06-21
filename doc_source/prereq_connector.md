@@ -40,12 +40,13 @@ Get the IP addresses of two DNS servers or domain controllers in your existing d
 AD Connector obtains the `_ldap._tcp.<DnsDomainName>` and `_kerberos._tcp.<DnsDomainName>` SRV records from these servers when connecting to your directory, so these servers must contain these SRV records\. The AD Connector attempts to find a common domain controller that will provide both LDAP and Kerberos services, so these SRV records must include at least one common domain controller\. For more information about SRV records, go to [SRV Resource Records](http://technet.microsoft.com/en-us/library/cc961719.aspx) on Microsoft TechNet\.
 
 **Ports for subnets**  
-For AWS Directory Service to communicate with your existing directory, the firewall for your existing network must have the following ports open to the CIDRs for both subnets in the VPC\.  
+For AD Connector to redirect directory requests to your existing Active Directory domain controllers, the firewall for your existing network must have the following ports open to the CIDRs for both subnets in your Amazon VPC\.  
 + TCP/UDP 53 \- DNS
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
-These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.  
+These are the minimum ports that are needed before AD Connector can connect to your directory\. Your specific configuration may require additional ports be open\.  
 If the DNS servers or Domain Controller servers for your existing Active Directory Domain are within the VPC, the security groups associated with those servers must have the above ports open to the CIDRs for both subnets in the VPC\. 
+For additional port requirements, see [AD and AD DS Port Requirements](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)) on Microsoft TechNet\.
 
 **Kerberos preauthentication**  
 Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure That Kerberos Pre\-authentication Is Enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.

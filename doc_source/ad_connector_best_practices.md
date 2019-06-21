@@ -69,7 +69,7 @@ Change your AD Connector service account Admin password regularly, and make sure
 
 ### Use Unique AD Connectors for Each Domain<a name="ad_connector_use_unique_connector"></a>
 
-AD Connectors and your on\-premises domains have a 1\-to\-1 relationship\. That is, for each on\-premises domain you want to authenticate against, you must create a unique AD Connector\. Each AD Connector that you create must use a different service account, even if they are connected to the same directory\.
+AD Connectors and your on\-premises AD domains have a 1\-to\-1 relationship\. That is, for each on\-premises domain, including child domains in an AD forest that you want to authenticate against, you must create a unique AD Connector\. Each AD Connector that you create must use a different service account, even if they are connected to the same directory\.
 
 ### Check for compatibility<a name="ad_connector_compatibility"></a>
 

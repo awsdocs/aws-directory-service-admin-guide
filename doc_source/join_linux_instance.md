@@ -29,7 +29,7 @@ Follow the steps for your specific Linux instance using one of the following tab
 1. Make sure your Amazon Linux \- 64bit instance is up to date\.
 
    ```
-   $ sudo yum -y update
+   sudo yum -y update
    ```
 
 1. Install the required Amazon Linux packages on your Linux instance\.
@@ -39,18 +39,18 @@ As you install the packages, you might be presented with several pop\-up configu
 Amazon Linux 1  
 
    ```
-   $ sudo yum -y install sssd realmd krb5-workstation
+   sudo yum -y install sssd realmd krb5-workstation
    ```  
 Amazon Linux 2  
 
    ```
-   $ sudo yum -y install sssd realmd krb5-workstation samba-common-tools
+   sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```
 
 1. Join the instance to the directory with the following command\. 
 
    ```
-   $ sudo realm join -U join_account@example.com example.com --verbose
+   sudo realm join -U join_account@example.com example.com --verbose
    ```  
 *join\_account@example\.com*  
 An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
@@ -76,26 +76,24 @@ The fully\-qualified DNS name of your directory\.
       PasswordAuthentication yes
       ```
 
-1. Start the SSSD service\.
+   1. Restart the SSH service\.
 
-   ```
-   $ sudo systemctl start sssd.service
-   ```
+      ```
+      sudo systemctl restart sshd.service
+      ```
 
-   Alternatively:
+      Alternatively:
 
-   ```
-   $ sudo service sssd start
-   ```
-
-1. Restart the instance\.
+      ```
+      sudo service sshd restart
+      ```
 
 1. After the instance has restarted, connect to it with any SSH client and add the AWS Delegated Administrators group to the sudoers list by performing the following steps:
 
    1. Open the `sudoers` file with the following command:
 
       ```
-      $ sudo visudo
+      sudo visudo
       ```
 
    1. Add the following to the bottom of the `sudoers` file and save it\.
@@ -117,7 +115,7 @@ The fully\-qualified DNS name of your directory\.
 1. Make sure your CentOS 7 instance is up to date\.
 
    ```
-   $ sudo yum -y update
+   sudo yum -y update
    ```
 
 1. Install the required CentOS 7 packages on your Linux instance\.
@@ -126,13 +124,13 @@ Some of these packages may already be installed\.
 As you install the packages, you might be presented with several pop\-up configuration screens\. You can generally leave the fields in these screens blank\.
 
    ```
-   $ sudo yum -y install sssd realmd krb5-workstation samba-common-tools
+   sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```
 
 1. Join the instance to the directory with the following command\. 
 
    ```
-   $ sudo realm join -U join_account@example.com example.com --verbose
+   sudo realm join -U join_account@example.com example.com --verbose
    ```  
 *join\_account@example\.com*  
 An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
@@ -158,26 +156,24 @@ The fully\-qualified DNS name of your directory\.
       PasswordAuthentication yes
       ```
 
-1. Start the SSSD service\.
+   1. Restart the SSH service\.
 
-   ```
-   $ sudo systemctl start sssd.service
-   ```
+      ```
+      sudo systemctl restart sshd.service
+      ```
 
-   Alternatively:
+      Alternatively:
 
-   ```
-   $ sudo service sssd start
-   ```
-
-1. Restart the instance\.
+      ```
+      sudo service sshd restart
+      ```
 
 1. After the instance has restarted, connect to it with any SSH client and add the AWS Delegated Administrators group to the sudoers list by performing the following steps:
 
    1. Open the `sudoers` file with the following command:
 
       ```
-      $ sudo visudo
+      sudo visudo
       ```
 
    1. Add the following to the bottom of the `sudoers` file and save it\.
@@ -199,7 +195,7 @@ The fully\-qualified DNS name of your directory\.
 1. Make sure the Red Hat \- 64bit instance is up to date\.
 
    ```
-   $ sudo yum -y update
+   sudo yum -y update
    ```
 
 1. Install the required Red Hat packages on your Linux instance\.
@@ -208,15 +204,15 @@ Some of these packages may already be installed\.
 As you install the packages, you might be presented with several pop\-up configuration screens\. You can generally leave the fields in these screens blank\.
 
    ```
-   $ sudo yum -y install sssd realmd krb5-workstation samba-common-tools
+   sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```
 
 1. Join the instance to the directory with the following command\. 
 
    ```
-   $ sudo realm join -U join_account@example.com example.com --verbose
+   sudo realm join -v -U join_account example.com --install=/
    ```  
-*join\_account@example\.com*  
+*join\_account*  
 An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully\-qualified DNS name of your directory\.
@@ -240,26 +236,24 @@ The fully\-qualified DNS name of your directory\.
       PasswordAuthentication yes
       ```
 
-1. Start the SSSD service\.
+   1. Restart the SSH service\.
 
-   ```
-   $ sudo systemctl start sssd.service
-   ```
+      ```
+      sudo systemctl restart sshd.service
+      ```
 
-   Alternatively:
+      Alternatively:
 
-   ```
-   $ sudo service sssd start
-   ```
-
-1. Restart the instance\.
+      ```
+      sudo service sshd restart
+      ```
 
 1. After the instance has restarted, connect to it with any SSH client and add the AWS Delegated Administrators group to the sudoers list by performing the following steps:
 
    1. Open the `sudoers` file with the following command:
 
       ```
-      $ sudo visudo
+      sudo visudo
       ```
 
    1. Add the following to the bottom of the `sudoers` file and save it\.
@@ -281,8 +275,8 @@ The fully\-qualified DNS name of your directory\.
 1. Make sure your Ubuntu \- 64bit instance is up to date\.
 
    ```
-   $ sudo apt-get update
-   $ sudo apt-get -y upgrade
+   sudo apt-get update
+   sudo apt-get -y upgrade
    ```
 
 1. Install the required Ubuntu packages on your Linux instance\.
@@ -291,7 +285,7 @@ Some of these packages may already be installed\.
 As you install the packages, you might be presented with several pop\-up configuration screens\. You can generally leave the fields in these screens blank\.
 
    ```
-   $ sudo apt-get -y install sssd realmd krb5-user samba-common packagekit adcli
+   sudo apt-get -y install sssd realmd krb5-user samba-common packagekit adcli
    ```
 
 1. Disable Reverse DNS resolution\. Ubuntu Instances **must** be reverse\-resolvable in DNS before the realm will work\. Otherwise, you have to disable reverse DNS in /etc/krb5\.conf as follows:
@@ -305,7 +299,7 @@ As you install the packages, you might be presented with several pop\-up configu
 1. Join the instance to the directory with the following command\. 
 
    ```
-   $ sudo realm join -U join_account@example.com example.com --verbose
+   sudo realm join -U join_account@example.com example.com --verbose
    ```
 **Note**  
 If you are using Ubuntu 16\.04, you must enter the domain name portion of the username with all capital letters\. For example, *join\_account@EXAMPLE\.COM* *example\.com* \-\-verbose\.  
@@ -333,26 +327,24 @@ The fully\-qualified DNS name of your directory\.
       PasswordAuthentication yes
       ```
 
-1. Start the SSSD service\.
+   1. Restart the SSH service\.
 
-   ```
-   $ sudo systemctl start sssd.service
-   ```
+      ```
+      sudo systemctl restart sshd.service
+      ```
 
-   Alternatively:
+      Alternatively:
 
-   ```
-   $ sudo service sssd start
-   ```
-
-1. Restart the instance\.
+      ```
+      sudo service sshd restart
+      ```
 
 1. After the instance has restarted, connect to it with any SSH client and add the AWS Delegated Administrators group to the sudoers list by performing the following steps:
 
    1. Open the `sudoers` file with the following command:
 
       ```
-      $ sudo visudo
+      sudo visudo
       ```
 
    1. Add the following to the bottom of the `sudoers` file and save it\.
@@ -415,13 +407,13 @@ ad_access_filter = (memberOf=cn=admins,ou=Testou,dc=example,dc=com)
 In order for the configuration to take affect you need to restart the sssd service:
 
 ```
-$ sudo systemctl restart sssd.service
+sudo systemctl restart sssd.service
 ```
 
 Alternatively, you could use:
 
 ```
-$ sudo service sssd start
+sudo service sssd start
 ```
 
 ## Connect to the Instance<a name="linux_connect"></a>

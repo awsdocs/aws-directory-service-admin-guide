@@ -19,7 +19,7 @@ While signed in with directory owner administrator credentials, you open the AWS
 **[Step 3: Accept Shared Directory Invite \(Optional\)](step3_accept_invite.md)**  
 While signed in with directory consumer administrator credentials, you open the AWS Directory Service console and accept the directory sharing invite\.
 
-**[Step 4: Test Seamlessly Joining EC2 to a Domain](step4_test_ec2_access.md)**  
+**[Step 4: Test Seamlessly Joining an EC2 Instance for Windows Server to a Domain](step4_test_ec2_access.md)**  
 Finally, as the directory consumer administrator, you attempt to join an EC2 instance to your domain and verify that it works\.
 
 **Additional Resources**

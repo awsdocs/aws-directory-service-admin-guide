@@ -16,4 +16,4 @@ If you chose the **Share this directory with other AWS accounts** \(handshake me
 
 **Next Step**
 
-[Step 4: Test Seamlessly Joining EC2 to a Domain](step4_test_ec2_access.md)
+[Step 4: Test Seamlessly Joining an EC2 Instance for Windows Server to a Domain](step4_test_ec2_access.md)

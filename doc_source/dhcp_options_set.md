@@ -8,15 +8,16 @@ AWS recommends that you create a DHCP options set for your AWS Directory Service
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. Choose **DHCP Options Sets** in the navigation pane, and choose **Create DHCP options set**\.
+1. In the navigation pane, choose **DHCP Options Sets**, and then choose **Create DHCP options set**\.
 
-1. In the **Create DHCP options set** dialog box, enter the following values for your directory:  
-**Name tag**  
+1. On the **Create DHCP options set** page, enter the following values for your directory:  
+**Name**  
 An optional tag for the options set\.  
 **Domain name**  
 The fully\-qualified name of your directory, such as `corp.example.com`\.  
 **Domain name servers**  
-The IP addresses of your directory's DNS servers\. These are the IP addresses of your AWS\-provided directory\. You can find these addresses by going to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, selecting **Directories** and then choosing the correct directory ID\.  
+The IP addresses of your AWS\-provided directory's DNS servers\.   
+You can find these addresses by going to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, selecting **Directories** and then choosing the correct directory ID\.  
 **NTP servers**  
 Leave this field blank\.  
 **NetBIOS name servers**  
@@ -24,9 +25,9 @@ Leave this field blank\.
 **NetBIOS node type**  
 Leave this field blank\.
 
-1. Choose **Yes, Create**\. The new set of DHCP options appears in your list of DHCP options\.
+1. Choose **Create DHCP options set**\. The new set of DHCP options appears in your list of DHCP options\.
 
-1. Make a note of the ID of the new set of DHCP options \(dopt\-*xxxxxxxx*\)\. You need it to associate the new options set with your VPC\.
+1. Make a note of the ID of the new set of DHCP options \(dopt\-*xxxxxxxx*\)\. You use it to associate the new options set with your VPC\.
 
 **To change the DHCP options set associated with a VPC**
 
@@ -34,8 +35,8 @@ After you create a set of DHCP options, you can't modify them\. If you want your
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. Choose **Your VPCs** in the navigation pane\.
+1. In the navigation pane, choose **Your VPCs**
 
-1. Select the VPC, and choose **Edit DHCP Options Set** from the **Actions** list\.
+1. Select the VPC, and then choose **Actions**, **Edit DHCP options set**\.
 
-1. In the **DHCP Options Set** list, select the desired options set from the list, and choose **Save**\.
+1. For **DHCP options set**, select an options set or choose **No DHCP options set**, and then choose **Save**\.

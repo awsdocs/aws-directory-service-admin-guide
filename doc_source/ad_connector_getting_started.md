@@ -5,3 +5,4 @@ With AD Connector you can connect AWS Directory Service to your existing enterpr
 **Topics**
 + [AD Connector Prerequisites](prereq_connector.md)
 + [Create an AD Connector](create_ad_connector.md)
++ [What Gets Created](create_details_ad_connector.md)
