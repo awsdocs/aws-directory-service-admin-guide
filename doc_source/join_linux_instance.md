@@ -46,6 +46,8 @@ Amazon Linux 2
    ```
    sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```
+**Note**  
+For help with determining the Amazon Linux version you are using, see [Identifying Amazon Linux Images](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#amazon-linux-image-id) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 1. Join the instance to the directory with the following command\. 
 

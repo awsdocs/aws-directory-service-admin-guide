@@ -5,7 +5,9 @@ AWS Directory Service can give other AWS applications and services, such as Amaz
 
 | AWS application / service | More information\.\.\. | 
 | --- | --- | 
+| Amazon Chime | For more information, see the [Amazon Chime Administration Guide](https://docs.aws.amazon.com/chime/latest/ag/what-is-chime.html)\. | 
 | Amazon Connect | For more information, see the [Amazon Connect Administration Guide](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)\. | 
+| Amazon FSx for Windows File Server | For more information, see [Using Amazon FSx with AWS Directory Service for Microsoft Active Directory](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/fsx-aws-managed-ad.html) in the Amazon FSx for Windows File Server User Guide\. | 
 | Amazon QuickSight | For more information, see the [Amazon QuickSight User Guide](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html)\. | 
 | Amazon Relational Database Service | For more information, see the [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\. | 
 | Amazon WorkDocs | For more information, see the [Amazon WorkDocs Administration Guide](https://docs.aws.amazon.com/workdocs/latest/adminguide/)\. | 

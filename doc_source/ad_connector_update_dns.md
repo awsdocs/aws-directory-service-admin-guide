@@ -11,6 +11,8 @@ If you have an update in progress, you must wait until it is complete before sub
 
 1. Choose the directory ID link for your directory\.
 
-1. On the **Directory details** page, in the **Existing DNS settings** section, choose **Update**\.
+1. On the **Directory details** page, choose **Network & security**\. 
+
+1. In the **Existing DNS settings** section, choose **Update**\.
 
 1. In the **Update existing DNS addresses** dialog, type the updated DNS IP addresses, and then choose **Update**\.

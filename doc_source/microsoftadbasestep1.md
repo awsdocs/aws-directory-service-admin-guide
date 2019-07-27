@@ -26,7 +26,7 @@ If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance t
 
 **To create a VPC**
 
-1. Launch the AWS CloudFormation template into your AWS account\. Click [here](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#cstack=sn%7EQuick-Start-VPC%7Cturl%7Ehttps://s3.amazonaws.com/quickstart-reference/aws/vpc/latest/templates/aws-vpc.template) while signed on to your account\.
+1. Launch the AWS CloudFormation template into your AWS account\. Click [here](https://fwd.aws/mm853) while signed on to your account\.
 
    The template is launched in the US West \(Oregon\) Region by default\. To change the region, use the region selector in the navigation bar\. This stack takes approximately five minutes to create\.
 

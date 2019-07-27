@@ -32,10 +32,10 @@ When you launch a AWS Directory Service for Microsoft Active Directory, AWS crea
 1. Select **Only the following objects in the folder**, and then select **Computer objects**\. 
 
 1. Select **Create selected objects in this folder** and **Delete selected objects in this folder**\. Then choose **Next**\.  
-![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_linux.png)
+![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_directory_join_linux.png)
 
 1. Select **Read** and **Write**, and then choose **Next**\.  
-![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_permissions.png)
+![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_directory_join_permissions.png)
 
 1. Verify the information on the **Completing the Delegation of Control Wizard** page and choose **Finish**\. 
 

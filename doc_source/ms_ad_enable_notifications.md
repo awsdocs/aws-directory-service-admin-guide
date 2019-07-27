@@ -31,7 +31,7 @@ If you are logged in using an IAM user or role that has only the [DirectoryServi
 
 1. Choose **Create**\.
 
-If you want to designate additional SNS subscribers, such as an additional email address, Amazon SQS queues or AWS Lambda, you can do this from the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v2/home](https://console.aws.amazon.com/sns/v2/home)\.
+If you want to designate additional SNS subscribers, such as an additional email address, Amazon SQS queues or AWS Lambda, you can do this from the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v3/home](https://console.aws.amazon.com/sns/v3/home)\.
 
 **To remove directory status messages from a topic**
 
@@ -45,7 +45,7 @@ If you want to designate additional SNS subscribers, such as an additional email
 
 1. Choose **Remove**\.
 
-This removes your directory as a publisher to the selected SNS topic\. If you want to delete the entire topic, you can do this from the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v2/home](https://console.aws.amazon.com/sns/v2/home)\.
+This removes your directory as a publisher to the selected SNS topic\. If you want to delete the entire topic, you can do this from the Amazon SNS console at [https://console\.aws\.amazon\.com/sns/v3/home](https://console.aws.amazon.com/sns/v3/home)\.
 
 **Note**  
 Before deleting an Amazon SNS topic using the SNS console, you should ensure that a directory is not sending status messages to that topic\.   

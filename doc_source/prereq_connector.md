@@ -121,7 +121,7 @@ This script is not supported on Windows Server 2003 or older operating systems\.
 1. From a Windows command prompt, run the DirectoryServicePortTest test application with the following options:
 
    ```
-   DirectoryServicePortTest.exe -d <domain_name> -ip <server_IP_address> -tcp "53,88,135,389,445,3268,5722,9389" -udp "53,88,123,138,389,445"
+   DirectoryServicePortTest.exe -d <domain_name> -ip <server_IP_address> -tcp "53,88,389" -udp "53,88,389"
    ```  
 *<domain\_name>*  
 The fully qualified domain name\. This is used to test the forest and domain functional levels\. If you exclude the domain name, the functional levels won't be tested\.  
