@@ -10,18 +10,14 @@ You can assign an existing IAM role to an AWS Directory Service user or group\. 
 
 1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under the **AWS apps & services** section, choose **AWS Management Console**\. 
+1. In the **AWS Management Console** section, under **Delegate console access**, choose the IAM role name for the existing IAM role that you want to assign users to\. If the role has not yet been created, see [Creating a New Role](create_role.md)\. 
 
-1. In the **Manage access to AWS Resources** dialog box, choose **Continue**\.
+1. On the **Selected role** page, under **Manage users and groups for this role**, choose **Add**\.
 
-1. In the **Assign users and groups to IAM roles** page, choose **click here** to create new IAM roles\. If you already have an existing IAM role that has a trust relationship defined in the policy document, skip to the next step\.
+1. On the **Add users and groups to the role** page, under **Select Active Directory Forest**, choose either the AWS Managed Microsoft AD forest \(this forest\) or the on\-premises forest \(trusted forest\), whichever contains where the accounts that need access to the AWS Management Console\. For more information about how to set up a trusted forest, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
 
-1. Under **Add Users and Groups to Roles**, choose the link for the existing IAM role that you want to assign users to\.
-
-1. In the **Role Detail** page, choose **Add**\. 
-
-1. In the **Add Users and Groups to Role** page, next to **Select Forest**, choose either the AWS Managed Microsoft AD forest \(this forest\) or the on\-premises forest \(trusted forest\), whichever contains where the accounts that need access to the AWS Management Console\. For more information about how to set up a trusted forest, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
-
-1. Next to **Search for**, choose either **User** or **Group**, and then type the name of the user or group\. In the list of possible matches, choose the user or group that you want to add\. 
+1. Under **Specify which users or groups to add**, select either **Find by user** or **Find by group**, and then type the name of the user or group\. In the list of possible matches, choose the user or group that you want to add\. 
 
 1. Choose **Add** to finish assigning the users and groups to the role\.
+**Note**  
+Access for users in nested groups within your directory are not supported\. Members of the parent group have console access, but members of child groups do not\.

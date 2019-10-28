@@ -6,7 +6,7 @@ In this section, you walk through the various post\-deployment tasks necessary f
 
 ## Create a DHCP Options Set for Your Directory<a name="createdhcpoptionsset"></a>
 
-In this procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP Options Sets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
+In this procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP Options Sets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
 
 **To create a DHCP options set for your directory**
 

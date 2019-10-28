@@ -10,8 +10,6 @@ To view the users and groups assigned to a role, perform the following steps\.
 
 1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under the **AWS apps & services** section, choose **AWS Management Console**\. 
+1. Under the **AWS Management Console** section, choose the role you want to view\. 
 
-1. In the **Manage access to AWS Resources** dialog box, choose **Continue**\.
-
-1. Under **Add Users and Groups to Roles**, choose the role\. On the **Role Detail** page, you can view the users and groups assigned to the role\.
+1. On the **Selected role** page, under **Manage users and groups for this role**, you can view the users and groups assigned to the role\.

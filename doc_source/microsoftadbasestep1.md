@@ -4,7 +4,7 @@ Before you can create AWS Managed Microsoft AD in your AWS test lab, you first n
 
 ## Create a Key Pair<a name="createkeypair2"></a>
 
-If you already have a key pair, you can skip this step\. For more information about Amazon EC2 key pairs, see [http://docs\.aws\.amazon\.com/AWSEC2/latest/UserGuide/ec2\-key\-pairs\.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)\.
+If you already have a key pair, you can skip this step\. For more information about Amazon EC2 key pairs, see [http://docs\.aws\.amazon\.com/AWSEC2/latest/UserGuide/ec2\-key\-pairs\.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)\.
 
 **To create a key pair**
 
@@ -22,7 +22,7 @@ This is the only chance for you to save the private key file\. You need to provi
 
 In this procedure you use a AWS CloudFormation template to create your VPC network\. For more information about how this template works, see [Amazon VPC QuickStart guide](https://aws.amazon.com/quickstart/architecture/vpc/)\. For this tutorial, we will set up a public VPC\. However you can make your VPC a private VPC as long as you create a network path to your VPC with Amazon Direct Connect, or with a Virtual Private Network \(VPN\) connection\.
 
-If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance to the next section\. All of the AWS CLI and PowerShell examples use custom VPC information\. For more information, see [Amazon Virtual Private Cloud \(Amazon VPC\)](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)\.
+If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance to the next section\. All of the AWS CLI and PowerShell examples use custom VPC information\. For more information, see [Amazon Virtual Private Cloud \(Amazon VPC\)](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)\.
 
 **To create a VPC**
 
@@ -45,7 +45,7 @@ If you would like to use the default VPC \(172\.31\.0\.0/16\), you can advance t
 
 ## Create a Security Group for EC2 Instances<a name="createsecuritygroup"></a>
 
-By default, AWS Managed Microsoft AD creates a security group to manage traffic between its domain controllers\. In this procedure, you create a security group that manages traffic within your VPC for your EC2 instances\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 Security Groups for Windows Instances](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
+By default, AWS Managed Microsoft AD creates a security group to manage traffic between its domain controllers\. In this procedure, you create a security group that manages traffic within your VPC for your EC2 instances\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 Security Groups for Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
 
 **To create a security group for EC2 instances**
 

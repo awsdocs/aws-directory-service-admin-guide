@@ -1,6 +1,6 @@
 # Use Cases for AWS Managed Microsoft AD<a name="ms_ad_use_cases"></a>
 
-With AWS Managed Microsoft AD, you can share a single directory for multiple use cases\. For example, you can share a directory to authenticate and authorize access for \.NET applications, [Amazon RDS for SQL Server](https://aws.amazon.com/rds/sqlserver/) with [Windows Authentication](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html) enabled, and [Amazon Chime](https://chime.aws/) for messaging and video conferencing\.
+With AWS Managed Microsoft AD, you can share a single directory for multiple use cases\. For example, you can share a directory to authenticate and authorize access for \.NET applications, [Amazon RDS for SQL Server](https://aws.amazon.com/rds/sqlserver/) with [Windows Authentication](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html) enabled, and [Amazon Chime](https://chime.aws/) for messaging and video conferencing\.
 
 The following diagram shows some of the use cases for your AWS Managed Microsoft AD directory\. These include the ability to grant your users access to external cloud applications and allow your on\-premises AD users to manage and have access to resources in the AWS Cloud\. 
 

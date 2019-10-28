@@ -14,7 +14,7 @@ TLS is a protocol web browsers and other applications use to exchange data secur
 
 ## Which TLS versions are supported by AWS SSO<a name="whichtls"></a>
 
-AWS applications and services support TLS 1\.1, 1\.2 and 1\.3 for secure sign\-ins\. As of August 14th 2019, TLS 1\.0 is no longer supported so it is important that all browsers are configured to support TLS 1\.1 or above\. This means, you will not be able to sign\-in to AWS applications and services if you access them while TLS 1\.0 is enabled\. For assistance making this change, contact your admin\. 
+AWS applications and services support TLS 1\.1, 1\.2 and 1\.3 for secure sign\-ins\. As of October 30th 2019, TLS 1\.0 is no longer supported so it is important that all browsers are configured to support TLS 1\.1 or above\. This means, you will not be able to sign\-in to AWS applications and services if you access them while TLS 1\.0 is enabled\. For assistance making this change, contact your admin\. 
 
 ## How do I enable supported TLS versions in my browser<a name="howtls"></a>
 

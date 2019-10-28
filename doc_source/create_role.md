@@ -11,7 +11,7 @@ iam:PutRolePolicy
 
 **To create a new role in the IAM console**
 
-1. In the navigation pane of the IAM console, choose **Roles**\. For more information, see [Creating a Role \(AWS Management Console\)](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in the *IAM User Guide*\. 
+1. In the navigation pane of the IAM console, choose **Roles**\. For more information, see [Creating a Role \(AWS Management Console\)](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user.html) in the *IAM User Guide*\. 
 
 1. Choose **Create role**\.
 

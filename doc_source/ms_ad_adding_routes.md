@@ -4,7 +4,7 @@ You can use AWS Directory Service for Microsoft Active Directory to take advanta
 
 Similarly, you must also enter the IP address information when routing traffic from your AWS Managed Microsoft AD on AWS to a peer AWS VPC, if the VPC uses public IP ranges\.
 
-When you add the IP addresses as described in [When to Create a Trust Relationship](ms_ad_setup_trust.md), you have the option of selecting **Add routes to the security group for this directory's VPC**\. This option should be selected unless you have previously customized your [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to allow the necessary traffic as shown below\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
+When you add the IP addresses as described in [When to Create a Trust Relationship](ms_ad_setup_trust.md), you have the option of selecting **Add routes to the security group for this directory's VPC**\. This option should be selected unless you have previously customized your [security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) to allow the necessary traffic as shown below\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 This option configures the security groups for your directory’s VPC as follows: 
 

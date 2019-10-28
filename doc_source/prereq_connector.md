@@ -7,13 +7,19 @@ Set up a VPC with the following:
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
 + The VPC must be connected to your existing network through a virtual private network \(VPN\) connection or AWS Direct Connect\.
 + The VPC must have default hardware tenancy\.
+AWS Directory Service uses a two VPC structure\. The EC2 instances which make up your directory run outside of your AWS account, and are managed by AWS\. They have two network adapters, `ETH0` and `ETH1`\. `ETH0` is the management adapter, and exists outside of your account\. `ETH1` is created within your account\.   
+The management IP range of your directory's `ETH0` network is chosen programmatically to ensure it does not conflict with the VPC where your directory is deployed\. This IP range can be in either of the following pairs \(as Directories run in two subnets\):  
++ 10\.0\.1\.0/24 & 10\.0\.2\.0/24 
++ 192\.168\.1\.0/24 & 192\.168\.2\.0/24 
+We avoid conflicts by checking the first octet of the `ETH1` CIDR\. If it starts with a 10, then we choose a 192\.168\.0\.0/16 VPC with 192\.168\.1\.0/24 and 192\.168\.2\.0/24 subnets\. If the first octet is anything else other than a 10 we choose a 10\.0\.0\.0/16 VPC with 10\.0\.1\.0/24 and 10\.0\.2\.0/24 subnets\.   
+The selection algorithm does not include routes on your VPC\. It is therefore possible to have an IP routing conflict result from this scenario\.   
 For more information, see the following topics in the *Amazon VPC User Guide*:  
 + [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
 + [Subnets in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPCSubnet)
 + [Adding a Hardware Virtual Private Gateway to Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html)
 For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](https://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
-**Existing network**  
+**Existing Active Directory**  
 You'll need to connect to an existing network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
 AD Connector does not support Read\-only domain controllers \(RODC\) when used in combination with the Amazon EC2 domain\-join feature\. 
 

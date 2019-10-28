@@ -8,7 +8,7 @@ For example, in the below illustration, DC\-1 and DC\-2 represent the two domain
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/ms_ad_additionaldcs.png)
 
-This process eliminates the need for you to manually configure directory data replication, automated daily snapshots, or monitoring for the additional domain controllers\. It's also easier for you to migrate and run mission critical Active Directory–integrated workloads in the AWS Cloud without having to deploy and maintain your own Active Directory infrastructure\. You can also deploy or remove additional domain controllers for AWS Managed Microsoft AD using the [UpdateNumberOfDomainControllers](http://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html) API\.
+This process eliminates the need for you to manually configure directory data replication, automated daily snapshots, or monitoring for the additional domain controllers\. It's also easier for you to migrate and run mission critical Active Directory–integrated workloads in the AWS Cloud without having to deploy and maintain your own Active Directory infrastructure\. You can also deploy or remove additional domain controllers for AWS Managed Microsoft AD using the [UpdateNumberOfDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html) API\.
 
 ## Add or Remove Additional Domain Controllers<a name="addremovedcs"></a>
 

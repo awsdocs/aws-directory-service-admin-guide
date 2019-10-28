@@ -26,32 +26,9 @@ By default, console access is not enabled for any directory\. To enable console 
 
 1. On the **Directory details** page, select the **Application management** tab\.
 
-1. In the **AWS apps & services** section, choose **AWS Management Console**\. 
+1. Under the **AWS Management Console** section, choose **Enable**\. Console access is now enabled for your directory\.
 
-1. On the **Directories** page, choose your directory ID\.
-
-1. On the **Directory details** page, select the **AWS apps & services** tab\.
-
-1. In the **AWS apps & services** section, choose **AWS Management Console**\. 
-
-1. In the **Enable AWS Management Console** dialog box, choose **Enable Access**\. Console access is now enabled for your directory\.
-
-   Before users can sign\-in to the console with your access URL, you must continue with the next steps to add your users to the role\. For general information about assigning users to IAM roles, see [Creating a New Role](create_role.md) or [Assigning Users or Groups to an Existing Role](assign_role.md)\. After the IAM roles have been assigned, users can then access the console using your access URL\. For example, if your directory access URL is example\-corp\.awsapps\.com, the URL to access the console is https://example\-corp\.awsapps\.com/console/\. 
-
-1. On the **AWS Management Console** page, choose **click here** to create new IAM roles\. If you already have an existing IAM role that has a trust relationship defined in the policy document, skip to the next step\.
-
-1. Under **Add Users and Groups to Roles**, choose the link for the existing IAM role that you want to assign users to\.
-
-1. On the **Role Detail** page, choose **Add**\. 
-
-1. In the **Add Users and Groups to Role** page, next to **Select Forest**, choose either the AWS Managed Microsoft AD forest \(this forest\) or the on\-premises forest \(trusted forest\), whichever contains where the accounts that need access to the AWS Management Console\. For more information about how to set up a trusted forest, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
-
-1. Next to **Search for**, choose either **User** or **Group**, and then type the name of the user or group\. In the list of possible matches, choose the user or group that you want to add\. 
-
-1. Choose **Add** to finish assigning the users and groups to the role\.
-
-**Note**  
-Access for users in nested groups within your directory are not supported\. Members of the parent group have console access, but members of child groups do not\.
+   Before users can sign\-in to the console with your access URL, you must first add your users to the role\. For general information about assigning users to IAM roles, see [Assigning Users or Groups to an Existing Role](assign_role.md)\. After the IAM roles have been assigned, users can then access the console using your access URL\. For example, if your directory access URL is example\-corp\.awsapps\.com, the URL to access the console is https://example\-corp\.awsapps\.com/console/\. 
 
 ## Disable AWS Management Console Access<a name="console_disable"></a>
 
@@ -65,11 +42,11 @@ To disable console access for your directory users and groups, perform the follo
 
 1. On the **Directory details** page, select the **Application management** tab\.
 
-1. Under the **AWS apps & services** section, choose **AWS Management Console**\. 
+1. Under the **AWS Management Console** section, choose **Disable**\. Console access is now disabled for your directory\.
 
-1. If any IAM roles have been assigned to users or groups in the directory, the **Disable Access** button in the **Manage access to AWS Resources** dialog box is unavailable\. In this case, you must choose **Continue** and remove all IAM role assignments for the directory before proceeding, including assignments for users or groups in your directory that have been deleted, which will show as **Deleted User** or **Deleted Group**\.
+1. If any IAM roles have been assigned to users or groups in the directory, the **Disable** button may be unavailable\. In this case, you must remove all IAM role assignments for the directory before proceeding, including assignments for users or groups in your directory that have been deleted, which will show as **Deleted User** or **Deleted Group**\.
 
-   After all IAM role assignments have been removed, repeat the steps above\. When the **Manage access to AWS Resources** dialog box is displayed, choose **Disable Access**\.
+   After all IAM role assignments have been removed, repeat the steps above\.
 
 ## Set Login Session Length<a name="console_session"></a>
 

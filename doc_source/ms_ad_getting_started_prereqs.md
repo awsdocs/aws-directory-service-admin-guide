@@ -2,23 +2,21 @@
 
 To create a AWS Managed Microsoft AD directory, you need a VPC with the following: 
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
-+ The following ports must be open between the two subnets that you deploy your directory into\. This is necessary to allow the domain controllers that AWS Directory Service creates for you to communicate with each other\. A security group will be created and attached to your directory to enable communication between the domain controllers\.
-  + TCP/UDP 53 \- DNS
-  + TCP/UDP 88 \- Kerberos authentication
-  + UDP 123 \- NTP
-  + TCP 135 \- RPC
-  + UDP 138 \- Netlogon
-  + TCP/UDP 389 \- LDAP
-  + TCP/UDP 445 \- SMB
-  + TCP 636 \- LDAPS \(LDAP over TLS/SSL\)
-  + TCP/UDP 464 \- Kerberos password change/set
-  + TCP 3268 \- Global Catalog
-  + TCP 3269 \- Global Catalog SSL
 + The VPC must have default hardware tenancy\.
 + You cannot create a AWS Managed Microsoft AD in a VPC using addresses in the 198\.18\.0\.0/15 address space\.
 + AWS Directory Service does not support using Network Address Translation \(NAT\) with Active Directory\. Using NAT can result in replication errors\.
 
 If you need to integrate your AWS Managed Microsoft AD domain with an existing on\-premises Active Directory domain, you must have the functional level for your on\-premises domain set to Windows Server 2003 or higher\.
+
+AWS Directory Service uses a two VPC structure\. The EC2 instances which make up your directory run outside of your AWS account, and are managed by AWS\. They have two network adapters, `ETH0` and `ETH1`\. `ETH0` is the management adapter, and exists outside of your account\. `ETH1` is created within your account\. 
+
+The management IP range of your directory's `ETH0` network is chosen programmatically to ensure it does not conflict with the VPC where your directory is deployed\. This IP range can be in either of the following pairs \(as Directories run in two subnets\):
++ 10\.0\.1\.0/24 & 10\.0\.2\.0/24 
++ 192\.168\.1\.0/24 & 192\.168\.2\.0/24 
+
+We avoid conflicts by checking the first octet of the `ETH1` CIDR\. If it starts with a 10, then we choose a 192\.168\.0\.0/16 VPC with 192\.168\.1\.0/24 and 192\.168\.2\.0/24 subnets\. If the first octet is anything else other than a 10 we choose a 10\.0\.0\.0/16 VPC with 10\.0\.1\.0/24 and 10\.0\.2\.0/24 subnets\. 
+
+The selection algorithm does not include routes on your VPC\. It is therefore possible to have an IP routing conflict result from this scenario\. 
 
 ## Multi\-factor Authentication Prerequisites<a name="prereq_mfa_ad"></a>
 
@@ -35,6 +33,6 @@ If your RADIUS server supports DNS addresses, you must create only one RADIUS cl
 
 1. Configure your existing network to allow inbound traffic from the RADIUS clients \(AWS Managed Microsoft AD DCs DNS addresses, see Step 1\) to your RADIUS server port\.
 
-1. Add a rule to the Amazon EC2 security group in your AWS Managed Microsoft AD domain that allows inbound traffic from the RADIUS server DNS address and port number defined previously\. For more information, see [Adding Rules to a Security Group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) in the *EC2 User Guide*\.
+1. Add a rule to the Amazon EC2 security group in your AWS Managed Microsoft AD domain that allows inbound traffic from the RADIUS server DNS address and port number defined previously\. For more information, see [Adding Rules to a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) in the *EC2 User Guide*\.
 
 For more information about using AWS Managed Microsoft AD with MFA, see [Enable Multi\-Factor Authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)\. 
