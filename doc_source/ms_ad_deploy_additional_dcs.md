@@ -15,7 +15,7 @@ This process eliminates the need for you to manually configure directory data re
 Use the following procedure to deploy or remove additional domain controllers in your AWS Managed Microsoft AD directory\.
 
 **Note**  
-If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additional domain controllers you add will also have LDAPS enabled automatically\. For more information, see [Enable Secure LDAP Communications for AWS Managed Microsoft AD](ms_ad_ldap.md)\.
+If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additional domain controllers you add will also have LDAPS enabled automatically\. For more information, see [Enable Secure LDAP \(LDAPS\)](ms_ad_ldap.md)\.
 
 **To add or remove additional domain controllers**
 

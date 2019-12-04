@@ -9,6 +9,7 @@ The following table provides a list describing which region specific endpoints a
 \* The following AWS Managed Microsoft AD features are not currently supported in the Asia Pacific \(Hong Kong\) Region:
 + Access URL for the directory
 + Mapping users to IAM roles for access to the AWS Management Console
++ Client\-side secure LDAP \(LDAPS\)
 
 For information about using AWS Directory Service in the AWS GovCloud \(US\-West\) Region, see [AWS GovCloud \(US\-West\) Endpoints](https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/using-govcloud-endpoints.html)\.
 
