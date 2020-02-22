@@ -9,6 +9,8 @@ You must configure your on\-premises firewall so that the following ports are op
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
 + TCP 445 \- SMB
+**Note**  
+After May 30th 2020, SMB v1 will no longer be supported\.
 
 **Note**  
 These are the minimum ports that are needed to connect the VPC to the on\-premises directory\. Your specific configuration may require additional ports be open\.

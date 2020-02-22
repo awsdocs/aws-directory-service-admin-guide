@@ -33,7 +33,7 @@ Depending on the size of your directory, it may take several minutes to create t
 
 ## Restoring Your Directory from a Snapshot<a name="snapshot_restore"></a>
 
-Restoring a directory from a snapshot is equivalent to moving the directory back in time\.
+Restoring a directory from a snapshot is equivalent to moving the directory back in time\. Directory snapshots are unique to the directory they were created from\. A snapshot can only be restored to the directory from which it was created\.
 
 **Warning**  
 We recommend that you contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/) before any snapshot restore; we may be able to help you avoid the need to do a snapshot restore\. Any restore from snapshot can result in data loss as they are a point in time\. It is important you understand that all of the DCs and DNS servers associated with the directory will be offline until the restore operation has been completed\. 

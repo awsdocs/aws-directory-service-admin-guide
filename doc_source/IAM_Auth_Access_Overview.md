@@ -25,8 +25,8 @@ These resources have unique Amazon Resource Names \(ARNs\) associated with them 
 
 | **Resource Type**  |  **ARN Format**  | 
 | --- | --- | 
-| Directory | `arn:aws:ds:region:account-id:directory/external-directory-id` | 
-| Snapshot | `arn:aws:ds:region:account-id:snapshot/external-snapshot-id` | 
+|  Directory  |  `arn:aws:ds:region:account-id:directory/external-directory-id`  | 
+|  Snapshot  |  `arn:aws:ds:region:account-id:snapshot/external-snapshot-id`  | 
 
 AWS Directory Service provides a set of operations to work with the appropriate resources\. For a list of available operations, see [Directory Service Actions](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\.
 
@@ -42,7 +42,7 @@ A *resource owner* is the AWS account that created a resource\. That is, the res
 A *permissions policy* describes who has access to what\. The following section explains the available options for creating permissions policies\.
 
 **Note**  
-This section discusses using IAM in the context of AWS Directory Service\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+This section discusses using IAM in the context of AWS Directory Service\. It doesn't provide detailed information about the IAM service\. For complete IAM documentation, see [What Is IAM?](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html) in the *IAM User Guide*\. For information about IAM policy syntax and descriptions, see [IAM JSON Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 Policies attached to an IAM identity are referred to as *identity\-based* policies \(IAM polices\) and policies attached to a resource are referred to as *resource\-based* policies\. AWS Directory Service supports only identity\-based policies \(IAM policies\)\.
 
@@ -87,15 +87,17 @@ Other services, such as Amazon S3, also support resource\-based permissions poli
 
 ## Specifying Policy Elements: Actions, Effects, Resources, and Principals<a name="SpecifyingIAMPolicyActions_DS"></a>
 
-For each AWS Directory Service resource \(see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\), the service defines a set of API operations\. For a list of available API operations, see [Directory Service Actions](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\. To grant permissions for these API operations, AWS Directory Service defines a set of actions that you can specify in a policy\. Note that, performing an API operation can require permissions for more than one action\. 
+For each AWS Directory Service resource, the service defines a set of API operations\. For more information, see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\. For a list of available API operations, see [Directory Service Actions](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_Operations.html)\.
+
+To grant permissions for these API operations, AWS Directory Service defines a set of actions that you can specify in a policy\. Note that performing an API operation can require permissions for more than one action\. 
 
 The following are the basic policy elements:
 + **Resource** – In a policy, you use an Amazon Resource Name \(ARN\) to identify the resource to which the policy applies\. For AWS Directory Service resources, you always use the wildcard character \(\*\) in IAM policies\. For more information, see [AWS Directory Service Resources and Operations](#CreatingIAMPolicies_DS)\. 
 + **Action** – You use action keywords to identify resource operations that you want to allow or deny\. For example, the `ds:DescribeDirectories` permission allows the user permissions to perform the AWS Directory Service `DescribeDirectories` operation\. 
-+ **Effect** – You specify the effect when the user requests the specific action—this can be either allow or deny\. If you don't explicitly grant access to \(allow\) a resource, access is implicitly denied\. You can also explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
++ **Effect** – You specify the effect when the user requests the specific action\. This can be either allow or deny\. If you don't explicitly grant access to \(allow\) a resource, access is implicitly denied\. You can also explicitly deny access to a resource, which you might do to make sure that a user cannot access it, even if a different policy grants access\.
 + **Principal** – In identity\-based policies \(IAM policies\), the user that the policy is attached to is the implicit principal\. For resource\-based policies, you specify the user, account, service, or other entity that you want to receive permissions \(applies to resource\-based policies only\)\. AWS Directory Service doesn't support resource\-based policies\.
 
-To learn more about IAM policy syntax and descriptions, see [AWS IAM Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
+To learn more about IAM policy syntax and descriptions, see [IAM JSON Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) in the *IAM User Guide*\.
 
 For a table showing all of the AWS Directory Service API actions and the resources that they apply to, see [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)\. 
 
@@ -103,4 +105,4 @@ For a table showing all of the AWS Directory Service API actions and the resourc
 
 When you grant permissions, you can use the access policy language to specify the conditions when a policy should take effect\. For example, you might want a policy to be applied only after a specific date\. For more information about specifying conditions in a policy language, see [Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) in the *IAM User Guide*\.
 
-To express conditions, you use predefined condition keys\. There are no condition keys specific to AWS Directory Service\. However, there are AWS\-wide condition keys that you can use as appropriate\. For a complete list of AWS\-wide keys, see [Available Global Condition Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM User Guide*\.  
+To express conditions, you use predefined condition keys\. There are no condition keys specific to AWS Directory Service\. However, there are AWS condition keys that you can use as appropriate\. For a complete list of AWS keys, see [Available Global Condition Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#AvailableKeys) in the *IAM User Guide*\.  

@@ -14,6 +14,9 @@ The following are the default limits for Simple AD\. Each limit is per region un
 
 \* The manual snapshot limit cannot be changed\.
 
+**Note**  
+You cannot attach a public IP address to your AWS elastic network interface \(ENI\)\.
+
 ## Increase Your Limit<a name="increase_limit"></a>
 
 Perform the following steps to increase your limit for a region\.

@@ -13,6 +13,9 @@ The following are the default limits for AWS Managed Microsoft AD\. Each limit i
 
 \* The manual snapshot limit cannot be changed\.
 
+**Note**  
+You cannot attach a public IP address to your AWS elastic network interface \(ENI\)\.
+
 For information regarding application design and load distribution, see [Programming Your Applications](ms_ad_best_practices.md#program_apps)\.
 
 For storage and object limits, see the **Comparison Table** on the [AWS Directory Service Pricing](https://aws.amazon.com/directoryservice/pricing/) page\.

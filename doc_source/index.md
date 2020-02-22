@@ -1,7 +1,7 @@
 # AWS Directory Service Administration Guide
 
 -----
-*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -135,6 +135,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Secure Your AD Connector Directory](ad_connector_security.md)
          + [Update Your AD Connector Service Account Credentials in AWS Directory Service](ad_connector_update_creds.md)
          + [Enable Multi-Factor Authentication for AD Connector](ad_connector_mfa.md)
+         + [Enable Client-Side LDAPS Using AD Connector](ad_connector_ldap_client_side.md)
       + [Monitor Your AD Connector Directory](ad_connector_monitor.md)
          + [Understanding Your Directory Status](ad_connector_directory_status.md)
          + [Configure Directory Status Notifications](ad_connector_enable_notifications.md)
@@ -187,10 +188,15 @@ Amazon's trademarks and trade dress may not be used in
    + [Application Compatibility Policy for Simple AD](simple_ad_app_compatibility.md)
    + [Troubleshooting Simple AD](simple_ad_troubleshooting.md)
       + [Simple AD Directory Status Reasons](simple_ad_troubleshooting_reasons.md)
-+ [IAM Authentication and Access Control for AWS Directory Service](iam_auth_access.md)
-   + [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)
-   + [Using Identity-Based Policies (IAM Policies) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)
-   + [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)
++ [Security in AWS Directory Service](security.md)
+   + [Identity and Access Management for AWS Directory Service](iam_auth_access.md)
+      + [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)
+      + [Using Identity-Based Policies (IAM Policies) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)
+      + [AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference](UsingWithDS_IAM_ResourcePermissions.md)
+   + [Logging and Monitoring in AWS Directory Service](incident-response.md)
+   + [Compliance Validation for AWS Directory Service](ds-compliance.md)
+   + [Resilience in AWS Directory Service](disaster-recovery-resiliency.md)
+   + [Infrastructure Security in AWS Directory Service](infrastructure-security.md)
 + [Service Level Agreement for AWS Directory Service](sla.md)
 + [Region Availability for AWS Directory Service](regions.md)
 + [Browser Compatibility](compatibility.md)

@@ -29,3 +29,5 @@ You can assign your existing IAM roles to your AWS Directory Service users and g
      ]
    }
    ```
+
+You can also update this policy document using the IAM CLI\. For more information, see [put\-role\-policy](https://docs.aws.amazon.com/cli/latest/reference/iam/put-role-policy.html) in the *IAM Command Line Reference*\.

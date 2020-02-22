@@ -60,7 +60,7 @@ The following shows an example of a permissions policy\.
 The policy includes the following:
 + The first statement grants permission to create a AWS Directory Service directory\. AWS Directory Service doesn't support permissions for this particular action at the resource\-level\. Therefore, the policy specifies a wildcard character \(\*\) as the `Resource` value\.
 + The second statement grants permissions to certain IAM actions\. The access to IAM actions is needed so that AWS Directory Service can read and create IAM roles on your behalf\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permission for the IAM actions on any IAM role\. To limit this permission to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific role name\. For more information, see [IAM Actions](https://docs.aws.amazon.com/IAM/latest/APIReference/API_Operations.html)\.
-+ The third statement grants permissions to a specific set of Amazon EC2 resources that are necessary to allow AWS Directory Service to create, configure, and destroy its directories\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permission for the EC2 actions on any EC2 resource or subresource\. To limit this permission to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific resource or subresource\. For more information, see [EC2 Actions](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html)
++ The third statement grants permissions to a specific set of Amazon EC2 resources that are necessary to allow AWS Directory Service to create, configure, and destroy its directories\. The wildcard character \(\*\) at the end of the `Resource` value means that the statement allows permission for the EC2 actions on any EC2 resource or subresource\. To limit this permission to a specific role, replace the wildcard character \(\*\) in the resource ARN with the specific resource or subresource\. For more information, see [Amazon EC2 Actions](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html)
 
 The policy doesn't specify the `Principal` element because in an identity\-based policy you don't specify the principal who gets the permission\. When you attach policy to a user, the user is the implicit principal\. When you attach a permission policy to an IAM role, the principal identified in the role's trust policy gets the permissions\.
 
@@ -68,7 +68,7 @@ For a table showing all of the AWS Directory Service API actions and the resourc
 
 ## Permissions Required to Use the AWS Directory Service Console<a name="UsingWithDS_IAM_RequiredPermissions_Console"></a>
 
-For a user to work with the AWS Directory Service console, that user must have permissions listed in the policy above or the permissions granted by the Directory Service Full Access Role or Directory Service Read Only role, described in [AWS Managed \(Predefined\) Policies for AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)\.
+For a user to work with the AWS Directory Service console, that user must have permissions listed in the preceding policy or the permissions granted by the Directory Service Full Access Role or Directory Service Read Only role, described in [AWS Managed \(Predefined\) Policies for AWS Directory Service](#IAM_Auth_Access_ManagedPolicies)\.
 
 If you create an IAM policy that is more restrictive than the minimum required permissions, the console won't function as intended for users with that IAM policy\. 
 
@@ -77,16 +77,16 @@ If you create an IAM policy that is more restrictive than the minimum required p
 AWS addresses many common use cases by providing standalone IAM policies that are created and administered by AWS\. Managed policies grant necessary permissions for common use cases so you can avoid having to investigate what permissions are needed\. For more information, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 The following AWS managed policies, which you can attach to users in your account, are specific to AWS Directory Service:
-+ **AWSDirectoryServiceReadOnlyAccess** – Grants a user or group read\-only access to all AWS Directory Service resources, EC2 subnets, EC2 network interfaces, and AWS SNS topics and subscriptions for the root AWS account\. For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
++ **AWSDirectoryServiceReadOnlyAccess** – Grants a user or group read\-only access to all AWS Directory Service resources, EC2 subnets, EC2 network interfaces, and Amazon Simple Notification Service \(Amazon SNS\) topics and subscriptions for the root AWS account\. For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
 + **AWSDirectoryServiceFullAccess** – Grants a user or group the following: 
   + Full access to AWS Directory Service
   + Access to key Amazon EC2 services required to use AWS Directory Service
-  + Ability to list Amazon Simple Notification Service topics
-  + Ability to create, manage, and delete Amazon Simple Notification Service topics with a name beginning with “DirectoryMonitoring”
+  + Ability to list Amazon SNS topics
+  + Ability to create, manage, and delete Amazon SNS topics with a name beginning with “DirectoryMonitoring”
 
   For more information, see [Using AWS Managed Policies with AWS Directory Service](ms_ad_managed_policies.md)\.
 
-In addition, there are other AWS\-managed policies that are suitable for use with other IAM roles\. These policies are assigned to the roles associated with users in your AWS Directory Service directory and are required in order for those users to have access to other AWS resources, such as Amazon EC2\. For more information, see [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)\.
+In addition, there are other AWS managed policies that are suitable for use with other IAM roles\. These policies are assigned to the roles that are associated with users in your AWS Directory Service directory\. These policies are required for those users to have access to other AWS resources, such as Amazon EC2\. For more information, see [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)\.
 
 You can also create custom IAM policies that allow users to access the required API actions and resources\. You can attach these custom policies to the IAM users or groups that require those permissions\.
 
@@ -159,9 +159,9 @@ You can apply tag\-based resource\-level permissions in the IAM policies you use
 **Note**  
 The condition context keys and values in an IAM policy apply only to those AWS Directory Service actions where an identifier for a resource capable of being tagged is a required parameter\. 
 
-[Controlling Access Using Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *AWS Identity and Access Management User Guide* has additional information on using tags\. The [IAM JSON Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) section of that guide has detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\.
+[Controlling Access Using Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html) in the *IAM User Guide* has additional information on using tags\. The [IAM JSON Policy Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html) section of that guide has detailed syntax, descriptions, and examples of the elements, variables, and evaluation logic of JSON policies in IAM\.
 
-The following tag policy example allows all `ds` calls as long as it contains the tag key/pair "`fooKey`" or "`fooValue`"\.
+The following tag policy example allows all `ds` calls as long as it contains the tag key\-value pair "`fooKey`":"`fooValue`"\.
 
 ```
 {
@@ -218,7 +218,7 @@ The following resource policy example allows all `ds` calls as long as the resou
 
 For more information about ARNs, see [Amazon Resource Names \(ARNs\) and AWS Service Namespaces](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\.
 
-The following list of AWS Directory Service APIs support tab\-based resource\-level permissions:
+The following list of AWS Directory Service API operations support tag\-based resource\-level permissions:
 + [AcceptSharedDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AcceptSharedDirectory.html)
 + [AddIpRoutes](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddIpRoutes.html)
 + [AddTagsToResource](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_AddTagsToResource.html)
@@ -238,6 +238,9 @@ The following list of AWS Directory Service APIs support tab\-based resource\-le
 + [DescribeConditionalForwarders](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeConditionalForwarders.html)
 + [DescribeDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDomainControllers.html)
 + [DescribeEventTopics](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeEventTopics.html)
++ [DescribeSharedDirectories](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSharedDirectories.html)
++ [DescribeSnapshots](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeSnapshots.html)
++ [DescribeTrusts](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeTrusts.html)
 + [DisableRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableRadius.html)
 + [DisableSso](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DisableSso.html)
 + [EnableRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_EnableRadius.html)
@@ -252,7 +255,9 @@ The following list of AWS Directory Service APIs support tab\-based resource\-le
 + [RemoveTagsFromResource](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RemoveTagsFromResource.html)
 + [ResetUserPassword](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ResetUserPassword.html)
 + [RestoreFromSnapshot](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_RestoreFromSnapshot.html)
++ [ShareDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_ShareDirectory.html)
 + [StartSchemaExtension](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_StartSchemaExtension.html)
++ [UnshareDirectory](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UnshareDirectory.html)
 + [UpdateConditionalForwarder](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateConditionalForwarder.html)
 + [UpdateNumberOfDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html)
 + [UpdateRadius](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateRadius.html)

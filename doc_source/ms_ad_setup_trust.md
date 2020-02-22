@@ -18,6 +18,8 @@ If you are creating a trust relationship with your on\-premises directory, you m
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
 + TCP 445 \- SMB
+**Note**  
+After May 30th 2020, SMB v1 will no longer be supported\.
 
 These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
 

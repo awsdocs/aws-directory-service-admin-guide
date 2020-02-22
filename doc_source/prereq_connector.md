@@ -63,7 +63,7 @@ AD Connector supports the following encryption types when authenticating to your
 + AES\-128\-HMAC
 + RC4\-HMAC
 
-## Multi\-factor Authentication Prerequisites<a name="mfa_prereqs"></a>
+## Multi\-Factor Authentication Prerequisites<a name="mfa_prereqs"></a>
 
 To support multi\-factor authentication with your AD Connector directory, you need the following:
 + A [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in your existing network that has two client endpoints\. The RADIUS client endpoints have the following requirements:
@@ -125,6 +125,8 @@ For AD Connector to connect to your existing directory, the firewall for your ex
 This script is not supported on Windows Server 2003 or older operating systems\.
 
 1. From a Windows command prompt, run the DirectoryServicePortTest test application with the following options:
+**Note**  
+The DirectoryServicePortTest test application can only be used when the domain and forest functional levels are set to Windows Server 2012 R2 and below\.
 
    ```
    DirectoryServicePortTest.exe -d <domain_name> -ip <server_IP_address> -tcp "53,88,389" -udp "53,88,389"

@@ -1,0 +1,5 @@
+# Logging and Monitoring in AWS Directory Service<a name="incident-response"></a>
+
+As a best practice, you should monitor your organization to ensure that changes are logged\. This helps you to ensure that any unexpected change can be investigated and unwanted changes can be rolled back\. AWS Directory Service currently supports the following two AWS services so that you can monitor your organization and the activity that happens within it\.
++ Amazon CloudWatch Events \- You can use CloudWatch Events with the AWS Managed Microsoft AD directory type\. For more information, see [Enable Log Forwarding](ms_ad_enable_log_forwarding.md)\.
++ AWS CloudTrail \- You can use CloudTrail with all AWS Directory Service directory types\. For more information, see [Logging AWS Directory Service API Calls with CloudTrail](https://docs.aws.amazon.com/directoryservice/latest/devguide/cloudtrail_logging.html)

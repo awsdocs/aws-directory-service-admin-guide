@@ -35,7 +35,7 @@ You can open the **System Properties** dialog box directly by running the follow
 
 1. When prompted for the name and password for the domain administrator, enter the username and password of an account that has domain join privileges\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.
 **Note**  
-You can enter either the fully\-qualified name of your domain or the NetBios name, followed by a backslash \(\\\), and then the user name, in this case, **Admin**\. For example, **corp\.example\.com\\Admin** or **corp\\Admin**\.
+You can enter either the fully\-qualified name of your domain or the NetBios name, followed by a backslash \(\\\), and then the user name, in this case, **administrator**\. For example, **corp\.example\.com\\administrator** or **corp\\administrator**\.
 
 1. After you receive the message welcoming you to the domain, restart the instance to have the changes take effect\.
 

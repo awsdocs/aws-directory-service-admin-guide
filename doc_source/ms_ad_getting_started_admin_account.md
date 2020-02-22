@@ -4,7 +4,7 @@ When you create an AWS Directory Service for Microsoft Active Directory director
 + Add, update, or delete users, groups, and computers\. For more information, see [Manage Users and Groups in AWS Managed Microsoft AD](ms_ad_manage_users_groups.md)\. 
 + Add resources to your domain such as file or print servers, and then assign permissions for those resources to users and groups in your OU\.
 + Create additional OUs and containers\.
-+ Delegate authority\. For more information, see [Overview of Managing Access Permissions to Your AWS Directory Service Resources](IAM_Auth_Access_Overview.md)\.
++ Delegate authority of additional OUs and containers\. For more information, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.
 + Create and link group policies\.
 + Restore deleted objects from the Active Directory Recycle Bin\.
 + Run Active Directory and DNS Windows PowerShell modules on the Active Directory Web Service\.

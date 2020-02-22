@@ -114,6 +114,29 @@ Also remember that if you have an SNS topic that receives messages from AWS Dire
 
 Before deleting a directory that is associated with one or more Amazon Enterprise Applications such as, Amazon WorkSpaces, Amazon WorkSpaces Application Manager, Amazon WorkDocs, Amazon WorkMail, AWS Management Console, or Amazon Relational Database Service \(Amazon RDS\), you must first remove each application\. For more information how to remove these applications, see [Delete Your Directory](ms_ad_delete.md)\.
 
+### Use SMB 2\.x Clients When Accessing the SYSVOL and NETLOGON Shares<a name="use_smbv2"></a>
+
+Client computers use Server Message Block \(SMB\) to access the SYSVOL and NETLOGON shares on AWS Managed Microsoft AD domain controllers for Group Policy, login scripts and other files\. Starting 05/31/2020, AWS will update its support for the SMB protocol to support SMB version 2\.0 \(SMBv2\) and newer only\. 
+
+The SMBv2 and newer version protocols add a number of features that improve client performance and increase the security of your domain controllers and clients\. This change follows recommendations by the [United Stated Computer Emergency Readiness Team](https://www.us-cert.gov/ncas/current-activity/2017/01/16/SMB-Security-Best-Practices) and [Microsoft](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) to disable SMBv1\.
+
+**Important**  
+If you currently use SMBv1 clients to access the SYSVOL and NETLOGON shares of your domain controller, you must update those clients to use SMBv2 or newer before 05/31/2020\. After that time, your directory will continue to work correctly but your SMBv1 clients will fail to connect to the SYSVOL and NETLOGON shares of your AWS Managed Microsoft AD domain controllers, and will also be unable to process Group Policy\.
+
+SMBv1 clients will continue to work with any other SMBv1 compatible file servers that you have\. However, AWS recommends that you update all of your SMB servers and clients to SMBv2 or newer\. To learn more about disabling SMBv1 and updating it to newer SMB versions on your systems, see these postings on [Microsoft TechNet](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) and [Support](https://support.microsoft.com/en-us/help/2696547/how-to-detect-enable-and-disable-smbv1-smbv2-and-smbv3-in-windows-and)\.
+
+**Tracking SMBv1 Remote Connections**
+
+You can review the **Microsoft\-Windows\-SMBServer/Audit** Windows Event log remotely connecting to the AWS Managed Microsoft AD domain controller, any events in this log indicate SMBv1 connections\. Below is an example of the information you might see in one of these logs:
+
+*SMB1 access*
+
+*Client Address: 203\.0\.113\.0*
+
+*Guidance:*
+
+*This event indicates that a client attempted to access the server using SMB1\. To stop auditing SMB1 access, use the Windows PowerShell cmdlet Set\-SmbServerConfiguration\.*
+
 ## Programming Your Applications<a name="program_apps"></a>
 
 Before you program your applications, consider the following:
