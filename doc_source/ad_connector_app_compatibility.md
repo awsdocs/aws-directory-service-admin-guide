@@ -14,4 +14,4 @@ The following is a list of compatible AWS applications and services:
 + Amazon WorkSpaces \- For detailed instructions, see [Launch a WorkSpace Using AD Connector](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-ad-connector.html)\. 
 
 **Note**  
-Amazon RDS for SQL Server is compatible with AWS Managed Microsoft AD only, and is not compatible with AD Connector\. For more information, see the AWS Microsoft AD section in the [AWS Directory Service FAQs](https://aws.amazon.com/directoryservice/faqs/#microsoft-ad) page\. 
+Amazon RDS is compatible with AWS Managed Microsoft AD only, and is not compatible with AD Connector\. For more information, see the AWS Microsoft AD section in the [AWS Directory Service FAQs](https://aws.amazon.com/directoryservice/faqs/#microsoft-ad) page\. 

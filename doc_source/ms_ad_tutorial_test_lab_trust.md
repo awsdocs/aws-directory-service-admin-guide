@@ -7,7 +7,7 @@ You should only need to create this tutorial once\. After that you can add optio
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/tutorialmicrosoftadtrust.png)
 
 **[Step 1: Set Up Your Environment for Trusts](microsoftadtruststep1.md)**  
-Before you can establish trusts between a new Active Directory forest and the AWS Managed Microsoft AD forest that you created in the [Base tutorial](ms_ad_tutorial_test_lab_base.md), you need to prepare your Amazon EC2 environment\. To do that, you first create a Windows Server 2016 server, promote that server to a domain controller, and then configure your VPC accordingly\.
+Before you can establish trusts between a new Active Directory forest and the AWS Managed Microsoft AD forest that you created in the [Base tutorial](ms_ad_tutorial_test_lab_base.md), you need to prepare your Amazon EC2 environment\. To do that, you first create a Windows Server 2019 server, promote that server to a domain controller, and then configure your VPC accordingly\.
 
 **[Step 2: Create the Trusts](microsoftadtruststep2.md)**  
 In this step, you create a two\-way forest trust relationship between your newly created Active Directory forest hosted in Amazon EC2 and your AWS Managed Microsoft AD forest in AWS\. 

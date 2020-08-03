@@ -4,9 +4,9 @@ For this lab, we are using EC2 instances that have public IP addresses to make i
 
 In this section, you walk through the various post\-deployment tasks necessary for client computers to connect to your domain using the Windows Server on your new EC2 instance\. You use the Windows Server in the next step to verify that the lab is operational\.
 
-## Create a DHCP Options Set for Your Directory<a name="createdhcpoptionsset"></a>
+## Optional: Create a DHCP Options Set in AWS\-DS\-VPC01 for Your Directory<a name="createdhcpoptionsset"></a>
 
-In this procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP Options Sets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
+In this optional procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP Options Sets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
 
 **To create a DHCP options set for your directory**
 
@@ -25,10 +25,12 @@ To find these addresses, go to the AWS Directory Service **Directories** page, a
 1. Choose **Create DHCP options set**, and then choose **Close**\. The new set of DHCP options appear in your list of DHCP options\.
 
 1. Make a note of the ID of the new set of DHCP options \(**dopt\-*xxxxxxxx***\)\. You use it at the end of this procedure when you associate the new options set with your VPC\.
+**Note**  
+Seamless domain join works without having to configure a DHCP Options Set\. 
 
-1. 6\. In the navigation pane, choose **Your VPCs**\.
+1. In the navigation pane, choose **Your VPCs**\.
 
-1. 7\. In the list of VPCs, select **AWS DS VPC**, choose **Actions**, and then choose **Edit DHCP options set**\.
+1. In the list of VPCs, select **AWS DS VPC**, choose **Actions**, and then choose **Edit DHCP options set**\.
 
 1. On the **Edit DHCP options set** page, select the options set that you recorded in Step 5, and then choose **Save**\.
 
@@ -72,13 +74,13 @@ In this procedure you set up a Windows Server system in Amazon EC2 that can be u
 
 1. Choose **Launch Instance**\.
 
-1. On the **Step 1** page, next to **Microsoft Windows Server 2016 Base \- ami\-*xxxxxxxx*** choose **Select**\.
+1. On the **Step 1** page, next to **Microsoft Windows Server 2019 Base \- ami\-*xxxxxxxxxxxxxxxxx*** choose **Select**\.
 
-1. On the **Step 2** page, select **t2\.micro** \(note, you can choose a larger instance type\), and then choose **Next: Configure Instance Details**\.
+1. On the **Step 2** page, select **t3\.micro** \(note, you can choose a larger instance type\), and then choose **Next: Configure Instance Details**\.
 
 1. On the **Step 3** page, do the following:
-   + For **Network**, choose the VPC that ends with **AWS\-DS\-VPC** \(for example, **vpc\-*xxxxxxxx* \| AWS\-DS\-VPC**\)\.
-   + For **Subnet** choose **Public subnet 1**, which should be preconfigured for your preferred Availability Zone \(for example, **subnet\-*xxxxxxxx* \| Public subnet1 \| *us\-west\-2a***\)\. 
+   + For **Network**, choose the VPC that ends with **AWS\-DS\-VPC01** \(for example, **vpc\-*xxxxxxxxxxxxxxxxx* \| AWS\-DS\-VPC01**\)\.
+   + For **Subnet** choose **Public subnet 1**, which should be preconfigured for your preferred Availability Zone \(for example, **subnet\-*xxxxxxxxxxxxxxxxx* \| AWS\-DS\-VPC01\-Subnet01 \| *us\-west\-2a***\)\. 
    + For **Auto\-assign Public IP**, choose **Enable** \(if the subnet setting is not set to enable by default\)\.
    + For **Domain join directory**, choose **corp\.example\.com \(d\-*xxxxxxxxxx*\)**\.
    + For **IAM role** choose the name you gave your instance role in [Create a Role to Join Windows Instances to Your AWS Managed Microsoft AD Domain](#configureec2), such as **EC2DomainJoin**\.

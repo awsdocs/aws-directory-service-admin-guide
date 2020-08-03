@@ -118,7 +118,7 @@ Use either of the following methods to check the LDAPS status in AWS Directory S
 + Run the following command\. If the status value returns `Enabled`, LDAPS has been successfully configured\.
 
   ```
-  aws ds describe-ldaps-settings –directory-id your_directory_id
+  aws ds describe-ldaps-settings –-directory-id your_directory_id
   ```
 
 ## Manage Client\-Side LDAPS<a name="ms_ad_manage-client-side-ldaps"></a>

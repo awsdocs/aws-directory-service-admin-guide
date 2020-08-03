@@ -6,7 +6,7 @@ The following are the various statuses for a directory\.
 The directory is operating normally\. No issues have been detected by the AWS Directory Service for your directory\. 
 
 **Creating**  
-The directory is currently being created\. Directory creation typically takes between 5 to 30 minutes but may vary depending on the system load\. 
+The directory is currently being created\. Directory creation typically takes between 20 to 45 minutes but may vary depending on the system load\. 
 
 **Deleted**  
 The directory has been deleted\. All resources for the directory have been released\. Once a directory enters this state, it cannot be recovered\. 

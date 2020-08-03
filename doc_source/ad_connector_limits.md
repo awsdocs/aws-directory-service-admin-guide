@@ -8,6 +8,7 @@ The following are the default limits for AD Connector\. Each limit is per region
 | Resource | Default Limit | 
 | --- | --- | 
 | AD Connector directories | 10 | 
+| Maximum number of registered certificate authority \(CA\) certificates per directory | 5 | 
 
 ## Increase Your Limit<a name="increase_limit"></a>
 

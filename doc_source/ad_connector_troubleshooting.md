@@ -20,10 +20,6 @@ Updating the password only in AWS Directory Service does NOT push the password c
 
 You may experience errors when searching for users while using AWS applications, such as Amazon WorkSpaces or Amazon QuickSight, even while the AD Connector status was active\. Expired credentials can prevent AD Connector from completing queries on objects in your Active Directory\. Update the password for the service account using the ordered steps provided above\.
 
-## I receive a "Authentication failed" error when querying users and groups in my domain through AD Connector<a name="query_domain"></a>
-
-This can occur if you have the **LDAP server signing requirements** policy enabled\. Consider disabling it and then trying your query again\. For general information about this policy, see [Domain controller: LDAP server signing requirements](https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/domain-controller-ldap-server-signing-requirements)\.
-
 ## I receive a "DNS unavailable" error when I try to connect to my on\-premises directory<a name="dns_unavailable"></a>
 
 You receive an error message similar to the following when connecting to your on\-premises directory:

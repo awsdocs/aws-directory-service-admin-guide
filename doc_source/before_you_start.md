@@ -1,6 +1,9 @@
 # Prerequisites<a name="before_you_start"></a>
 
 This tutorial assumes you already have the following:
+
+**Note**  
+AWS Managed Microsoft AD does not support trust with [Single Label Domains](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)\.
 + An AWS Managed Microsoft AD directory created on AWS\. If you need help doing this, see [Getting Started with AWS Managed Microsoft AD](ms_ad_getting_started.md)\.
 + An EC2 instance running Windows added to that AWS Managed Microsoft AD\. If you need help doing this, see [Manually Join a Windows Instance](join_windows_instance.md)\.
 **Important**  

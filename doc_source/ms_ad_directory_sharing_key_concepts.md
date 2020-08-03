@@ -20,10 +20,6 @@ AWS Managed Microsoft AD provides the following two directory sharing methods:
 + **AWS Organizations** – This method makes it easier to share the directory within your organization because you can browse and validate the directory consumer accounts\. To use this option, your organization must have **All features** enabled, and your directory must be in the organization master account\. This method of sharing simplifies your setup because it doesn’t require the directory consumer accounts to accept your directory sharing request\. In the console, this method is referred to as **Share this directory with AWS accounts inside your organization**\.
 + **Handshake** – This method enables directory sharing when you aren’t using AWS Organizations\. The handshake method requires the directory consumer account to accept the directory sharing request\. In the console, this method is referred to as **Share this directory with other AWS accounts**\.
 
-## VPC Peering<a name="vpc_peering"></a>
+## Network Connectivity<a name="network_connectivity"></a>
 
-VPC peering is a networking connection made between two VPCs through which you can route traffic\. This is a prerequisite to configuring a directory sharing relationship across AWS accounts\. For more information, see [What is VPC Peering?](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html)\.
-
-To get started, see [Tutorial: Sharing Your AWS Managed Microsoft AD Directory for Seamless EC2 Domain\-Join](ms_ad_tutorial_directory_sharing.md)\.
-
-## <a name="directory_sharing_related"></a>
+Network connectivity is a prerequisite to use a directory sharing relationship across AWS accounts\. AWS supports many solutions to connect your VPCs, some of these include [VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html), [Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html), and [VPN](https://docs.aws.amazon.com/vpc/latest/adminguide/Welcome.html)\. To get started, see [Tutorial: Sharing Your AWS Managed Microsoft AD Directory for Seamless EC2 Domain\-Join](ms_ad_tutorial_directory_sharing.md)\.

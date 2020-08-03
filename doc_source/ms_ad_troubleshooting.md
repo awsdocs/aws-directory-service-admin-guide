@@ -12,5 +12,6 @@ For more information, see [Reset a User Password](ms_ad_manage_users_groups_rese
 + [Password recovery](#ms_ad_tshoot_password_recovery)
 + [DNS Troubleshooting](ms_ad_troubleshooting_dns.md)
 + [Linux Domain Join Errors](ms_ad_troubleshooting_join_linux.md)
++ [Active Directory Low Available Storage Space](ms_ad_troubleshooting_low_storage_space.md)
 + [Schema Extension Errors](ms_ad_troubleshooting_schema.md)
 + [Trust Creation Status Reasons](ms_ad_troubleshooting_trusts.md)

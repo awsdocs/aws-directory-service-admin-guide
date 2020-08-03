@@ -3,6 +3,8 @@
 Before you begin the steps in this tutorial, you must first do the following:
 + Create two new AWS accounts for testing purposes in the same Region\. When you create an AWS account, it automatically creates a dedicated virtual private cloud \(VPC\) in each account\. Take note of the VPC ID in each account\. You will need this later\.
 + Create a VPC peering connection between the two VPCs in each account using the procedures in this step\. 
+**Note**  
+While there are many ways to connect Directory owner and Directory consumer account VPCs, this tutorial will use the VPC peering method\. For additional VPC connectivity options, see [Network Connectivity](ms_ad_directory_sharing_key_concepts.md#network_connectivity)\.
 
 ## Configure a VPC Peering Connection between the Directory Owner and the Directory Consumer account<a name="step1_configure_owner_account_vpc"></a>
 

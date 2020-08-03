@@ -11,6 +11,9 @@ AWS Managed Microsoft AD supports both external and forest trusts\. To walk thro
 
 Creating the trust requires only a few steps, but you must first complete several prerequisite steps prior to setting up the trust\.
 
+**Note**  
+AWS Managed Microsoft AD does not support trust with [Single Label Domains](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)\.
+
 ### Connect to VPC<a name="connect_vpc"></a>
 
 If you are creating a trust relationship with your on\-premises directory, you must first connect your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your on\-premises network must have the following ports open to the CIDRs for both subnets in the VPC\.
@@ -19,7 +22,7 @@ If you are creating a trust relationship with your on\-premises directory, you m
 + TCP/UDP 389 \- LDAP
 + TCP 445 \- SMB
 **Note**  
-After May 30th 2020, SMB v1 will no longer be supported\.
+SMBv1 is no longer supported\.
 
 These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
 

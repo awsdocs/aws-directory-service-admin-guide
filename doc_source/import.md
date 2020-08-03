@@ -4,7 +4,7 @@ You can extend your schema by importing an LDIF file from either the AWS Directo
 
 **Important**  
 When you make an update to your AWS Managed Microsoft AD directory schema, the operation is not reversible\. In other words, once you create a new class or attribute, Active Directory doesn’t allow you to remove it\. However, you can disable it\.   
-If you must delete the schema changes, one option is to restore the directory from a previous snapshot\. Restoring a snapshot rolls both the schema and the directory data back to a previous point, not just the schema\.
+If you must delete the schema changes, one option is to restore the directory from a previous snapshot\. Restoring a snapshot rolls both the schema and the directory data back to a previous point, not just the schema\. Note, the maximum supported age of a snapshot is 180 days\. For more information, see [Useful shelf life of a system\-state backup of Active Directory](https://support.microsoft.com/en-za/help/216993/useful-shelf-life-of-a-system-state-backup-of-active-directory) on the Microsoft website\.
 
 Before the update process begins, AWS Managed Microsoft AD takes a snapshot to preserve the current state of your directory\.
 

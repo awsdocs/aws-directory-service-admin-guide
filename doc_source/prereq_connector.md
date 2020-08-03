@@ -20,13 +20,15 @@ For more information, see the following topics in the *Amazon VPC User Guide*:
 For more information about AWS Direct Connect, see the [AWS Direct Connect User Guide](https://docs.aws.amazon.com/directconnect/latest/UserGuide/)\.
 
 **Existing Active Directory**  
-You'll need to connect to an existing network with an Active Directory domain\. The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
+You'll need to connect to an existing network with an Active Directory domain\.  
+AD Connector does not support trust with [Single Label Domains](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)\.
+The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
 AD Connector does not support Read\-only domain controllers \(RODC\) when used in combination with the Amazon EC2 domain\-join feature\. 
 
 **Service account**  
 You must have credentials for a service account in the existing directory which has been delegated the following privileges:  
 + Read users and groups \- Required
-+ Join computers to the domain \- Required
++ Join computers to the domain \- Required only when using Seamless Domain Join and Amazon WorkSpaces
 + Create computer objects \- Required only when using Seamless Domain Join and Amazon WorkSpaces
 For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
 
@@ -58,10 +60,18 @@ For additional port requirements, see [AD and AD DS Port Requirements](https://d
 Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure That Kerberos Pre\-authentication Is Enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
 **Encryption types**  
-AD Connector supports the following encryption types when authenticating to your Active Directory domain controllers:  
+AD Connector supports the following encryption types when authenticating via Kerberos to your Active Directory domain controllers:  
 + AES\-256\-HMAC
 + AES\-128\-HMAC
 + RC4\-HMAC
+
+## AWS Single Sign\-On Prerequisites<a name="prereq_aws_sso_ad_connector"></a>
+
+If you plan to use AWS Single Sign\-On \(AWS SSO\) with AD Connector, you need to ensure that the following are true:
++ Your AD Connector is set up in your AWS organization’s master account\.
++ Your instance of AWS SSO is in the same Region where your AD Connector is set up\. 
+
+For more information, see [AWS SSO Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
 
 ## Multi\-Factor Authentication Prerequisites<a name="mfa_prereqs"></a>
 

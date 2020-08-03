@@ -7,25 +7,36 @@ The following is a list of compatible AWS applications and services:
 + Amazon Connect \- For more information, see [How Amazon Connect Works](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html#amazon-connect-fundamentals)\.
 + Amazon EC2 – For more information, see [Join an EC2 Instance to Your AWS Managed Microsoft AD Directory](ms_ad_join_instance.md)\.
 + Amazon FSx for Windows File Server – For more information, see [What is Amazon FSx for Windows File Server?](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)\.
-+ AWS Management Console – For more information, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
 + Amazon QuickSight \- For more information, see [Managing User Accounts in Amazon QuickSight Enterprise Edition](https://docs.aws.amazon.com/quicksight/latest/user/managing-users-enterprise.html)\.
-+ Amazon RDS for SQL Server \- For more information, see [Using Windows Authentication with a Microsoft SQL Server DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html)\.
++ Amazon RDS for MySQL \- For more information, see [Using Kerberos Authentication for MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-kerberos.html)\.
++ Amazon RDS for SQL Server \- For more information, see [Using Windows Authentication with an Amazon RDS Microsoft SQL Server DB Instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html)\.
++ Amazon RDS for Oracle \- For more information, see [Using Kerberos Authentication with Amazon RDS for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html)\.
++ Amazon RDS for PostgreSQL \- For more information, see [Using Kerberos Authentication with Amazon RDS for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/postgresql-kerberos.html)\.
 + AWS Single Sign\-On \- For detailed instructions, see [Connect AWS SSO to an On\-Premises Active Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/connectawsad.html)\.
 + Amazon WorkDocs \- For detailed instructions, see [Connecting to Your On\-Premises Directory with AWS Managed Microsoft AD](https://docs.aws.amazon.com/workdocs/latest/adminguide/connect_directory_microsoft.html)\.
 + Amazon WorkMail \- For detailed instructions, see [Integrate Amazon WorkMail with an Existing Directory \(Standard Setup\)](https://docs.aws.amazon.com/workmail/latest/adminguide/premises_directory.html)\.
 + Amazon WorkSpaces \- For detailed instructions, see [Launch a WorkSpace Using AWS Managed Microsoft AD](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-microsoft-ad.html)\. 
++ AWS Client VPN \- For detailed instructions, see [Client authentication and authorization](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authorization.html)\.
++ AWS Management Console – For more information, see [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
 
 Due to the magnitude of custom and commercial off\-the\-shelf applications that use Active Directory, AWS does not and cannot perform formal or broad verification of third\-party application compatibility with AWS Directory Service for Microsoft Active Directory \(AWS Managed Microsoft AD\)\. Although AWS works with customers in an attempt to overcome any potential application installation challenges they might encounter, we are unable to guarantee that any application is or will continue to be compatible with AWS Managed Microsoft AD\.
 
 The following third\-party applications are compatible with AWS Managed Microsoft AD:
++ Active Directory\-Based Activation \(ADBA\)
++ Active Directory Certificate Services \(AD CS\): Enterprise Certificate Authority
 + Active Directory Federation Services \(AD FS\)
++ Active Directory Users and Computers \(ADUC\)
 + Application Server \(\.NET\)
++ Azure Active Directory \(Azure AD\)
 + Azure Active Directory \(AD\) Connect
-+ Enterprise Certificate Authority
-+ Remote Desktop Licensing Manager
-+ SharePoint Server
-+ SQL Server \(includes Always On Availability Groups\)
-+ System Center Configuration Manager \(SCCM\) \- The user deploying SCCM must be a member of the AWS Delegated System Management Administrators group\.
++ Distributed File System Replication \(DFSR\)
++ Distributed File System Namespaces \(DFSN\)
++ Microsoft Remote Desktop Services Licensing Server
++ Microsoft SharePoint Server
++ Microsoft SQL Server \(including SQL Server Always On Availability Groups\)
++ Microsoft System Center Configuration Manager \(SCCM\) \- The user deploying SCCM must be a member of the AWS Delegated System Management Administrators group\.
++ Microsoft Windows and Windows Server OS
++ Office 365
 
 Note that not all configurations of these applications may be supported\.
 
@@ -39,4 +50,7 @@ Although applications may have configurations that are incompatible, application
 ## Known Incompatible Applications<a name="incompatibleapps"></a>
 
 The following lists commonly requested commercial off\-the\-shelf applications for which we have not found a configuration that works with AWS Managed Microsoft AD\. AWS updates this list from time to time at its sole discretion as a courtesy to help you avoid unproductive efforts\. AWS provide this information without warranty or claims regarding current or future compatibility\.
-+ Microsoft Exchange
++ Active Directory Certificate Services \(AD CS\): Certificate Enrollment Web Service
++ Active Directory Certificate Services \(AD CS\): Certificate Enrollment Policy Web Service
++ Microsoft Exchange Server
++ Microsoft Skype for Business Server

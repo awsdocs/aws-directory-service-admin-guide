@@ -31,7 +31,7 @@ For more information about how to join your EC2 instance to the domain, see [Joi
 
 ### Step 3: Create a Certificate Template<a name="createcustomcert"></a>
 
-After your enterprise CA has been set up, you can create a custom LDAPS certificate template in Active Directory\. The certificate template must be created with server authentication and autoenroll enabled\. For more information, see [Create a New Certificate Template](https://technet.microsoft.com/en-us/library/cc753370.aspx) on the Microsoft TechNet website\. 
+After your enterprise CA has been set up, you can configure the Kerberos Authentication certificate template\. 
 
 **To create a certificate template**
 
@@ -39,21 +39,9 @@ After your enterprise CA has been set up, you can create a custom LDAPS certific
 
 1. Launch **Server Manager\.**, and then choose **Tools**, **Certification Authority**\.
 
-1. In the **Certificate Authority** window, expand your CA tree in the left pane\. Right\-click **Certificate Templates** and then choose** Manage**\.
+1. In the **Certificate Authority** window, expand your CA tree in the left pane\. Right\-click **Certificate Templates** and then choose **New, Certificate Template to Issue**\.
 
-1. In the **Certificate Templates Console** window, right\-click **Domain Controller**, and then choose **Duplicate Template**\.
-
-1. In the **Properties of New Template** window, switch to the **General** tab and change the **Template display name** to **ServerAuthentication**\.
-
-1. Switch to the **Security** tab and choose **Domain Controllers** in the **Group or user names** section\. Select the **Autoenroll** check box in the **Permissions for Domain Controllers** section\.
-
-1. Switch to the **Extensions** tab, choose **Application Policies** in the **Extensions included in this template** section, and then choose **Edit**\.
-
-1. In the **Edit Application Policies Extension** window, choose **Client Authentication** and choose **Remove**\. Click **OK** to create the **ServerAuthentication** certificate template, and then close the **Certificate Templates Console** window\.
-
-1. In the **Certificate Authority** window, right\-click **Certificate Templates**, and choose** New**, **Certificate Template to Issue**\.
-
-1. In the **Enable Certificate Templates** window, choose **ServerAuthentication**, and then click **OK**\.
+1. In the **Enable Certificate Templates** window, choose **Kerberos Authentication** and then choose **OK**\. Your AWS Microsoft AD directory domain controllers can now obtain a certificate through auto\-enrollment to enable LDAPS\.
 
 ### Step 4: Add Security Group Rules<a name="addgrouprules"></a>
 

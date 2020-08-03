@@ -21,6 +21,9 @@ Only the actions listed here are allowed for the Admin account\. The Admin accou
 **Important**  
 AWS Domain Administrators have full administrative access to all domains hosted on AWS\. See your agreement with AWS and the [AWS Data Protection FAQ](https://aws.amazon.com/compliance/data-privacy-faq/) for more information about how AWS handles content, including directory information, that you store on AWS systems\.
 
+**Note**  
+We recommend that you do not delete or rename this account\. If you no longer want to use the account, we recommend you set a long password \(128 or more random characters\) and then disable the account\. 
+
 ## Enterprise and Domain Administrator Privileged Accounts<a name="privileged_accounts"></a>
 
 To perform operational management of your directory, AWS has exclusive control of accounts with Enterprise Administrator and Domain Administrator privileges\. This includes exclusive control of the AD administrator account\. AWS protects this account by automating password management through the use of a password vault\. During automated rotation of the administrator password, AWS creates a temporary user account and grants it Domain Administrator privileges\. This temporary account is used as a back\-up in the event of password rotation failure on the administrator account\. After AWS successfully rotates the administrator password, AWS deletes the temporary administrator account\.

@@ -4,6 +4,8 @@ You can rename your AWS Managed Microsoft AD directory’s default site name so 
 
 To do that, you must be logged in with the **Admin** account or with an account that is a member of the **AWS Delegated Sites and Services Administrators** group\. For more information about this group, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
 
+For additional benefits on renaming your site in relation to trusts, see [Domain Locator Across a Forest Trust](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/domain-locator-across-a-forest-trust/ba-p/395689) on Microsoft's website\.
+
 **To rename the AWS Managed Microsoft AD site name**
 
 1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.

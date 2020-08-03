@@ -18,7 +18,7 @@ Port requirements vary based on the version of Windows Server used by your domai
 + TCP/UDP 389 \- LDAP 
 + TCP/UDP 445 \- SMB 
 **Note**  
-After May 30th 2020, SMB v1 will no longer be supported\.
+SMBv1 is no longer supported\.
 + TCP/UDP 464 \- Kerberos authentication
 + TCP 636 \- LDAPS \(LDAP over TLS/SSL\) 
 + TCP 873 \- Rsync 

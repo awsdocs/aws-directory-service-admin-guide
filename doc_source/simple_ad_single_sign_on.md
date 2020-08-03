@@ -7,6 +7,31 @@ Before you enable single sign\-on, you need to take additional steps to enable y
 **Note**  
 Single sign\-on only works when used on a computer that is joined to the AWS Directory Service directory\. It cannot be used on computers that are not joined to the directory\.
 
+If your directory is an AD Connector directory and the AD Connector service account does not have the permission to add or remove its service principal name attribute, then for Steps 5 and 6 below, you have two options:
+
+1. You can proceed and will be prompted for the username and password for a directory user that has this permission to add or remove the service principal name attribute on the AD Connector service account\. These credentials are only used to enable single sign\-on and are not stored by the service\. The AD Connector service account permissions are not changed\.
+
+1. You can delegate permissions to allow the AD Connector service account to add or remove the service principal name attribute on itself, you can run the below PowerShell commands from a domain joined computer using an account that has permissions to modify the permissions on the AD Connector service account\. The below command will give the AD Connector service account the ability to add and remove a service principal name attribute only for itself\.
+
+```
+$AccountName = 'ConnectorAccountName'
+# DO NOT modify anything below this comment.
+Getting Active Directory information.
+Import-Module 'ActiveDirectory'
+$RootDse = Get-ADRootDSE 
+[System.GUID]$ServicePrincipalNameGuid = (Get-ADObject -SearchBase $RootDse.SchemaNamingContext -Filter { lDAPDisplayName -eq 'servicePrincipalName' } -Properties 'schemaIDGUID').schemaIDGUID
+# Getting AD Connector service account Information.
+$AccountProperties = Get-ADUser -Identity $AccountName
+$AclPath = $AccountProperties.DistinguishedName
+$AccountSid = New-Object -TypeName 'System.Security.Principal.SecurityIdentifier' $AccountProperties.SID.Value
+# Getting ACL settings for AD Connector service account.
+$ObjectAcl = Get-ACL -Path "AD:\$AclPath" 
+# Setting ACL allowing the AD Connector service account the ability to add and remove a Service Principal Name (SPN) to itself
+$AddAccessRule = New-Object -TypeName 'System.DirectoryServices.ActiveDirectoryAccessRule' $AccountSid, 'WriteProperty', 'Allow', $ServicePrincipalNameGUID, 'None'
+$ObjectAcl.AddAccessRule($AddAccessRule)
+Set-ACL -AclObject $ObjectAcl -Path "AD:\$AclPath"
+```
+
 **To enable or disable single sign\-on with Amazon WorkDocs**
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
@@ -21,11 +46,7 @@ Single sign\-on only works when used on a computer that is joined to the AWS Dir
 
 1. In the **Enable Single Sign\-On for this directory** dialog box, choose **Enable**\. Single sign\-on is enabled for the directory\. 
 
-   If the directory is an AD Connector directory and the AD Connector service account does not have permission to add a service principal name, you are prompted for the username and password for a directory user that has this permission\. These credentials are only used to enable single sign\-on and are not stored by the service\. The AD Connector service account is not changed\.
-
 1. If you later want to disable single sign\-on with Amazon WorkDocs, choose **Disable**, and then in the **Disable Single Sign\-On for this directory** dialog box, choose **Disable** again\. 
-
-   If the directory is an AD Connector directory and the AD Connector service account does not have permission to remove a service principal name, you are prompted for the username and password for a directory user that has this permission\. These credentials are only used to disable single sign\-on and are not stored by the service\. The AD Connector service account is not changed\.
 
 **Topics**
 + [Single Sign\-On for IE and Chrome](#ie_sso)

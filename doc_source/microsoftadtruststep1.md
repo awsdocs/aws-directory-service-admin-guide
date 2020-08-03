@@ -2,23 +2,25 @@
 
 In this section, you set up your Amazon EC2 environment, deploy your new forest, and prepare your VPC for trusts with AWS\.
 
-## Create a Windows Server 2016 EC2 Instance<a name="createkeypair1"></a>
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/tutorialmicrosoftadbase_vpclayout.png)
 
-Use the following procedure to create a Windows Server 2016 member server in Amazon EC2\. 
+## Create a Windows Server 2019 EC2 Instance<a name="createkeypair1"></a>
 
-**To create a Windows Server 2016 EC2 instance**
+Use the following procedure to create a Windows Server 2019 member server in Amazon EC2\. 
+
+**To create a Windows Server 2019 EC2 instance**
 
 1. Open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
 1. In the Amazon EC2 console, choose **Launch Instance**\.
 
-1. On the **Step 1** page, locate **Microsoft Windows Server 2016 Base \- ami\-*xxxxxxxx*** in the list\. Then choose **Select**\.
+1. On the **Step 1** page, locate **Microsoft Windows Server 2019 Base \- ami\-*xxxxxxxxxxxxxxxxx*** in the list\. Then choose **Select**\.
 
 1. On the **Step 2** page, select **t2\.large**, and then choose **Next: Configure Instance Details**\.
 
 1. On the **Step 3** page, do the following:
-   + For **Network**, select **vpc\-*xxxxxxxx* AWS\-DS\-VPC** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createvpc)\)\.
-   + For **Subnet**, select **subnet\-*xxxxxxxx* \| Public subnet2 \| \(YourAZ\)**\.
+   + For **Network**, select **vpc\-*xxxxxxxxxxxxxxxxx* AWS\-DS\-VPC01** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createvpc)\)\.
+   + For **Subnet**, select **subnet\-*xxxxxxxxxxxxxxxxx* \| AWS\-OnPrem\-VPC01\-Subnet01 \| AWS\-OnPrem\-VPC01**\.
    + For **Auto\-assign Public IP** list, choose **Enable** \(if the subnet setting is not set to **Enable** by default\)\.
    + Leave the rest of the settings at their defaults\.
    + Choose **Next: Add Storage**\.
@@ -81,13 +83,13 @@ If you want to create a domain controller in AWS that replicates with your on\-p
 1. On the **Deployment Configuration** page, choose **Add a new forest**\. In **Root domain name**, type **example\.local**, and then choose **Next**\.
 
 1. On the **Domain Controller Options** page, do the following:
-   + In both **Forest functional level** and **Domain functional level**, choose **Windows Server 2016**\.
+   + In both **Forest functional level** and **Domain functional level**, choose **Windows Server 2019**\.
    + Under **Specify domain controller capabilities**, verify that both **Domain Name System \(DNS\) server** and **Global Catalog \(GC\)** are selected\.
    + Type and then confirm a Directory Services Restore Mode \(DSRM\) password\. Then choose **Next**\.
 
 1. On the **DNS Options** page, ignore the warning about delegation and choose **Next**\.
 
-1. On the **Additional options** page, make sure that **EXAMPLE1** is listed as the NetBios domain name\.
+1. On the **Additional options** page, make sure that **EXAMPLE** is listed as the NetBios domain name\.
 
 1. On the **Paths** page, leave the defaults, and then choose **Next**\.
 
@@ -128,6 +130,8 @@ This security group was automatically created when you initially created your di
 1. Perform the same steps for the **corp\.example\.com** domain from the **corp\.example\.com\-mgmt **instance\.
 
 **To configure DNS conditional forwarders**
+**Note**  
+A conditional forwarder is a DNS server on a network that is used to forward DNS queries according to the DNS domain name in the query\. For example, a DNS server can be configured to forward all the queries it receives for names ending with widgets\.example\.com to the IP address of a specific DNS server or to the IP addresses of multiple DNS servers\.
 
 1. First you must get some information about your AWS Managed Microsoft AD\.
 

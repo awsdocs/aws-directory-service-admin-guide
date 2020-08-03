@@ -10,22 +10,29 @@ AWS logs the following events for compliance\.
 | Monitoring category | Policy setting | Audit state | 
 | --- | --- | --- | 
 | Account Logon | Audit Credential Validation  | Success, Failure | 
+|  | Audit Other Account Logon Events | Success, Failure | 
 | Account Management | Audit Computer Account Management  | Success, Failure | 
 |  | Audit Other Account Management Events | Success, Failure | 
 |  | Audit Security Group Management | Success, Failure | 
 |  | Audit User Account Management | Success, Failure | 
-| Detailed Tracking | Audit Process Creation | Success | 
+| Detailed Tracking | Audit DPAPI Activity | Success, Failure | 
+|  | Audit PNP Activity | Success | 
+|  | Audit Process Creation | Success, Failure | 
 | DS Access | Audit Directory Service Access | Success, Failure | 
 |  | Audit Directory Service Changes | Success, Failure | 
-| Logon/Logoff | Audit Account Lockout Success | Success, Failure | 
+| Logon/Logoff | Audit Account Lockout | Success, Failure | 
 |  | Audit Logoff | Success | 
 |  | Audit Logon | Success, Failure | 
-|  | Audit Special Logon | Success | 
-| Object Access | Audit Removable Storage | Success, Failure | 
+|  | Audit Other Logon/Logoff Events | Success, Failure | 
+|  | Audit Special Logon | Success, Failure | 
+| Object Access | Audit Other Object Access Events | Success, Failure | 
+|  | Audit Removable Storage | Success, Failure | 
 |  | Audit Central Access Policy Staging | Success, Failure | 
 | Policy Change | Audit Policy Change | Success, Failure | 
-|  | Audit Authentication Policy Change | Success | 
+|  | Audit Authentication Policy Change | Success, Failure | 
 |  | Audit Authorization Policy Change | Success, Failure | 
+|  | Audit MPSSVC Rule\-Level Policy Change | Success | 
+|  | Audit Other Policy Change Events | Failure | 
 | Privilege Use | Audit Sensitive Privilege Use | Success, Failure | 
 | System | Audit IPsec Driver | Success, Failure | 
 |  | Audit Other System Events | Success, Failure | 

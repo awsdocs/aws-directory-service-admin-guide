@@ -11,6 +11,8 @@ If single sign\-on is enabled for the directory, AWS Directory Service must tran
 
 1. Choose the directory ID link for your directory\.
 
-1. On the **Directory details** page, in the **Connector account credentials** section, choose **Update**\. 
+1. On the **Directory details** page, choose the **Networking & security** tab\.
+
+1. In the **Service account credentials** section, choose **Update**\. 
 
 1. In the **Update service account credentials** dialog, type the new user name and password, and then choose **Update Directory**\.

@@ -7,3 +7,4 @@ This section describes considerations for securing your AWS Managed Microsoft AD
 + [Enable Multi\-Factor Authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)
 + [Enable Secure LDAP \(LDAPS\)](ms_ad_ldap.md)
 + [Manage Compliance for AWS Managed Microsoft AD](ms_ad_compliance.md)
++ [Enhance Your AWS Managed Microsoft AD Network Security Configuration](ms_ad_network_security.md)

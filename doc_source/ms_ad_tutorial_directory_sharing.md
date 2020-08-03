@@ -11,7 +11,7 @@ This workflow has four basic steps\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/directory_sharing_tutorial3.png)
 
 **[Step 1: Set Up Your Networking Environment](step1_setup_networking.md)**  
-In the directory owner account, you set up all of the networking prerequisites necessary for the directory sharing process\.
+In the directory owner account, you set up all of the networking prerequisites necessary for the directory sharing process\. 
 
 **[Step 2: Share Your Directory](step2_share_directory.md)**  
 While signed in with directory owner administrator credentials, you open the AWS Directory Service console and start the share directory workflow, which sends an invitation to the directory consumer account\.

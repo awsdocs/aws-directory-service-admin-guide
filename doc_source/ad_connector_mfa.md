@@ -11,7 +11,9 @@ Multi\-factor authentication is not available for Simple AD\. However, MFA can b
 
 1. Choose the directory ID link for your AD Connector directory\.
 
-1. On the **Directory details** page, in the **Multi\-factor authentication** section, choose **Actions**, and then choose **Enable**\.
+1. On the **Directory details** page, select the **Networking & security** tab\.
+
+1. In the **Multi\-factor authentication** section, choose **Actions**, and then choose **Enable**\.
 
 1. On the **Enable multi\-factor authentication \(MFA\)** page, provide the following values:   
 **Display label**  

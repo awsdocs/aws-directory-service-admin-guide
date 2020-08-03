@@ -20,8 +20,8 @@ You can use three different methods to create your directory\. You can use the A
      + Non\-alphanumeric characters \(\~\!@\#$%^&\*\_\-\+=`\|\\\(\)\{\}\[\]:;"'<>,\.?/\)
 
 1. On the **Choose VPC and subnets** page, provide the following information, and then choose **Next**\.
-   + For **VPC**, choose the option that begins with **AWS\-DS\-VPC** and ends with **\(10\.0\.0\.0/16\)**\.
-   + For **Subnets**, choose the **10\.0\.128\.0/20** and **10\.0\.144\.0/20** public subnets\.
+   + For **VPC**, choose the option that begins with **AWS\-DS\-VPC01** and ends with **\(10\.0\.0\.0/16\)**\.
+   + For **Subnets**, choose the **10\.0\.0\.0/24** and **10\.0\.1\.0/24** public subnets\.
 
 1. On the **Review & create** page, review the directory information and make any necessary changes\. When the information is correct, choose **Create directory**\. Creating the directory takes 20 to 40 minutes\. Once created, the **Status** value changes to **Active**\.
 

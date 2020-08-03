@@ -1,6 +1,6 @@
 # What Is AWS Directory Service?<a name="what_is"></a>
 
-AWS Directory Service provides multiple ways to use Amazon Cloud Directory and Microsoft Active Directory \(AD\) with other AWS services\. Directories store information about users, groups, and devices, and administrators use them to manage access to information and resources\. AWS Directory Service provides multiple directory choices for customers who want to use existing Microsoft AD or Lightweight Directory Access Protocol \(LDAP\)–aware applications in the cloud\. It also offers those same choices to developers who need a directory to manage users, groups, devices, and access\.
+AWS Directory Service provides multiple ways to use Microsoft Active Directory \(AD\) with other AWS services\. Directories store information about users, groups, and devices, and administrators use them to manage access to information and resources\. AWS Directory Service provides multiple directory choices for customers who want to use existing Microsoft AD or Lightweight Directory Access Protocol \(LDAP\)–aware applications in the cloud\. It also offers those same choices to developers who need a directory to manage users, groups, devices, and access\.
 
 ## Which to Choose<a name="choosing_an_option"></a>
 
@@ -12,7 +12,6 @@ You can choose directory services with the features and scalability that best me
 | What do you need to do? | Recommended AWS Directory Service options | 
 | --- | --- | 
 | I need Active Directory or LDAP for my applications in the cloud |  Select [AWS Directory Service for Microsoft Active Directory](#microsoftad) \(Standard Edition or Enterprise Edition\) if you need an actual Microsoft Active Directory in the AWS Cloud that supports Active Directory–aware workloads, or AWS applications and services such as Amazon WorkSpaces and Amazon QuickSight, or you need LDAP support for Linux applications\. Use [AD Connector](#adconnector) if you only need to allow your on\-premises users to log in to AWS applications and services with their Active Directory credentials\. You can also use AD Connector to join Amazon EC2 instances to your existing Active Directory domain\. Use [Simple AD](#simplead) if you need a low\-scale, low\-cost directory with basic Active Directory compatibility that supports Samba 4–compatible applications, or you need LDAP compatibility for LDAP\-aware applications\.  | 
-| I develop cloud applications that manage hierarchical data with complex relationships | Use [Amazon Cloud Directory](#clouddirectory) if you need a cloud\-scale directory to share and control access to hierarchical data between your applications\. | 
 | I develop SaaS applications | Use [Amazon Cognito](#cognito) if you develop high\-scale SaaS applications and need a scalable directory to manage and authenticate your subscribers and that works with social media identities\. | 
 
 ## AWS Directory Service Options<a name="directoryoptions"></a>
@@ -22,7 +21,7 @@ AWS Directory Service includes several directory types to choose from\. For more
 ------
 #### [ AWS Directory Service for Microsoft Active Directory ]<a name="microsoftad"></a>
 
-Also known as AWS Managed Microsoft AD, AWS Directory Service for Microsoft Active Directory is powered by an actual Microsoft Windows Server Active Directory \(AD\), managed by AWS in the AWS Cloud\. It enables you to migrate a broad range of Active Directory–aware applications to the AWS Cloud\. AWS Managed Microsoft AD works with Microsoft SharePoint, Microsoft SQL Server Always On Availability Groups, and many \.NET applications\. It also supports AWS managed applications and services including [Amazon WorkSpaces](https://aws.amazon.com/workspaces/), [Amazon WorkDocs](https://aws.amazon.com/workdocs/), [Amazon QuickSight](https://aws.amazon.com/quicksight/), [Amazon Chime](https://aws.amazon.com/chime/), [Amazon Connect](https://aws.amazon.com/connect/), and [Amazon Relational Database Service for Microsoft SQL Server](https://aws.amazon.com/rds/sqlserver/) \(RDS for SQL Server\)\.
+Also known as AWS Managed Microsoft AD, AWS Directory Service for Microsoft Active Directory is powered by an actual Microsoft Windows Server Active Directory \(AD\), managed by AWS in the AWS Cloud\. It enables you to migrate a broad range of Active Directory–aware applications to the AWS Cloud\. AWS Managed Microsoft AD works with Microsoft SharePoint, Microsoft SQL Server Always On Availability Groups, and many \.NET applications\. It also supports AWS managed applications and services including [Amazon WorkSpaces](https://aws.amazon.com/workspaces/), [Amazon WorkDocs](https://aws.amazon.com/workdocs/), [Amazon QuickSight](https://aws.amazon.com/quicksight/), [Amazon Chime](https://aws.amazon.com/chime/), [Amazon Connect](https://aws.amazon.com/connect/), and [Amazon Relational Database Service for Microsoft SQL Server](https://aws.amazon.com/rds/sqlserver/) \(Amazon RDS for SQL Server, Amazon RDS for Oracle, and Amazon RDS for PostgreSQL\)\.
 
 AWS Managed Microsoft AD is approved for applications in the AWS Cloud that are subject to [U\.S\. Health Insurance Portability and Accountability Act](http://www.hhs.gov/ocr/privacy/) \(HIPAA\) or [Payment Card Industry Data Security Standard](https://aws.amazon.com/compliance/pci-dss-level-1-faqs/) \(PCI DSS\) compliance when you [enable compliance for your directory](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_compliance.html)\.
 
@@ -71,15 +70,6 @@ Simple AD does not support multi\-factor authentication \(MFA\), trust relations
 ***When to use***
 
 You can use Simple AD as a standalone directory in the cloud to support Windows workloads that need basic AD features, compatible AWS applications, or to support Linux workloads that need LDAP service\. For more information, see [Simple Active Directory](directory_simple_ad.md)\.
-
-------
-#### [ Amazon Cloud Directory ]<a name="clouddirectory"></a>
-
-Amazon Cloud Directory is a cloud\-native directory that can store hundreds of millions of application\-specific objects with multiple relationships and schemas\. Use Amazon Cloud Directory if you need a highly scalable directory store for your application’s hierarchical data\.
-
-***When to use***
-
-Amazon Cloud Directory is a great choice when you need to build application directories such as device registries, catalogs, social networks, organization structures, and network topologies\. For more information, see [What is Amazon Cloud Directory?](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html) in the *Amazon Cloud Directory Developer Guide*\.
 
 ------
 #### [ Amazon Cognito ]<a name="cognito"></a>

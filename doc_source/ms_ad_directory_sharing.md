@@ -20,3 +20,4 @@ For more information about directory sharing and how to extend the reach of your
 **Additional Resources**
 + [Use Case: Share Your Directory to Seamlessly Join Amazon EC2 Instances to a Domain Across AWS Accounts](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/usecase6.html)
 + [AWS Security Blog Article: How to Join Amazon EC2 Instances From Multiple Accounts and VPCs to a Single AWS Managed Microsoft AD Directory](https://aws.amazon.com/blogs/security/how-to-domain-join-amazon-ec2-instances-aws-managed-microsoft-ad-directory-multiple-accounts-vpcs/)
++ [Joining your Amazon RDS DB instances across accounts to a single shared domain](https://aws.amazon.com/blogs/database/joining-your-amazon-rds-instances-across-accounts-to-a-single-shared-domain/)
