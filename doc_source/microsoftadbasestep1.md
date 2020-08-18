@@ -148,11 +148,7 @@ By default, AWS Managed Microsoft AD creates a security group to manage traffic 
 | Custom TCP Rule  | TCP | 636 | 10\.0\.0\.0/16 | LDAP SSL | 
 | Custom TCP Rule  | TCP | 49152 \- 65535 | 10\.0\.0\.0/16 | RPC | 
 | Custom TCP Rule  | TCP | 3268 \- 3269 | 10\.0\.0\.0/16 | LDAP GC & LDAP GC SSL | 
-| Custom TCP Rule  | UDP | 53 | 10\.0\.0\.0/16 | DNS | 
-| Custom UDP Rule  | UDP | 88 | 10\.0\.0\.0/16 | Kerberos | 
 | Custom UDP Rule  | UDP | 123 | 10\.0\.0\.0/16 | Windows Time | 
-| Custom UDP Rule  | UDP | 389 | 10\.0\.0\.0/16 | LDAP | 
-| Custom UDP Rule  | UDP | 464 | 10\.0\.0\.0/16 | Kerberos change / set password | 
 | All Traffic | All | All | 10\.100\.0\.0/16 | All local VPC traffic | 
 
 **Security Group Outbound Rules for AWS\-OnPrem\-VPC01**
