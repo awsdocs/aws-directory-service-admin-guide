@@ -16,7 +16,7 @@ If your directory is an AD Connector directory and the AD Connector service acco
 ```
 $AccountName = 'ConnectorAccountName'
 # DO NOT modify anything below this comment.
-Getting Active Directory information.
+# Getting Active Directory information.
 Import-Module 'ActiveDirectory'
 $RootDse = Get-ADRootDSE 
 [System.GUID]$ServicePrincipalNameGuid = (Get-ADObject -SearchBase $RootDse.SchemaNamingContext -Filter { lDAPDisplayName -eq 'servicePrincipalName' } -Properties 'schemaIDGUID').schemaIDGUID

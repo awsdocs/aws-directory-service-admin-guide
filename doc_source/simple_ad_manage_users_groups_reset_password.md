@@ -12,11 +12,11 @@ You can use any of the following methods to reset a user's password\.
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, under **Active Directory**, choose **Directories**, and then select the directory in the list where you want to reset a user's password\.
 
-1. Choose **Actions**, and then choose **Reset user password**\.
+1. On the **Directory details** page, choose **Reset user password**\.
 
 1. In the **Reset user password** dialog, in **Username** type the username of the user whose password needs to change\.
 
-1. Type a password in **New password** and **Confirm Password**, and then choose **Reset password**\.
+1. Type a password in **New password** and **Confirm password**, and then choose **Reset password**\.
 
 **Method 2: To reset a user password \(Windows PowerShell\)**
 

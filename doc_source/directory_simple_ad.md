@@ -4,7 +4,7 @@ Simple AD is a standalone managed directory that is powered by a Samba 4 Active 
 + Small \- Supports up to 500 users \(approximately 2,000 objects including users, groups, and computers\)\.
 + Large \- Supports up to 5,000 users \(approximately 20,000 objects including users, groups, and computers\)\.
 
-Simple AD provides a subset of the features offered by AWS Managed Microsoft AD, including the ability to manage user accounts and group memberships, create and apply group policies, securely connect to Amazon EC2 instances, and provide Kerberos\-based single sign\-on \(SSO\)\. However, note that Simple AD does not support features such as trust relationships with other domains, Active Directory Administrative Center, PowerShell support, Active Directory recycle bin, group managed service accounts, and schema extensions for POSIX and Microsoft applications\.
+Simple AD provides a subset of the features offered by AWS Managed Microsoft AD, including the ability to manage user accounts and group memberships, create and apply group policies, securely connect to Amazon EC2 instances, and provide Kerberos\-based single sign\-on \(SSO\)\. However, note that Simple AD does not support features such as multi\-factor authentication \(MFA\), trust relationships with other domains, Active Directory Administrative Center, PowerShell support, Active Directory recycle bin, group managed service accounts, and schema extensions for POSIX and Microsoft applications\.
 
 Simple AD offers many advantages:
 + Simple AD makes it easier to [manage Amazon EC2 instances running Linux and Windows](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple_ad_join_instance.html) and deploy Windows applications in the AWS Cloud\.

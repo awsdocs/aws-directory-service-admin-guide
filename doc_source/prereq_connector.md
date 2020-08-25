@@ -100,7 +100,7 @@ This procedure must be performed on a machine that is joined to your directory a
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html)
 
-1. In the **Active Directory User and Computers** navigation tree, select your domain root\. In the menu, select **Action**, and then **Delegate Control**\.
+1. In the **Active Directory User and Computers** navigation tree, select your domain root\. In the menu, select **Action**, and then **Delegate Control**\. If your AD Connector is connected to AWS Managed Microsoft AD, you will not have access to delegate control at the domain root level\. In this case, to delegate control, select the OU under your directory OU where your computer objects will be created\.
 
 1. On the **Delegation of Control Wizard** page, click **Next**, then click **Add**\.
 

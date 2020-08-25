@@ -21,7 +21,9 @@ Be sure to save this password\. AWS Directory Service does not store this passwo
 + Creates the following groups in the AWS Delegated Groups OU:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html)
-+ Creates and applies the following Group Policy Objects \(GPOs\):  
++ Creates and applies the following Group Policy Objects \(GPOs\):
+**Note**  
+You do not have permissions to delete, modify, or unlink these GPOs\. This is by design as they are reserved for AWS use\. You may link them to OUs that you control if needed\.   
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html)
 
