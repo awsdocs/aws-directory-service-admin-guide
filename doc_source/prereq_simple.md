@@ -5,7 +5,7 @@ To create a Simple AD directory, you need a VPC with the following:
 + The VPC must have default hardware tenancy\.
 + The VPC must **not** be configured with the following [VPC endpoint\(s\)](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html):
   + [CloudWatch VPC Endpoint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-and-interface-VPC.html)
-+ If you require LDAPS support with Simple AD, we recommend that you configure it using an Elastic Load Balancer and HA Proxy running on EC2 instances\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single ELB IP address, and have automatic fail\-over through the HA Proxy\. For more information about how to configure LDAPS with Simple AD, see [How to Configure an LDAPS Endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-an-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.
++ If you require LDAPS support with Simple AD, we recommend that you configure it using an Elastic Load Balancer and HA Proxy running on EC2 instances\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single ELB IP address, and have automatic fail\-over through the HA Proxy\. For more information about how to configure LDAPS with Simple AD, see [How to Configure an LDAPS Endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.
 + The following encryption types must be enabled in the directory: 
   + RC4\_HMAC\_MD5
   + AES128\_HMAC\_SHA1
