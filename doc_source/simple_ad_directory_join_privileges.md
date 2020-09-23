@@ -6,7 +6,7 @@ With Simple AD, members of the **Domain Admins** group have sufficient privilege
 
 However, as a best practice, you should use an account that has only the minimum privileges necessary\. The following procedure demonstrates how to create a new group called `Joiners` and delegate the privileges to this group that are needed to join computers to the directory\.
 
-You must perform this procedure on a machine that is joined to your directory and has the **Active Directory User and Computers** MMC snap\-in installed\. You must also be logged in as a domain administrator\.
+You must perform this procedure on a computer that is joined to your directory and has the **Active Directory User and Computers** MMC snap\-in installed\. You must also be logged in as a domain administrator\.
 
 **To delegate join privileges for Simple AD**
 

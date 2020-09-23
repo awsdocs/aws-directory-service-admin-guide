@@ -6,7 +6,7 @@ This procedure seamlessly joins a Windows EC2 instance to your Simple AD directo
 
 1. Sign in to the AWS Management Console and open the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
 
-1. From the region selector in the navigation bar, choose the same region as the existing directory\.
+1. From the Region selector in the navigation bar, choose the same Region as the existing directory\.
 
 1. Choose **Launch Instance**\.
 
@@ -40,7 +40,7 @@ This option is only available for Windows instances\. Linux instances must be ma
 
       1. Under **Select type of trusted entity**, choose **AWS service**\.
 
-      1. Under **Choose the service that this role will use**, in the full list of services, choose **EC2** \.
+      1. Under **Choose the service that this role will use**, in the full list of services, choose **EC2**\.
 
       1. Under **Select your use case**, choose **EC2**, and the choose **Next: Permissions**\.
 

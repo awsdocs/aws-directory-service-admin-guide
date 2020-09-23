@@ -9,7 +9,7 @@ Single sign\-on only works when used on a computer that is joined to the AWS Dir
 
 If your directory is an AD Connector directory and the AD Connector service account does not have the permission to add or remove its service principal name attribute, then for Steps 5 and 6 below, you have two options:
 
-1. You can proceed and will be prompted for the username and password for a directory user that has this permission to add or remove the service principal name attribute on the AD Connector service account\. These credentials are only used to enable single sign\-on and are not stored by the service\. The AD Connector service account permissions are not changed\.
+1. You can proceed and will be prompted for the user name and password for a directory user that has this permission to add or remove the service principal name attribute on the AD Connector service account\. These credentials are only used to enable single sign\-on and are not stored by the service\. The AD Connector service account permissions are not changed\.
 
 1. You can delegate permissions to allow the AD Connector service account to add or remove the service principal name attribute on itself, you can run the below PowerShell commands from a domain joined computer using an account that has permissions to modify the permissions on the AD Connector service account\. The below command will give the AD Connector service account the ability to add and remove a service principal name attribute only for itself\.
 

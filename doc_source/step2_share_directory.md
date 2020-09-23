@@ -16,7 +16,9 @@ Use the following procedures to begin the directory sharing workflow from within
 
 1. On the **Choose which AWS accounts to share with** page, choose one of the following sharing methods depending on your business needs:
 
-   1. **Share this directory with AWS accounts inside your organization** – With this option you can select the AWS accounts you want to share your directory with from a list showing all the AWS accounts inside your AWS organization\. You must enable trusted access with AWS Directory Service before you share a directory\. For more information, see [How to Enable or Disable Trusted Access](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_how-to-enable-disable-trusted-access)\. Please note that, to use this option, AWS Organizations **must have All features enabled**, and your directory **must be in the organization master account**.
+   1. **Share this directory with AWS accounts inside your organization** – With this option you can select the AWS accounts you want to share your directory with from a list showing all the AWS accounts inside your AWS organization\. You must enable trusted access with AWS Directory Service before you share a directory\. For more information, see [How to Enable or Disable Trusted Access](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_how-to-enable-disable-trusted-access)\.
+**Note**  
+To use this option, your organization must have **All features** enabled, and your directory must be in the organization master account\.
 
       1. Under **AWS accounts in your organization**, select the AWS accounts that you want to share the directory with and click **Add**\. 
 

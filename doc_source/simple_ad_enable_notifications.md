@@ -21,7 +21,7 @@ You can associate multiple directories as publishers to a single topic\. You can
 1. On the **Create notification** page, select **Choose a notification type**, and then choose **Create a new notification**\. Alternatively, if you already have an existing SNS topic, you can choose **Associate existing SNS topic** to send status messages from this directory to that topic\.
 **Note**  
 If you choose **Create a new notification** but then use the same topic name for an SNS topic that already exists, Amazon SNS does not create a new topic, but just adds the new subscription information to the existing topic\.  
-If you choose **Associate existing SNS topic**, you will only be able to choose an SNS topic that is in the same region as the directory\.
+If you choose **Associate existing SNS topic**, you will only be able to choose an SNS topic that is in the same Region as the directory\.
 
 1. Choose the **Recipient type** and enter the **Recipient** contact information\. If you enter a phone number for SMS, use numbers only\. Do not include dashes, spaces, or parentheses\.
 

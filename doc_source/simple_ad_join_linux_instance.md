@@ -59,7 +59,7 @@ For help with determining the Amazon Linux version you are using, see [Identifyi
 *join\_account@example\.com*  
 An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
-The fully\-qualified DNS name of your directory\.
+The fully qualified DNS name of your directory\.
 
    ```
    ...
@@ -139,7 +139,7 @@ As you install the packages, you might be presented with several pop\-up configu
 *join\_account@example\.com*  
 An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
-The fully\-qualified DNS name of your directory\.
+The fully qualified DNS name of your directory\.
 
    ```
    ...
@@ -219,7 +219,7 @@ As you install the packages, you might be presented with several pop\-up configu
 *join\_account*  
 The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
-The fully\-qualified DNS name of your directory\.
+The fully qualified DNS name of your directory\.
 
    ```
    ...
@@ -312,7 +312,7 @@ As you install the packages, you might be presented with several pop\-up configu
 *join\_account@example\.com*  
 The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
-The fully\-qualified DNS name of your directory\.
+The fully qualified DNS name of your directory\.
 
    ```
    ...
@@ -454,7 +454,7 @@ access_provider = ad
 ad_access_filter = (memberOf=cn=admins,ou=Testou,dc=example,dc=com)
 ```
 
-In order for the configuration to take affect you need to restart the sssd service:
+In order for the configuration to take effect, you need to restart the sssd service:
 
 ```
 sudo systemctl restart sssd.service
@@ -468,7 +468,7 @@ sudo service sssd start
 
 ## Connect to the Instance<a name="simple_ad_linux_connect"></a>
 
-When a user connects to the instance using an SSH client, they are prompted for their username\. The user can enter the username in either the `username@example.com` or `EXAMPLE\username` format\. The response will appear similar to the following, depending on which linux distribution you are using:
+When a user connects to the instance using an SSH client, they are prompted for their user name\. The user can enter the user name in either the `username@example.com` or `EXAMPLE\username` format\. The response will appear similar to the following, depending on which linux distribution you are using:
 
 **Amazon Linux, Red Hat Enterprise Linux, and CentOS Linux**
 

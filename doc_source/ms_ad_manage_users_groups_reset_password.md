@@ -14,7 +14,7 @@ You can use any of the following methods to reset a user's password\.
 
 1. On the **Directory details** page, choose **Reset user password**\.
 
-1. In the **Reset user password** dialog, in **Username** type the username of the user whose password needs to change\.
+1. In the **Reset user password** dialog, in **Username** type the user name of the user whose password needs to change\.
 
 1. Type a password in **New password** and **Confirm password**, and then choose **Reset password**\.
 
@@ -22,7 +22,7 @@ You can use any of the following methods to reset a user's password\.
 
 1. Open Windows PowerShell\.
 
-1. Type the following command and replace the username "joebob" and password "P@ssw0rd" with your desired credentials\. See [Reset\-DSUserPassword Cmdlet](https://docs.aws.amazon.com/powershell/latest/reference/items/Reset-DSUserPassword.html) for more information\.
+1. Type the following command and replace the user name "joebob" and password "P@ssw0rd" with your desired credentials\. See [Reset\-DSUserPassword Cmdlet](https://docs.aws.amazon.com/powershell/latest/reference/items/Reset-DSUserPassword.html) for more information\.
 
    `Reset-DSUserPassword -UserName joebob -DirectoryId d-1234567890 -NewPassword P@ssw0rd`
 
@@ -30,6 +30,6 @@ You can use any of the following methods to reset a user's password\.
 
 1. Open the AWS CLI\.
 
-1. Type the following command and replace the username "joebob" and password "P@ssw0rd" with your desired credentials\. See [reset\-user\-password](https://docs.aws.amazon.com/cli/latest/reference/ds/reset-user-password.html) in the *AWS CLI Command Reference* for more information\.
+1. Type the following command and replace the user name "joebob" and password "P@ssw0rd" with your desired credentials\. See [reset\-user\-password](https://docs.aws.amazon.com/cli/latest/reference/ds/reset-user-password.html) in the *AWS CLI Command Reference* for more information\.
 
    `aws ds reset-user-password --directory-id d-1234567890 --user-name joebob --new-password P@ssw0rd`

@@ -14,7 +14,7 @@ AWS recommends that you create a DHCP options set for your AWS Directory Service
 **Name**  
 An optional tag for the options set\.  
 **Domain name**  
-The fully\-qualified name of your directory, such as `corp.example.com`\.  
+The fully qualified name of your directory, such as `corp.example.com`\.  
 **Domain name servers**  
 The IP addresses of your AWS\-provided directory's DNS servers\.   
 You can find these addresses by going to the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, selecting **Directories** and then choosing the correct directory ID\.  
