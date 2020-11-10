@@ -36,6 +36,6 @@ Perform the following steps to increase your limit for a Region\.
 
 1. Under **Regarding**, select **Service Limit Increase**\.
 
-1. Under **Limit Type**, select **AWS Directory Service**\.
+1. Under **Limit Type**, select **Directory Service**\.
 
 1. Fill in all of the necessary fields in the form and click the button at the bottom of the page for your desired method of contact\.
