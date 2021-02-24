@@ -15,3 +15,18 @@ The following is a list of compatible AWS applications and services:
 
 **Note**  
 Amazon RDS is compatible with AWS Managed Microsoft AD only, and is not compatible with AD Connector\. For more information, see the AWS Microsoft AD section in the [AWS Directory Service FAQs](https://aws.amazon.com/directoryservice/faqs/#microsoft-ad) page\. 
+<proposed changes:
+
+
+comparing these 2 links:
+
+https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_app_compatibility.html
+
+https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_app_compatibility.html
+
+I come to the conclusion that AWS Client VPN needs Managed AD to work with AD Authentication. however looking at this link:
+
+https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html
+
+it clearly mentions that AD Connector and Managed AD both provide AD and MFA authentication for AWS Client VPN. I don't want this pull request to be approved but I want somebody with access to Service Teams compare these docs and update all 3 accordingly.
+>
