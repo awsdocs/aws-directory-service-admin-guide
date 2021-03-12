@@ -5,7 +5,7 @@ This procedure seamlessly joins a Linux EC2 instance to your AWS Managed Microso
 The following Linux instance distributions and versions are supported:
 + Amazon Linux AMI 2018\.03\.0
 + Amazon Linux 2 \(64\-bit x86\)
-+ Red Hat Enterprise Linux 8 \(HVM\) \(64\-bit x86\)
++ Red Hat Enterprise Linux 7 & Red Hat Enterprise Linux 8 \(HVM\) \(64\-bit x86\)
 + Ubuntu Server 18\.04 LTS & Ubuntu Server 16\.04 LTS
 + CentOS 7 x86\-64
 + SUSE Linux Enterprise Server 15 SP1
