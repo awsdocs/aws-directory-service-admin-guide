@@ -1,4 +1,4 @@
-# Seamlessly Join a Linux EC2 Instance to Your AD Connector Directory<a name="ad_connector_seamlessly_join_linux_instance"></a>
+# Seamlessly join a Linux EC2 instance to your AD Connector directory<a name="ad_connector_seamlessly_join_linux_instance"></a>
 
 This procedure seamlessly joins a Linux EC2 instance to your AD Connector directory\.
 
@@ -17,11 +17,11 @@ Distributions prior to Ubuntu 14 and Red Hat Enterprise Linux 7 do not support t
 
 Before you can set up seamless domain join to a Linux EC2 instance, you need to complete the procedures in this section\.
 
-### Select Your Seamless Domain Join Service Account<a name="ad_connector_seamless-linux-prereqs-select"></a>
+### Select your seamless domain join service account<a name="ad_connector_seamless-linux-prereqs-select"></a>
 
 You can seamlessly join Linux computers to your on\-premises Active Directory domain through AD Connector\. To do that, you must create a user account with create computer account permissions to join the computers to the domain\. You can use your AD Connector service account if you prefer\. Or you can use any other account that has sufficient privileges to join computers to the domain\. Although members of the *Domain Admins* or other groups might have sufficient privileges to join computers to the domain, we do not recommend these\. As a best practice, we recommend that you use a service account that has the minimum privileges necessary to join computers to the domain\.
 
-To delegate an account with the minimum privileges necessary to join computers to the domain, you can run the following PowerShell commands\. You must run these commands from a domain\-joined Windows computer with the [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md) installed\. In addition, you must use an account that has permission to modify the permissions on your Computers OU or container\. The PowerShell command sets permissions that allow the service account to create computer objects in your domain’s default computers container\. If you prefer using a graphical user interface \(GUI\) you can use the manual process that is described in [Delegate privileges to your service account](prereq_connector.md#connect_delegate_privileges)\.
+To delegate an account with the minimum privileges necessary to join computers to the domain, you can run the following PowerShell commands\. You must run these commands from a domain\-joined Windows computer with the [Installing the Active Directory administration tools](ms_ad_install_ad_tools.md) installed\. In addition, you must use an account that has permission to modify the permissions on your Computers OU or container\. The PowerShell command sets permissions that allow the service account to create computer objects in your domain’s default computers container\. If you prefer using a graphical user interface \(GUI\) you can use the manual process that is described in [Delegate privileges to your service account](prereq_connector.md#connect_delegate_privileges)\.
 
 ```
 $AccountName = 'awsSeamlessDomain'
@@ -46,7 +46,7 @@ Set-ACL -AclObject $ObjectAcl -Path "AD:\$ComputersContainer"
 
 If you prefer using a graphical user interface \(GUI\) you can use the manual process to described in [Delegate privileges to your service account](prereq_connector.md#connect_delegate_privileges)\.
 
-### Create the Secrets to Store the Domain Service Account<a name="seamless-linux-prereqs-create-secrets"></a>
+### Create the secrets to store the domain service account<a name="seamless-linux-prereqs-create-secrets"></a>
 
 You can use AWS Secrets Manager to store the domain service account\.
 
@@ -88,11 +88,11 @@ You must enter **aws/directory\-services/*d\-xxxxxxxxx*/seamless\-domain\-join**
 
 1. Choose your newly created secret name from the list, and take note of the **Secret ARN** value\. You will need it in the next section\.
 
-### Create the Required IAM Policy and Role<a name="seamless-linux-prereqs-create-policy"></a>
+### Create the required IAM policy and role<a name="seamless-linux-prereqs-create-policy"></a>
 
 Use the following prerequisite steps to create a custom policy that allows read\-only access to your Secrets Manager seamless domain join secret \(which you created earlier\), and to create a new LinuxEC2DomainJoin IAM role\. 
 
-#### Create the Secrets Manager IAM Read Policy<a name="seamless-linux-prereqs-create-policy-step1"></a>
+#### Create the Secrets Manager IAM read policy<a name="seamless-linux-prereqs-create-policy-step1"></a>
 
 You use the IAM console to create a policy that grants read\-only access to your Secrets Manager secret\.
 
@@ -126,14 +126,14 @@ Make sure you replace the `Resource` ARN with the actual ARN of the secret that 
    }
    ```
 
-1. When you are finished, choose **Review policy**\. The [Policy Validator](https://docs.aws.amazon.com/https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The [Validating IAM policy grammar](https://docs.aws.amazon.com/https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) reports any syntax errors\.
 
 1. On the **Review policy** page, enter a policy name, such as **SM\-Secret\-Linux\-DJ\-*d\-xxxxxxxxxx*\-Read**\. Review the **Summary** section to see the permissions that your policy grants\. Then choose **Create policy** to save your changes\. The new policy appears in the list of managed policies and is now ready to attach to an identity\.
 
 **Note**  
 We recommend you create one policy per secret\. Doing so ensures that instances only have access to the appropriate secret and minimizes the impact if an instance is compromised\. 
 
-#### Create the LinuxEC2DomainJoin Role<a name="seamless-linux-prereqs-create-policy-step2"></a>
+#### Create the LinuxEC2DomainJoin role<a name="seamless-linux-prereqs-create-policy-step2"></a>
 
 You use the IAM console to create the role that you will use to domain join your Linux EC2 instance\.
 
@@ -157,7 +157,7 @@ You use the IAM console to create the role that you will use to domain join your
 
    1. Enter **SM\-Secret\-Linux\-DJ\-*d\-xxxxxxxxxx*\-Read** \(or the name of the policy that you created in the previous procedure\)\. Then select the check box for that item in the list\.
 **Note**  
-AmazonSSMDirectoryServiceAccess provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. AmazonSSMManagedInstanceCore provides the minimum permissions necessary to use the AWS Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
+AmazonSSMDirectoryServiceAccess provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. AmazonSSMManagedInstanceCore provides the minimum permissions necessary to use the AWS Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM instance profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
 
 1. Choose **Next: Tags**\.
 
@@ -169,7 +169,7 @@ AmazonSSMDirectoryServiceAccess provides the permissions to join instances to an
 
 1. Choose **Create role**\.
 
-## Seamlessly Join Your Linux EC2 Instance<a name="ad_connector_seamless-linux-join-instance"></a>
+## Seamlessly join your Linux EC2 instance<a name="ad_connector_seamless-linux-join-instance"></a>
 
 Now that you have configured all of the prerequisite tasks, you can use the following procedure to seamlessly join your Linux EC2 instance\.
 
@@ -193,7 +193,7 @@ The AMI used must have AWS Systems Manager \(SSM Agent\) version 2\.3\.1644\.0 o
 
    1. For **Subnet**, choose one of the public subnets in your VPC\. The subnet that you choose must have all external traffic routed to an internet gateway\. If this is not the case, you won't be able to connect to the instance remotely\. 
 
-   1. For **Auto\-assign Public IP**, choose **Enable**\. For more information about public and private IP addressing, see [Amazon EC2 Instance IP Addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\. 
+   1. For **Auto\-assign Public IP**, choose **Enable**\. For more information about public and private IP addressing, see [Amazon EC2 instance IP addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\. 
 
    1. For **Domain join directory**, choose your domain from the list\. 
 

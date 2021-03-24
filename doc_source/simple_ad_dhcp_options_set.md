@@ -1,8 +1,8 @@
-# Create a DHCP Options Set<a name="simple_ad_dhcp_options_set"></a>
+# Create a DHCP options set<a name="simple_ad_dhcp_options_set"></a>
 
 AWS recommends that you create a DHCP options set for your AWS Directory Service directory and assign the DHCP options set to the VPC that your directory is in\. This allows any instances in that VPC to point to the specified domain and DNS servers to resolve their domain names\.
 
- For more information about DHCP options sets, see [DHCP Options Sets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
+ For more information about DHCP options sets, see [DHCP options sets](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html) in the *Amazon VPC User Guide*\.
 
 **To create a DHCP options set for your directory**
 

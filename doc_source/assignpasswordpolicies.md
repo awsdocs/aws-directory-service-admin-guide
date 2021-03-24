@@ -1,14 +1,14 @@
-# Assign Password Policies to Your Users<a name="assignpasswordpolicies"></a>
+# Assign password policies to your users<a name="assignpasswordpolicies"></a>
 
 User accounts that are a member of the **AWS Delegated Fine Grained Password Policy Administrators** security group can use the following procedure to assign policies to users and security groups\.
 
 **To assign password policies to your users**
 
-1. Launch [Active Directory Administrative Center \(ADAC\)](https://technet.microsoft.com/en-us/library/dd560651.aspx) from any managed EC2 instance that you joined to your AWS Managed Microsoft AD domain\.
+1. Launch [Active Directory administrative center \(ADAC\)](https://technet.microsoft.com/en-us/library/dd560651.aspx) from any managed EC2 instance that you joined to your AWS Managed Microsoft AD domain\.
 
 1. Switch to the **Tree View** and navigate to **System\\Password Settings Container**\.
 
-1. Double click on the fine\-grained policy you want to edit\. Click **Add** to edit the policy properties, and add users or security groups to the policy\. For more information about the default fine\-grained policies provided with AWS Managed Microsoft AD, see [AWS Pre\-Defined Password Policies](supportedpolicysettings.md#supportedpwdpolicies)\.
+1. Double click on the fine\-grained policy you want to edit\. Click **Add** to edit the policy properties, and add users or security groups to the policy\. For more information about the default fine\-grained policies provided with AWS Managed Microsoft AD, see [AWS pre\-defined password policies](supportedpolicysettings.md#supportedpwdpolicies)\.
 
 1. To verify the password policy has been applied, run the following PowerShell command:
 

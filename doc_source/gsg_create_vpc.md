@@ -1,12 +1,12 @@
-# Step 1: Create and Configure Your VPC<a name="gsg_create_vpc"></a>
+# Step 1: Create and configure your VPC<a name="gsg_create_vpc"></a>
 
 The following sections demonstrate how to create and configure a VPC for use with AWS Directory Service\.
 
 **Topics**
-+ [Create a New VPC](#create_vpc)
-+ [Add a Second Subnet](#add_subnet)
++ [Create a new VPC](#create_vpc)
++ [Add a second subnet](#add_subnet)
 
-## Create a New VPC<a name="create_vpc"></a>
+## Create a new VPC<a name="create_vpc"></a>
 
 This tutorial uses one of the VPC creation wizards to create the following:
 + The VPC
@@ -39,7 +39,7 @@ Leave default selection
 
 1. It takes several minutes for the VPC to be created\. After the VPC is created, proceed to the following section to add a second subnet\.
 
-## Add a Second Subnet<a name="add_subnet"></a>
+## Add a second subnet<a name="add_subnet"></a>
 
 AWS Directory Service requires two subnets in your VPC, and each subnet must be in a different Availability Zone\. The VPC wizard only creates one subnet, so you must manually create the second subnet, and specify a different Availability Zone than the first subnet\. Create the second subnet by performing the following steps\.
 

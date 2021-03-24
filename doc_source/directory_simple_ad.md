@@ -7,7 +7,7 @@ Simple AD is a standalone managed directory that is powered by a Samba 4 Active 
 Simple AD provides a subset of the features offered by AWS Managed Microsoft AD, including the ability to manage user accounts and group memberships, create and apply group policies, securely connect to Amazon EC2 instances, and provide Kerberos\-based single sign\-on \(SSO\)\. However, note that Simple AD does not support features such as multi\-factor authentication \(MFA\), trust relationships with other domains, Active Directory Administrative Center, PowerShell support, Active Directory recycle bin, group managed service accounts, and schema extensions for POSIX and Microsoft applications\.
 
 Simple AD offers many advantages:
-+ Simple AD makes it easier to [manage Amazon EC2 instances running Linux and Windows](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple_ad_join_instance.html) and deploy Windows applications in the AWS Cloud\.
++ Simple AD makes it easier to [manage amazon EC2 instances running Linux and Windows](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple_ad_join_instance.html) and deploy Windows applications in the AWS Cloud\.
 + Many of the applications and tools that you use today that require Microsoft Active Directory support can be used with Simple AD\.
 + User accounts in Simple AD allow access to AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail\.
 + You can manage AWS resources through IAM role–based access to the AWS Management Console\.
@@ -28,10 +28,10 @@ Simple AD does not support any of the following:
 Continue reading the topics in this section to learn how to create your own Simple AD\.
 
 **Topics**
-+ [Getting Started with Simple AD](simple_ad_getting_started.md)
-+ [How To Administer Simple AD](simple_ad_how_to.md)
-+ [Tutorial: Create a Simple AD Directory](simple_ad_tutorial_create.md)
-+ [Best Practices for Simple AD](simple_ad_best_practices.md)
-+ [Limits for Simple AD](simple_ad_limits.md)
-+ [Application Compatibility Policy for Simple AD](simple_ad_app_compatibility.md)
++ [Getting started with Simple AD](simple_ad_getting_started.md)
++ [How to administer Simple AD](simple_ad_how_to.md)
++ [Tutorial: Create a Simple AD directory](simple_ad_tutorial_create.md)
++ [Best practices for Simple AD](simple_ad_best_practices.md)
++ [Simple AD quotas](simple_ad_limits.md)
++ [Application compatibility policy for Simple AD](simple_ad_app_compatibility.md)
 + [Troubleshooting Simple AD](simple_ad_troubleshooting.md)

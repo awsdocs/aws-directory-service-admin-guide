@@ -1,4 +1,4 @@
-# Single Sign\-On<a name="simple_ad_single_sign_on"></a>
+# Single sign\-on<a name="simple_ad_single_sign_on"></a>
 
 AWS Directory Service provides the ability to allow your users to access Amazon WorkDocs from a computer joined to the directory without having to enter their credentials separately\. 
 
@@ -42,17 +42,17 @@ Set-ACL -AclObject $ObjectAcl -Path "AD:\$AclPath"
 
 1. In the **Application access URL** section, choose **Enable** to enable single sign\-on for Amazon WorkDocs\. 
 
-   If you do not see the **Enable** button, you may need to first create an Access URL before this option will be displayed\. For more information about how to create an access URL, see [Creating an Access URL](ms_ad_create_access_url.md)\. 
+   If you do not see the **Enable** button, you may need to first create an Access URL before this option will be displayed\. For more information about how to create an access URL, see [Creating an access URL](ms_ad_create_access_url.md)\. 
 
 1. In the **Enable Single Sign\-On for this directory** dialog box, choose **Enable**\. Single sign\-on is enabled for the directory\. 
 
 1. If you later want to disable single sign\-on with Amazon WorkDocs, choose **Disable**, and then in the **Disable Single Sign\-On for this directory** dialog box, choose **Disable** again\. 
 
 **Topics**
-+ [Single Sign\-On for IE and Chrome](#ie_sso)
-+ [Single Sign\-On for Firefox](#firefox_sso)
++ [Single sign\-on for IE and Chrome](#ie_sso)
++ [Single sign\-on for Firefox](#firefox_sso)
 
-## Single Sign\-On for IE and Chrome<a name="ie_sso"></a>
+## Single sign\-on for IE and Chrome<a name="ie_sso"></a>
 
 To allow Microsoft Internet Explorer \(IE\) and Google Chrome browsers to support single sign\-on, the following tasks must be performed on the client computer:
 + Add your access URL \(e\.g\., https://*<alias>*\.awsapps\.com\) to the list of approved sites for single sign\-on\.
@@ -63,11 +63,11 @@ To allow Microsoft Internet Explorer \(IE\) and Google Chrome browsers to suppor
 You or your users can perform these tasks manually, or you can change these settings using Group Policy settings\.
 
 **Topics**
-+ [Manual Update for Single Sign\-On on Windows](#ie_sso_manual_windows)
-+ [Manual Update for Single Sign\-On on OS X](#chrome_sso_manual_mac)
-+ [Group Policy Settings for Single Sign\-On](#ie_sso_gpo)
++ [Manual update for single sign\-on on Windows](#ie_sso_manual_windows)
++ [Manual update for single sign\-on on OS X](#chrome_sso_manual_mac)
++ [Group policy settings for single sign\-on](#ie_sso_gpo)
 
-### Manual Update for Single Sign\-On on Windows<a name="ie_sso_manual_windows"></a>
+### Manual update for single sign\-on on Windows<a name="ie_sso_manual_windows"></a>
 
 To manually enable single sign\-on on a Windows computer, perform the following steps on the client computer\. Some of these settings may already be set correctly\.
 
@@ -118,7 +118,7 @@ To manually enable single sign\-on on a Windows computer, perform the following 
 
 1. Close and re\-open your browser to have these changes take effect\.
 
-### Manual Update for Single Sign\-On on OS X<a name="chrome_sso_manual_mac"></a>
+### Manual update for single sign\-on on OS X<a name="chrome_sso_manual_mac"></a>
 
 To manually enable single sign\-on for Chrome on OS X, perform the following steps on the client computer\. You will need administrator rights on your computer to complete these steps\.
 
@@ -134,7 +134,7 @@ To manually enable single sign\-on for Chrome on OS X, perform the following ste
 
 1. Restart Chrome and open chrome://policy in Chrome to confirm that the new settings are in place\.
 
-### Group Policy Settings for Single Sign\-On<a name="ie_sso_gpo"></a>
+### Group policy settings for single sign\-on<a name="ie_sso_gpo"></a>
 
 The domain administrator can implement Group Policy settings to make the single sign\-on changes on client computers that are joined to the domain\.
 
@@ -230,15 +230,15 @@ The value for *<alias>* is derived from your access URL\. If your access URL is 
 
 These changes will take effect after the next Group Policy update on the client, or the next time the user logs in\.
 
-## Single Sign\-On for Firefox<a name="firefox_sso"></a>
+## Single sign\-on for Firefox<a name="firefox_sso"></a>
 
 To allow Mozilla Firefox browser to support single sign\-on, add your access URL \(e\.g\., https://*<alias>*\.awsapps\.com\) to the list of approved sites for single sign\-on\. This can be done manually, or automated with a script\.
 
 **Topics**
-+ [Manual Update for Single Sign\-On](#firefox_sso_manual)
-+ [Automatic Update for Single Sign\-On](#firefox_sso_script)
++ [Manual update for single sign\-on](#firefox_sso_manual)
++ [Automatic update for single sign\-on](#firefox_sso_script)
 
-### Manual Update for Single Sign\-On<a name="firefox_sso_manual"></a>
+### Manual update for single sign\-on<a name="firefox_sso_manual"></a>
 
 To manually add your access URL to the list of approved sites in Firefox, perform the following steps on the client computer\.
 
@@ -249,6 +249,6 @@ To manually add your access URL to the list of approved sites in Firefox, perfor
 1. Open the `network.negotiate-auth.trusted-uris` preference and add your access URL to the list of sites\. Use a comma \(,\) to separate multiple entries\.  
 ![\[Internet Explorer automatic logon setting\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/firefox_sso_config.png)
 
-### Automatic Update for Single Sign\-On<a name="firefox_sso_script"></a>
+### Automatic update for single sign\-on<a name="firefox_sso_script"></a>
 
 As a domain administrator, you can use a script to add your access URL to the Firefox `network.negotiate-auth.trusted-uris` user preference on all computers on your network\. For more information, go to [https://support\.mozilla\.org/en\-US/questions/939037](https://support.mozilla.org/en-US/questions/939037)\.

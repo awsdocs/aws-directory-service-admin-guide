@@ -1,4 +1,4 @@
-# Sign Up for an AWS Account<a name="setting_up_aws_account"></a>
+# Sign up for an AWS account<a name="setting_up_aws_account"></a>
 
 Your AWS account gives you access to all services, but you are charged only for the resources that you use\.
 

@@ -1,16 +1,16 @@
-# Enhance Your AWS Managed Microsoft AD Network Security Configuration<a name="ms_ad_network_security"></a>
+# Enhance your AWS Managed Microsoft AD network security configuration<a name="ms_ad_network_security"></a>
 
-The AWS Security Group that is provisioned for the AWS Managed Microsoft AD directory is configured with the minimum inbound network ports required to support all known use cases for your AWS Managed Microsoft AD directory\. For more information on the provisioned AWS Security Group, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
+The AWS Security Group that is provisioned for the AWS Managed Microsoft AD directory is configured with the minimum inbound network ports required to support all known use cases for your AWS Managed Microsoft AD directory\. For more information on the provisioned AWS Security Group, see [What gets created](ms_ad_getting_started_what_gets_created.md)\.
 
 To further enhance the network security of your AWS Managed Microsoft AD directory you can modify the AWS Security Group based on common scenarios listed below\.
 
 **Topics**
-+ [AWS Applications Only Support](#aws_apps_support)
-+ [AWS Applications Only with Trust Support](#aws_apps_trust_support)
-+ [AWS Applications and Native Active Directory Workload Support](#aws_apps_native_ad_support)
-+ [AWS Applications and Native Active Directory Workload Support with Trust Support](#aws_apps_native_ad_trust_support)
++ [AWS applications only support](#aws_apps_support)
++ [AWS applications only with trust support](#aws_apps_trust_support)
++ [AWS applications and native Active Directory workload support](#aws_apps_native_ad_support)
++ [AWS applications and native Active Directory workload support with trust support](#aws_apps_native_ad_trust_support)
 
-## AWS Applications Only Support<a name="aws_apps_support"></a>
+## AWS applications only support<a name="aws_apps_support"></a>
 
 All user accounts are provisioned only in your AWS Managed Microsoft AD to be used with supported AWS applications, such as the following:
 + Amazon Chime
@@ -44,7 +44,7 @@ None\.
 
 None\.
 
-## AWS Applications Only with Trust Support<a name="aws_apps_trust_support"></a>
+## AWS applications only with trust support<a name="aws_apps_trust_support"></a>
 
 All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Active Directory to be used with supported AWS applications, such as the following:
 + Amazon Chime
@@ -100,7 +100,7 @@ TCP 636 is only required when LDAP over SSL is in use\.
 | --- | --- | --- | --- | --- | 
 | All | All | On\-premise CIDR | All traffic |  | 
 
-## AWS Applications and Native Active Directory Workload Support<a name="aws_apps_native_ad_support"></a>
+## AWS applications and native Active Directory workload support<a name="aws_apps_native_ad_support"></a>
 
 User accounts are provisioned only in your AWS Managed Microsoft AD to be used with supported AWS applications, such as the following:
 + Amazon Chime
@@ -151,7 +151,7 @@ If you want to use an Enterprise CA with this configuration you will need to cre
 
 None\.
 
-## AWS Applications and Native Active Directory Workload Support with Trust Support<a name="aws_apps_native_ad_trust_support"></a>
+## AWS applications and native Active Directory workload support with trust support<a name="aws_apps_native_ad_trust_support"></a>
 
 All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Active Directory to be used with supported AWS applications, such as the following:
 + Amazon Chime

@@ -1,4 +1,4 @@
-# Step 4: Test Seamlessly Joining an EC2 Instance for Windows Server to a Domain<a name="step4_test_ec2_access"></a>
+# Step 4: Test seamlessly joining an EC2 instance for Windows Server to a domain<a name="step4_test_ec2_access"></a>
 
 You can use either of the following two methods to test seamless domain join\. 
 
@@ -24,11 +24,9 @@ Use this step in the directory consumer account\.
 
    1. For **Auto\-assign Public IP**, choose **Enable**\.
 
-      For more information about public and private IP addressing, see [Amazon EC2 Instance IP Addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+      For more information about public and private IP addressing, see [Amazon EC2 instance IP addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 
    1. For **Domain join directory**, choose your domain from the list\. 
-**Note**  
-This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Join a Linux Instance](join_linux_instance.md)\.
 
    1. For **IAM role**, do one of the following:
 
@@ -48,7 +46,7 @@ This option is only available for Windows instances\. Linux instances must be ma
 
       1. In the list of policies, select the **AmazonSSMManagedInstanceCore** and **AmazonSSMDirectoryServiceAccess** policies\. \(To filter the list, type **SSM** in the search box\.\) 
 **Note**  
-**AmazonSSMDirectoryServiceAccess** provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. **AmazonSSMManagedInstanceCore** provides the minimum permissions necessary to use the Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
+**AmazonSSMDirectoryServiceAccess** provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. **AmazonSSMManagedInstanceCore** provides the minimum permissions necessary to use the Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM instance profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
 
       1. Choose **Next: Tags**\.
 
@@ -73,7 +71,7 @@ This option is only available for Windows instances\. Linux instances must be ma
 Use this step in the directory consumer account\. To complete this procedure, you'll need some information about the directory owner account\.
 
 **Note**  
-Make sure to attach the **AmazonSSMManagedInstanceCore** and **AmazonSSMDirectoryServiceAccess** managed policies to the IAM role permissions for your instance before starting the steps in this procedure\. For information about these managed policies and other policies you can attach to an IAM instance profile for Systems Manager, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.For information about managed policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
+Make sure to attach the **AmazonSSMManagedInstanceCore** and **AmazonSSMDirectoryServiceAccess** managed policies to the IAM role permissions for your instance before starting the steps in this procedure\. For information about these managed policies and other policies you can attach to an IAM instance profile for Systems Manager, see [Create an IAM instance profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.For information about managed policies, see [AWS Managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 1. Sign into the AWS Management Console and open the AWS Systems Manager console at [https://console.aws.amazon.com/systems-manager/](https://console.aws.amazon.com/systems-manager/)\.
 

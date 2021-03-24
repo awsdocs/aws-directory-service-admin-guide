@@ -1,4 +1,4 @@
-# Seamlessly Join a Windows EC2 Instance<a name="ad_connector_launching_instance"></a>
+# Seamlessly join a Windows EC2 instance<a name="ad_connector_launching_instance"></a>
 
 This procedure seamlessly joins a Windows EC2 instance to your AD Connector directory\.
 
@@ -22,11 +22,9 @@ This procedure seamlessly joins a Windows EC2 instance to your AD Connector dire
 
    1. For **Auto\-assign Public IP**, choose **Enable**\.
 
-      For more information about public and private IP addressing, see [Amazon EC2 Instance IP Addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+      For more information about public and private IP addressing, see [Amazon EC2 instance IP addressing](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-instance-addressing.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 
    1. For **Domain join directory**, choose your domain from the list\. 
-**Note**  
-This option is only available for Windows instances\. Linux instances must be manually joined to the directory as explained in [Manually Join a Linux Instance](join_linux_instance.md)\.
 
    1. For **IAM role**, do one of the following:
 
@@ -46,7 +44,7 @@ This option is only available for Windows instances\. Linux instances must be ma
 
       1. In the list of policies, select the **AmazonSSMManagedInstanceCore** and **AmazonSSMDirectoryServiceAccess** policies\. \(To filter the list, type **SSM** in the search box\.\) 
 **Note**  
-**AmazonSSMDirectoryServiceAccess** provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. **AmazonSSMManagedInstanceCore** provides the minimum permissions necessary to use the Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
+**AmazonSSMDirectoryServiceAccess** provides the permissions to join instances to an Active Directory managed by AWS Directory Service\. **AmazonSSMManagedInstanceCore** provides the minimum permissions necessary to use the Systems Manager service\. For more information about creating a role with these permissions, and for information about other permissions and policies you can assign to your IAM role, see [Create an IAM instance profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\.
 
       1. Choose **Next: Tags**\.
 

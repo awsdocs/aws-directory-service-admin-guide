@@ -1,4 +1,4 @@
-# Step 2: Create Your AWS Managed Microsoft AD Directory in AWS<a name="microsoftadbasestep2"></a>
+# Step 2: Create your AWS Managed Microsoft AD directory in AWS<a name="microsoftadbasestep2"></a>
 
 You can use three different methods to create your directory\. You can use the AWS Management Console procedure \(recommended for this tutorial\) or you can use either the AWS CLI or AWS Tools for Windows PowerShell procedures to create your directory\.
 

@@ -1,14 +1,14 @@
-# Active Directory Low Available Storage Space<a name="ms_ad_troubleshooting_low_storage_space"></a>
+# Active Directory low available storage space<a name="ms_ad_troubleshooting_low_storage_space"></a>
 
 When your AWS Managed Microsoft AD is impaired due to Active Directory having low available storage space, immediate action is required to return the directory to an active state\. The two most common causes of this impairment are covered in the sections below:
 
-1. [SYSVOL Folder is Storing More Than Essential Group Policy Objects](#sysvol-folder-gpo)
+1. [SYSVOL folder is storing more than essential group policy objects](#sysvol-folder-gpo)
 
-1. [Active Directory Database has Filled the Volume](#ad-db-filled-volume)
+1. [Active Directory database has filled the volume](#ad-db-filled-volume)
 
 For pricing information about AWS Managed Microsoft AD storage, see [AWS Directory Service Pricing](https://aws.amazon.com/directoryservice/pricing/#Comparison_Table)\.
 
-## SYSVOL Folder is Storing More Than Essential Group Policy Objects<a name="sysvol-folder-gpo"></a>
+## SYSVOL folder is storing more than essential group policy objects<a name="sysvol-folder-gpo"></a>
 
 A common cause of this impairment is due to storing non\-essential files for Group Policy processing in the SYSVOL folder\. These non\-essential files could be EXEs, MSIs, or any other file that is not essential for Group Policy to process\. The essential objects for Group Policy to process are Group Policy Objects, Logon/off Scripts, and the [Central Store for Group Policy objects](https://support.microsoft.com/en-us/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra)\. Any non\-essential files should be stored on a file server\(s\) other than your AWS Managed Microsoft AD domain controllers\.
 
@@ -18,7 +18,7 @@ To remove any unnecessary files you can access the SYSVOL share via it’s unive
 
 Storing only essential Group Policy files in your SYSVOL share will ensure that you will not impair your directory due to SYSVOL bloat\.
 
-## Active Directory Database has Filled the Volume<a name="ad-db-filled-volume"></a>
+## Active Directory database has filled the volume<a name="ad-db-filled-volume"></a>
 
 A common cause of this impairment is due to the Active Directory database filling the volume\. To verify if this is the case, you can review the **total** count of objects in your directory\. We bold the word **total** to ensure that you understand **deleted** objects still count towards the total number of objects in a directory\.
 
@@ -26,7 +26,7 @@ By default AWS Managed Microsoft AD keeps items in the AD Recycling Bin for 180 
 
 For more details on AWS Managed Microsoft AD supported object counts, see [AWS Directory Service Pricing](https://aws.amazon.com/directoryservice/pricing/#Comparison_Table)\.
 
-To get the total number of objects in a directory that includes the deleted objects, you can run the following PowerShell command from a domain joined Windows instance\. For steps how to setup a management instance, see [Manage Users and Groups in AWS Managed Microsoft AD](ms_ad_manage_users_groups.md)\. 
+To get the total number of objects in a directory that includes the deleted objects, you can run the following PowerShell command from a domain joined Windows instance\. For steps how to setup a management instance, see [Manage users and groups in AWS Managed Microsoft AD](ms_ad_manage_users_groups.md)\. 
 
 ```
 Get-ADObject -Filter * -IncludeDeletedObjects | Measure-Object -Property 'Count' | Select-Object -Property 'Count'
@@ -70,7 +70,7 @@ In AWS Managed Microsoft AD, members of the **AWS Delegated Deleted Object Lifet
 **Note**  
 This is an advanced topic\. If configured inappropriately, it can result in data loss\. We highly recommend that you first review [The AD Recycle Bin: Understanding, Implementing, Best Practices, and Troubleshooting](https://techcommunity.microsoft.com/t5/ask-the-directory-services-team/the-ad-recycle-bin-understanding-implementing-best-practices-and/ba-p/396944) to get a better understanding of these processes\.
 
-The ability to change the `msDS-DeletedObjectLifetime` attribute value to a lower number can help ensure your object count does not exceed supported levels\. The lowest valid value this attribute can be set to is 2 days\. Once that value has exceeded you will no longer be able to recover the deleted object using the AD Recycling Bin\. It will require restoring your directory from a snapshot to recover the object\(s\)\. For more information, see [Snapshot or Restore Your Directory](ms_ad_snapshots.md)\. **Any restore from snapshot can result in data loss as they are a point in time\.**
+The ability to change the `msDS-DeletedObjectLifetime` attribute value to a lower number can help ensure your object count does not exceed supported levels\. The lowest valid value this attribute can be set to is 2 days\. Once that value has exceeded you will no longer be able to recover the deleted object using the AD Recycling Bin\. It will require restoring your directory from a snapshot to recover the object\(s\)\. For more information, see [Snapshot or restore your directory](ms_ad_snapshots.md)\. **Any restore from snapshot can result in data loss as they are a point in time\.**
 
 To change Deleted Object Lifetime of your directory run the following command:
 

@@ -1,6 +1,6 @@
-# Step 2: Create Your Simple AD Directory<a name="gsg_create_directory"></a>
+# Step 2: Create your Simple AD directory<a name="gsg_create_directory"></a>
 
-To create a new directory, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [Simple AD Prerequisites](prereq_simple.md)\.
+To create a new directory, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [Simple AD prerequisites](prereq_simple.md)\.
 
 **To create a Simple AD directory**
 

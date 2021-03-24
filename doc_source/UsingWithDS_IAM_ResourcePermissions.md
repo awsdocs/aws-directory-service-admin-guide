@@ -1,6 +1,6 @@
-# AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference<a name="UsingWithDS_IAM_ResourcePermissions"></a>
+# AWS Directory Service API permissions: Actions, resources, and conditions reference<a name="UsingWithDS_IAM_ResourcePermissions"></a>
 
-When you are setting up [Access Control](iam_auth_access.md#access_control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The the following:
+When you are setting up [Access control](iam_auth_access.md#access_control) and writing permissions policies that you can attach to an IAM identity \(identity\-based policies\), you can use the following table as a reference\. The the following:
 + Each AWS Directory Service API operation
 + The corresponding actions for which you can grant permissions to perform the action
 + The AWS resource for which you can grant the permissions
@@ -16,4 +16,4 @@ You can use AWS global condition keys in your AWS Directory Service policies to 
 To specify an action, use the `ds:` prefix followed by the API operation name \(for example, `ds:CreateDirectory`\)\.
 
 ## Related Topics<a name="iam2_related"></a>
-+ [Access Control](iam_auth_access.md#access_control)
++ [Access control](iam_auth_access.md#access_control)

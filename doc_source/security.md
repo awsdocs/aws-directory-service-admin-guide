@@ -8,34 +8,34 @@ Security is a shared responsibility between AWS and you\. The [shared responsibi
 
 This documentation helps you understand how to apply the shared responsibility model when using AWS Directory Service\. The following topics show you how to configure AWS Directory Service to meet your security and compliance objectives\. You also learn how to use other AWS services that help you to monitor and secure your AWS Directory Service resources\. 
 
-**Security Topics**
+**Security topics**
 
 The following security topics can be found in this section:
-+ [Identity and Access Management for AWS Directory Service](iam_auth_access.md)
-+ [Logging and Monitoring in AWS Directory Service](incident-response.md)
-+ [Compliance Validation for AWS Directory Service](ds-compliance.md)
++ [Identity and access management for AWS Directory Service](iam_auth_access.md)
++ [Logging and monitoring in AWS Directory Service](incident-response.md)
++ [Compliance validation for AWS Directory Service](ds-compliance.md)
 + [Resilience in AWS Directory Service](disaster-recovery-resiliency.md)
-+ [Infrastructure Security in AWS Directory Service](infrastructure-security.md)
++ [Infrastructure security in AWS Directory Service](infrastructure-security.md)
 
-**Additional Security Topics**
+**Additional security topics**
 
 The following additional security topics can be found in this guide:
 
-*Accounts, Trusts, and AWS Resource Access*
-+ [Admin Account](ms_ad_getting_started_admin_account.md)
+*Accounts, trusts, and AWS resource access*
++ [Admin account](ms_ad_getting_started_admin_account.md)
 + [Group Managed Service Accounts](ms_ad_key_concepts_gmsa.md)
-+ [When to Create a Trust Relationship](ms_ad_setup_trust.md)
-+ [Kerberos Constrained Delegation](ms_ad_key_concepts_kerberos.md)
-+ [Grant Users and Groups Access to AWS Resources](ms_ad_manage_roles.md)
-+ [Enable Access to AWS Applications and Services](ms_ad_manage_apps_services.md)
++ [When to create a trust relationship](ms_ad_setup_trust.md)
++ [Kerberos constrained delegation](ms_ad_key_concepts_kerberos.md)
++ [Grant users and groups access to AWS resources](ms_ad_manage_roles.md)
++ [Enable access to AWS applications and services](ms_ad_manage_apps_services.md)
 
-*Secure Your Directory*
-+ [Secure Your AWS Managed Microsoft AD Directory](ms_ad_security.md)
-+ [Secure Your AD Connector Directory](ad_connector_security.md)
+*Secure your directory*
++ [Secure your AWS Managed Microsoft AD directory](ms_ad_security.md)
++ [Secure your AD Connector directory](ad_connector_security.md)
 
-*Logging and Monitoring*
-+ [Monitor Your AWS Managed Microsoft AD](ms_ad_monitor.md)
-+ [Monitor Your AD Connector Directory](ad_connector_monitor.md)
+*Logging and monitoring*
++ [Monitor your AWS Managed Microsoft AD](ms_ad_monitor.md)
++ [Monitor your AD Connector directory](ad_connector_monitor.md)
 
 *Resilience*
-+ [Patching and Maintenance for AWS Managed Microsoft AD](ms_ad_key_concepts_maintenance.md)
++ [Patching and maintenance for AWS Managed Microsoft AD](ms_ad_key_concepts_maintenance.md)

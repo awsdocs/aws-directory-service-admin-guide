@@ -1,4 +1,4 @@
-# Viewing Users and Groups Assigned to a Role<a name="view_role_details"></a>
+# Viewing users and groups assigned to a role<a name="view_role_details"></a>
 
 To view the users and groups assigned to a role, perform the following steps\.
 
@@ -8,7 +8,9 @@ To view the users and groups assigned to a role, perform the following steps\.
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, select the **Application management** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to view your assignments, and then choose the **Application management** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Application management** tab\.
 
 1. Under the **AWS Management Console** section, choose the role you want to view\. 
 

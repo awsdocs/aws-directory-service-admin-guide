@@ -1,4 +1,4 @@
-# Manually Join a Linux Instance<a name="join_linux_instance"></a>
+# Manually join a Linux instance<a name="join_linux_instance"></a>
 
 In addition to Amazon EC2 Windows instances, you can also join certain Amazon EC2 Linux instances to your AWS Directory Service for Microsoft Active Directory directory\. The following Linux instance distributions and versions are supported:
 + Amazon Linux AMI 2018\.03\.0
@@ -11,9 +11,9 @@ In addition to Amazon EC2 Windows instances, you can also join certain Amazon EC
 **Note**  
 Other Linux distributions and versions may work but have not been tested\.
 
-## Join an Instance to Your Directory<a name="join_linux_prereq"></a>
+## Join an instance to your directory<a name="join_linux_prereq"></a>
 
-Before you can join either an Amazon Linux, CentOS, Red Hat, or Ubuntu instance to your directory, the instance must first be launched as specified in [Seamlessly Join a Windows EC2 Instance](launching_instance.md)\. 
+Before you can join either an Amazon Linux, CentOS, Red Hat, or Ubuntu instance to your directory, the instance must first be launched as specified in [Seamlessly join a Windows EC2 instance](launching_instance.md)\. 
 
 **Important**  
 Some of the following procedures, if not performed correctly, can render your instance unreachable or unusable\. Therefore, we strongly suggest you make a backup or take a snapshot of your instance before performing these procedures\.
@@ -49,7 +49,7 @@ Amazon Linux 2
    sudo yum -y install sssd realmd krb5-workstation samba-common-tools
    ```
 **Note**  
-For help with determining the Amazon Linux version you are using, see [Identifying Amazon Linux Images](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#amazon-linux-image-id) in the *Amazon EC2 User Guide for Linux Instances*\.
+For help with determining the Amazon Linux version you are using, see [Identifying Amazon Linux images](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html#amazon-linux-image-id) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 1. Join the instance to the directory with the following command\. 
 
@@ -57,7 +57,7 @@ For help with determining the Amazon Linux version you are using, see [Identifyi
    sudo realm join -U join_account@example.com example.com --verbose
    ```  
 *join\_account@example\.com*  
-An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
+An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully qualified DNS name of your directory\.
 
@@ -137,7 +137,7 @@ As you install the packages, you might be presented with several pop\-up configu
    sudo realm join -U join_account@example.com example.com --verbose
    ```  
 *join\_account@example\.com*  
-An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
+An account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully qualified DNS name of your directory\.
 
@@ -217,7 +217,7 @@ As you install the packages, you might be presented with several pop\-up configu
    sudo realm join -v -U join_account example.com --install=/
    ```  
 *join\_account*  
-The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
+The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully qualified DNS name of your directory\.
 
@@ -305,7 +305,7 @@ As you install the packages, you might be presented with several pop\-up configu
    sudo realm join -U join_account example.com --verbose
    ```  
 *join\_account*  
-The sAMAccountName in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
+The sAMAccountName in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully\-qualified DNS name of your directory\.
 
@@ -498,7 +498,7 @@ As you install the packages, you might be presented with several pop\-up configu
    sudo realm join -U join_account example.com --verbose
    ```  
 *join\_account@example\.com*  
-The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
+The **sAMAccountName** for an account in the *example\.com* domain that has domain join privileges\. Enter the password for the account when prompted\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.  
 *example\.com*  
 The fully qualified DNS name of your directory\.
 
@@ -552,7 +552,7 @@ The fully qualified DNS name of your directory\.
 
 ------
 
-## Restricting Account Login Access<a name="linux_filter"></a>
+## Restricting account login access<a name="linux_filter"></a>
 
 Since all accounts are defined in Active Directory, by default, all the users in the directory can log in to the instance\. You can allow only specific users to log in to the instance with ad\_access\_filter in sssd\.conf\. For example:
 
@@ -618,7 +618,7 @@ Alternatively, you could use:
 sudo service sssd start
 ```
 
-## Connect to the Instance<a name="linux_connect"></a>
+## Connect to the instance<a name="linux_connect"></a>
 
 When a user connects to the instance using an SSH client, they are prompted for their user name\. The user can enter the user name in either the `username@example.com` or `EXAMPLE\username` format\. The response will appear similar to the following, depending on which linux distribution you are using:
 

@@ -1,4 +1,4 @@
-# Add a User to a Group<a name="ms_ad_manage_users_groups_add_user_to_group"></a>
+# Add a user to a group<a name="ms_ad_manage_users_groups_add_user_to_group"></a>
 
 Use the following procedure to add a user to a security group with an EC2 instance that is joined to your AWS Managed Microsoft AD directory\.
 

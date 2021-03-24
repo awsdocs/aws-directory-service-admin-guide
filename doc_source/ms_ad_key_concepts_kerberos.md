@@ -1,4 +1,4 @@
-# Kerberos Constrained Delegation<a name="ms_ad_key_concepts_kerberos"></a>
+# Kerberos constrained delegation<a name="ms_ad_key_concepts_kerberos"></a>
 
 Kerberos constrained delegation is a feature in Windows Server\. This feature gives service administrators the ability to specify and enforce application trust boundaries by limiting the scope where application services can act on a user’s behalf\. This can be useful when you need to configure which front\-end service accounts can delegate to their backend services\. Kerberos constrained delegation also prevents your gMSA from connecting to any and all services on behalf of your Active Directory users, avoiding the potential for abuse by a rogue developer\.
 

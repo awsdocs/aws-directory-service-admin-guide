@@ -1,4 +1,4 @@
-# Deploy Additional Domain Controllers<a name="ms_ad_deploy_additional_dcs"></a>
+# Deploy additional domain controllers<a name="ms_ad_deploy_additional_dcs"></a>
 
 Deploying additional domain controllers increases the redundancy, which results in even greater resilience and higher availability\. This also improves the performance of your directory by supporting a greater number of Active Directory requests\. For example, you can now use AWS Managed Microsoft AD to support multiple \.NET applications that are deployed on large fleets of Amazon EC2 and Amazon RDS for SQL Server instances\.
 
@@ -10,18 +10,25 @@ For example, in the below illustration, DC\-1 and DC\-2 represent the two domain
 
 This process eliminates the need for you to manually configure directory data replication, automated daily snapshots, or monitoring for the additional domain controllers\. It's also easier for you to migrate and run mission critical Active Directory–integrated workloads in the AWS Cloud without having to deploy and maintain your own Active Directory infrastructure\. You can also deploy or remove additional domain controllers for AWS Managed Microsoft AD using the [UpdateNumberOfDomainControllers](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_UpdateNumberOfDomainControllers.html) API\.
 
-## Add or Remove Additional Domain Controllers<a name="addremovedcs"></a>
+**Note**  
+Additional domain controllers is a Regional feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be applied separately in each Region\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
+
+## Add or remove additional domain controllers<a name="addremovedcs"></a>
 
 Use the following procedure to deploy or remove additional domain controllers in your AWS Managed Microsoft AD directory\.
 
 **Note**  
-If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additional domain controllers you add will also have LDAPS enabled automatically\. For more information, see [Enable Secure LDAP \(LDAPS\)](ms_ad_ldap.md)\.
+If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additional domain controllers you add will also have LDAPS enabled automatically\. For more information, see [Enable secure LDAP \(LDAPS\)](ms_ad_ldap.md)\.
 
 **To add or remove additional domain controllers**
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.
 
 1. On the **Directories** page, choose your directory ID\.
+
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to add or remove domain controllers, and then choose the **Scale & share** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Scale & share** tab\.
 
 1. On the **Directory details** page, select the **Scale** tab\.
 
@@ -35,4 +42,4 @@ If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additi
 After deploying additional domain controllers, you can reduce the number of domain controllers to two, which is the minimum required for fault\-tolerance and high availability purposes\.
 
 **Related AWS Security Blog Article**
-+ [How to Increase the Redundancy and Performance of Your AWS Directory Service for AWS Managed Microsoft AD by Adding Domain Controllers](https://aws.amazon.com/blogs/security/how-to-increase-the-redundancy-and-performance-of-your-aws-directory-service-for-microsoft-ad-directory-by-adding-domain-controllers/)
++ [How to increase the redundancy and performance of your AWS Directory Service for AWS Managed Microsoft AD by adding domain controllers](https://aws.amazon.com/blogs/security/how-to-increase-the-redundancy-and-performance-of-your-aws-directory-service-for-microsoft-ad-directory-by-adding-domain-controllers/)

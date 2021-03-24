@@ -1,4 +1,4 @@
-# AD Connector Prerequisites<a name="prereq_connector"></a>
+# AD Connector prerequisites<a name="prereq_connector"></a>
 
 To connect to your existing directory with AD Connector, you need the following:
 
@@ -21,7 +21,7 @@ For more information about AWS Direct Connect, see the [AWS Direct Connect User 
 
 **Existing Active Directory**  
 You'll need to connect to an existing network with an Active Directory domain\.  
-AD Connector does not support trust with [Single Label Domains](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)\.
+AD Connector does not support [Single Label Domains](https://support.microsoft.com/en-us/help/2269810/microsoft-support-for-single-label-domains)\.
 The functional level of this domain must be `Windows Server 2003` or higher\. AD Connector also supports connecting to a domain hosted on an Amazon EC2 instance\.  
 AD Connector does not support Read\-only domain controllers \(RODC\) when used in combination with the Amazon EC2 domain\-join feature\. 
 
@@ -57,7 +57,7 @@ If the DNS servers or Domain Controller servers for your existing Active Directo
 For additional port requirements, see [AD and AD DS Port Requirements](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)) on Microsoft TechNet\.
 
 **Kerberos preauthentication**  
-Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure That Kerberos Pre\-authentication Is Enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
+Your user accounts must have Kerberos preauthentication enabled\. For detailed instructions on how to enable this setting, see [Ensure that Kerberos pre\-authentication is enabled](ms_ad_tutorial_setup_trust_prepare_onprem.md#tutorial_setup_trust_enable_kerberos)\. For general information about this setting, go to [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
 **Encryption types**  
 AD Connector supports the following encryption types when authenticating via Kerberos to your Active Directory domain controllers:  
@@ -65,15 +65,15 @@ AD Connector supports the following encryption types when authenticating via Ker
 + AES\-128\-HMAC
 + RC4\-HMAC
 
-## AWS Single Sign\-On Prerequisites<a name="prereq_aws_sso_ad_connector"></a>
+## AWS Single Sign\-On prerequisites<a name="prereq_aws_sso_ad_connector"></a>
 
 If you plan to use AWS Single Sign\-On \(AWS SSO\) with AD Connector, you need to ensure that the following are true:
-+ Your AD Connector is set up in your AWS organization’s master account\.
++ Your AD Connector is set up in your AWS organization’s management account\.
 + Your instance of AWS SSO is in the same Region where your AD Connector is set up\. 
 
-For more information, see [AWS SSO Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
+For more information, see [AWS SSO prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
 
-## Multi\-Factor Authentication Prerequisites<a name="mfa_prereqs"></a>
+## Multi\-factor authentication prerequisites<a name="mfa_prereqs"></a>
 
 To support multi\-factor authentication with your AD Connector directory, you need the following:
 + A [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in your existing network that has two client endpoints\. The RADIUS client endpoints have the following requirements:
@@ -82,7 +82,7 @@ To support multi\-factor authentication with your AD Connector directory, you ne
 + Your existing network must allow inbound traffic over the default RADIUS server port \(1812\) from the AWS Directory Service servers\.
 + The usernames between your RADIUS server and your existing directory must be identical\.
 
-For more information about using AD Connector with MFA, see [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)\. 
+For more information about using AD Connector with MFA, see [Enable multi\-factor authentication for AD Connector](ad_connector_mfa.md)\. 
 
 ## Delegate privileges to your service account<a name="connect_delegate_privileges"></a>
 

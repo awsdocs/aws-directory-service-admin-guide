@@ -1,12 +1,12 @@
-# Step 3: Deploy an EC2 Instance to Manage AWS Managed Microsoft AD<a name="microsoftadbasestep3"></a>
+# Step 3: Deploy an EC2 instance to manage your AWS Managed Microsoft AD<a name="microsoftadbasestep3"></a>
 
 For this lab, we are using EC2 instances that have public IP addresses to make it easy to access the management instance from anywhere\. In a production setting, you can use instances that are in a private VPC that are only accessible through a VPN or Amazon Direct Connect link\. There is no requirement the instance have a public IP address\.
 
 In this section, you walk through the various post\-deployment tasks necessary for client computers to connect to your domain using the Windows Server on your new EC2 instance\. You use the Windows Server in the next step to verify that the lab is operational\.
 
-## Optional: Create a DHCP Options Set in AWS\-DS\-VPC01 for Your Directory<a name="createdhcpoptionsset"></a>
+## Optional: Create a DHCP options set in AWS\-DS\-VPC01 for your directory<a name="createdhcpoptionsset"></a>
 
-In this optional procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP Options Sets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
+In this optional procedure, you set up a DHCP option scope so that EC2 instances in your VPC automatically use your AWS Managed Microsoft AD for DNS resolution\. For more information, see [DHCP options sets](https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_DHCP_Options.html)\.
 
 **To create a DHCP options set for your directory**
 
@@ -34,9 +34,9 @@ Seamless domain join works without having to configure a DHCP Options Set\.
 
 1. On the **Edit DHCP options set** page, select the options set that you recorded in Step 5, and then choose **Save**\.
 
-## Create a Role to Join Windows Instances to Your AWS Managed Microsoft AD Domain<a name="configureec2"></a>
+## Create a role to join Windows instances to your AWS Managed Microsoft AD domain<a name="configureec2"></a>
 
-Use this procedure to configure a role that joins an EC2 Windows instance to a domain\. For more information, see [Seamlessly Join a Windows EC2 Instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html) in the *Amazon EC2 User Guide for Windows Instances*\.
+Use this procedure to configure a role that joins an EC2 Windows instance to a domain\. For more information, see [Seamlessly join a Windows EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-join-aws-domain.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 
 **To configure EC2 to join Windows instances to your domain**
 
@@ -52,7 +52,7 @@ Use this procedure to configure a role that joins an EC2 Windows instance to a d
    + Select the box next to the **AmazonSSMManagedInstanceCore** managed policy\. This policy provides the minimum permissions necessary to use the Systems Manager service\.
    + Select the box next to **AmazonSSMDirectoryServiceAccess** managed policy\. The policy provides the permissions to join instances to an Active Directory managed by AWS Directory Service\.
 
-   For information about these managed policies and other policies you can attach to an IAM instance profile for Systems Manager, see [Create an IAM Instance Profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\. For information about managed policies, see [AWS Managed Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
+   For information about these managed policies and other policies you can attach to an IAM instance profile for Systems Manager, see [Create an IAM instance profile for Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-instance-profile.html) in the *AWS Systems Manager User Guide*\. For information about managed policies, see [AWS Managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) in the *IAM User Guide*\.
 
 1. Choose **Next: Tags**\.
 
@@ -64,7 +64,7 @@ Use this procedure to configure a role that joins an EC2 Windows instance to a d
 
 1. Choose **Create role**\. The system returns you to the **Roles** page\.
 
-## Create an EC2 Instance and Automatically Join the Directory<a name="deployec2instance"></a>
+## Create an EC2 instance and automatically join the directory<a name="deployec2instance"></a>
 
 In this procedure you set up a Windows Server system in Amazon EC2 that can be used later to administer users, groups, and policies in Active Directory\. 
 
@@ -83,7 +83,7 @@ In this procedure you set up a Windows Server system in Amazon EC2 that can be u
    + For **Subnet** choose **Public subnet 1**, which should be preconfigured for your preferred Availability Zone \(for example, **subnet\-*xxxxxxxxxxxxxxxxx* \| AWS\-DS\-VPC01\-Subnet01 \| *us\-west\-2a***\)\. 
    + For **Auto\-assign Public IP**, choose **Enable** \(if the subnet setting is not set to enable by default\)\.
    + For **Domain join directory**, choose **corp\.example\.com \(d\-*xxxxxxxxxx*\)**\.
-   + For **IAM role** choose the name you gave your instance role in [Create a Role to Join Windows Instances to Your AWS Managed Microsoft AD Domain](#configureec2), such as **EC2DomainJoin**\.
+   + For **IAM role** choose the name you gave your instance role in [Create a role to join Windows instances to your AWS Managed Microsoft AD domain](#configureec2), such as **EC2DomainJoin**\.
    + Leave the rest of the settings at their defaults\.
    + Choose **Next: Add Storage**\.
 
@@ -103,11 +103,11 @@ In this procedure you set up a Windows Server system in Amazon EC2 that can be u
 
 1. Choose **View Instances** to return to the Amazon EC2 console and view the status of the deployment\.
 
-## Install the Active Directory Tools on Your EC2 Instance<a name="installadtools"></a>
+## Install the Active Directory tools on your EC2 instance<a name="installadtools"></a>
 
 You can choose from two methods to install the Active Directory Domain Management Tools on your EC2 instance\. You can use the Server Manager UI \(recommended for this tutorial\) or Windows PowerShell\.
 
-**To install the Active Directory Tools on your EC2 instance \(Server Manager\)**
+**To install the Active Directory tools on your EC2 instance \(Server Manager\)**
 
 1. In the Amazon EC2 console, choose **Instances**, select the instance you just created, and then choose **Connect**\. 
 
@@ -144,7 +144,7 @@ You can choose from two methods to install the Active Directory Domain Managemen
    + DNS
    + Group Policy Management
 
-**To install the Active Directory Tools on your EC2 instance \(Windows PowerShell\) \(Optional\)**
+**To install the Active Directory tools on your EC2 instance \(Windows PowerShell\) \(Optional\)**
 
 1. Start Windows PowerShell\.
 

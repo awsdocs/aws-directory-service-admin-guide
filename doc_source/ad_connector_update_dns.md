@@ -1,4 +1,4 @@
-# Update the DNS Address for Your AD Connector<a name="ad_connector_update_dns"></a>
+# Update the DNS address for your AD Connector<a name="ad_connector_update_dns"></a>
 
 Use the following steps to update the DNS addresses that your AD Connector is pointing to\.
 
@@ -6,7 +6,7 @@ Use the following steps to update the DNS addresses that your AD Connector is po
 If you have an update in progress, you must wait until it is complete before submitting another update\.
 
 **Note**  
-If you are using Amazon WorkSpaces with your AD Connector, ensure that your WorkSpace’s DNS addresses are updated as well\. For more information, see [Update DNS Servers for WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/update-dns-server.html)\.
+If you are using Amazon WorkSpaces with your AD Connector, ensure that your WorkSpace’s DNS addresses are updated as well\. For more information, see [Update DNS servers for WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/update-dns-server.html)\.
 
 **To update your DNS settings for AD Connector**
 

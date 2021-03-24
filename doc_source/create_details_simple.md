@@ -1,4 +1,4 @@
-# What Gets Created<a name="create_details_simple"></a>
+# What gets created<a name="create_details_simple"></a>
 
 When you create a directory with Simple AD, AWS Directory Service performs the following tasks on your behalf:
 + Sets up a Samba\-based directory within the VPC\.

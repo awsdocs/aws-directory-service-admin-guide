@@ -1,15 +1,18 @@
-# Enable Multi\-Factor Authentication for AWS Managed Microsoft AD<a name="ms_ad_mfa"></a>
+# Enable multi\-factor authentication for AWS Managed Microsoft AD<a name="ms_ad_mfa"></a>
 
-You can enable multi\-factor authentication \(MFA\) for your AWS Managed Microsoft AD directory to increase security when your users specify their AD credentials to access [Supported Amazon Enterprise Applications](#supportedamazonapps)\. When you enable MFA, your users enter their username and password \(first factor\) as usual, and they must also enter an authentication code \(the second factor\) they obtain from your virtual or hardware MFA solution\. These factors together provide additional security by preventing access to your Amazon Enterprise applications, unless users supply valid user credentials and a valid MFA code\. 
+You can enable multi\-factor authentication \(MFA\) for your AWS Managed Microsoft AD directory to increase security when your users specify their AD credentials to access [Supported Amazon Enterprise applications](#supportedamazonapps)\. When you enable MFA, your users enter their username and password \(first factor\) as usual, and they must also enter an authentication code \(the second factor\) they obtain from your virtual or hardware MFA solution\. These factors together provide additional security by preventing access to your Amazon Enterprise applications, unless users supply valid user credentials and a valid MFA code\. 
 
-To enable MFA, you must have an MFA solution that is a [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server, or you must have an MFA plugin to a RADIUS server already implemented in your on\-premises infrastructure\. Your MFA solution should implement One Time Passcodes \(OTP\) that users obtain from a hardware device or from software running on a device such as a cell phone\.
+To enable MFA, you must have an MFA solution that is a [Remote authentication dial\-in user service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server, or you must have an MFA plugin to a RADIUS server already implemented in your on\-premises infrastructure\. Your MFA solution should implement One Time Passcodes \(OTP\) that users obtain from a hardware device or from software running on a device such as a cell phone\.
 
 RADIUS is an industry\-standard client/server protocol that provides authentication, authorization, and accounting management to enable users to connect to network services\. AWS Managed Microsoft AD includes a RADIUS client that connects to the RADIUS server upon which you have implemented your MFA solution\. Your RADIUS server validates the username and OTP code\. If your RADIUS server successfully validates the user, AWS Managed Microsoft AD then authenticates the user against AD\. Upon successful AD authentication, users can then access the AWS application\. Communication between the AWS Managed Microsoft AD RADIUS client and your RADIUS server require you to configure AWS security groups that enable communication over port 1812\.
 
-You can enable multi\-factor authentication for your AWS Managed Microsoft AD directory by performing the following procedure\. For more information about how to configure your RADIUS server to work with AWS Directory Service and MFA, see [Multi\-factor Authentication Prerequisites](ms_ad_getting_started_prereqs.md#prereq_mfa_ad)\.
+You can enable multi\-factor authentication for your AWS Managed Microsoft AD directory by performing the following procedure\. For more information about how to configure your RADIUS server to work with AWS Directory Service and MFA, see [Multi\-factor authentication prerequisites](ms_ad_getting_started_prereqs.md#prereq_mfa_ad)\.
 
 **Note**  
-Multi\-factor authentication is not available for Simple AD\. However, MFA can be enabled for your AD Connector directory\. For more information, see [Enable Multi\-Factor Authentication for AD Connector](ad_connector_mfa.md)\.
+Multi\-factor authentication is not available for Simple AD\. However, MFA can be enabled for your AD Connector directory\. For more information, see [Enable multi\-factor authentication for AD Connector](ad_connector_mfa.md)\.
+
+**Note**  
+MFA is a Regional feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be applied separately in each Region\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
 
 **To enable multi\-factor authentication for AWS Managed Microsoft AD**
 
@@ -21,7 +24,9 @@ Multi\-factor authentication is not available for Simple AD\. However, MFA can b
 
 1. Choose the directory ID link for your AWS Managed Microsoft AD directory\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to enable MFA, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Multi\-factor authentication** section, choose **Actions**, and then choose **Enable**\.
 
@@ -49,11 +54,11 @@ The number of times that communication with the RADIUS server is attempted\. Thi
 
 1. Choose **Enable**\. 
 
-## Supported Amazon Enterprise Applications<a name="supportedamazonapps"></a>
+## Supported Amazon Enterprise applications<a name="supportedamazonapps"></a>
 
 All Amazon Enterprise IT applications including Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, Amazon QuickSight, and access to AWS Single Sign\-On and AWS Management Console are supported when using AWS Managed Microsoft AD and AD Connector with MFA\. 
 
-For information about how to configure basic user access to Amazon Enterprise applications, AWS Single Sign\-On and the AWS Management Console using AWS Directory Service, see [Enable Access to AWS Applications and Services](ms_ad_manage_apps_services.md) and [Enable Access to the AWS Management Console with AD Credentials](ms_ad_management_console_access.md)\.
+For information about how to configure basic user access to Amazon Enterprise applications, AWS Single Sign\-On and the AWS Management Console using AWS Directory Service, see [Enable access to AWS applications and services](ms_ad_manage_apps_services.md) and [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
 
-**Related AWS Security Blog Article**
-+ [How to Enable Multi\-Factor Authentication for AWS Services by Using AWS Managed Microsoft AD and On\-Premises Credentials](https://aws.amazon.com/blogs/security/how-to-enable-multi-factor-authentication-for-amazon-workspaces-and-amazon-quicksight-by-using-microsoft-ad-and-on-premises-credentials/)
+**Related AWS Security blog article**
++ [How to enable multi\-factor authentication for AWS services by using AWS Managed Microsoft AD and on\-premises credentials](https://aws.amazon.com/blogs/security/how-to-enable-multi-factor-authentication-for-amazon-workspaces-and-amazon-quicksight-by-using-microsoft-ad-and-on-premises-credentials/)

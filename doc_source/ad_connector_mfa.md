@@ -1,9 +1,9 @@
-# Enable Multi\-Factor Authentication for AD Connector<a name="ad_connector_mfa"></a>
+# Enable multi\-factor authentication for AD Connector<a name="ad_connector_mfa"></a>
 
-You can enable multi\-factor authentication for AD Connector when you have Active Directory running on\-premises or in EC2 instances\. For more information about using multi\-factor authentication with AWS Directory Service, see [AD Connector Prerequisites](prereq_connector.md)\.
+You can enable multi\-factor authentication for AD Connector when you have Active Directory running on\-premises or in EC2 instances\. For more information about using multi\-factor authentication with AWS Directory Service, see [AD Connector prerequisites](prereq_connector.md)\.
 
 **Note**  
-Multi\-factor authentication is not available for Simple AD\. However, MFA can be enabled for your AWS Managed Microsoft AD directory\. For more information, see [Enable Multi\-Factor Authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)\.
+Multi\-factor authentication is not available for Simple AD\. However, MFA can be enabled for your AWS Managed Microsoft AD directory\. For more information, see [Enable multi\-factor authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)\.
 
 **To enable multi\-factor authentication for AD Connector**
 

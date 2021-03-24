@@ -1,4 +1,4 @@
-# Removing a User or Group from a Role<a name="remove_role_users"></a>
+# Removing a user or group from a role<a name="remove_role_users"></a>
 
 To remove a user or group from a role, perform the following steps\.
 
@@ -8,7 +8,9 @@ To remove a user or group from a role, perform the following steps\.
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, select the **Application management** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to remove your assignments, and then choose the **Application management** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Application management** tab\.
 
 1. Under the **AWS Management Console** section, choose the role you want to view\. 
 

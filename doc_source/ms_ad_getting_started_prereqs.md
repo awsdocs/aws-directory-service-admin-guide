@@ -1,4 +1,4 @@
-# AWS Managed Microsoft AD Prerequisites<a name="ms_ad_getting_started_prereqs"></a>
+# AWS Managed Microsoft AD prerequisites<a name="ms_ad_getting_started_prereqs"></a>
 
 To create a AWS Managed Microsoft AD directory, you need a VPC with the following: 
 + At least two subnets\. Each of the subnets must be in a different Availability Zone\.
@@ -12,15 +12,15 @@ AWS Directory Service uses a two VPC structure\. The EC2 instances which make up
 
 The management IP range of your directory's ETH0 network is 198\.18\.0\.0/15\.
 
-## AWS Single Sign\-On Prerequisites<a name="prereq_aws_sso_ms_ad"></a>
+## AWS Single Sign\-On prerequisites<a name="prereq_aws_sso_ms_ad"></a>
 
 If you plan to use AWS Single Sign\-On \(AWS SSO\) with AWS Managed Microsoft AD, you need to ensure that the following are true:
-+ Your AWS Managed Microsoft AD directory is set up in your AWS organization’s master account\.
++ Your AWS Managed Microsoft AD directory is set up in your AWS organization’s management account\.
 + Your instance of AWS SSO is in the same Region where your AWS Managed Microsoft AD directory is set up\. 
 
-For more information, see [AWS SSO Prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
+For more information, see [AWS SSO prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
 
-## Multi\-factor Authentication Prerequisites<a name="prereq_mfa_ad"></a>
+## Multi\-factor authentication prerequisites<a name="prereq_mfa_ad"></a>
 
 To support multi\-factor authentication with your AWS Managed Microsoft AD directory, you must configure either your on\-premises or cloud\-based [Remote Authentication Dial\-In User Service](https://en.wikipedia.org/wiki/RADIUS) \(RADIUS\) server in the following way so that it can accept requests from your AWS Managed Microsoft AD directory in AWS\.
 
@@ -35,6 +35,6 @@ If your RADIUS server supports DNS addresses, you must create only one RADIUS cl
 
 1. Configure your existing network to allow inbound traffic from the RADIUS clients \(AWS Managed Microsoft AD DCs DNS addresses, see Step 1\) to your RADIUS server port\.
 
-1. Add a rule to the Amazon EC2 security group in your AWS Managed Microsoft AD domain that allows inbound traffic from the RADIUS server DNS address and port number defined previously\. For more information, see [Adding Rules to a Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) in the *EC2 User Guide*\.
+1. Add a rule to the Amazon EC2 security group in your AWS Managed Microsoft AD domain that allows inbound traffic from the RADIUS server DNS address and port number defined previously\. For more information, see [Adding rules to a security group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#adding-security-group-rule) in the *EC2 User Guide*\.
 
-For more information about using AWS Managed Microsoft AD with MFA, see [Enable Multi\-Factor Authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)\. 
+For more information about using AWS Managed Microsoft AD with MFA, see [Enable multi\-factor authentication for AWS Managed Microsoft AD](ms_ad_mfa.md)\. 

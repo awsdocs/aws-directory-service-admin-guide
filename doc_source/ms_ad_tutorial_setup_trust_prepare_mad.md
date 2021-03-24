@@ -1,8 +1,8 @@
-# Step 2: Prepare Your AWS Managed Microsoft AD<a name="ms_ad_tutorial_setup_trust_prepare_mad"></a>
+# Step 2: Prepare your AWS Managed Microsoft AD<a name="ms_ad_tutorial_setup_trust_prepare_mad"></a>
 
 Now let's get your AWS Managed Microsoft AD ready for the trust relationship\. Many of the following steps are almost identical to what you just completed for your on\-premises domain\. This time, however, you are working with your AWS Managed Microsoft AD\.
 
-## Configure Your VPC Subnets and Security Groups<a name="tutorial_setup_trust_open_vpc"></a>
+## Configure your VPC subnets and security groups<a name="tutorial_setup_trust_open_vpc"></a>
 
 You must allow traffic from your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. To do this, you will need to make sure that the ACLs associated with the subnets used to deploy your AWS Managed Microsoft AD and the security group rules configured on your domain controllers, both allow the requisite traffic to support trusts\. 
 
@@ -46,7 +46,7 @@ These are the minimum ports that are needed to be able to connect the VPC and on
 1. Go to the **Outbound Rules** tab for that security group\. Choose **Edit**, and then **Add another rule**\. For the new rule, enter the following values: 
    + **Type**: ALL Traffic
    + **Protocol**: ALL
-   + **Destination** determines the traffic that can leave your domain controllers and where it can go\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
+   + **Destination** determines the traffic that can leave your domain controllers and where it can go\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Select **Save**\.  
 ![\[Edit security group\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/edit_security_group.png)
@@ -55,7 +55,7 @@ These are the minimum ports that are needed to be able to connect the VPC and on
    + **Type**: Custom UDP Rule
    + **Protocol**: UDP
    + **Port Range**: 445
-   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. This setting determines the traffic that can reach your domain controllers\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
+   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. This setting determines the traffic that can reach your domain controllers\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Select **Save**\.
 
@@ -63,15 +63,15 @@ These are the minimum ports that are needed to be able to connect the VPC and on
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_tutorial_setup_trust_prepare_mad.html)
 
-## Ensure That Kerberos Pre\-authentication Is Enabled<a name="tutorial_setup_trust_enable_kerberos_on_mad"></a>
+## Ensure that Kerberos pre\-authentication is enabled<a name="tutorial_setup_trust_enable_kerberos_on_mad"></a>
 
 Now you want to confirm that users in your AWS Managed Microsoft AD also have Kerberos pre\-authentication enabled\. This is the same process you completed for your on\-premises directory\. This is the default, but let's check to make sure nothing has changed\.
 
-**To view user Kerberos settings**
+**To view user kerberos settings**
 
-1. Log in to an instance that is a member of your AWS Managed Microsoft AD directory using either the [Admin Account](ms_ad_getting_started_admin_account.md) for the domain or an account that has been delegated permissions to manage users in the domain\.
+1. Log in to an instance that is a member of your AWS Managed Microsoft AD directory using either the [Admin account](ms_ad_getting_started_admin_account.md) for the domain or an account that has been delegated permissions to manage users in the domain\.
 
-1. If they are not already installed, install the Active Directory Users and Computers tool and the DNS tool\. Learn how to install these tools in [Installing the Active Directory Administration Tools](ms_ad_install_ad_tools.md)\.
+1. If they are not already installed, install the Active Directory Users and Computers tool and the DNS tool\. Learn how to install these tools in [Installing the Active Directory administration tools](ms_ad_install_ad_tools.md)\.
 
 1. Open Server Manager\. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
@@ -84,4 +84,4 @@ Now you want to confirm that users in your AWS Managed Microsoft AD also have Ke
 
 **Next Step**
 
-[Step 3: Create the Trust Relationship](ms_ad_tutorial_setup_trust_create.md)
+[Step 3: Create the trust relationship](ms_ad_tutorial_setup_trust_create.md)

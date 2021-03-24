@@ -1,10 +1,10 @@
-# Step 1: Set Up Your Environment for Trusts<a name="microsoftadtruststep1"></a>
+# Step 1: Set up your environment for trusts<a name="microsoftadtruststep1"></a>
 
 In this section, you set up your Amazon EC2 environment, deploy your new forest, and prepare your VPC for trusts with AWS\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/tutorialmicrosoftadbase_vpclayout.png)
 
-## Create a Windows Server 2019 EC2 Instance<a name="createkeypair1"></a>
+## Create a Windows Server 2019 EC2 instance<a name="createkeypair1"></a>
 
 Use the following procedure to create a Windows Server 2019 member server in Amazon EC2\. 
 
@@ -41,7 +41,7 @@ Use the following procedure to create a Windows Server 2019 member server in Ama
 
 1. Choose **View Instances** to return to the Amazon EC2 console and view the status of the deployment\.
 
-## Promote Your Server to a Domain Controller<a name="promoteserver"></a>
+## Promote your server to a domain controller<a name="promoteserver"></a>
 
 Before you can create trusts, you must build and deploy the first domain controller for a new forest\. During this process you configure a new Active Directory forest, install DNS, and set this server to use the local DNS server for name resolution\. You must reboot the server at the end of this procedure\.
 
@@ -97,7 +97,7 @@ If you want to create a domain controller in AWS that replicates with your on\-p
 
 1. Choose **Install**\. Once the installation is complete, the server reboots and then becomes a functional domain controller\.
 
-## Configure Your VPC<a name="configurevpc1"></a>
+## Configure your VPC<a name="configurevpc1"></a>
 
 The following three procedures guide you through the steps to configure your VPC for connectivity with AWS\.
 
@@ -119,7 +119,7 @@ This security group was automatically created when you initially created your di
    + Leave the rest of the settings at their defaults\.
    + Select **Save**\.
 
-**To verify Kerberos preauthentication is enabled**
+**To verify kerberos preauthentication is enabled**
 
 1. On the **example\.local** domain controller, open **Server Manager**\.
 
@@ -136,6 +136,8 @@ A conditional forwarder is a DNS server on a network that is used to forward DNS
 1. First you must get some information about your AWS Managed Microsoft AD\.
 
    Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservicev2/](https://console.aws.amazon.com/directoryservicev2/)\.
+
+   
 
 1. In the navigation pane, choose **Directories**\.
 
