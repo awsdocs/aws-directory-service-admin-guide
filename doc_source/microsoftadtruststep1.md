@@ -19,7 +19,7 @@ Use the following procedure to create a Windows Server 2019 member server in Ama
 1. On the **Step 2** page, select **t2\.large**, and then choose **Next: Configure Instance Details**\.
 
 1. On the **Step 3** page, do the following:
-   + For **Network**, select **vpc\-*xxxxxxxxxxxxxxxxx* AWS\-DS\-VPC01** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createvpc)\)\.
+   + For **Network**, select **vpc\-*xxxxxxxxxxxxxxxxx* AWS\-OnPrem\-VPC01** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createvpc)\)\.
    + For **Subnet**, select **subnet\-*xxxxxxxxxxxxxxxxx* \| AWS\-OnPrem\-VPC01\-Subnet01 \| AWS\-OnPrem\-VPC01**\.
    + For **Auto\-assign Public IP** list, choose **Enable** \(if the subnet setting is not set to **Enable** by default\)\.
    + Leave the rest of the settings at their defaults\.
