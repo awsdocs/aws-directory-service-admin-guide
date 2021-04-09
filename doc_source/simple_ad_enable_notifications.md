@@ -1,8 +1,8 @@
-# Configure Directory Status Notifications<a name="simple_ad_enable_notifications"></a>
+# Configure directory status notifications<a name="simple_ad_enable_notifications"></a>
 
 Using Amazon Simple Notification Service \(Amazon SNS\), you can receive email or text \(SMS\) messages when the status of your directory changes\. You get notified if your directory goes from an Active status to an [Impaired or Inoperable status](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_status.html)\. You also receive a notification when the directory returns to an Active status\.
 
-## How It Works<a name="ds_sns_overview"></a>
+## How it works<a name="ds_sns_overview"></a>
 
 Amazon SNS uses “topics” to collect and distribute messages\. Each topic has one or more subscribers who receive the messages that have been published to that topic\. Using the steps below you can add AWS Directory Service as publisher to an Amazon SNS topic\. When AWS Directory Service detects a change in your directory’s status, it publishes a message to that topic, which is then sent to the topic's subscribers\. 
 

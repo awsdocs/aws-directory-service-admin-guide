@@ -1,6 +1,6 @@
-# Create a Simple AD Directory<a name="how_to_create_simple_ad"></a>
+# Create a Simple AD directory<a name="how_to_create_simple_ad"></a>
 
-To create a new directory, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [Simple AD Prerequisites](prereq_simple.md)\.
+To create a new directory, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [Simple AD prerequisites](prereq_simple.md)\.
 
 **To create a Simple AD directory**
 

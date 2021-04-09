@@ -28,7 +28,7 @@ You receive an error message similar to the following when connecting to your on
 DNS unavailable (TCP port 53) for IP: <DNS IP address>
 ```
 
-AD Connector must be able to communicate with your on\-premises DNS servers via TCP and UDP over port 53\. Verify that your security groups and on\-premises firewalls allow TCP and UDP communication over this port\. For more information, see [AD Connector Prerequisites](prereq_connector.md)\.
+AD Connector must be able to communicate with your on\-premises DNS servers via TCP and UDP over port 53\. Verify that your security groups and on\-premises firewalls allow TCP and UDP communication over this port\. For more information, see [AD Connector prerequisites](prereq_connector.md)\.
 
 ## I receive a "Connectivity issues detected" error when I try to connect to my on\-premises directory<a name="connectivity_issues_detected"></a>
 
@@ -40,7 +40,7 @@ Kerberos/authentication unavailable (TCP port 88) for IP: <IP address>
 Please ensure that the listed ports are available and retry the operation.
 ```
 
-AD Connector must be able to communicate with your on\-premises domain controllers via TCP and UDP over the following ports\. Verify that your security groups and on\-premises firewalls allow TCP and UDP communication over these ports\. For more information, see [AD Connector Prerequisites](prereq_connector.md)\.
+AD Connector must be able to communicate with your on\-premises domain controllers via TCP and UDP over the following ports\. Verify that your security groups and on\-premises firewalls allow TCP and UDP communication over these ports\. For more information, see [AD Connector prerequisites](prereq_connector.md)\.
 + 88 \(Kerberos\)
 + 389 \(LDAP\)
 
@@ -62,7 +62,7 @@ If you have a directory that has been in the "Requested" state for more than fiv
 
 ## I receive an "AZ Constrained" error when I create a directory<a name="contrained_az2"></a>
 
-Some AWS accounts created before 2012 might have access to Availability Zones in the US East \(N\. Virginia\), US West \(N\. California\), or Asia Pacific \(Tokyo\) region that do not support AWS Directory Service directories\. If you receive an error such as this when creating a directory, choose a subnet in a different Availability Zone and try to create the directory again\.
+Some AWS accounts created before 2012 might have access to Availability Zones in the US East \(N\. Virginia\), US West \(N\. California\), or Asia Pacific \(Tokyo\) Region that do not support AWS Directory Service directories\. If you receive an error such as this when creating a directory, choose a subnet in a different Availability Zone and try to create the directory again\.
 
 ## Some of my users cannot authenticate with my directory<a name="kerberos_preauth2"></a>
 

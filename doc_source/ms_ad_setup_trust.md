@@ -1,11 +1,11 @@
-# When to Create a Trust Relationship<a name="ms_ad_setup_trust"></a>
+# When to create a trust relationship<a name="ms_ad_setup_trust"></a>
 
 You can configure one and two\-way external and forest trust relationships between your AWS Directory Service for Microsoft Active Directory and on\-premises directories, as well as between multiple AWS Managed Microsoft AD directories in the AWS cloud\. AWS Managed Microsoft AD supports all three trust relationship directions: Incoming, Outgoing and Two\-way \(Bi\-directional\)\.
 
 **Note**  
 When setting up trust relationships, you must ensure that your on\-premises directory is and remains compatible with AWS Directory Services\. For more information on your responsibilities, please see our [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model)\.
 
-AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a Trust Relationship Between Your AWS Managed Microsoft AD and Your On\-Premises Domain](ms_ad_tutorial_setup_trust.md)\.
+AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your on\-premises domain](ms_ad_tutorial_setup_trust.md)\.
 
 ## Prerequisites<a name="trust_prereq"></a>
 
@@ -17,6 +17,8 @@ AWS Managed Microsoft AD does not support trust with [Single Label Domains](http
 ### Connect to VPC<a name="connect_vpc"></a>
 
 If you are creating a trust relationship with your on\-premises directory, you must first connect your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your on\-premises network must have the following ports open to the CIDRs for both subnets in the VPC\.
+
+ 
 + TCP/UDP 53 \- DNS
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
@@ -43,9 +45,11 @@ The VPC that contains your AWS Managed Microsoft AD must have the appropriate ou
 The selected security group is a security group that is automatically created when you initially create your directory\.
 
 1. Go to the **Outbound Rules** tab of that security group\. Select **Edit**, then **Add another rule**\. For the new rule, enter the following values:
+
+    
    + **Type**: All Traffic
    + **Protocol**: All
-   + **Destination** determines the traffic that can leave your domain controllers and where it can go in your on\-premises network\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
+   + **Destination** determines the traffic that can leave your domain controllers and where it can go in your on\-premises network\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Select **Save**\.
 
@@ -62,10 +66,12 @@ The selected security group is a security group that is automatically created wh
 The selected security group is a security group that is automatically created when you initially create your directory\.
 
 1. Go to the **Inbound Rules** tab of that security group\. Select **Edit**, then **Add another rule**\. For the new rule, enter the following values:
+
+    
    + **Type**: Custom UDP Rule
    + **Protocol**: UDP
    + **Port Range**: 445
-   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same region\. This setting determines the traffic that can reach your domain controllers from your on\-premises network\. For more information, see [Understand Your Directory’s AWS Security Group Configuration and Use](ms_ad_best_practices.md#understandsecuritygroup)\.
+   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. This setting determines the traffic that can reach your domain controllers from your on\-premises network\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Select **Save**\.
 
@@ -75,11 +81,11 @@ The selected security group is a security group that is automatically created wh
 
    These security rules impact an internal network interface that is not exposed publicly\.
 
-### Enable Kerberos Pre\-authentication<a name="enable_kerberos"></a>
+### Enable Kerberos pre\-authentication<a name="enable_kerberos"></a>
 
 Your user accounts must have Kerberos pre\-authentication enabled\. For more information about this setting, review [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
-### Configure DNS Conditional Forwarders On Your On\-premises domain<a name="mad_forwarder"></a>
+### Configure DNS conditional forwarders on your on\-premises domain<a name="mad_forwarder"></a>
 
 You must set up DNS conditional forwarders on your on\-premises domain\. Refer to [Assign a Conditional Forwarder for a Domain Name](https://technet.microsoft.com/en-us/library/cc794735.aspx) on Microsoft TechNet for details on conditional forwarders\.
 
@@ -115,13 +121,16 @@ To perform the following steps, you must have access to following Windows Server
 
 1. Select **Store this conditional forwarder in Active Directory and replicate as follows: All DNS servers in this domain**\. Choose **OK**\.
 
-### Trust Relationship Password<a name="onprem_trust"></a>
+### Trust relationship password<a name="onprem_trust"></a>
 
 If you are creating a trust relationship with an existing domain, set up the trust relationship on that domain using Windows Server Administration tools\. As you do so, note the trust password that you use\. You will need to use this same password when setting up the trust relationship on the AWS Managed Microsoft AD\. For more information, see [Managing Trusts](https://technet.microsoft.com/en-us/library/cc771568.aspx) on Microsoft TechNet\.
 
 You are now ready to create the trust relationship on your AWS Managed Microsoft AD\.
 
-## Create, Verify, or Delete a Trust Relationship<a name="trust_steps"></a>
+## Create, verify, or delete a trust relationship<a name="trust_steps"></a>
+
+**Note**  
+Trust relationships is a global feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be performed in the [Primary Region](multi-region-global-primary-additional.md#multi-region-primary)\. The changes will be applied across all replicated Regions automatically\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
 
 **To create a trust relationship with your AWS Managed Microsoft AD**
 
@@ -129,7 +138,9 @@ You are now ready to create the trust relationship on your AWS Managed Microsoft
 
 1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
 
@@ -161,7 +172,9 @@ You can create multiple trusts between your AWS Managed Microsoft AD and various
 
 1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Trust relationships** section, select the trust you want to verify, choose **Actions**, and then select **Verify trust relationship**\.
 
@@ -173,7 +186,9 @@ This process verifies only the outgoing direction of a two\-way trust\. AWS does
 
 1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Trust relationships** section, select the trust you want to delete, choose **Actions**, and then select **Delete trust relationship**\.
 

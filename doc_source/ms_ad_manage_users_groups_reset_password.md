@@ -1,10 +1,10 @@
-# Reset a User Password<a name="ms_ad_manage_users_groups_reset_password"></a>
+# Reset a user password<a name="ms_ad_manage_users_groups_reset_password"></a>
 
 Users must adhere to password policies as defined in the directory\. Sometimes this can get the best of users, including the directory admin, and they forget their password\. When this happens, you can quickly reset the user's password using AWS Directory Service if the user resides in either a Simple AD or AWS Managed Microsoft AD directory\.
 
 You can reset the password for any user in your directory with the following exceptions:
 + For Simple AD, you cannot reset the password for any user that is a member of either the **Domain Admins** or **Enterprise Admins** group except for the Administrator user\.
-+ For AWS Managed Microsoft AD, you cannot reset the password for any user that is in an OU other than the OU that is based off of the NetBIOS name you typed when you created your directory\. For example, you cannot reset the password for a user in the **AWS Reserved** OU\. For more information about the OU structure for an AWS Managed Microsoft AD directory, see [What Gets Created](ms_ad_getting_started_what_gets_created.md)\.
++ For AWS Managed Microsoft AD, you cannot reset the password for any user that is in an OU other than the OU that is based off of the NetBIOS name you typed when you created your directory\. For example, you cannot reset the password for a user in the **AWS Reserved** OU\. For more information about the OU structure for an AWS Managed Microsoft AD directory, see [What gets created](ms_ad_getting_started_what_gets_created.md)\.
 
 You can use any of the following methods to reset a user's password\.
 

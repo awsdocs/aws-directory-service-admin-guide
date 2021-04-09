@@ -1,10 +1,12 @@
-# Step 1: Prepare Your On\-Premises Domain<a name="ms_ad_tutorial_setup_trust_prepare_onprem"></a>
+# Step 1: Prepare your on\-premises Domain<a name="ms_ad_tutorial_setup_trust_prepare_onprem"></a>
 
 First you need to complete several prerequisite steps on your on\-premises domain\.
 
-## Configure Your On\-Premises Firewall<a name="tutorial_setup_trust_connect_vpc"></a>
+## Configure your on\-premises firewall<a name="tutorial_setup_trust_connect_vpc"></a>
 
 You must configure your on\-premises firewall so that the following ports are open to the CIDRs for all subnets used by the VPC that contains your AWS Managed Microsoft AD\. In this tutorial, we allow both incoming and outgoing traffic from 10\.0\.0\.0/16 \(the CIDR block of our AWS Managed Microsoft AD's VPC\) on the following ports:
+
+ 
 + TCP/UDP 53 \- DNS
 + TCP/UDP 88 \- Kerberos authentication
 + TCP/UDP 389 \- LDAP
@@ -15,11 +17,11 @@ SMBv1 is no longer supported\.
 **Note**  
 These are the minimum ports that are needed to connect the VPC to the on\-premises directory\. Your specific configuration may require additional ports be open\.
 
-## Ensure That Kerberos Pre\-authentication Is Enabled<a name="tutorial_setup_trust_enable_kerberos"></a>
+## Ensure that Kerberos pre\-authentication is enabled<a name="tutorial_setup_trust_enable_kerberos"></a>
 
 User accounts in both directories must have Kerberos preauthentication enabled\. This is the default, but let's check the properties of any random user to make sure nothing has changed\.
 
-**To view user Kerberos settings**
+**To view user kerberos settings**
 
 1. On your on\-premises domain controller, open Server Manager\.
 
@@ -30,7 +32,7 @@ User accounts in both directories must have Kerberos preauthentication enabled\.
 1. Choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is *not* checked\.   
 ![\[Enable Kerberos\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/kerberos_enabled.png)
 
-## Configure DNS Conditional Forwarders for Your On\-premises Domain<a name="tutorial_setup_trust_onprem_forwarder"></a>
+## Configure DNS conditional forwarders for your on\-premises domain<a name="tutorial_setup_trust_onprem_forwarder"></a>
 
 You must set up DNS conditional forwarders on each domain\. Before doing this on your on\-premises domain, you will first get some information about your AWS Managed Microsoft AD\.
 
@@ -67,4 +69,4 @@ You must set up DNS conditional forwarders on each domain\. Before doing this on
 
 **Next Step**
 
-[Step 2: Prepare Your AWS Managed Microsoft AD](ms_ad_tutorial_setup_trust_prepare_mad.md)
+[Step 2: Prepare your AWS Managed Microsoft AD](ms_ad_tutorial_setup_trust_prepare_mad.md)

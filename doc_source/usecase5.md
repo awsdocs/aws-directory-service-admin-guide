@@ -1,4 +1,4 @@
-# Use Case 5: Extend Your On\-Premises AD to the AWS Cloud<a name="usecase5"></a>
+# Use Case 5: Extend your on\-premises AD to the AWS Cloud<a name="usecase5"></a>
 
 If you already have an AD infrastructure and want to use it when migrating AD\-aware workloads to the AWS Cloud, AWS Managed Microsoft AD can help\. You can use [AD trusts](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_tutorial_test_lab_trust.html) to connect AWS Managed Microsoft AD to your existing AD\. This means your users can access AD\-aware and AWS applications with their on\-premises AD credentials, without needing you to synchronize users, groups, or passwords\.
 

@@ -1,4 +1,4 @@
-# Creating an Access URL<a name="simple_ad_create_access_url"></a>
+# Creating an access URL<a name="simple_ad_create_access_url"></a>
 
 An access URL is used with AWS applications and services, such as Amazon WorkSpaces, to reach a login page that is associated with your directory\. The URL must be unique globally\. You can create an access URL for your directory by performing the following steps\.
 

@@ -1,8 +1,8 @@
-# What Is AWS Directory Service?<a name="what_is"></a>
+# What is AWS Directory Service?<a name="what_is"></a>
 
 AWS Directory Service provides multiple ways to use Microsoft Active Directory \(AD\) with other AWS services\. Directories store information about users, groups, and devices, and administrators use them to manage access to information and resources\. AWS Directory Service provides multiple directory choices for customers who want to use existing Microsoft AD or Lightweight Directory Access Protocol \(LDAP\)–aware applications in the cloud\. It also offers those same choices to developers who need a directory to manage users, groups, devices, and access\.
 
-## Which to Choose<a name="choosing_an_option"></a>
+## Which to choose<a name="choosing_an_option"></a>
 
 You can choose directory services with the features and scalability that best meets your needs\. Use the following table to help you determine which AWS Directory Service directory option works best for your organization\.
 
@@ -14,7 +14,7 @@ You can choose directory services with the features and scalability that best me
 | I need Active Directory or LDAP for my applications in the cloud |  Select [AWS Directory Service for Microsoft Active Directory](#microsoftad) \(Standard Edition or Enterprise Edition\) if you need an actual Microsoft Active Directory in the AWS Cloud that supports Active Directory–aware workloads, or AWS applications and services such as Amazon WorkSpaces and Amazon QuickSight, or you need LDAP support for Linux applications\. Use [AD Connector](#adconnector) if you only need to allow your on\-premises users to log in to AWS applications and services with their Active Directory credentials\. You can also use AD Connector to join Amazon EC2 instances to your existing Active Directory domain\. Use [Simple AD](#simplead) if you need a low\-scale, low\-cost directory with basic Active Directory compatibility that supports Samba 4–compatible applications, or you need LDAP compatibility for LDAP\-aware applications\.  | 
 | I develop SaaS applications | Use [Amazon Cognito](#cognito) if you develop high\-scale SaaS applications and need a scalable directory to manage and authenticate your subscribers and that works with social media identities\. | 
 
-## AWS Directory Service Options<a name="directoryoptions"></a>
+## AWS Directory Service options<a name="directoryoptions"></a>
 
 AWS Directory Service includes several directory types to choose from\. For more information, select one of the following tabs:
 
@@ -31,7 +31,7 @@ AWS Managed Microsoft AD also supports federated use cases using Active Director
 
 The service includes key features that enable you to [extend your schema](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_schema_extensions.html), [manage password policies](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_password_policies.html), and [enable secure LDAP communications](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_ldap.html) through Secure Socket Layer \(SSL\)/Transport Layer Security \(TLS\)\. You can also [enable multi\-factor authentication \(MFA\) for AWS Managed Microsoft AD](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_mfa.html) to provide an additional layer of security when users access AWS applications from the Internet\. Because Active Directory is an LDAP directory, you can also use AWS Managed Microsoft AD for Linux Secure Shell \(SSH\) authentication and for other LDAP\-enabled applications\.
 
-AWS provides monitoring, daily snapshots, and recovery as part of the service—you [add users and groups to AWS Managed Microsoft AD](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_create_users_groups.html), and administer Group Policy using familiar Active Directory tools running on a Windows computer joined to the AWS Managed Microsoft AD domain\. You can also scale the directory by [deploying additional domain controllers](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_deploy_additional_dcs.html) and help improve application performance by distributing requests across a larger number of domain controllers\.
+AWS provides monitoring, daily snapshots, and recovery as part of the service—you [add users and groups to AWS Managed Microsoft AD](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_manage_users_groups.html), and administer Group Policy using familiar Active Directory tools running on a Windows computer joined to the AWS Managed Microsoft AD domain\. You can also scale the directory by [deploying additional domain controllers](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_deploy_additional_dcs.html) and help improve application performance by distributing requests across a larger number of domain controllers\.
 
 AWS Managed Microsoft AD is available in two editions: Standard and Enterprise\.
 + **Standard Edition: **AWS Managed Microsoft AD \(Standard Edition\) is optimized to be a primary directory for small and midsize businesses with up to 5,000 employees\. It provides you enough storage capacity to support up to 30,000\* directory objects, such as users, groups, and computers\.
@@ -82,13 +82,13 @@ You can also use Amazon Cognito when you need to create custom registration fiel
 
 ------
 
-See [Region Availability for AWS Directory Service](regions.md) for a list of supported directory types per region\.
+See [Region availability for AWS Directory Service](regions.md) for a list of supported directory types per Region\.
 
 ## Working with Amazon EC2<a name="new_to_ec2"></a>
 
 A basic understanding of Amazon EC2 is essential to using AWS Directory Service\. We recommend that you begin by reading the following topics: 
 + [What is Amazon EC2?](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/concepts.html) in the *Amazon EC2 User Guide for Windows Instances*\.
-+ [Launching EC2 Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/LaunchingAndUsingInstances.html) in the *Amazon EC2 User Guide for Windows Instances*\.
-+ [Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*\.
++ [Launching EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/LaunchingAndUsingInstances.html) in the *Amazon EC2 User Guide for Windows Instances*\.
++ [Security groups](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 + [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html) in the *Amazon VPC User Guide*\.
 + [Adding a Hardware Virtual Private Gateway to Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_VPN.html) in the *Amazon VPC User Guide*\. 

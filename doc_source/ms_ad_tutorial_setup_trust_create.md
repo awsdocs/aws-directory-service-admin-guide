@@ -1,8 +1,8 @@
-# Step 3: Create the Trust Relationship<a name="ms_ad_tutorial_setup_trust_create"></a>
+# Step 3: Create the trust relationship<a name="ms_ad_tutorial_setup_trust_create"></a>
 
-Now that the preparation work is complete, the final steps are to create the trusts\. First you create the trust on your on\-premises domain, and then finally on your AWS Managed Microsoft AD\. If you have any issues during the trust creation process, see [Trust Creation Status Reasons](ms_ad_troubleshooting_trusts.md) for assistance\.
+Now that the preparation work is complete, the final steps are to create the trusts\. First you create the trust on your on\-premises domain, and then finally on your AWS Managed Microsoft AD\. If you have any issues during the trust creation process, see [Trust creation status reasons](ms_ad_troubleshooting_trusts.md) for assistance\.
 
-## Configure the Trust in Your On\-Premises Active Directory<a name="tutorial_setup_trust_onprem_trust"></a>
+## Configure the trust in your on\-premises Active Directory<a name="tutorial_setup_trust_onprem_trust"></a>
 
 In this tutorial, you configure a two\-way forest trust\. However, if you create a one\-way forest trust, be aware that the trust directions on each of your domains must be complementary\. For example, if you create a one\-way, outgoing trust on your on\-premises domain, you need to create a one\-way, incoming trust on your AWS Managed Microsoft AD\.
 
@@ -33,9 +33,12 @@ AWS Managed Microsoft AD also supports external trusts\. However, for the purpos
 
 1. Choose **No, do not confirm the incoming trust**\. Choose **Next**\.
 
-## Configure the Trust in Your AWS Managed Microsoft AD Directory<a name="tutorial_setup_trust_mad_trust"></a>
+## Configure the trust in your AWS Managed Microsoft AD directory<a name="tutorial_setup_trust_mad_trust"></a>
 
 Finally, you configure the forest trust relationship with your AWS Managed Microsoft AD directory\. Because you created a two\-way forest trust on the on\-premises domain, you also create a two\-way trust using your AWS Managed Microsoft AD directory\.
+
+**Note**  
+Trust relationships is a global feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be performed in the [Primary Region](multi-region-global-primary-additional.md#multi-region-primary)\. The changes will be applied across all replicated Regions automatically\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
 
 **To configure the trust in your AWS Managed Microsoft AD directory**
 
@@ -43,7 +46,9 @@ Finally, you configure the forest trust relationship with your AWS Managed Micro
 
 1. On the **Directories** page, choose your AWS Managed Microsoft AD ID\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Trust relationships** section, choose **Actions**, and then select **Add trust relationship**\.
 
@@ -57,4 +62,4 @@ Finally, you configure the forest trust relationship with your AWS Managed Micro
 
 Congratulations\. You now have a trust relationship between your on\-premises domain \(corp\.example\.com\) and your AWS Managed Microsoft AD \(MyManagedAD\.example\.com\)\. Only one relationship can be set up between these two domains\. If for example, you want to change the trust direction to one\-way, you would first need to delete this existing trust relationship and create a new one\.
 
-For more information, including instructions about verifying or deleting trusts, see [When to Create a Trust Relationship](ms_ad_setup_trust.md)\. 
+For more information, including instructions about verifying or deleting trusts, see [When to create a trust relationship](ms_ad_setup_trust.md)\. 

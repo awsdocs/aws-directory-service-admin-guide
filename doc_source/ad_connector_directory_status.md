@@ -1,4 +1,4 @@
-# Understanding Your Directory Status<a name="ad_connector_directory_status"></a>
+# Understanding your directory status<a name="ad_connector_directory_status"></a>
 
 The following are the various statuses for a directory\.
 
@@ -19,7 +19,7 @@ The directory could not be created\. Please delete this directory\. If this prob
 
 **Impaired**  
 The directory is running in a degraded state\. One or more issues have been detected, and not all directory operations may be working at full operational capacity\. There are many potential reasons for the directory being in this state\. These include normal operational maintenance activity such as patching or EC2 instance rotation, temporary hot spotting by an application on one of your domain controllers, or changes you made to your network that inadvertently disrupt directory communications\. For more information, see either [Troubleshooting AWS Managed Microsoft AD](ms_ad_troubleshooting.md), [Troubleshooting AD Connector](ad_connector_troubleshooting.md), [Troubleshooting Simple AD](simple_ad_troubleshooting.md)\. For normal maintenance related issues, AWS resolves these issues within 40 minutes\. If after reviewing the troubleshooting topic, your directory is in an Impaired state longer than 40 minutes, we recommend that you contact the [AWS Support Center](https://console.aws.amazon.com/support/home#/)\.  
-Do not restore a snapshot while a directory is in an Impaired state\. It is rare that snapshot restore is necessary to resolve impairments\. For more information, see [Snapshot or Restore Your Directory](ms_ad_snapshots.md)\.
+Do not restore a snapshot while a directory is in an Impaired state\. It is rare that snapshot restore is necessary to resolve impairments\. For more information, see [Snapshot or restore your directory](ms_ad_snapshots.md)\.
 
 **Inoperable**  
 The directory is not functional\. All directory endpoints have reported issues\. 
@@ -33,4 +33,4 @@ Restoring the directory from a snapshot failed\. Please retry the restore operat
 **Restoring**  
 The directory is currently being restored from an automatic or manual snapshot\. Restoring from a snapshot typically takes several minutes, depending on the size of the directory data in the snapshot\. 
 
-For more information, see [Simple AD Directory Status Reasons](simple_ad_troubleshooting_reasons.md)\.
+For more information, see [Simple AD directory status reasons](simple_ad_troubleshooting_reasons.md)\.

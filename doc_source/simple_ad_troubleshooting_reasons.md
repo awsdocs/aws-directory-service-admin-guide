@@ -1,6 +1,6 @@
-# Simple AD Directory Status Reasons<a name="simple_ad_troubleshooting_reasons"></a>
+# Simple AD directory status reasons<a name="simple_ad_troubleshooting_reasons"></a>
 
-When a directory is impaired or inoperable, the directory status message contains additional information\. The status message is displayed in the AWS Directory Service console, or returned in the [https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryDescription.html#ADS-Type-DirectoryDescription-StageReason](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryDescription.html#ADS-Type-DirectoryDescription-StageReason) member by the [https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html) API\. For more information about the directory status, see [Understanding Your Directory Status](ms_ad_directory_status.md)\.
+When a directory is impaired or inoperable, the directory status message contains additional information\. The status message is displayed in the AWS Directory Service console, or returned in the [https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryDescription.html#ADS-Type-DirectoryDescription-StageReason](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DirectoryDescription.html#ADS-Type-DirectoryDescription-StageReason) member by the [https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html](https://docs.aws.amazon.com/directoryservice/latest/devguide/API_DescribeDirectories.html) API\. For more information about the directory status, see [Understanding your directory status](ms_ad_directory_status.md)\.
 
 The following are the status messages for a Simple AD directory:
 
@@ -8,7 +8,7 @@ The following are the status messages for a Simple AD directory:
 + [The directory service's elastic network interface is not attached](#sr_eni_detached)
 + [Issue\(s\) detected by instance](#sr_internal_error)
 + [The critical AWS Directory Service reserved user is missing from the directory](#sr_service_account_missing)
-+ [The critical AWS Directory Service reserved user needs to belong to the Domain Admins AD group](#sr_service_account_not_admin)
++ [The critical AWS Directory Service reserved user needs to belong to the Domain Admins group](#sr_service_account_not_admin)
 + [The critical AWS Directory Service reserved user is disabled](#sr_service_account_disabled)
 + [The main domain controller does not have all FSMO roles](#sr_dc_fsmo_role)
 + [Domain controller replication failures](#sr_dc_repl_failures)
@@ -37,7 +37,7 @@ When a Simple AD is created, AWS Directory Service creates a service account in 
 **Troubleshooting**  
 To correct this issue, restore the directory to a previous snapshot that was created before the service account was deleted\. Automatic snapshots are taken of your Simple AD directory one time a day\. If it has been more than five days after this account was deleted, you may not be able to restore the directory to a state where this account exists\. If you are not able to restore the directory from a snapshot where this account exists, your directory may become permanently unusable\. If this is the case, you must delete your directory and create a new one\. 
 
-## The critical AWS Directory Service reserved user needs to belong to the Domain Admins AD group<a name="sr_service_account_not_admin"></a>
+## The critical AWS Directory Service reserved user needs to belong to the Domain Admins group<a name="sr_service_account_not_admin"></a>
 
 **Description**  
 When a Simple AD is created, AWS Directory Service creates a service account in the directory with the name `AWSAdminD-xxxxxxxxx`\. This error is received when this service account is not a member of the `Domain Admins` group\. Membership in this group is needed to give AWS Directory Service the privileges it needs to perform maintenance and recovery operations, such as transferring FSMO roles, domain joining new directory controllers, and restoring from snapshots\.
@@ -71,4 +71,4 @@ The Simple AD directory controllers are failing to replicate with one another\. 
 + Another instance has been promoted to a domain controller in the directory\.
 
 **Troubleshooting**  
-For more information about your VPC network requirements, see either AWS Managed Microsoft AD [AWS Managed Microsoft AD Prerequisites](ms_ad_getting_started_prereqs.md), AD Connector [AD Connector Prerequisites](prereq_connector.md), or Simple AD [Simple AD Prerequisites](prereq_simple.md)\. If there is an unknown domain controller in your directory, you must demote it\. If your VPC network setup is correct, but the error persists, please contact AWS Support for more assistance\. 
+For more information about your VPC network requirements, see either AWS Managed Microsoft AD [AWS Managed Microsoft AD prerequisites](ms_ad_getting_started_prereqs.md), AD Connector [AD Connector prerequisites](prereq_connector.md), or Simple AD [Simple AD prerequisites](prereq_simple.md)\. If there is an unknown domain controller in your directory, you must demote it\. If your VPC network setup is correct, but the error persists, please contact AWS Support for more assistance\. 

@@ -1,4 +1,4 @@
-# Linux Domain Join Errors<a name="ms_ad_troubleshooting_join_linux"></a>
+# Linux domain join errors<a name="ms_ad_troubleshooting_join_linux"></a>
 
 The following can help you troubleshoot some error messages you might encounter when joining an EC2 Linux instance to your AWS Managed Microsoft AD directory\.
 
@@ -52,7 +52,7 @@ default_realm = EXAMPLE.COM
 rdns = false
 ```
 
-## One\-Way Trust Authentication Issue with Seamless Domain Join<a name="1-way-trust-auth-issues"></a>
+## One\-way trust authentication issue with seamless domain join<a name="1-way-trust-auth-issues"></a>
 
 If you have a one\-way outgoing trust established between your AWS Managed Microsoft AD and your on\-premises AD, you might encounter an authentication issue when attempting to authenticate against the domain joined Linux instance using your trusted AD credentials with Winbind\. 
 

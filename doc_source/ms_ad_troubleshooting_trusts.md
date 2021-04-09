@@ -1,4 +1,4 @@
-# Trust Creation Status Reasons<a name="ms_ad_troubleshooting_trusts"></a>
+# Trust creation status reasons<a name="ms_ad_troubleshooting_trusts"></a>
 
 When trust creation fails, the status message contains additional information\. Here’s some help understanding what those messages mean\.
 
@@ -17,7 +17,7 @@ By default, `Network access: Named Pipes that can be accessed anonymously` is no
 
 ## The specified domain name does not exist or could not be contacted<a name="no_domain_name"></a>
 
-To solve this problem, ensure the security group settings for your domain and access control list \(ACL\) for your VPC are correct and you have accurately entered the information for your conditional forwarder\. For more information about security requirements, see [When to Create a Trust Relationship](ms_ad_setup_trust.md)\.
+To solve this problem, ensure the security group settings for your domain and access control list \(ACL\) for your VPC are correct and you have accurately entered the information for your conditional forwarder\. For more information about security requirements, see [When to create a trust relationship](ms_ad_setup_trust.md)\.
 
 If this does not solve the issue, it is possible that information for a previously created conditional forwarder has been cached, preventing the creation of a new trust\. Please wait several minutes and then try creating the trust and conditional forwarder again\.
 

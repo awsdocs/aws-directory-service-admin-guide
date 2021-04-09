@@ -1,4 +1,4 @@
-# Create an IAM User<a name="setting_up_create_iam_user"></a>
+# Create an IAM user<a name="setting_up_create_iam_user"></a>
 
 The AWS Management Console requires your username and password so that the service can determine whether you have permission to access its resources\. However, we recommend that you avoid accessing AWS using the credentials for your root AWS account; instead, we recommend that you use AWS Identity and Access Management \(IAM\) to create an IAM user and add the IAM user to an IAM group with administrative permissions\. This grants the IAM user administrative permissions\. You then access the AWS Management Console using the credentials for the IAM user\.
 
@@ -36,11 +36,11 @@ You must activate IAM user and role access to Billing before you can use the `Ad
 
 1. Choose **Next: Tags**\.
 
-1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM Entities](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) in the *IAM User Guide*\.
+1. \(Optional\) Add metadata to the user by attaching tags as key\-value pairs\. For more information about using tags in IAM, see [Tagging IAM entities](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html) in the *IAM User Guide*\.
 
 1. Choose **Next: Review** to see the list of group memberships to be added to the new user\. When you are ready to proceed, choose **Create user**\.
 
-You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) and [Example Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html)\.
+You can use this same process to create more groups and users and to give your users access to your AWS account resources\. To learn about using policies that restrict user permissions to specific AWS resources, see [Access management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) and [Example policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_examples.html)\.
 
 To sign in as this new IAM user, sign out of the AWS Management Console, then use the following URL, where *your\_aws\_account\_id* is your AWS account number without the hyphens \(for example, if your AWS account number is `1234-5678-9012`, your AWS account ID is `123456789012`\):
 
@@ -56,4 +56,4 @@ If you don't want the URL for your sign\-in page to contain your AWS account ID,
 https://your_account_alias.signin.aws.amazon.com/console/
 ```
 
-For more information about using IAM policies to control access to your AWS Directory Service resources, see [Using Identity\-Based Policies \(IAM Policies\) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)\.
+For more information about using IAM policies to control access to your AWS Directory Service resources, see [Using identity\-based policies \(IAM policies\) for AWS Directory Service](IAM_Auth_Access_IdentityBased.md)\.

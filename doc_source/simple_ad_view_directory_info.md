@@ -1,4 +1,4 @@
-# View Directory Information<a name="simple_ad_view_directory_info"></a>
+# View directory information<a name="simple_ad_view_directory_info"></a>
 
 You can view detailed information about a directory\.
 
@@ -8,4 +8,4 @@ You can view detailed information about a directory\.
 
 1. Click the directory ID link for your directory\. Information about the directory is displayed in the **Directory details** page\. 
 
-For more information about the **Status** field, see [Understanding Your Directory Status](ms_ad_directory_status.md)\.
+For more information about the **Status** field, see [Understanding your directory status](ms_ad_directory_status.md)\.

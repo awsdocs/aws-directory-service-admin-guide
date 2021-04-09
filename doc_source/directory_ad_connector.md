@@ -2,6 +2,9 @@
 
 AD Connector is a directory gateway with which you can redirect directory requests to your on\-premises Microsoft Active Directory without caching any information in the cloud\. AD Connector comes in two sizes, small and large\. You can spread application loads across multiple AD Connectors to scale to your performance needs\. There are no enforced user or connection limits\. 
 
+**Note**  
+AD Connector cannot be shared with other AWS accounts\. If this is a requirement, consider using AWS Managed Microsoft AD to [Share your directory](ms_ad_directory_sharing.md)\. AD Connector is also not multi\-VPC aware, which means that AWS applications like [Amazon WorkSpaces](https://aws.amazon.com/workspaces) are required to be provisioned into the same VPC as your AD Connector\.
+
 Once set up, AD Connector offers the following benefits:
 + Your end users and IT administrators can use their existing corporate credentials to log on to AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail\.
 + You can manage AWS resources like Amazon EC2 instances or Amazon S3 buckets through IAM role\-based access to the AWS Management Console\.
@@ -11,9 +14,9 @@ Once set up, AD Connector offers the following benefits:
 Continue reading the topics in this section to learn how to connect to a directory and make the most of AD Connector features\.
 
 **Topics**
-+ [Getting Started with AD Connector](ad_connector_getting_started.md)
-+ [How To Administer AD Connector](ad_connector_how_to.md)
-+ [Best Practices for AD Connector](ad_connector_best_practices.md)
-+ [Limits for AD Connector](ad_connector_limits.md)
-+ [Application Compatibility Policy for AD Connector](ad_connector_app_compatibility.md)
++ [Getting started with AD Connector](ad_connector_getting_started.md)
++ [How to administer AD Connector](ad_connector_how_to.md)
++ [Best practices for AD Connector](ad_connector_best_practices.md)
++ [AD Connector quotas](ad_connector_limits.md)
++ [Application compatibility policy for AD Connector](ad_connector_app_compatibility.md)
 + [Troubleshooting AD Connector](ad_connector_troubleshooting.md)

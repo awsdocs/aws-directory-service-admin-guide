@@ -1,8 +1,8 @@
-# Step 1: Set Up Your AWS Environment for AWS Managed Microsoft AD<a name="microsoftadbasestep1"></a>
+# Step 1: Set up your AWS environment for AWS Managed Microsoft AD<a name="microsoftadbasestep1"></a>
 
 Before you can create AWS Managed Microsoft AD in your AWS test lab, you first need to set up your Amazon EC2 key pair so that all login data is encrypted\.
 
-## Create a Key Pair<a name="createkeypair2"></a>
+## Create a key pair<a name="createkeypair2"></a>
 
 If you already have a key pair, you can skip this step\. For more information about Amazon EC2 key pairs, see [http://docs\.aws\.amazon\.com/AWSEC2/latest/UserGuide/ec2\-key\-pairs\.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)\.
 
@@ -18,17 +18,17 @@ If you already have a key pair, you can skip this step\. For more information ab
 **Important**  
 This is the only chance for you to save the private key file\. You need to provide the name of your key pair when you launch an instance and the corresponding private key each time you decrypt the password for the instance\.
 
-## Create, Configure, and Peer Two VPCs<a name="createvpc"></a>
+## Create, configure, and peer two VPCs<a name="createvpc"></a>
 
 As shown in the following illustration, by the time you finish this multi\-step process you will have created and configured two public VPCs, two public subnets per VPC, one Internet Gateway per VPC, and one VPC Peering connection between the VPCs\. We chose to use public VPCs and subnets for the purpose of simplicity and cost\. For production workloads, we recommend that you use private VPCs\. For more information about improving VPC Security, see [Security in Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/security.html)\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/tutorialmicrosoftadbase_vpclayout.png)
 
-All of the AWS CLI and PowerShell examples use the VPC information from below and are built in us\-west\-2\. You may choose any [supported region](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/regions.html) to build you environment in\. For general information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.
+All of the AWS CLI and PowerShell examples use the VPC information from below and are built in us\-west\-2\. You may choose any [supported Region](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/regions.html) to build you environment in\. For general information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)\.
 
 **Step 1: Create two VPCs**
 
-In this step, you need to create two VPCs in the same account using the specified parameters in the following table\. AWS Managed Microsoft AD supports the use of separate accounts with the [Share Your Directory](ms_ad_directory_sharing.md) feature\. The first VPC will be used for AWS Managed Microsoft AD\. The second VPC will be used for resources that can be used later in [Tutorial: Creating a Trust from AWS Managed Microsoft AD to a Self\-Managed Active Directory Installation on Amazon EC2](ms_ad_tutorial_test_lab_trust.md)\.
+In this step, you need to create two VPCs in the same account using the specified parameters in the following table\. AWS Managed Microsoft AD supports the use of separate accounts with the [Share your directory](ms_ad_directory_sharing.md) feature\. The first VPC will be used for AWS Managed Microsoft AD\. The second VPC will be used for resources that can be used later in [Tutorial: Creating a trust from AWS Managed Microsoft AD to a self\-managed Active Directory installation on Amazon EC2](ms_ad_tutorial_test_lab_trust.md)\.
 
 
 ****  
@@ -41,7 +41,7 @@ For detailed instructions, see [Creating a VPC](https://docs.aws.amazon.com/vpc/
 
 **Step 2: Create two subnets per VPC**
 
-After you have created the VPCs you will need to create two subnets per VPC using the specified parameters in the following table\. For this test lab each subnet will be a /24\. This will allows up to 256 addresses to be issued per subnet\. Each subnet must be a in a separate AZ\. Putting each subnet in a separate in AZ is one of the [AWS Managed Microsoft AD Prerequisites](ms_ad_getting_started_prereqs.md)\.
+After you have created the VPCs you will need to create two subnets per VPC using the specified parameters in the following table\. For this test lab each subnet will be a /24\. This will allows up to 256 addresses to be issued per subnet\. Each subnet must be a in a separate AZ\. Putting each subnet in a separate in AZ is one of the [AWS Managed Microsoft AD prerequisites](ms_ad_getting_started_prereqs.md)\.
 
 
 ****  
@@ -68,7 +68,7 @@ For detailed instructions, see [Internet gateways](https://docs.aws.amazon.com/v
 
 **Step 4: Configure a VPC peering connection between AWS\-DS\-VPC01 and AWS\-OnPrem\-VPC01**
 
-Since you already created two VPCs earlier, you will need to network them together using VPC peering using the specified parameters in the following table\. While there are many ways to connect your VPCs, this tutorial will use VPC Peering\. AWS Managed Microsoft AD supports many solutions to connect your VPCs, some of these include [VPC Peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html), [Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html), and [VPN](https://docs.aws.amazon.com/vpc/latest/adminguide/Welcome.html)\. 
+Since you already created two VPCs earlier, you will need to network them together using VPC peering using the specified parameters in the following table\. While there are many ways to connect your VPCs, this tutorial will use VPC Peering\. AWS Managed Microsoft AD supports many solutions to connect your VPCs, some of these include [VPC peering](https://docs.aws.amazon.com/vpc/latest/peering/what-is-vpc-peering.html), [Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html), and [VPN](https://docs.aws.amazon.com/vpc/latest/adminguide/Welcome.html)\. 
 
 
 ****  
@@ -94,9 +94,9 @@ You can easily find the correct route table for each VPC by filtering on the VPC
 
 For instructions on how to add routes to a VPC route table, see [Adding and removing routes from a route table](https://docs.aws.amazon.com/vpc/latest/userguide/WorkWithRouteTables.html#AddRemoveRoutes)\.
 
-## Create Security Groups for EC2 Instances<a name="createsecuritygroup"></a>
+## Create security groups for EC2 instances<a name="createsecuritygroup"></a>
 
-By default, AWS Managed Microsoft AD creates a security group to manage traffic between its domain controllers\. In this section, you will need to create 2 security groups \(one for each VPC\) which will be used to manage traffic within your VPC for your EC2 instances using the specified parameters in the following tables\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 Security Groups for Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
+By default, AWS Managed Microsoft AD creates a security group to manage traffic between its domain controllers\. In this section, you will need to create 2 security groups \(one for each VPC\) which will be used to manage traffic within your VPC for your EC2 instances using the specified parameters in the following tables\. You also add a rule that allows RDP \(3389\) inbound from anywhere and for all traffic types inbound from the local VPC\. For more information, see [Amazon EC2 security groups for Windows instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/using-network-security.html)\.
 
 
 ****  

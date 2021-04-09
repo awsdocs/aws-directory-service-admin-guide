@@ -1,4 +1,4 @@
-# Step 2: Import Your LDIF File<a name="import"></a>
+# Step 2: Import your LDIF file<a name="import"></a>
 
 You can extend your schema by importing an LDIF file from either the AWS Directory Service console or by using the API\. For more information about how to do this with the schema extension APIs, see the [https://docs.aws.amazon.com/directoryservice/latest/devguide/](https://docs.aws.amazon.com/directoryservice/latest/devguide/)\. At this time, AWS does not support external applications, such as Microsoft Exchange, to perform schema updates directly\. 
 
@@ -8,13 +8,18 @@ If you must delete the schema changes, one option is to restore the directory fr
 
 Before the update process begins, AWS Managed Microsoft AD takes a snapshot to preserve the current state of your directory\.
 
+**Note**  
+Schema extensions is a global feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be performed in the [Primary Region](multi-region-global-primary-additional.md#multi-region-primary)\. The changes will be applied across all replicated Regions automatically\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
+
 **To import your LDIF file**
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, select **Directories**\.
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, select the **Maintenance** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Maintenance** tab\.
 
 1. In the **Schema extensions** section, choose **Actions**, and then select **Upload and update schema**\.
 
@@ -22,7 +27,7 @@ Before the update process begins, AWS Managed Microsoft AD takes a snapshot to p
 **Important**  
 Extending the schema is a critical operation\. Don’t apply any schema update in production environment without first testing it with your application in a development or test environment\.
 
-## How is the LDIF File Applied<a name="howapplied"></a>
+## How is the LDIF file applied<a name="howapplied"></a>
 
 After your LDIF file has been uploaded, AWS Managed Microsoft AD takes steps to protect your directory against errors as it applies the changes in the following order\. 
 
@@ -36,6 +41,6 @@ After your LDIF file has been uploaded, AWS Managed Microsoft AD takes steps to 
 
 1. **Replication occurs to all DCs\.** AWS Managed Microsoft AD adds the isolated DC back in to replication to complete the update\. While this is all happening, your directory continues to provide the Active Directory service to your applications without disruption\.
 
-**Next Step**
+**Next step**
 
-[Step 3: Verify If The Schema Extension Was Successful](verify.md)
+[Step 3: Verify if the schema extension was successful](verify.md)

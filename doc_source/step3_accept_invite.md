@@ -1,4 +1,4 @@
-# Step 3: Accept Shared Directory Invite \(Optional\)<a name="step3_accept_invite"></a>
+# Step 3: Accept shared directory invite \(optional\)<a name="step3_accept_invite"></a>
 
 If you chose the **Share this directory with other AWS accounts** \(handshake method\) option in the previous procedure, you should use this procedure to finish the shared directory workflow\. If you chose the **Share this directory with AWS accounts inside your organization** option, skip this step and proceed to Step 4\. 
 
@@ -16,4 +16,4 @@ If you chose the **Share this directory with other AWS accounts** \(handshake me
 
 **Next Step**
 
-[Step 4: Test Seamlessly Joining an EC2 Instance for Windows Server to a Domain](step4_test_ec2_access.md)
+[Step 4: Test seamlessly joining an EC2 instance for Windows Server to a domain](step4_test_ec2_access.md)

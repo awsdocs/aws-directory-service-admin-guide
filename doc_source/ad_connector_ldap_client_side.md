@@ -1,4 +1,4 @@
-# Enable Client\-Side LDAPS Using AD Connector<a name="ad_connector_ldap_client_side"></a>
+# Enable client\-side LDAPS using AD Connector<a name="ad_connector_ldap_client_side"></a>
 
 Client\-side LDAPS support in AD Connector encrypts communications between Microsoft Active Directory \(AD\) and AWS applications\. Examples of such applications include Amazon WorkSpaces, AWS SSO, Amazon QuickSight, and Amazon Chime\. This encryption helps you to better protect your organization’s identity data and meet your security requirements\.
 
@@ -7,15 +7,15 @@ Client\-side LDAPS support in AD Connector encrypts communications between Micro
 Before you enable client\-side LDAPS, you need to meet the following requirements\.
 
 **Topics**
-+ [Deploy Server Certificates in Active Directory](#ad_connector_ldap_client_side_deploy_server_certs)
-+ [CA Certificate Requirements](#ad_connector_ldap_client_side_get_certs_ready)
++ [Deploy server certificates in Active Directory](#ad_connector_ldap_client_side_deploy_server_certs)
++ [CA certificate requirements](#ad_connector_ldap_client_side_get_certs_ready)
 + [Networking requirements](#ad_connector_ldap_client_side_considerations_enabling)
 
-### Deploy Server Certificates in Active Directory<a name="ad_connector_ldap_client_side_deploy_server_certs"></a>
+### Deploy server certificates in Active Directory<a name="ad_connector_ldap_client_side_deploy_server_certs"></a>
 
 In order to enable client\-side LDAPS, you need to obtain and install server certificates for each domain controller in Active Directory\. These certificates will be used by the LDAP service to listen for and automatically accept SSL connections from LDAP clients\. You can use SSL certificates that are either issued by an in\-house Active Directory Certificate Services \(ADCS\) deployment or purchased from a commercial issuer\. For more information on Active Directory server certificate requirements, see [LDAP over SSL \(LDAPS\) Certificate](https://social.technet.microsoft.com/wiki/contents/articles/2980.ldap-over-ssl-ldaps-certificate.aspx) on the Microsoft website\.
 
-### CA Certificate Requirements<a name="ad_connector_ldap_client_side_get_certs_ready"></a>
+### CA certificate requirements<a name="ad_connector_ldap_client_side_get_certs_ready"></a>
 
 A certificate authority \(CA\) certificate, which represents the issuer of your server certificates, is required for client\-side LDAPS operation\. CA certificates are matched with the server certificates that are presented by your Active Directory domain controllers to encrypt LDAP communications\. Note the following CA certificate requirements:
 +  To register a certificate, it must be more than 90 days away from expiration\.
@@ -27,19 +27,19 @@ A certificate authority \(CA\) certificate, which represents the issuer of your 
 
 AWS application LDAP traffic will run exclusively on TCP port 636, with no fallback to LDAP port 389\. However, Windows LDAP communications supporting replication, trusts, and more will continue using LDAP port 389 with Windows\-native security\. Configure AWS security groups and network firewalls to allow TCP communications on port 636 in AD Connector \(outbound\) and self\-managed Active Directory \(inbound\)\. 
 
-## Enable Client\-Side LDAPS<a name="ad_connector_enableclientsideldaps"></a>
+## Enable client\-side LDAPS<a name="ad_connector_enableclientsideldaps"></a>
 
 To enable client\-side LDAPS, you import your certificate authority \(CA\) certificate into AD Connector, and then enable LDAPS on your directory\. Upon enabling, all LDAP traffic between AWS applications and your self\-managed Active Directory will flow with Secure Sockets Layer \(SSL\) channel encryption\.
 
 You can use two different methods to enable client\-side LDAPS for your directory\. You can use either the AWS Management Console method or the AWS CLI method\.
 
 **Topics**
-+ [Step 1: Register Certificate in AWS Directory Service](#ad_connector_registercert)
-+ [Step 2: Check Registration Status](#ad_connector_check-registration-status)
-+ [Step 3: Enable Client\-Side LDAPS](#ad_connector_enableclientsideldapssteps)
-+ [Step 4: Check LDAPS Status](#ad_connector_check-ldaps-status)
++ [Step 1: Register certificate in AWS Directory Service](#ad_connector_registercert)
++ [Step 2: Check registration status](#ad_connector_check-registration-status)
++ [Step 3: Enable client\-side LDAPS](#ad_connector_enableclientsideldapssteps)
++ [Step 4: Check LDAPS status](#ad_connector_check-ldaps-status)
 
-### Step 1: Register Certificate in AWS Directory Service<a name="ad_connector_registercert"></a>
+### Step 1: Register certificate in AWS Directory Service<a name="ad_connector_registercert"></a>
 
 Use either of the following methods to register a certificate in AWS Directory Service\.
 
@@ -64,7 +64,7 @@ Use either of the following methods to register a certificate in AWS Directory S
   aws ds register-certificate --directory-id your_directory_id --certificate-data file://your_file_path
   ```
 
-### Step 2: Check Registration Status<a name="ad_connector_check-registration-status"></a>
+### Step 2: Check registration status<a name="ad_connector_check-registration-status"></a>
 
 To see the status of a certificate registration or a list of registered certificates, use either of the following methods\.
 
@@ -81,7 +81,7 @@ To see the status of a certificate registration or a list of registered certific
   aws ds list-certificates --directory-id your_directory_id
   ```
 
-### Step 3: Enable Client\-Side LDAPS<a name="ad_connector_enableclientsideldapssteps"></a>
+### Step 3: Enable client\-side LDAPS<a name="ad_connector_enableclientsideldapssteps"></a>
 
 Use either of the following methods to enable client\-side LDAPS in AWS Directory Service\.
 
@@ -103,7 +103,7 @@ You must have successfully registered at least one certificate before you can en
   aws ds enable-ldaps --directory-id your_directory_id --type Client
   ```
 
-### Step 4: Check LDAPS Status<a name="ad_connector_check-ldaps-status"></a>
+### Step 4: Check LDAPS status<a name="ad_connector_check-ldaps-status"></a>
 
 Use either of the following methods to check the LDAPS status in AWS Directory Service\.
 
@@ -120,13 +120,13 @@ Use either of the following methods to check the LDAPS status in AWS Directory S
   aws ds describe-ldaps-settings –directory-id your_directory_id
   ```
 
-## Manage Client\-Side LDAPS<a name="ad_connector_manage-client-side-ldaps"></a>
+## Manage client\-side LDAPS<a name="ad_connector_manage-client-side-ldaps"></a>
 
 Use these commands to manage your LDAPS configuration\.
 
 You can use two different methods to manage client\-side LDAPS settings\. You can use either the AWS Management Console method or the AWS CLI method\.
 
-### View Certificate Details<a name="ad_connector_describe-a-certificate"></a>
+### View certificate details<a name="ad_connector_describe-a-certificate"></a>
 
 Use either of the following methods to see when a certificate is set to expire\.
 
@@ -147,7 +147,7 @@ Use either of the following methods to see when a certificate is set to expire\.
   aws ds describe-certificate --directory-id your_directory_id --certificate-id your_cert_id
   ```
 
-### Deregister a Certificate<a name="ad_connector_dergister-a-certificate"></a>
+### Deregister a certificate<a name="ad_connector_dergister-a-certificate"></a>
 
 Use either of the following methods to deregister a certificate\.
 
@@ -173,7 +173,7 @@ If only one certificate is registered, you must first disable LDAPS before you c
   aws ds deregister-certificate --directory-id your_directory_id --certificate-id your_cert_id
   ```
 
-### Disable Client\-Side LDAPS<a name="ad_connector_disable-client-side-ldaps"></a>
+### Disable client\-side LDAPS<a name="ad_connector_disable-client-side-ldaps"></a>
 
 Use either of the following methods to disable client\-side LDAPS\.
 

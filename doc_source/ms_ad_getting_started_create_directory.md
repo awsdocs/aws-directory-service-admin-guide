@@ -1,6 +1,6 @@
-# Create Your AWS Managed Microsoft AD directory<a name="ms_ad_getting_started_create_directory"></a>
+# Create your AWS Managed Microsoft AD directory<a name="ms_ad_getting_started_create_directory"></a>
 
-To create a new directory, perform the following steps\. Before starting this procedure, make sure that you have completed the prerequisites identified in [AWS Managed Microsoft AD Prerequisites](ms_ad_getting_started_prereqs.md)\. 
+To create a new directory, perform the following steps\. Before starting this procedure, make sure that you have completed the prerequisites identified in [AWS Managed Microsoft AD prerequisites](ms_ad_getting_started_prereqs.md)\. 
 
 **To create an AWS Managed Microsoft AD directory**
 

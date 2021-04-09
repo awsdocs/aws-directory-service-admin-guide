@@ -1,4 +1,4 @@
-# Configure Directory Status Notifications<a name="ms_ad_enable_notifications"></a>
+# Configure directory status notifications<a name="ms_ad_enable_notifications"></a>
 
 Using Amazon Simple Notification Service \(Amazon SNS\), you can receive email or text \(SMS\) messages when the status of your directory changes\. You get notified if your directory goes from an Active status to an [Impaired or Inoperable status](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_status.html)\. You also receive a notification when the directory returns to an Active status\.
 
@@ -8,13 +8,18 @@ Amazon SNS uses “topics” to collect and distribute messages\. Each topic has
 
 You can associate multiple directories as publishers to a single topic\. You can also add directory status messages to topics that you’ve previously created in Amazon SNS\. You have detailed control over who can publish to and subscribe to a topic\. For complete information about Amazon SNS, see [What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)\.
 
+**Note**  
+Directory status notifications is a Regional feature of AWS Managed Microsoft AD\. If you are using [Multi\-Region replication](ms_ad_configure_multi_region_replication.md), the following procedures must be applied separately in each Region\. For more information, see [Global vs Regional features](multi-region-global-region-features.md)\.
+
 **To enable SNS messaging for your directory**
 
 1. Sign in to the AWS Management Console and open the AWS Directory Service console at [https://console\.aws\.amazon\.com/directoryservicev2/](https://console.aws.amazon.com/directoryservicev2/)\.
 
 1.  On the **Directories** page, choose your directory ID\.
 
-1. Select the **Maintenance** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to enable SNS messaging, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Maintenance** tab\.
 
 1. In the **Directory monitoring** section, choose **Actions**, and then select **Create notification**\.
 
@@ -39,7 +44,9 @@ If you want to designate additional SNS subscribers, such as an additional email
 
 1.  On the **Directories** page, choose your directory ID\.
 
-1. Select the **Maintenance** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to remove status messages, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Maintenance** tab\.
 
 1. In the **Directory monitoring** section, select an SNS topic name in the list, choose **Actions**, and then select **Remove**\.
 

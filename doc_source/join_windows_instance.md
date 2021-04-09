@@ -1,6 +1,6 @@
-# Manually Join a Windows Instance<a name="join_windows_instance"></a>
+# Manually join a Windows instance<a name="join_windows_instance"></a>
 
-To manually join an existing Amazon EC2 Windows instance to a Simple AD or AWS Directory Service for Microsoft Active Directory directory, the instance must be launched as specified in [Seamlessly Join a Windows EC2 Instance](launching_instance.md)\. 
+To manually join an existing Amazon EC2 Windows instance to a Simple AD or AWS Directory Service for Microsoft Active Directory directory, the instance must be launched as specified in [Seamlessly join a Windows EC2 instance](launching_instance.md)\. 
 
 **To join a Windows instance to a Simple AD or AWS Managed Microsoft AD directory**
 
@@ -33,7 +33,7 @@ You can open the **System Properties** dialog box directly by running the follow
 
 1. In the **Member of** field, select **Domain**, enter the fully qualified name of your AWS Directory Service directory, and choose **OK**\.
 
-1. When prompted for the name and password for the domain administrator, enter the user name and password of an account that has domain join privileges\. For more information about delegating these privileges, see [Delegate Directory Join Privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.
+1. When prompted for the name and password for the domain administrator, enter the user name and password of an account that has domain join privileges\. For more information about delegating these privileges, see [Delegate directory join privileges for AWS Managed Microsoft AD](directory_join_privileges.md)\.
 **Note**  
 You can enter either the fully qualified name of your domain or the NetBios name, followed by a backslash \(\\\), and then the user name\.  
 If using AWS Managed Microsoft AD, the user name would be **Admin**\. For example, **corp\.example\.com\\admin** or **corp\\admin**\.  

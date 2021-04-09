@@ -1,16 +1,13 @@
-# Snapshot or Restore Your Directory<a name="simple_ad_snapshots"></a>
+# Snapshot or restore your directory<a name="simple_ad_snapshots"></a>
 
-AWS Directory Service provides the ability to take manual snapshots of data for a Simple AD or AWS Directory Service for Microsoft Active Directory directory\. These snapshots can be used to perform a point\-in\-time restore for your directory\. 
-
-**Note**  
-You cannot take snapshots of AD Connector directories\.
+AWS Directory Service provides the ability to take manual snapshots of data for your Simple AD directory\. These snapshots can be used to perform a point\-in\-time restore for your directory\. You cannot take snapshots of AD Connector directories\.
 
 **Topics**
-+ [Creating a Snapshot of Your Directory](#snapshot_create)
-+ [Restoring Your Directory from a Snapshot](#snapshot_restore)
-+ [Deleting a Snapshot](#snapshot_delete)
++ [Creating a snapshot of your directory](#simple_ad_snapshot_create)
++ [Restoring your directory from a snapshot](#simple_ad_snapshot_restore)
++ [Deleting a snapshot](#simple_ad_snapshot_delete)
 
-## Creating a Snapshot of Your Directory<a name="snapshot_create"></a>
+## Creating a snapshot of your directory<a name="simple_ad_snapshot_create"></a>
 
 A snapshot can be used to restore your directory to what it was at the point in time that the snapshot was taken\. To create a manual snapshot of your directory, perform the following steps\.
 
@@ -31,7 +28,7 @@ You are limited to 5 manual snapshots for each directory\. If you have already r
 
 Depending on the size of your directory, it may take several minutes to create the snapshot\. When the snapshot is ready, the **Status** value changes to `Completed`\.
 
-## Restoring Your Directory from a Snapshot<a name="snapshot_restore"></a>
+## Restoring your directory from a snapshot<a name="simple_ad_snapshot_restore"></a>
 
 Restoring a directory from a snapshot is equivalent to moving the directory back in time\. Directory snapshots are unique to the directory they were created from\. A snapshot can only be restored to the directory from which it was created\. In addition, the maximum supported age of a manual snapshot is 180 days\. For more information, see [Useful shelf life of a system\-state backup of Active Directory](https://support.microsoft.com/en-za/help/216993/useful-shelf-life-of-a-system-state-backup-of-active-directory) on the Microsoft website\.
 
@@ -52,9 +49,9 @@ To restore your directory from a snapshot, perform the following steps\.
 
 1. Review the information in the **Restore directory snapshot** dialog box, and choose **Restore**\.
 
-For a Simple AD directory, it may take several minutes for the directory to be restored\. For a AWS Managed Microsoft AD directory, it can take from two to three hours\. When it has been successfully restored, the **Status** value of the directory changes to `Active`\. Any changes made to the directory after the snapshot date are overwritten\. 
+For a Simple AD directory, it may take several minutes for the directory to be restored\. When it has been successfully restored, the **Status** value of the directory changes to `Active`\. Any changes made to the directory after the snapshot date are overwritten\. 
 
-## Deleting a Snapshot<a name="snapshot_delete"></a>
+## Deleting a snapshot<a name="simple_ad_snapshot_delete"></a>
 
 **To delete a snapshot**
 

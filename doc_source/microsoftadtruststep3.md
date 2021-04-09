@@ -1,4 +1,4 @@
-# Step 3: Verify the Trust<a name="microsoftadtruststep3"></a>
+# Step 3: Verify the trust<a name="microsoftadtruststep3"></a>
 
 In this section, you test whether the trusts were set up successfully between AWS and Active Directory on Amazon EC2\.
 
@@ -8,7 +8,9 @@ In this section, you test whether the trusts were set up successfully between AW
 
 1. Choose the **corp\.example\.com** directory\.
 
-1. On the **Directory details** page, select the **Networking & security** tab\.
+1. On the **Directory details** page, do one of the following:
+   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Networking & security** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
 
 1. In the **Trust relationships** section, select the trust relationship you just created\.
 

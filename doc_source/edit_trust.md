@@ -1,6 +1,8 @@
-# Editing the Trust Relationship for an Existing Role<a name="edit_trust"></a>
+# Editing the trust relationship for an existing role<a name="edit_trust"></a>
 
-You can assign your existing IAM roles to your AWS Directory Service users and groups\. To do this, however, the role must have a trust relationship with AWS Directory Service\. When you use AWS Directory Service to create a role using the procedure in [Creating a New Role](create_role.md), this trust relationship is automatically set\. You only need to establish this trust relationship for IAM roles that are not created by AWS Directory Service\.
+You can assign your existing IAM roles to your AWS Directory Service users and groups\. To do this, however, the role must have a trust relationship with AWS Directory Service\. When you use AWS Directory Service to create a role using the procedure in [Creating a new role](create_role.md), this trust relationship is automatically set\. You only need to establish this trust relationship for IAM roles that are not created by AWS Directory Service\.
+
+
 
 **To establish a trust relationship for an existing role to AWS Directory Service**
 

@@ -1,4 +1,4 @@
-# Installing the Active Directory Administration Tools<a name="ms_ad_install_ad_tools"></a>
+# Installing the Active Directory administration tools<a name="ms_ad_install_ad_tools"></a>
 
 To manage your directory from an EC2 Windows instance, you need to install the Active Directory Domain Services and Active Directory Lightweight Directory Services Tools on the instance\. Use the following procedure to install these tools on either Windows Server 2012, Windows Server 2016, or Windows Server 2019\.
 

@@ -1,4 +1,4 @@
-# Simple AD Prerequisites<a name="prereq_simple"></a>
+# Simple AD prerequisites<a name="prereq_simple"></a>
 
 To create a Simple AD directory, you need a VPC with the following: 
 + At least two subnets\. For Simple AD to install correctly, you must install your two domain controllers in separate subnets that must be in a different Availability Zone\. In addition, the subnets must be in the same Classless Inter\-Domain Routing \(CIDR\) range\. If you want to extend or resize the VPC for your directory, then make sure to select both of the domain controller subnets for the extended VPC CIDR range\.
