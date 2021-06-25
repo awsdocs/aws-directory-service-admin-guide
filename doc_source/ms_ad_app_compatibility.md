@@ -18,6 +18,7 @@ The following is a list of compatible AWS applications and services:
 + Amazon WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AWS Managed Microsoft AD](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-microsoft-ad.html)\. 
 + AWS Client VPN \- For detailed instructions, see [Client authentication and authorization](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authorization.html)\.
 + AWS Management Console – For more information, see [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
++ AWS Transfer Family - For detailed instructions, see [Working with AWS Directory Service for Microsoft Active Directory](https://docs.aws.amazon.com/transfer/latest/userguide/directory-services-users.html)
 
 Due to the magnitude of custom and commercial off\-the\-shelf applications that use Active Directory, AWS does not and cannot perform formal or broad verification of third\-party application compatibility with AWS Directory Service for Microsoft Active Directory \(AWS Managed Microsoft AD\)\. Although AWS works with customers in an attempt to overcome any potential application installation challenges they might encounter, we are unable to guarantee that any application is or will continue to be compatible with AWS Managed Microsoft AD\.
 
