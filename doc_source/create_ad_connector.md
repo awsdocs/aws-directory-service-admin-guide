@@ -2,6 +2,9 @@
 
 To connect to your existing directory with AD Connector, perform the following steps\. Before starting this procedure, make sure you have completed the prerequisites identified in [AD Connector prerequisites](prereq_connector.md)\.
 
+**Note**  
+You cannot create an AD Connector with a Cloud Formation template\.
+
 **To connect with AD Connector**
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories** and then choose **Set up directory**\.

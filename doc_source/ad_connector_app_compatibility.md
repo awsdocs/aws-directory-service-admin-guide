@@ -9,9 +9,11 @@ The following is a list of compatible AWS applications and services:
 + AWS Management Console – You can use AD Connector to authenticate AWS Management Console users with their Active Directory credentials without setting up SAML infrastructure\. For more information, see [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
 + Amazon QuickSight \- For more information, see [Managing user accounts in Amazon QuickSight Enterprise Edition](https://docs.aws.amazon.com/quicksight/latest/user/managing-users-enterprise.html)\.
 + AWS Single Sign\-On \- For detailed instructions, see [Connect AWS SSO to an on\-premises Active Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/connectawsad.html)\.
++ AWS Transfer Family \- For detailed instructions, see [Working with AWS Directory Service for Microsoft Active Directory](https://docs.aws.amazon.com/transfer/latest/userguide/directory-services-users.html)\.
++ AWS Client VPN \- For detailed instructions, see [Client authentication and authorization](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authorization.html)\.
 + Amazon WorkDocs \- For detailed instructions, see [Connecting to your on\-premises directory with AD Connector](https://docs.aws.amazon.com/workdocs/latest/adminguide/connect_directory_connector.html)\.
 + Amazon WorkMail \- For detailed instructions, see [Integrate Amazon WorkMail with an existing directory \(standard setup\)](https://docs.aws.amazon.com/workmail/latest/adminguide/premises_directory.html)\.
-+ Amazon WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AD Connector](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-ad-connector.html)\. 
++ WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AD Connector](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-ad-connector.html)\. 
 
 **Note**  
 Amazon RDS is compatible with AWS Managed Microsoft AD only, and is not compatible with AD Connector\. For more information, see the AWS Microsoft AD section in the [AWS Directory Service FAQs](https://aws.amazon.com/directoryservice/faqs/#microsoft-ad) page\. 

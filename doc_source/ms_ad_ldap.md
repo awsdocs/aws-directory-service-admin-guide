@@ -8,7 +8,7 @@ To mitigate this form of data exposure, AWS Managed Microsoft AD provides an opt
 
 AWS Managed Microsoft AD provides support for LDAPS in both of the following deployment scenarios:
 + **Server\-side LDAPS** encrypts LDAP communications between your commercial or homegrown LDAP\-aware applications \(acting as LDAP clients\) and AWS Managed Microsoft AD \(acting as an LDAP server\)\. For more information, see [Enable server\-side LDAPS using AWS Managed Microsoft AD](ms_ad_ldap_server_side.md)\.
-+ **Client\-side LDAPS** encrypts LDAP communications between AWS applications such as Amazon WorkSpaces \(acting as LDAP clients\) and your self\-managed Active Directory \(acting as LDAP server\)\. For more information, see [Enable client\-side LDAPS using AWS Managed Microsoft AD](ms_ad_ldap_client_side.md)\.
++ **Client\-side LDAPS** encrypts LDAP communications between AWS applications such as WorkSpaces \(acting as LDAP clients\) and your self\-managed Active Directory \(acting as LDAP server\)\. For more information, see [Enable client\-side LDAPS using AWS Managed Microsoft AD](ms_ad_ldap_client_side.md)\.
 
 **Topics**
 + [Enable server\-side LDAPS using AWS Managed Microsoft AD](ms_ad_ldap_server_side.md)

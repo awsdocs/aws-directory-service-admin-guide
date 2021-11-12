@@ -8,7 +8,7 @@ For detailed instructions on how to set up and configure server\-side LDAPS and 
 
 You must do most of the setup from the Amazon EC2 instance that you use to manage your AWS Managed Microsoft AD domain controllers\. The following steps guide you through enabling LDAPS for your domain in the AWS Cloud\.
 
-If you would like to use automation to setup your PKI Infrastructure, you can use the [Microsoft Public Key Infrastructure on AWS QuickStart Guide](https://aws.amazon.com/quickstart/architecture/microsoft-pki/)\. Specifically you will want to follow the instructions in the guide to load the template for [Deploy Microsoft PKI into an existing VPC on AWS](https://aws-quickstart.github.io/quickstart-microsoft-pki/#_deployment_steps)\. Once you load the template, be sure to choose **AWSManaged** when you get to the **Active Directory Domain Services Type** option\. If you used the QuickStart guide, you can jump directly to [Step 3: Create a certificate template](#createcustomcert)\.
+If you would like to use automation to setup your PKI Infrastructure, you can use the [Microsoft Public Key Infrastructure on AWS QuickStart Guide](https://aws.amazon.com/quickstart/architecture/microsoft-pki/)\. Specifically you will want to follow the instructions in the guide to load the template for [Deploy Microsoft PKI into an existing VPC on AWS](https://aws-quickstart.github.io/quickstart-microsoft-pki/#_deployment_steps)\. Once you load the template, be sure to choose **`AWSManaged`** when you get to the **Active Directory Domain Services Type** option\. If you used the QuickStart guide, you can jump directly to [Step 3: Create a certificate template](#createcustomcert)\.
 
 **Topics**
 + [Step 1: Delegate who can enable LDAPS](#grantpermsldaps)

@@ -13,6 +13,11 @@ The management IP range of your directory's `ETH0` network is chosen programmati
 + 192\.168\.1\.0/24 & 192\.168\.2\.0/24 
 We avoid conflicts by checking the first octet of the `ETH1` CIDR\. If it starts with a 10, then we choose a 192\.168\.0\.0/16 VPC with 192\.168\.1\.0/24 and 192\.168\.2\.0/24 subnets\. If the first octet is anything else other than a 10 we choose a 10\.0\.0\.0/16 VPC with 10\.0\.1\.0/24 and 10\.0\.2\.0/24 subnets\.   
 The selection algorithm does not include routes on your VPC\. It is therefore possible to have an IP routing conflict result from this scenario\.   
+The VPC must **not** be configured with the following [VPC endpoint\(s\)](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html):   
++ [Route53 VPC endpoints](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-vpc-interface-endpoint.html) that include DNS conditional overrides for \*\.amazonaws\.com which resolve to non public AWS IP addresses
++ [ CloudWatch VPC endpoint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-and-interface-VPC.html)
++ [ Systems Manager VPC endpoint](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html)
++ [ Security Token Service VPC endpoint ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts_vpce.html)
 For more information, see the following topics in the *Amazon VPC User Guide*:  
 + [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Introduction.html)
 + [Subnets in your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPCSubnet)
@@ -28,9 +33,10 @@ AD Connector does not support Read\-only domain controllers \(RODC\) when used i
 **Service account**  
 You must have credentials for a service account in the existing directory which has been delegated the following privileges:  
 + Read users and groups \- Required
-+ Join computers to the domain \- Required only when using Seamless Domain Join and Amazon WorkSpaces
-+ Create computer objects \- Required only when using Seamless Domain Join and Amazon WorkSpaces
-For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\. 
++ Join computers to the domain \- Required only when using Seamless Domain Join and WorkSpaces
++ Create computer objects \- Required only when using Seamless Domain Join and WorkSpaces
+For more information, see [Delegate privileges to your service account](#connect_delegate_privileges)\.   
+AD Connector uses Kerberos for authentication and authorization of AWS applications\. LDAP is only used for user and group object lookups \(read operations\)\. With the LDAP transactions, nothing is mutable and credentials are not passed in clear text\. Authentication is handled by an AWS internal service, which uses Kerberos tickets to perform LDAP operations as a user\.
 
 **User permissions**  
 All Active Directory users must have permissions to read their own attributes\. Specifically the following attributes:  
@@ -115,7 +121,7 @@ This procedure must be performed on a machine that is joined to your directory a
 
 1. Select **Read**, and then choose **Next**\.
 **Note**  
-If you will be using Seamless Domain Join or Amazon WorkSpaces, you must also enable **Write** permissions so that AWS Managed Microsoft AD can create computer objects\.  
+If you will be using Seamless Domain Join or WorkSpaces, you must also enable **Write** permissions so that the Active Directory can create computer objects\.  
 ![\[Object type\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/aduc_delegate_join_permissions.png)
 
 1. Verify the information on the **Completing the Delegation of Control Wizard** page, and click **Finish**\. 

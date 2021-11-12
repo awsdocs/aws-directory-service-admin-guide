@@ -58,8 +58,9 @@ For more information, see [Use the Windows DC locator service](#program_dc_locat
 
 ### Understand username restrictions for AWS applications<a name="usernamerestrictions"></a>
 
-AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
+AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
 + Spaces
++ Multibyte characters
 + \!"\#$%&'\(\)\*\+,/:;<=>?@\[\\\]^`\{\|\}\~
 
 **Note**  
@@ -86,7 +87,7 @@ When setting up trust relationship between your AWS Managed Microsoft AD directo
 + Ensure the trust direction is setup correctly if using a one\-way trust \(Outgoing on trusting domain, Incoming on trusted domain\)
 + Both fully qualified domain names \(FQDNs\) and NetBIOS names must be unique between forests / domains
 
-For more details and specific instructions on setting up a trust relationship, see [When to create a trust relationship](ms_ad_setup_trust.md)\.
+For more details and specific instructions on setting up a trust relationship, see [Creating a trust relationship](ms_ad_setup_trust.md)\.
 
 ## Managing your directory<a name="bp_managing_directory"></a>
 
@@ -112,13 +113,13 @@ Also remember that if you have an SNS topic that receives messages from AWS Dire
 
 ### Remove Amazon Enterprise applications before deleting a directory<a name="remove_rds"></a>
 
-Before deleting a directory that is associated with one or more Amazon Enterprise Applications such as, Amazon WorkSpaces, Amazon WorkSpaces Application Manager, Amazon WorkDocs, Amazon WorkMail, AWS Management Console, or Amazon Relational Database Service \(Amazon RDS\), you must first remove each application\. For more information how to remove these applications, see [Delete your directory](ms_ad_delete.md)\.
+Before deleting a directory that is associated with one or more Amazon Enterprise Applications such as, WorkSpaces, Amazon WorkSpaces Application Manager, Amazon WorkDocs, Amazon WorkMail, AWS Management Console, or Amazon Relational Database Service \(Amazon RDS\), you must first remove each application\. For more information how to remove these applications, see [Delete your directory](ms_ad_delete.md)\.
 
 ### Use SMB 2\.x clients when accessing the SYSVOL and NETLOGON shares<a name="use_smbv2"></a>
 
 Client computers use Server Message Block \(SMB\) to access the SYSVOL and NETLOGON shares on AWS Managed Microsoft AD domain controllers for Group Policy, login scripts and other files\. AWS Managed Microsoft AD only supports SMB version 2\.0 \(SMBv2\) and newer\. 
 
-The SMBv2 and newer version protocols add a number of features that improve client performance and increase the security of your domain controllers and clients\. This change follows recommendations by the [United Stated Computer Emergency Readiness Team](https://www.us-cert.gov/ncas/current-activity/2017/01/16/SMB-Security-Best-Practices) and [Microsoft](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) to disable SMBv1\.
+The SMBv2 and newer version protocols add a number of features that improve client performance and increase the security of your domain controllers and clients\. This change follows recommendations by the [United States Computer Emergency Readiness Team](https://www.us-cert.gov/ncas/current-activity/2017/01/16/SMB-Security-Best-Practices) and [Microsoft](https://blogs.technet.microsoft.com/filecab/2016/09/16/stop-using-smb1/) to disable SMBv1\.
 
 **Important**  
 If you currently use SMBv1 clients to access the SYSVOL and NETLOGON shares of your domain controller, you must update those clients to use SMBv2 or newer\. Your directory will work correctly but your SMBv1 clients will fail to connect to the SYSVOL and NETLOGON shares of your AWS Managed Microsoft AD domain controllers, and will also be unable to process Group Policy\.

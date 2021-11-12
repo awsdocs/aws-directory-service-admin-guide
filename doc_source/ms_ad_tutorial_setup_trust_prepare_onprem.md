@@ -1,10 +1,10 @@
-# Step 1: Prepare your on\-premises Domain<a name="ms_ad_tutorial_setup_trust_prepare_onprem"></a>
+# Step 1: Prepare your self\-managed AD Domain<a name="ms_ad_tutorial_setup_trust_prepare_onprem"></a>
 
-First you need to complete several prerequisite steps on your on\-premises domain\.
+First you need to complete several prerequisite steps on your self\-managed \(on\-premises\) domain\.
 
-## Configure your on\-premises firewall<a name="tutorial_setup_trust_connect_vpc"></a>
+## Configure your self\-managed firewall<a name="tutorial_setup_trust_connect_vpc"></a>
 
-You must configure your on\-premises firewall so that the following ports are open to the CIDRs for all subnets used by the VPC that contains your AWS Managed Microsoft AD\. In this tutorial, we allow both incoming and outgoing traffic from 10\.0\.0\.0/16 \(the CIDR block of our AWS Managed Microsoft AD's VPC\) on the following ports:
+You must configure your self\-managed firewall so that the following ports are open to the CIDRs for all subnets used by the VPC that contains your AWS Managed Microsoft AD\. In this tutorial, we allow both incoming and outgoing traffic from 10\.0\.0\.0/16 \(the CIDR block of our AWS Managed Microsoft AD's VPC\) on the following ports:
 
  
 + TCP/UDP 53 \- DNS
@@ -15,7 +15,7 @@ You must configure your on\-premises firewall so that the following ports are op
 SMBv1 is no longer supported\.
 
 **Note**  
-These are the minimum ports that are needed to connect the VPC to the on\-premises directory\. Your specific configuration may require additional ports be open\.
+These are the minimum ports that are needed to connect the VPC to the self\-managed directory\. Your specific configuration may require additional ports be open\.
 
 ## Ensure that Kerberos pre\-authentication is enabled<a name="tutorial_setup_trust_enable_kerberos"></a>
 
@@ -23,7 +23,7 @@ User accounts in both directories must have Kerberos preauthentication enabled\.
 
 **To view user kerberos settings**
 
-1. On your on\-premises domain controller, open Server Manager\.
+1. On your self\-managed domain controller, open Server Manager\.
 
 1. On the **Tools** menu, choose **Active Directory Users and Computers**\.
 
@@ -32,11 +32,11 @@ User accounts in both directories must have Kerberos preauthentication enabled\.
 1. Choose the **Account** tab\. In the **Account options** list, scroll down and ensure that **Do not require Kerberos preauthentication** is *not* checked\.   
 ![\[Enable Kerberos\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/images/kerberos_enabled.png)
 
-## Configure DNS conditional forwarders for your on\-premises domain<a name="tutorial_setup_trust_onprem_forwarder"></a>
+## Configure DNS conditional forwarders for your self\-managed domain<a name="tutorial_setup_trust_onprem_forwarder"></a>
 
-You must set up DNS conditional forwarders on each domain\. Before doing this on your on\-premises domain, you will first get some information about your AWS Managed Microsoft AD\.
+You must set up DNS conditional forwarders on each domain\. Before doing this on your self\-managed domain, you will first get some information about your AWS Managed Microsoft AD\.
 
-**To configure conditional forwarders on your on\-premises domain**
+**To configure conditional forwarders on your self\-managed domain**
 
 1. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) at https://console\.aws\.amazon\.com/directoryservicev2/\.
 
@@ -46,7 +46,7 @@ You must set up DNS conditional forwarders on each domain\. Before doing this on
 
 1. On the **Details** page, take note of the values in **Directory name** and the **DNS address** of your directory\.
 
-1. Now, return to your on\-premises domain controller\. Open Server Manager\.
+1. Now, return to your self\-managed domain controller\. Open Server Manager\.
 
 1. On the **Tools** menu, choose **DNS**\.
 

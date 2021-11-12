@@ -32,7 +32,7 @@ Amazon RDS for MySQL
 Amazon RDS for Oracle
 Amazon RDS for PostgreSQL
 Amazon RDS for SQL Server
-Amazon WorkSpaces
+WorkSpaces
 Active Directory trusts
 Domain joined clients or servers
 
@@ -53,6 +53,7 @@ All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Ac
 + AWS Single Sign\-On
 + Amazon WorkDocs
 + Amazon WorkMail
++ Amazon WorkSpaces
 + AWS Client VPN
 + AWS Management Console
 
@@ -66,7 +67,7 @@ Amazon RDS for MySQL
 Amazon RDS for Oracle
 Amazon RDS for PostgreSQL
 Amazon RDS for SQL Server
-Amazon WorkSpaces
+WorkSpaces
 Active Directory trusts
 Domain joined clients or servers
 This configuration requires you to ensure the “On\-premise CIDR” network is secure\.
@@ -115,7 +116,7 @@ User accounts are provisioned only in your AWS Managed Microsoft AD to be used w
 + AWS Single Sign\-On
 + Amazon WorkDocs
 + Amazon WorkMail
-+ Amazon WorkSpaces
++ WorkSpaces
 + AWS Client VPN
 + AWS Management Console
 
@@ -166,7 +167,7 @@ All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Ac
 + AWS Single Sign\-On
 + Amazon WorkDocs
 + Amazon WorkMail
-+ Amazon WorkSpaces
++ WorkSpaces
 + AWS Client VPN
 + AWS Management Console
 

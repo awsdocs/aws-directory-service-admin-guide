@@ -10,6 +10,6 @@ You can identify the features that are used globally on the **Directory details*
 
 ## Regional features<a name="multi-region-regional"></a>
 
-Any changes that you make to a feature in a [ Additional Region  Any Regions that you have added to your directory are referred to as *additional* Regions\. Although some features can be managed globally for all Regions, others are managed individually per Region\. To manage a feature for an additional Region \(non\-primary Region\), you must first select the additional Region from the list in the **Multi\-Region replication** section on the **Directory details** page\. Then you can proceed to manage the feature\.  Any changes that you make to [Regional features](multi-region-global-region-features.md#multi-region-regional) while an additional Region is selected will be applied only to that Region\. ](multi-region-global-primary-additional.md#multi-region-additional) will be applied only to that Region\.
+Any changes that you make to a feature in an [Additional Region](multi-region-global-primary-additional.md#multi-region-additional) will be applied only to that Region\.
 
 You can identify the features that are Regional on the **Directory details** page because they do ***not*** display **Applied to all replicated Regions** or **Inherited from primary Region** next to them\.

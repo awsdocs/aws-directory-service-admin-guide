@@ -6,7 +6,7 @@ The following is a list of compatible AWS applications and services:
 + Amazon Chime \- For detailed instructions, see [Connect to your Active Directory](https://docs.aws.amazon.com/chime/latest/ag/active_directory.html)\.
 + Amazon Connect \- For more information, see [How Amazon Connect works](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html#amazon-connect-fundamentals)\.
 + Amazon EC2 – For more information, see [Join an EC2 instance to your AWS Managed Microsoft AD directory](ms_ad_join_instance.md)\.
-+ Amazon FSx for Windows File Server – For more information, see [What is Amazon FSx for Windows File Server?](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)\.
++ FSx for Windows File Server – For more information, see [What is FSx for Windows File Server?](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html)\.
 + Amazon QuickSight \- For more information, see [Managing user accounts in Amazon QuickSight Enterprise Edition](https://docs.aws.amazon.com/quicksight/latest/user/managing-users-enterprise.html)\.
 + Amazon RDS for MySQL \- For more information, see [Using Kerberos authentication for MySQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/mysql-kerberos.html)\.
 + Amazon RDS for SQL Server \- For more information, see [Using Windows authentication with an Amazon RDS Microsoft SQL Server DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html)\.
@@ -15,7 +15,7 @@ The following is a list of compatible AWS applications and services:
 + AWS Single Sign\-On \- For detailed instructions, see [Connect AWS SSO to an on\-premises Active Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/connectawsad.html)\.
 + Amazon WorkDocs \- For detailed instructions, see [Connecting to your on\-premises directory with AWS Managed Microsoft AD](https://docs.aws.amazon.com/workdocs/latest/adminguide/connect_directory_microsoft.html)\.
 + Amazon WorkMail \- For detailed instructions, see [Integrate Amazon WorkMail with an existing directory \(standard setup\)](https://docs.aws.amazon.com/workmail/latest/adminguide/premises_directory.html)\.
-+ Amazon WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AWS Managed Microsoft AD](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-microsoft-ad.html)\. 
++ WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AWS Managed Microsoft AD](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-microsoft-ad.html)\. 
 + AWS Client VPN \- For detailed instructions, see [Client authentication and authorization](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/authentication-authorization.html)\.
 + AWS Management Console – For more information, see [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
 

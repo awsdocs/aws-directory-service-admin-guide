@@ -1,6 +1,6 @@
 # Enable client\-side LDAPS using AWS Managed Microsoft AD<a name="ms_ad_ldap_client_side"></a>
 
-Client\-side LDAPS support in AWS Managed Microsoft AD encrypts communications between Microsoft Active Directory \(AD\) and AWS applications\. Examples of such applications include Amazon WorkSpaces, AWS SSO, Amazon QuickSight, and Amazon Chime\. This encryption helps you to better protect your organization’s identity data and meet your security requirements\.
+Client\-side LDAPS support in AWS Managed Microsoft AD encrypts communications between Microsoft Active Directory \(AD\) and AWS applications\. Examples of such applications include WorkSpaces, AWS SSO, Amazon QuickSight, and Amazon Chime\. This encryption helps you to better protect your organization’s identity data and meet your security requirements\.
 
 ## Prerequisites<a name="ldap_client_side_prerequisites"></a>
 

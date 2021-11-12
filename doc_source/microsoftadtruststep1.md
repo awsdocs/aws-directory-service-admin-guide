@@ -29,7 +29,7 @@ Use the following procedure to create a Windows Server 2019 member server in Ama
 
 1. On the **Step 5** page, choose **Add Tag**\. Under **Key** type **example\.local\-DC01**, and then choose **Next: Configure Security Group**\.
 
-1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS RDP Security Group** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createsecuritygroup)\), and then choose **Review and Launch** to review your instance\.
+1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS Test Lab Security Group** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createsecuritygroup)\), and then choose **Review and Launch** to review your instance\.
 
 1. On the **Step 7** page, review the page, and then choose **Launch**\.
 
@@ -83,7 +83,7 @@ If you want to create a domain controller in AWS that replicates with your on\-p
 1. On the **Deployment Configuration** page, choose **Add a new forest**\. In **Root domain name**, type **example\.local**, and then choose **Next**\.
 
 1. On the **Domain Controller Options** page, do the following:
-   + In both **Forest functional level** and **Domain functional level**, choose **Windows Server 2019**\.
+   + In both **Forest functional level** and **Domain functional level**, choose **Windows Server 2016**\.
    + Under **Specify domain controller capabilities**, verify that both **Domain Name System \(DNS\) server** and **Global Catalog \(GC\)** are selected\.
    + Type and then confirm a Directory Services Restore Mode \(DSRM\) password\. Then choose **Next**\.
 

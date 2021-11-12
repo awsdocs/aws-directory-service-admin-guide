@@ -1,11 +1,15 @@
-# When to create a trust relationship<a name="ms_ad_setup_trust"></a>
+# Creating a trust relationship<a name="ms_ad_setup_trust"></a>
 
-You can configure one and two\-way external and forest trust relationships between your AWS Directory Service for Microsoft Active Directory and on\-premises directories, as well as between multiple AWS Managed Microsoft AD directories in the AWS cloud\. AWS Managed Microsoft AD supports all three trust relationship directions: Incoming, Outgoing and Two\-way \(Bi\-directional\)\.
+You can configure one and two\-way external and forest trust relationships between your AWS Directory Service for Microsoft Active Directory and self\-managed \(on\-premises\) directories, as well as between multiple AWS Managed Microsoft AD directories in the AWS cloud\. AWS Managed Microsoft AD supports all three trust relationship directions: Incoming, Outgoing and Two\-way \(Bi\-directional\)\.
 
 **Note**  
-When setting up trust relationships, you must ensure that your on\-premises directory is and remains compatible with AWS Directory Services\. For more information on your responsibilities, please see our [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model)\.
+When setting up trust relationships, you must ensure that your self\-managed directory is and remains compatible with AWS Directory Services\. For more information on your responsibilities, please see our [shared responsibility model](https://aws.amazon.com/compliance/shared-responsibility-model)\.
 
-AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your on\-premises domain](ms_ad_tutorial_setup_trust.md)\.
+AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your self\-managed Active Directory domain](ms_ad_tutorial_setup_trust.md)\.
+
+A two\-way trust is required for AWS Enterprise Apps such as Amazon Chime, Amazon Connect, Amazon QuickSight, AWS Single Sign\-On, Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, AWS Client VPN, and the AWS Management Console\. AWS Managed Microsoft AD must be able to query the users and groups in your self\-managed AD\.
+
+Amazon EC2, Amazon RDS, and Amazon FSx will work with either a one\-way or two\-way trust\.
 
 ## Prerequisites<a name="trust_prereq"></a>
 
@@ -16,7 +20,7 @@ AWS Managed Microsoft AD does not support trust with [Single Label Domains](http
 
 ### Connect to VPC<a name="connect_vpc"></a>
 
-If you are creating a trust relationship with your on\-premises directory, you must first connect your on\-premises network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your on\-premises network must have the following ports open to the CIDRs for both subnets in the VPC\.
+If you are creating a trust relationship with your self\-managed directory, you must first connect your self\-managed network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your self\-managed network must have the following ports open to the CIDRs for both subnets in the VPC\.
 
  
 + TCP/UDP 53 \- DNS
@@ -49,51 +53,23 @@ The selected security group is a security group that is automatically created wh
     
    + **Type**: All Traffic
    + **Protocol**: All
-   + **Destination** determines the traffic that can leave your domain controllers and where it can go in your on\-premises network\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
+   + **Destination** determines the traffic that can leave your domain controllers and where it can go in your self\-managed network\. Specify a single IP address or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
 
 1. Select **Save**\.
-
-**To configure your VPC inbound rules**
-
-1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/), on the **Directory Details** page, note your AWS Managed Microsoft AD directory ID\.
-
-1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
-
-1. Choose **Security Groups**\.
-
-1. Search for your AWS Managed Microsoft AD directory ID\. In the search results, select the item with the description "AWS created security group for *directory ID* directory controllers"\.
-**Note**  
-The selected security group is a security group that is automatically created when you initially create your directory\.
-
-1. Go to the **Inbound Rules** tab of that security group\. Select **Edit**, then **Add another rule**\. For the new rule, enter the following values:
-
-    
-   + **Type**: Custom UDP Rule
-   + **Protocol**: UDP
-   + **Port Range**: 445
-   + For **Source**, specify a single IP address, or an IP address range in CIDR notation \(for example, 203\.0\.113\.5/32\)\. You can also specify the name or ID of another security group in the same Region\. This setting determines the traffic that can reach your domain controllers from your on\-premises network\. For more information, see [Understand your directory’s AWS security group configuration and use](ms_ad_best_practices.md#understandsecuritygroup)\.
-
-1. Select **Save**\.
-
-1. Repeat these steps, adding each of the following rules:  
-****    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_setup_trust.html)
-
-   These security rules impact an internal network interface that is not exposed publicly\.
 
 ### Enable Kerberos pre\-authentication<a name="enable_kerberos"></a>
 
 Your user accounts must have Kerberos pre\-authentication enabled\. For more information about this setting, review [Preauthentication](http://technet.microsoft.com/en-us/library/cc961961.aspx) on Microsoft TechNet\.
 
-### Configure DNS conditional forwarders on your on\-premises domain<a name="mad_forwarder"></a>
+### Configure DNS conditional forwarders on your self\-managed domain<a name="mad_forwarder"></a>
 
-You must set up DNS conditional forwarders on your on\-premises domain\. Refer to [Assign a Conditional Forwarder for a Domain Name](https://technet.microsoft.com/en-us/library/cc794735.aspx) on Microsoft TechNet for details on conditional forwarders\.
+You must set up DNS conditional forwarders on your self\-managed domain\. Refer to [Assign a Conditional Forwarder for a Domain Name](https://technet.microsoft.com/en-us/library/cc794735.aspx) on Microsoft TechNet for details on conditional forwarders\.
 
-To perform the following steps, you must have access to following Windows Server tools for your on\-premises domain:
+To perform the following steps, you must have access to following Windows Server tools for your self\-managed domain:
 + AD DS and AD LDS Tools
 + DNS
 
-**To configure conditional forwarders on your on\-premises domain**
+**To configure conditional forwarders on your self\-managed domain**
 
 1. First you must get some information about your AWS Managed Microsoft AD\. Sign into the AWS Management Console and open the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) at https://console\.aws\.amazon\.com/directoryservicev2/\.
 
@@ -103,7 +79,7 @@ To perform the following steps, you must have access to following Windows Server
 
 1. Take note of the fully qualified domain name \(FQDN\) and the DNS addresses of your directory\.
 
-1. Now, return to your on\-premises domain controller\. Open Server Manager\.
+1. Now, return to your self\-managed domain controller\. Open Server Manager\.
 
 1. On the **Tools** menu, choose **DNS**\.
 
@@ -148,13 +124,13 @@ Trust relationships is a global feature of AWS Managed Microsoft AD\. If you are
 
 1. \(Optional\) If you want to allow only authorized users to access resources in your AWS Managed Microsoft AD directory, you can optionally choose the **Selective authentication** check box\. For general information about selective authentication, see [Security Considerations for Trusts](https://technet.microsoft.com/pt-pt/library/cc755321(v=ws.10).aspx) on Microsoft TechNet\.
 
-1. For **Conditional forwarder**, type the IP address of your on\-premises DNS server\. If you have previously created conditional forwarders, you can type the FQDN of your on\-premises domain instead of a DNS IP address\. 
+1. For **Conditional forwarder**, type the IP address of your self\-managed DNS server\. If you have previously created conditional forwarders, you can type the FQDN of your self\-managed domain instead of a DNS IP address\. 
 
-1. \(Optional\) Choose **Add another IP address** and type the IP address of an additional on\-premises DNS server\. You can repeat this step for each applicable DNS server address for a total of four addresses\.
+1. \(Optional\) Choose **Add another IP address** and type the IP address of an additional self\-managed DNS server\. You can repeat this step for each applicable DNS server address for a total of four addresses\.
 
 1.  Choose **Add**\. 
 
-1. If the DNS server or the network for your on\-premises domain uses a public \(non\-RFC 1918\) IP address space, go to the **IP routing** section, choose **Actions**, and then choose **Add route**\. Type the IP address block of your DNS server or on\-premises network using CIDR format, for example 203\.0\.113\.0/24\. This step is not necessary if both your DNS server and your on\-premises network are using RFC 1918 IP address spaces\.
+1. If the DNS server or the network for your self\-managed domain uses a public \(non\-RFC 1918\) IP address space, go to the **IP routing** section, choose **Actions**, and then choose **Add route**\. Type the IP address block of your DNS server or self\-managed network using CIDR format, for example 203\.0\.113\.0/24\. This step is not necessary if both your DNS server and your self\-managed network are using RFC 1918 IP address spaces\.
 **Note**  
 When using a public IP address space, make sure that you do not use any of the [AWS IP address ranges](https://ip-ranges.amazonaws.com/ip-ranges.json) as these cannot be used\.
 
@@ -178,7 +154,7 @@ You can create multiple trusts between your AWS Managed Microsoft AD and various
 
 1. In the **Trust relationships** section, select the trust you want to verify, choose **Actions**, and then select **Verify trust relationship**\.
 
-This process verifies only the outgoing direction of a two\-way trust\. AWS does not support verification of an incoming trusts\. For more information on how to verify a trust to or from your on\-premises Active Directory, refer to [Verify a Trust](https://technet.microsoft.com/en-us/library/cc753821.aspx) on Microsoft TechNet\.
+This process verifies only the outgoing direction of a two\-way trust\. AWS does not support verification of an incoming trusts\. For more information on how to verify a trust to or from your self\-managed Active Directory, refer to [Verify a Trust](https://technet.microsoft.com/en-us/library/cc753821.aspx) on Microsoft TechNet\.
 
 **To delete an existing trust relationship**
 

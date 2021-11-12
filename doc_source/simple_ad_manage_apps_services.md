@@ -7,12 +7,13 @@ AWS Directory Service can give other AWS applications and services, such as Amaz
 | --- | --- | 
 | Amazon Chime | For more information, see the [Amazon Chime Administration Guide](https://docs.aws.amazon.com/chime/latest/ag/what-is-chime.html)\. | 
 | Amazon Connect | For more information, see the [Amazon Connect Administration Guide](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)\. | 
-| Amazon FSx for Windows File Server | For more information, see [Using Amazon FSx with AWS Directory Service for Microsoft Active Directory](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/fsx-aws-managed-ad.html) in the Amazon FSx for Windows File Server User Guide\. | 
+| FSx for Windows File Server | For more information, see [Using Amazon FSx with AWS Directory Service for Microsoft Active Directory](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/fsx-aws-managed-ad.html) in the FSx for Windows File Server User Guide\. | 
 | Amazon QuickSight | For more information, see the [Amazon QuickSight User Guide](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html)\. | 
 | Amazon Relational Database Service | For more information, see the [Amazon RDS User Guide](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/)\. | 
+| AWS Transfer Family | For more information, see the [AWS Transfer Family User Guide](https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html)\. | 
 | Amazon WorkDocs | For more information, see the [Amazon WorkDocs Administration Guide](https://docs.aws.amazon.com/workdocs/latest/adminguide/)\. | 
 | Amazon WorkMail |  For more information, see the [Amazon WorkMail Administrator Guide](https://docs.aws.amazon.com/workmail/latest/adminguide/)\.  | 
-| Amazon WorkSpaces |  You can create a Simple AD, AWS Managed Microsoft AD, or AD Connector directly from Amazon WorkSpaces\. Simply launch **Advanced Setup** when creating your Workspace\. For more information, see the [Amazon WorkSpaces Administration Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/)\.  | 
+| WorkSpaces |  You can create a Simple AD, AWS Managed Microsoft AD, or AD Connector directly from WorkSpaces\. Simply launch **Advanced Setup** when creating your Workspace\. For more information, see the [Amazon WorkSpaces Administration Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/)\.  | 
 | Amazon WorkSpaces Application Manager | For more information, see the [Amazon WAM Administration Guide](http://docs.aws.amazon.com/wam/latest/adminguide/)\. | 
 | AWS Management Console | For more information, see [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\. | 
 

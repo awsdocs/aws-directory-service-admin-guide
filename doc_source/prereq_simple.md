@@ -4,8 +4,11 @@ To create a Simple AD directory, you need a VPC with the following:
 + At least two subnets\. For Simple AD to install correctly, you must install your two domain controllers in separate subnets that must be in a different Availability Zone\. In addition, the subnets must be in the same Classless Inter\-Domain Routing \(CIDR\) range\. If you want to extend or resize the VPC for your directory, then make sure to select both of the domain controller subnets for the extended VPC CIDR range\.
 + The VPC must have default hardware tenancy\.
 + The VPC must **not** be configured with the following [VPC endpoint\(s\)](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html):
-  + [CloudWatch VPC Endpoint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-and-interface-VPC.html)
-+ If you require LDAPS support with Simple AD, we recommend that you configure it using a Network Load Balancer\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single NLB IP address, and have automatic fail\-over through the NLB\. For more information about how to configure LDAPS with Simple AD, see [How to Configure an LDAPS Endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.
+  + [Route53 VPC endpoints](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-vpc-interface-endpoint.html) that include DNS conditional overrides for \*\.amazonaws\.com which resolve to non public AWS IP addresses
+  + [ CloudWatch VPC endpoint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch-and-interface-VPC.html)
+  + [ Systems Manager VPC endpoint](https://docs.aws.amazon.com/systems-manager/latest/userguide/setup-create-vpc.html)
+  + [ Security Token Service VPC endpoint ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_sts_vpce.html)
++ If you require LDAPS support with Simple AD, we recommend that you configure it using a Network Load Balancer connected to port 389\. This model enables you to use a strong certificate for the LDAPS connection, simplify access to LDAPS through a single NLB IP address, and have automatic fail\-over through the NLB\. Simple AD does not support the use of self\-signed certificates on port 636\. For more information about how to configure LDAPS with Simple AD, see [How to configure an LDAPS endpoint for Simple AD](https://aws.amazon.com/blogs/security/how-to-configure-ldaps-endpoint-for-simple-ad/) in the *AWS Security Blog*\.
 + The following encryption types must be enabled in the directory: 
   + RC4\_HMAC\_MD5
   + AES128\_HMAC\_SHA1

@@ -7,20 +7,22 @@ The following are the default quotas for AWS Managed Microsoft AD\. Each quota i
 
 | Resource | Default quota | 
 | --- | --- | 
-| AWS Managed Microsoft AD directories | 20 | 
+| AWS Managed Microsoft AD directories | 10 | 
 | Manual snapshots \* | 5 per AWS Managed Microsoft AD | 
 | Manual snapshots age \*\* | 180 days | 
 | Maximum number of domain controllers per directory | 20 | 
-| Shared domains per Standard Microsoft AD | 5 | 
-| Shared domains per Enterprise Microsoft AD | 125 | 
+| Shared domains per Standard Microsoft AD \*\*\* | 5 | 
+| Shared domains per Enterprise Microsoft AD \*\*\* | 125 | 
 | Maximum number of registered certificate authority \(CA\) certificates per directory | 5 | 
-| Maximum number of total AWS Regions in a single AWS Managed Microsoft AD \(Enterprise Edition\) directory \*\*\* | 5 | 
+| Maximum number of total AWS Regions in a single AWS Managed Microsoft AD \(Enterprise Edition\) directory \*\*\*\* | 5 | 
 
 \* The manual snapshot quota cannot be changed\.
 
 \*\* The maximum supported age of a manual snapshot is 180 days and cannot be changed\. This is due to the Tombstone\-Lifetime attribute of deleted objects which defines the useful shelf life of a system\-state backup of Active Directory\. It is not possible to restore from a snapshot older than 180 days\. For more information, see [Useful shelf life of a system\-state backup of Active Directory](https://support.microsoft.com/en-za/help/216993/useful-shelf-life-of-a-system-state-backup-of-active-directory) on the Microsoft website\.
 
-\*\*\* This includes 1 primary Region and up to 4 additional Regions\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
+\*\*\* The shared domain default quota refers to the number of accounts that an individual directory can be shared to\.
+
+\*\*\*\* This includes 1 primary Region and up to 4 additional Regions\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
 
 **Note**  
 You cannot attach a public IP address to your AWS elastic network interface \(ENI\)\.

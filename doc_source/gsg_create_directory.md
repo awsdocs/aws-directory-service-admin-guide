@@ -13,7 +13,7 @@ To create a new directory, perform the following steps\. Before starting this pr
 Choose from either the **Small** or **Large** size option\. For more information about sizes, see [Simple Active Directory](directory_simple_ad.md)\.  
 **Organization name**  
 A unique organization name for your directory that will be used to register client devices\.  
-This field is only available if you are creating your directory as part of launching Amazon WorkSpaces\.  
+This field is only available if you are creating your directory as part of launching WorkSpaces\.  
 **Directory DNS name**  
 The fully qualified name for the directory, such as `corp.example.com`\.  
 **Directory NetBIOS name**  

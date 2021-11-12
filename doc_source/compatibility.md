@@ -1,6 +1,6 @@
 # Browser compatibility<a name="compatibility"></a>
 
-AWS applications and services such as Amazon WorkSpaces, Amazon WorkMail, Amazon Connect, Amazon Chime, Amazon WorkDocs, and AWS Single Sign\-On \(AWS SSO\) all require valid sign\-in credentials from a compatible browser before you can access them\. The following table describes only the browsers and browser versions that are compatible for sign\-ins\.
+AWS applications and services such as WorkSpaces, Amazon WorkMail, Amazon Connect, Amazon Chime, Amazon WorkDocs, and AWS Single Sign\-On \(AWS SSO\) all require valid sign\-in credentials from a compatible browser before you can access them\. The following table describes only the browsers and browser versions that are compatible for sign\-ins\.
 
 
 ****  

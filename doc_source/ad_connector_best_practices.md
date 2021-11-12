@@ -44,8 +44,9 @@ To discover domain controllers, AD Connector uses the Active Directory site whos
 
 ### Understand username restrictions for AWS applications<a name="ad_connector_usernamerestrictions"></a>
 
-AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
+AWS Directory Service provides support for most character formats that can be used in the construction of usernames\. However, there are character restrictions that are enforced on usernames that will be used for signing in to AWS applications, such as WorkSpaces, Amazon WorkDocs, Amazon WorkMail, or Amazon QuickSight\. These restrictions require that the following characters not be used:
 + Spaces
++ Multibyte characters
 + \!"\#$%&'\(\)\*\+,/:;<=>?@\[\\\]^`\{\|\}\~
 
 **Note**  

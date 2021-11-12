@@ -9,7 +9,7 @@ Simple AD provides a subset of the features offered by AWS Managed Microsoft AD,
 Simple AD offers many advantages:
 + Simple AD makes it easier to [manage amazon EC2 instances running Linux and Windows](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple_ad_join_instance.html) and deploy Windows applications in the AWS Cloud\.
 + Many of the applications and tools that you use today that require Microsoft Active Directory support can be used with Simple AD\.
-+ User accounts in Simple AD allow access to AWS applications such as Amazon WorkSpaces, Amazon WorkDocs, or Amazon WorkMail\.
++ User accounts in Simple AD allow access to AWS applications such as WorkSpaces, Amazon WorkDocs, or Amazon WorkMail\.
 + You can manage AWS resources through IAM role–based access to the AWS Management Console\.
 + Daily automated snapshots enable point\-in\-time recovery\.
 
@@ -17,6 +17,7 @@ Simple AD does not support any of the following:
 + Amazon AppStream 2\.0
 + Amazon Chime
 + Amazon RDS for SQL Server
++ Amazon RDS for Oracle
 + AWS Single Sign\-On
 + Trust relationships with other domains
 + Active Directory Administrative Center

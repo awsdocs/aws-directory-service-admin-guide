@@ -21,7 +21,7 @@ AWS services such as Amazon RDS for SQL Server and Amazon FSx connect to the loc
 
 You can use the following AWS services with the multi\-Region replication feature\.
 + Amazon EC2
-+ Amazon FSx for Windows File Server
++ FSx for Windows File Server
 + Amazon RDS for SQL Server
 + Amazon RDS for Oracle
 + Amazon RDS for MySQL

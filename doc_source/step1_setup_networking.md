@@ -42,25 +42,25 @@ Now that your VPC peering connection is active, you must add an entry to your VP
 
 1. While in the **Route Tables** section of the Amazon VPC console, select the route table for the directory owner VPC\.
 
-1. Choose the **Routes** tab, choose **Edit**, and then choose **Add another route**\.
+1. Choose the **Routes** tab, choose **Edit routes**, and then choose **Add route**\.
 
 1. In the **Destination** column, enter the CIDR block for the directory consumer VPC\.
 
 1. In the **Target** column, enter the VPC peering connection ID \(such as **pcx\-123456789abcde000**\) for the peering connection that you created earlier in the directory owner account\.
 
-1. Choose **Save**\.
+1. Choose **Save changes**\.
 
 **To add an entry to the VPC route table in the directory consumer account**
 
 1. While in the **Route Tables** section of the Amazon VPC console, select the route table for the directory consumer VPC\.
 
-1. Choose the **Routes** tab, choose **Edit**, and then choose **Add another route**\.
+1. Choose the **Routes** tab, choose **Edit routes**, and then choose **Add route**\.
 
 1. In the **Destination** column, enter the CIDR block for the directory owner VPC\.
 
 1. In the **Target** column, type in the VPC peering connection ID \(such as **pcx\-123456789abcde001**\) for the peering connection that you created earlier in the directory consumer account\.
 
-1. Choose **Save**\.
+1. Choose **Save changes**\.
 
 Make sure to configure your directory consumer VPCs’ security group to enable outbound traffic by adding the Active Directory protocols and ports to the outbound rules table\. For more information, see [Security groups for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) and [AWS Managed Microsoft AD prerequisites](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_prereqs.html)\.
 

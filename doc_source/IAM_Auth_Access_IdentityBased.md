@@ -17,45 +17,49 @@ The following shows an example of a permissions policy\.
 
 ```
 {
-  "Version" : "2012-10-17",
-  "Statement" : [
-    {
-      "Action" : [
-        "ds:CreateDirectory"
-      ],
-      "Effect" : "Allow",
-      "Resource" : "*"
-    },
-    
-    {
-      "Action" : [
-        "iam:PassRole", 
-        "iam:GetRole", 
-        "iam:CreateRole", 
-        "iam:PutRolePolicy"
-       ],
-      "Effect" : "Allow",
-      "Resource" : "*"
-    },
-    
-    {
-      "Action" : [
-        "ec2:DescribeSubnets",
-        "ec2:DescribeVpcs",
-        "ec2:CreateSecurityGroup",
-        "ec2:DeleteSecurityGroup",
-        "ec2:CreateNetworkInterface",
-        "ec2:DescribeNetworkInterfaces",
-        "ec2:DeleteNetworkInterface",
-        "ec2:AuthorizeSecurityGroupIngress",
-        "ec2:AuthorizeSecurityGroupEgress",
-        "ec2:RevokeSecurityGroupIngress",
-        "ec2:RevokeSecurityGroupEgress"
-      ],
-      "Effect" : "Allow",
-      "Resource" : "*"
-    }
-  ]
+   "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowDsEc2IamGetRole",
+            "Effect": "Allow",
+            "Action": [
+                "ds:CreateDirectory",
+                "ec2:RevokeSecurityGroupIngress",
+                "ec2:CreateNetworkInterface",
+                "ec2:AuthorizeSecurityGroupEgress",
+                "ec2:AuthorizeSecurityGroupIngress",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeVpcs",
+                "ec2:CreateSecurityGroup",
+                "ec2:RevokeSecurityGroupEgress",
+                "ec2:DeleteSecurityGroup",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DescribeSubnets",
+                "iam:GetRole"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "WarningAllowsCreatingRolesWithDirSvcPrefix",
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateRole",
+                "iam:PutRolePolicy"
+            ],
+            "Resource": "arn:aws:iam::111122223333:role/DirSvc*"
+        },
+        {
+            "Sid": "AllowPassRole",
+            "Effect": "Allow",
+            "Action": "iam:PassRole",
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:PassedToService": "cloudwatch.amazonaws.com"
+                }
+            }
+        }
+    ]
 }
 ```
 

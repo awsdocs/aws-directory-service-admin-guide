@@ -91,7 +91,7 @@ In this procedure you set up a Windows Server system in Amazon EC2 that can be u
 
 1. On the **Step 5** page, choose **Add Tag**\. Under **Key** type **corp\.example\.com\-mgmt** and then choose **Next: Configure Security Group**\.
 
-1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS RDP Security Group**, and then choose **Review and Launch** to review your instance\.
+1. On the **Step 6** page, choose **Select an existing security group**, select **AWS DS Test Lab Security Group** \(which you previously set up in the [Base tutorial](microsoftadbasestep1.md#createsecuritygroup)\), and then choose **Review and Launch** to review your instance\.
 
 1. On the **Step 7** page, review the page, and then choose **Launch**\.
 

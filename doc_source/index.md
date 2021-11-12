@@ -1,7 +1,7 @@
 # AWS Directory Service Administration Guide
 
 -----
-*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -82,13 +82,16 @@ Amazon's trademarks and trade dress may not be used in
          + [Create a group](ms_ad_manage_users_groups_create_group.md)
          + [Add a user to a group](ms_ad_manage_users_groups_add_user_to_group.md)
       + [Connect to your existing AD infrastructure](ms_ad_connect_existing_infrastructure.md)
-         + [When to create a trust relationship](ms_ad_setup_trust.md)
-            + [Adding IP routes when using public IP addresses](ms_ad_adding_routes.md)
-         + [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your on-premises domain](ms_ad_tutorial_setup_trust.md)
+         + [Creating a trust relationship](ms_ad_setup_trust.md)
+         + [Adding IP routes when using public IP addresses](ms_ad_adding_routes.md)
+         + [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your self-managed Active Directory domain](ms_ad_tutorial_setup_trust.md)
             + [Prerequisites](before_you_start.md)
-            + [Step 1: Prepare your on-premises Domain](ms_ad_tutorial_setup_trust_prepare_onprem.md)
+            + [Step 1: Prepare your self-managed AD Domain](ms_ad_tutorial_setup_trust_prepare_onprem.md)
             + [Step 2: Prepare your AWS Managed Microsoft AD](ms_ad_tutorial_setup_trust_prepare_mad.md)
             + [Step 3: Create the trust relationship](ms_ad_tutorial_setup_trust_create.md)
+         + [Tutorial: Create a trust relationship between two AWS Managed Microsoft AD domains](ms_ad_tutorial_setup_trust_between_2_managed_ad_domains.md)
+            + [Step 1: Prepare your AWS Managed Microsoft AD](ms_ad_tutorial_setup_trust_prepare_mad_between_2_managed_ad_domains.md)
+            + [Step 2: Create the trust relationship with another AWS Managed Microsoft AD domain](ms_ad_tutorial_setup_trust_create_between_2_managed_ad_domains.md)
       + [Extend your schema](ms_ad_schema_extensions.md)
          + [When to extend your AWS Managed Microsoft AD schema](ms_ad_schema_when_to_extend.md)
          + [Tutorial: Extending your AWS Managed Microsoft AD schema](ms_ad_tutorial_extend_schema.md)
@@ -146,7 +149,13 @@ Amazon's trademarks and trade dress may not be used in
          + [Update your AD Connector service account credentials in AWS Directory Service](ad_connector_update_creds.md)
          + [Enable multi-factor authentication for AD Connector](ad_connector_mfa.md)
          + [Enable client-side LDAPS using AD Connector](ad_connector_ldap_client_side.md)
-         + [Enable smart card authentication in AD Connector](ad_connector_clientauth.md)
+            + [Prerequisites](prereqs-ldap-client-side.md)
+            + [Enable client-side LDAPS](enable-ldap-client-side.md)
+            + [Manage client-side LDAPS](manage-ldap-client-side.md)
+         + [Enable mTLS authentication in AD Connector for use with smart cards](ad_connector_clientauth.md)
+            + [Prerequisites](prereqs-clientauth.md)
+            + [Enable smart card authentication](enable-clientauth.md)
+            + [Manage smart card authentication settings](manage-clientauth.md)
       + [Monitor your AD Connector directory](ad_connector_monitor.md)
          + [Understanding your directory status](ad_connector_directory_status.md)
          + [Configure directory status notifications](ad_connector_enable_notifications.md)

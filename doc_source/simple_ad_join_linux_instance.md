@@ -463,7 +463,7 @@ sudo systemctl restart sssd.service
 Alternatively, you could use:
 
 ```
-sudo service sssd start
+sudo service sssd restart
 ```
 
 ## Connect to the instance<a name="simple_ad_linux_connect"></a>

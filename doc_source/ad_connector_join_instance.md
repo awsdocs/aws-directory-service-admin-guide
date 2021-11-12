@@ -6,6 +6,9 @@ If you need to manually join an EC2 instance to your domain, you must launch the
 
 To be able to connect remotely to these instances, you must have IP connectivity to the instances from the network you are connecting from\. In most cases, this requires that an internet gateway be attached to your VPC and that the instance has a public IP address\.
 
+**Note**  
+Once you join an instance to your self\-managed Active Directory \(on\-premises\), the instance communicates directly with your Active Directory and bypasses AD Connector\.
+
 **Topics**
 + [Seamlessly join a Windows EC2 instance](ad_connector_launching_instance.md)
 + [Seamlessly join a Linux EC2 instance to your AD Connector directory](ad_connector_seamlessly_join_linux_instance.md)

@@ -24,7 +24,7 @@ The following additional security topics can be found in this guide:
 *Accounts, trusts, and AWS resource access*
 + [Admin account](ms_ad_getting_started_admin_account.md)
 + [Group Managed Service Accounts](ms_ad_key_concepts_gmsa.md)
-+ [When to create a trust relationship](ms_ad_setup_trust.md)
++ [Creating a trust relationship](ms_ad_setup_trust.md)
 + [Kerberos constrained delegation](ms_ad_key_concepts_kerberos.md)
 + [Grant users and groups access to AWS resources](ms_ad_manage_roles.md)
 + [Enable access to AWS applications and services](ms_ad_manage_apps_services.md)

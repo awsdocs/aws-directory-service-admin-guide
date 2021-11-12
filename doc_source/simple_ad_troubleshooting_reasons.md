@@ -59,7 +59,7 @@ Use the Active Directory Users and Computers tool to re\-enable the service acco
 All the FSMO roles are not owned by the Simple AD directory controller\. AWS Directory Service cannot guarantee certain behavior and functionality if the FSMO roles do not belong to the correct Simple AD directory controller\.
 
 **Troubleshooting**  
-Use Active Directory tools to move the FSMO roles back to the original working directory controller\. For more information about moving the FSMO roles, go to [https://support\.microsoft\.com/en\-us/kb/324801](https://support.microsoft.com/en-us/kb/324801)\. If this does not correct the problem, please contact AWS Support for more assistance\.
+Use Active Directory tools to move the FSMO roles back to the original working directory controller\. For more information about moving the FSMO roles, go to [https://docs\.microsoft\.com/troubleshoot/windows\-server/identity/transfer\-or\-seize\-fsmo\-roles\-in\-ad\-ds](https://docs.microsoft.com/troubleshoot/windows-server/identity/transfer-or-seize-fsmo-roles-in-ad-ds)\. If this does not correct the problem, please contact AWS Support for more assistance\.
 
 ## Domain controller replication failures<a name="sr_dc_repl_failures"></a>
 

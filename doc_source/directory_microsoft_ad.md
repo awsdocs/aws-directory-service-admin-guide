@@ -8,9 +8,12 @@ AWS Directory Service makes it easy to set up and run directories in the AWS Clo
 + Manage users and groups
 + Provide single sign\-on to applications and services
 + Create and apply group policy
-+ Securely connect to Amazon EC2 Linux and Windows instances
 + Simplify the deployment and management of cloud\-based Linux and Microsoft Windows workloads
 + You can use AWS Managed Microsoft AD to enable multi\-factor authentication by integrating with your existing RADIUS\-based MFA infrastructure to provide an additional layer of security when users access AWS applications\.
++ Securely connect to Amazon EC2 Linux and Windows instances
+
+**Note**  
+AWS manages the licensing of your Windows Server instances for you; all you need to do is pay for the instances you use\. There is also no need to buy additional Windows Server CALs, as access is included in the price\. Each instance comes with two remote connections for admin purposes only\. If you require more than two connections, or need those connections for purposes other than admin, you may have to bring in additional Remote Desktop Services CALs for use on AWS\.
 
 Read the topics in this section to get started creating a AWS Managed Microsoft AD directory, creating a trust relationship between AWS Managed Microsoft AD and your on\-premises directories, and extending your AWS Managed Microsoft AD schema\.
 

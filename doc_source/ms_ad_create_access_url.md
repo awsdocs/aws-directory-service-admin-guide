@@ -1,6 +1,6 @@
 # Creating an access URL<a name="ms_ad_create_access_url"></a>
 
-An access URL is used with AWS applications and services, such as Amazon WorkSpaces, to reach a login page that is associated with your directory\. The URL must be unique globally\. You can create an access URL for your directory by performing the following steps\.
+An access URL is used with AWS applications and services, such as Amazon WorkDocs, to reach a login page that is associated with your directory\. The URL must be unique globally\. You can create an access URL for your directory by performing the following steps\.
 
 **Warning**  
 Once you create an application access URL for this directory, it cannot be changed\. After an access URL is created, it cannot be used by others\. If you delete your directory, the access URL is also deleted and can then be used by any other account\.

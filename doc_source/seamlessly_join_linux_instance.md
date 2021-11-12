@@ -76,7 +76,13 @@ You must enter **awsSeamlessDomainPassword** exactly as it is\. Make sure there 
 
       1. Choose **Next**\.
 
-1. Under **Secret name**, enter a secret name that includes your directory ID using the following format **aws/directory\-services/*d\-xxxxxxxxx*/seamless\-domain\-join**\. This will be used to retrieve secrets in the application\.
+1. Under **Secret name**, enter a secret name that includes your directory ID using the following format:
+
+   ```
+   aws/directory-services/d-xxxxxxxxx/seamless-domain-join
+   ```
+
+   This will be used to retrieve secrets in the application\.
 **Note**  
 You must enter **aws/directory\-services/*d\-xxxxxxxxx*/seamless\-domain\-join** exactly as it is but replace *d\-xxxxxxxxxx* with your directory ID\. Make sure that there are no leading or ending spaces\. Otherwise the domain join will fail\. 
 

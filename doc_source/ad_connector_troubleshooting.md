@@ -18,7 +18,7 @@ Updating the password only in AWS Directory Service does NOT push the password c
 
 ## I receive a “Unable to Authenticate” error when using AWS applications to search for users or groups<a name="fails_when_searching"></a>
 
-You may experience errors when searching for users while using AWS applications, such as Amazon WorkSpaces or Amazon QuickSight, even while the AD Connector status was active\. Expired credentials can prevent AD Connector from completing queries on objects in your Active Directory\. Update the password for the service account using the ordered steps provided above\.
+You may experience errors when searching for users while using AWS applications, such as WorkSpaces or Amazon QuickSight, even while the AD Connector status was active\. Expired credentials can prevent AD Connector from completing queries on objects in your Active Directory\. Update the password for the service account using the ordered steps provided above\.
 
 ## I receive a "DNS unavailable" error when I try to connect to my on\-premises directory<a name="dns_unavailable"></a>
 

@@ -1,10 +1,12 @@
 # Document history<a name="document_history"></a>
 
 The following table describes the important changes since the last release of the *AWS Directory Service Administrator Guide*\. 
-+ **Latest documentation update:** January 2, 2019
++ **Latest documentation update:** August 25, 2021
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Simple AD VPC Endpoints](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_simple.html) | Added content regarding which VPC endpoints should not be configured\. | August 25, 2021 | 
+| [AD Connector VPC Endpoints](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/prereq_connector.html) | Added content regarding which VPC endpoints should not be configured\. | August 25, 2021 | 
 | [Smart card support](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ad_connector_clientauth.html) | Added content on support for smart cards and Amazon WorkSpaces Application Manager in AWS GovCloud \(US\-West\) Region | December 1, 2020 | 
 | [Password reset](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_manage_users_groups_reset_password.html) | Added content on how to reset user passwords using the AWS Management Console, Windows PowerShell and AWS CLI\. | January 2, 2019 | 
 | [Directory sharing](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_directory_sharing.html) | Added documentation for using directory sharing with AWS Managed Microsoft AD\. | September 25, 2018 | 

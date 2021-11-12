@@ -35,8 +35,8 @@ MFA is a Regional feature of AWS Managed Microsoft AD\. If you are using [Multi\
 Provide a label name\.  
 **RADIUS server DNS name or IP addresses**  
 The IP addresses of your RADIUS server endpoints, or the IP address of your RADIUS server load balancer\. You can enter multiple IP addresses by separating them with a comma \(e\.g\., `192.0.0.0,192.0.0.12`\)\.  
-RADIUS MFA is applicable only to authenticate access to the AWS Management Console, or to Amazon Enterprise applications and services such as Amazon WorkSpaces, Amazon QuickSight, or Amazon Chime\. It does not provide MFA to Windows workloads running on EC2 instances, or for signing into an EC2 instance\. AWS Directory Service does not support RADIUS Challenge/Response authentication\.  
-Users must have their MFA code at the time they enter their user name and password\. Alternatively, you must use a solution that performs MFA out\-of\-band such as SMS text verification for the user\. In out\-of\-band MFA solutions, you must make sure you set the RADIUS time\-out value appropriately for your solution\. When using an out\-of\-band MFA solution, the sign\-in page will prompt the user for an MFA code\. In this case, the best practice is for users to enter their password in both the password field and the MFA field\.  
+RADIUS MFA is applicable only to authenticate access to the AWS Management Console, or to Amazon Enterprise applications and services such as WorkSpaces, Amazon QuickSight, or Amazon Chime\. It does not provide MFA to Windows workloads running on EC2 instances, or for signing into an EC2 instance\. AWS Directory Service does not support RADIUS Challenge/Response authentication\.  
+Users must have their MFA code at the time they enter their user name and password\. Alternatively, you must use a solution that performs MFA out\-of\-band such as SMS text verification for the user\. In out\-of\-band MFA solutions, you must make sure you set the RADIUS time\-out value appropriately for your solution\. When using an out\-of\-band MFA solution, the sign\-in page will prompt the user for an MFA code\. In this case, users must enter their password in both the password field and the MFA field\.  
 **Port**  
 The port that your RADIUS server is using for communications\. Your on\-premises network must allow inbound traffic over the default RADIUS server port \(UDP:1812\) from the AWS Directory Service servers\.  
 **Shared secret code**  
@@ -56,7 +56,7 @@ The number of times that communication with the RADIUS server is attempted\. Thi
 
 ## Supported Amazon Enterprise applications<a name="supportedamazonapps"></a>
 
-All Amazon Enterprise IT applications including Amazon WorkSpaces, Amazon WorkDocs, Amazon WorkMail, Amazon QuickSight, and access to AWS Single Sign\-On and AWS Management Console are supported when using AWS Managed Microsoft AD and AD Connector with MFA\. 
+All Amazon Enterprise IT applications including WorkSpaces, Amazon WorkDocs, Amazon WorkMail, Amazon QuickSight, and access to AWS Single Sign\-On and AWS Management Console are supported when using AWS Managed Microsoft AD and AD Connector with MFA\. 
 
 For information about how to configure basic user access to Amazon Enterprise applications, AWS Single Sign\-On and the AWS Management Console using AWS Directory Service, see [Enable access to AWS applications and services](ms_ad_manage_apps_services.md) and [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
 

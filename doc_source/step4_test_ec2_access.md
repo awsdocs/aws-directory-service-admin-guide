@@ -79,7 +79,7 @@ Make sure to attach the **AmazonSSMManagedInstanceCore** and **AmazonSSMDirector
 
 1. Choose **Run command**\.
 
-1. On the **Run a command** page, search for **AWS\-JoinDirectoryServiceDomain**\. When it is displayed in the search results, select the **AWS\-JoinDirectoryServiceDomain** option\.
+1. On the **Run a command** page, search for `AWS-JoinDirectoryServiceDomain`\. When it is displayed in the search results, select the `AWS-JoinDirectoryServiceDomain` option\.
 
 1. Scroll down to the **Command parameters** section\. You must provide the following parameters:
    + For **Directory Id**, enter the name of the AWS Directory Service directory\.
