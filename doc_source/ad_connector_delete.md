@@ -28,3 +28,5 @@ If you are using AWS Single Sign\-On and have previously connected it to the AWS
 1. In the navigation pane, choose **Directories**\.
 
 1. Select only the directory to be deleted and click **Delete**\. It takes several minutes for the directory to be deleted\. When the directory has been deleted, it is removed from your directory list\.
+
+To delete an inoperable AD Connector, see [I cannot delete my AD Connector](ad_connector_troubleshooting.md#delete_ad_connector)\.

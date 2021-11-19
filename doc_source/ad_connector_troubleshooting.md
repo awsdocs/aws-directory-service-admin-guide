@@ -71,3 +71,7 @@ Your user accounts must have Kerberos preauthentication enabled\. This is the de
 ## I receive an "Invalid Credentials" error when the service account used by AD Connector attempts to authenticate<a name="invalid_creds"></a>
 
 This can occur if the hard drive on your domain controller runs out of space\. Ensure that your domain controller's hard drives are not full\.
+
+## I cannot delete my AD Connector<a name="delete_ad_connector"></a>
+
+If your AD Connector switches to an inoperable state, you no longer have access to your domain controllers\. We block the deletion of an AD Connector when there are still applications linked to it because one of those applications may still be using the directory\. Contact [AWS Support](https://aws.amazon.com/contact-us/)\.

@@ -219,6 +219,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Compliance validation for AWS Directory Service](ds-compliance.md)
    + [Resilience in AWS Directory Service](disaster-recovery-resiliency.md)
    + [Infrastructure security in AWS Directory Service](infrastructure-security.md)
+   + [Cross-service confused deputy prevention](cross-service-confused-deputy-prevention.md)
 + [Service level agreement for AWS Directory Service](sla.md)
 + [Region availability for AWS Directory Service](regions.md)
 + [Browser compatibility](compatibility.md)
