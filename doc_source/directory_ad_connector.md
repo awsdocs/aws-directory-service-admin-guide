@@ -1,6 +1,10 @@
 # Active Directory Connector<a name="directory_ad_connector"></a>
 
-AD Connector is a directory gateway with which you can redirect directory requests to your on\-premises Microsoft Active Directory without caching any information in the cloud\. AD Connector comes in two sizes, small and large\. You can spread application loads across multiple AD Connectors to scale to your performance needs\. There are no enforced user or connection limits\. AD Connectors and your on\-premises AD domains have a 1\-to\-1 relationship\. That is, for each on\-premises domain, including child domains in an AD forest that you want to authenticate against, you must create a unique AD Connector\.
+AD Connector is a directory gateway with which you can redirect directory requests to your on\-premises Microsoft Active Directory without caching any information in the cloud\. AD Connector may be deployed in two size tiers, `small` and `large`. A `small` AD Connector is designed for smaller organizations of up to 500 users. A `large` AD Connector can support larger organizations of up to 5,000 users. You can spread application loads across multiple AD Connectors to scale to your performance needs\. There are no enforced user or connection limits\. AD Connectors and your on\-premises AD domains have a 1\-to\-1 relationship\. That is, for each on\-premises domain, including child domains in an AD forest that you want to authenticate against, you must create a unique AD Connector\.
+
+**Note**   
+The user count for `small` and `large`-tier AD Connectors is a recommendation, not an enforced limit. Usage is measured in number of concurrent requests, so organizations with more users than this bound may still find `small` or `large` sufficient for their use case.
+
 
 **Note**  
 AD Connector cannot be shared with other AWS accounts\. If this is a requirement, consider using AWS Managed Microsoft AD to [Share your directory](ms_ad_directory_sharing.md)\. AD Connector is also not multi\-VPC aware, which means that AWS applications like [WorkSpaces](https://aws.amazon.com/workspaces) are required to be provisioned into the same VPC as your AD Connector\.
