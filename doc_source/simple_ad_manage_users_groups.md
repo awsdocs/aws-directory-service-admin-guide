@@ -12,6 +12,7 @@ The following topics include instructions on how to create and manage users and 
 **Topics**
 + [Installing the Active Directory administration tools](simple_ad_install_ad_tools.md)
 + [Create a user](simple_ad_manage_users_groups_create_user.md)
++ [Delete a user](simple_ad_manage_users_groups_delete_user.md)
 + [Reset a user password](simple_ad_manage_users_groups_reset_password.md)
 + [Create a group](simple_ad_manage_users_groups_create_group.md)
 + [Add a user to a group](simple_ad_manage_users_groups_add_user_to_group.md)
