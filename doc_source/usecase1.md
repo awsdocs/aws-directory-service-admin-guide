@@ -51,7 +51,6 @@ FSx for Windows File Server can be used as a storage option for Microsoft SQL Se
 FSx for Windows File Server can be used to store data from Active Directory user home folders and My Documents in a central location\. FSx for Windows File Server can also be used to store data from Roaming User Profiles\.
 
 **Related items**
-+ [How to assign a home folder to a user](https://support.microsoft.com/en-us/help/816313/how-to-assign-a-home-folder-to-a-user)
 + [Windows home directories made easy with Amazon FSx](https://aws.amazon.com/blogs/storage/windows-home-directories-and-file-shares-made-easy-with-amazon-fsx/)
 + [Deploying roaming user profiles](https://docs.microsoft.com/en-us/windows-server/storage/folder-redirection/deploy-roaming-user-profiles)
 + [Using FSx for Windows File Server with WorkSpaces](https://aws.amazon.com/blogs/desktop-and-application-streaming/using-amazon-fsx-for-windows-file-server-with-amazon-workspaces/)

@@ -33,7 +33,11 @@ The IP address of at least one DNS server in your existing directory\. These ser
 **Service account username**  
 The user name of a user in the existing directory\. For more information about this account, see the [AD Connector prerequisites](prereq_connector.md)\.  
 **Service account password**  
-The password for the existing user account\.  
+The password for the existing user account\. This password is case\-sensitive and must be between 8 and 128 characters in length, inclusive\. It must also contain at least one character from three of the following four categories:  
+   + Lowercase letters \(a\-z\)
+   + Uppercase letters \(A\-Z\)
+   + Numbers \(0\-9\)
+   + Non\-alphanumeric characters \(\~\!@\#$%^&\*\_\-\+=`\|\\\(\)\{\}\[\]:;"'<>,\.?/\)  
 **Confirm password**  
 Retype the password for the existing user account\.
 

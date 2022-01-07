@@ -30,8 +30,6 @@ If you have configured your AWS Managed Microsoft AD to enable LDAPS, any additi
    + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to add or remove domain controllers, and then choose the **Scale & share** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
    + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Scale & share** tab\.
 
-1. On the **Directory details** page, select the **Scale** tab\.
-
 1. In the **Domain controllers** section, choose **Edit**\.
 
 1. Specify the number of domain controllers to add or remove from your directory, and then choose **Modify**\. 
@@ -43,3 +41,30 @@ After deploying additional domain controllers, you can reduce the number of doma
 
 **Related AWS Security Blog Article**
 + [How to increase the redundancy and performance of your AWS Directory Service for AWS Managed Microsoft AD by adding domain controllers](https://aws.amazon.com/blogs/security/how-to-increase-the-redundancy-and-performance-of-your-aws-directory-service-for-microsoft-ad-directory-by-adding-domain-controllers/)
+
+## Use Amazon CloudWatch metrics to determine when to add domain controllers<a name="scaledcs"></a>
+
+Load balancing across all of your domain controllers is important for the resilience and performance of your directory\. To help you optimize the performance of your domain controllers in AWS Managed Microsoft AD, we recommend that you first monitor important metrics in CloudWatch to form a baseline\. During this process, you analyze your directory over time to identify your average and peak directory utilization\. After determining your baseline, you can monitor these metrics on a regular basis to help determine when to add a domain controller to your directory\. For more information, see [Monitor your domain controllers with performance metrics](ms_ad_monitor_dc_performance.md)\.
+
+The following metrics are important to monitor on a regular basis\. For a full list of available domain controller metrics in CloudWatch, see [AWS Managed Microsoft AD performance counters](#performance-counters)\. 
++ Domain controller\-specific metrics, such as:
+  + Processor
+  + Memory
+  + Logical Disk
+  + Network Interface
++ AWS Managed Microsoft AD directory\-specific metrics, such as:
+  + LDAP searches
+  + Binds
+  + DNS queries
+  + Directory reads
+  + Directory writes
+
+For instructions on how to set up domain controller metrics using the CloudWatch console, see [How to automate AWS Managed Microsoft AD scaling based on utilization metrics](https://aws.amazon.com/blogs/security/how-to-automate-aws-managed-microsoft-ad-scaling-based-on-utilization-metrics/) in the AWS Security Blog\. For general information about metrics in CloudWatch, see [Using Amazon CloudWatch metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) in the *Amazon CloudWatch User Guide*\. 
+
+For general information about domain controller planning, see [Capacity planning for Active Directory Domain Services](https://docs.microsoft.com/en-us/windows-server/administration/performance-tuning/role/active-directory-server/capacity-planning-for-active-directory-domain-services) on the Microsoft website\.
+
+### AWS Managed Microsoft AD performance counters<a name="performance-counters"></a>
+
+The following table lists all performance counters available in Amazon CloudWatch for tracking domain controller and directory performance in AWS Managed Microsoft AD\.
+
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_deploy_additional_dcs.html)

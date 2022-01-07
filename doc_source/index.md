@@ -53,6 +53,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Configure directory status notifications](ms_ad_enable_notifications.md)
          + [Review your AWS Managed Microsoft AD directory logs](ms_ad_directory_logs.md)
          + [Enable log forwarding](ms_ad_enable_log_forwarding.md)
+         + [Monitor your domain controllers with performance metrics](ms_ad_monitor_dc_performance.md)
       + [Multi-Region replication](ms_ad_configure_multi_region_replication.md)
          + [Global vs Regional features](multi-region-global-region-features.md)
          + [Primary vs additional Regions](multi-region-global-primary-additional.md)

@@ -19,7 +19,8 @@ In this optional procedure, you set up a DHCP option scope so that EC2 instances
    + For **Domain name**, type **corp\.example\.com**\.
    + For **Domain name servers**, type the IP addresses of your AWS provided directory's DNS servers\. 
 **Note**  
-To find these addresses, go to the AWS Directory Service **Directories** page, and then choose the applicable directory ID, On the **Details** page, identify and use the IPs that are displayed in **DNS address**\.
+To find these addresses, go to the AWS Directory Service **Directories** page, and then choose the applicable directory ID\. On the **Details** page, identify and use the IPs that are displayed in **DNS address**\.  
+Alternatively, to find these addresses, go to the AWS Directory Service **Directories** page, and choose the applicable directory ID\. Then, choose **Scale & share**\. Under **Domain controllers**, identify and use the IPs that are displayed in **IP address**\.
    + Leave the settings blank for **NTP servers**, **NetBIOS name servers**, and **NetBIOS node type**\.
 
 1. Choose **Create DHCP options set**, and then choose **Close**\. The new set of DHCP options appear in your list of DHCP options\.

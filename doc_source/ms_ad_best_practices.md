@@ -93,6 +93,12 @@ For more details and specific instructions on setting up a trust relationship, s
 
 Consider these suggestions for managing your directory\.
 
+### Track your domain controller performance<a name="bp_scale_dcs"></a>
+
+To help optimize scaling decisions and improve directory resilience and performance, we recommend that you use CloudWatch metrics\. For more information, see [Monitor your domain controllers with performance metrics](ms_ad_monitor_dc_performance.md)\.
+
+For instructions on how to set up domain controller metrics using the CloudWatch console, see [How to automate AWS Managed Microsoft AD scaling based on utilization metrics](https://aws.amazon.com/blogs/security/how-to-automate-aws-managed-microsoft-ad-scaling-based-on-utilization-metrics/) in the AWS Security Blog\.
+
 ### Carefully plan for schema extensions<a name="manage_schema_extensions"></a>
 
 Thoughtfully apply schema extensions to index your directory for important and frequent queries\. Use care to not over\-index the directory as indexes consume directory space and rapidly changing indexed values can result in performance problems\. To add indexes, you must create a Lightweight Directory Access Protocol \(LDAP\) Directory Interchange Format \(LDIF\) file and extend your schema change\. For more information, see [Extend your schema](ms_ad_schema_extensions.md)\.

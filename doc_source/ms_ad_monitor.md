@@ -7,3 +7,4 @@ You can monitor your AWS Managed Microsoft AD directory with the following metho
 + [Configure directory status notifications](ms_ad_enable_notifications.md)
 + [Review your AWS Managed Microsoft AD directory logs](ms_ad_directory_logs.md)
 + [Enable log forwarding](ms_ad_enable_log_forwarding.md)
++ [Monitor your domain controllers with performance metrics](ms_ad_monitor_dc_performance.md)

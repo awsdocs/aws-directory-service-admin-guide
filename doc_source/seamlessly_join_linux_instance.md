@@ -132,7 +132,7 @@ Make sure you replace the `Resource` ARN with the actual ARN of the secret that 
    }
    ```
 
-1. When you are finished, choose **Review policy**\. The [Validating IAM policy grammar](https://docs.aws.amazon.com/https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html) reports any syntax errors\.
+1. When you are finished, choose **Review policy**\. The policy validator reports any syntax errors\. For more information, see [Validating IAM policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_policy-validator.html)\.
 
 1. On the **Review policy** page, enter a policy name, such as **SM\-Secret\-Linux\-DJ\-*d\-xxxxxxxxxx*\-Read**\. Review the **Summary** section to see the permissions that your policy grants\. Then choose **Create policy** to save your changes\. The new policy appears in the list of managed policies and is now ready to attach to an identity\.
 

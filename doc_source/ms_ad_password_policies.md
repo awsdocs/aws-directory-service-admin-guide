@@ -18,7 +18,7 @@ AWS Managed Microsoft AD enables you to define and assign different fine\-graine
 
 For example, you can assign a less strict policy setting for employees that have access to low sensitivity information only\. For senior managers who regularly access confidential information you can apply more strict settings\. 
 
-AWS provides a set of fine\-grained password policies in AWS Managed Microsoft AD that you can configure and assign to your groups\. To configure the policies, you can use standard Microsoft policy tools such as [Active Directory administrative center \(ADAC\)](https://technet.microsoft.com/en-us/library/dd560651.aspx)\. To get started with the Microsoft policy tools, see [Installing the Active Directory administration tools](ms_ad_install_ad_tools.md)\.
+AWS provides a set of fine\-grained password policies in AWS Managed Microsoft AD that you can configure and assign to your groups\. To configure the policies, you can use standard Microsoft policy tools such as [Active Directory Administrative Center](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/adac/active-directory-administrative-center)\. To get started with the Microsoft policy tools, see [Installing the Active Directory administration tools](ms_ad_install_ad_tools.md)\.
 
 **Topics**
 + [Supported policy settings](supportedpolicysettings.md)

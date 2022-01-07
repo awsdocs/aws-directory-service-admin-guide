@@ -11,7 +11,7 @@ Access was denied when trying to create the trust\. Either the trust password is
   + netlogon
   + samr
   + lsarpc
-+ Verify that the above named pipes exist as the value\(s\) on the **NullSessionPipes** registry key which is in the registry path **HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters**\.
++ Verify that the above named pipes exist as the value\(s\) on the **NullSessionPipes** registry key which is in the registry path **HKLM\\SYSTEM\\CurrentControlSet\\services\\LanmanServer\\Parameters**\. These values must be inserted on separated rows\.
 
 **Note**  
 By default, `Network access: Named Pipes that can be accessed anonymously` is not set and will display `Not Defined`\. This is normal, as the domain controller's effective default settings for `Network access: Named Pipes that can be accessed anonymously` is `netlogon`, `samr`, `lsarpc`\.

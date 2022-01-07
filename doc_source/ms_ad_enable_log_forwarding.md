@@ -25,7 +25,7 @@ Log forwarding is a Regional feature of AWS Managed Microsoft AD\. If you are us
 
 1. On the **Enable log forwarding to CloudWatch** dialog, choose either of the following options:
 
-   1. Select **Create a new CloudWatch log group**, under **Log group name**, specify a name that you can refer to in CloudWatch Logs\.
+   1. Select **Create a new CloudWatch log group**, under **CloudWatch Log group name**, specify a name that you can refer to in CloudWatch Logs\.
 
    1. Select **Choose an existing CloudWatch log group**, and under **Existing CloudWatch log groups**, select a log group from the menu\.
 
@@ -65,7 +65,7 @@ For instructions on how to create a CloudWatch Logs group, see [Create a log gro
 
 ### Step 2: Create a CloudWatch Logs resource policy in IAM<a name="step2_create_resource_policy"></a>
 
-Create a CloudWatch Logs resource policy granting AWS Directory Service rights to add logs into the new log group you created in Step 1\. You can either specify the exact ARN to the log group to limit Directory Service’s access to other log groups or use a wild card to include all log groups\. The following sample policy uses the wild card method to identify that all log groups that start with `/aws/directoryservice/` for the AWS account where your directory resides will be included\. 
+Create a CloudWatch Logs resource policy granting AWS Directory Service rights to add logs into the new log group you created in Step 1\. You can either specify the exact ARN to the log group to limit AWS Directory Service’s access to other log groups or use a wild card to include all log groups\. The following sample policy uses the wild card method to identify that all log groups that start with `/aws/directoryservice/` for the AWS account where your directory resides will be included\. 
 
 ```
 {

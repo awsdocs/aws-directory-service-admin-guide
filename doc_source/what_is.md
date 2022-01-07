@@ -78,7 +78,7 @@ Amazon Cognito is a user directory that adds sign\-up and sign\-in to your mobil
 
 ***When to use***
 
-You can also use Amazon Cognito when you need to create custom registration fields and store that metadata in your user directory\. This fully managed service scales to support hundreds of millions of users\. For more information, see [Creating and Managing User Pools](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html)\.
+You can also use Amazon Cognito when you need to create custom registration fields and store that metadata in your user directory\. This fully managed service scales to support hundreds of millions of users\. For more information, see [Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html) in the *Amazon Cognito Developer Guide*\.
 
 ------
 

@@ -13,7 +13,7 @@ User accounts that are a member of the **AWS Delegated Fine Grained Password Pol
 1. To verify the password policy has been applied, run the following PowerShell command:
 
    ```
-   [Get\-ADUserResultantPasswordPolicy](https://docs.microsoft.com/en-us/powershell/module/addsadministration/get-aduserresultantpasswordpolicy?view=win10-ps) -Identity 'username'
+   [Get\-ADUserResultantPasswordPolicy](https://docs.microsoft.com/en-us/powershell/module/activedirectory/get-aduserresultantpasswordpolicy?view=windowsserver2022-ps) -Identity 'username'
    ```
 
 If you do not configure any of the five password policies in your AWS Managed Microsoft AD directory, Active Directory uses the default domain group policy\. For additional details on using **Password Settings Container**, see this [Microsoft blog post](https://blogs.technet.microsoft.com/canitpro/2013/05/29/step-by-step-enabling-and-using-fine-grained-password-policies-in-ad/)\. 
