@@ -24,13 +24,11 @@ The following example shows how you can use the `aws:SourceArn` and `aws:SourceA
                 "logs:PutLogEvents"
             ],
     "Resource": [
-      "arn:aws:logs:::ResourceName/*"
+      "arn:aws:logs:YOUR_REGION:YOUR_ACCOUNT_NUMBER:log-group:/aws/directoryservice/YOUR_LOG_GROUP:*"
     ],
     "Condition": {
-      "ArnLike": {
-        "aws:SourceArn": "arn:aws:logs:YOUR_REGION:YOUR_ACCOUNT_NUMBER:log-group:/aws/directoryservice/*"
-      },
       "StringEquals": {
+        "aws:SourceArn": "arn:aws:ds:YOUR_REGION:YOUR_ACCOUNT_NUMBER:directory/YOUR_DIRECTORY_ID",
         "aws:SourceAccount": "123456789012"
       }
     }
