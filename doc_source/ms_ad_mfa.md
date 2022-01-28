@@ -47,6 +47,7 @@ Confirm the shared secret code for your RADIUS endpoints\.
 Select the protocol that was specified when your RADIUS endpoints were created\.  
 **Server timeout \(in seconds\)**  
 The amount of time, in seconds, to wait for the RADIUS server to respond\. This must be a value between 1 and 50\.  
+We recommend configuring your RADIUS server timeout to 20 seconds or less\. If the timeout exceeds 20 seconds, the system cannot retry with another RADIUS server and may result in a timeout failure\.  
 **Max RADIUS request retries**  
 The number of times that communication with the RADIUS server is attempted\. This must be a value between 0 and 10\.
 
