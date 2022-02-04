@@ -17,11 +17,11 @@ This tutorial uses one of the VPC creation wizards to create the following:
 
 1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
-1. In the navigation pane, click **VPC Dashboard**\. If you do not already have any VPC resources, locate the **Your Virtual Private Cloud** area of the dashboard and click **Get started creating a VPC**\. Otherwise, click **Start VPC Wizard**\.
+1. On the **VPC Dashboard**, choose **Launch VPC Wizard**\.
 
-1. Select the second option, **VPC with a Single Public Subnet**, and then click **Select**\.
+1. Under **Step 1: Select a VPC Configuration**, on **VPC with a Single Public Subnet**, choose **Select**\.
 
-1. Enter the following information into the wizard and click **Create VPC**\.  
+1. Enter the following information into the wizard and choose **Create VPC**\.  
 **IP CIDR block**  
 `10.0.0.0/16`  
 **VPC name**  

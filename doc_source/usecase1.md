@@ -16,7 +16,7 @@ Integrating FSx for Windows File Server with AWS Managed Microsoft AD provides a
 
 This section provides a reference to resources on common FSx for Windows File Server integrations with AWS Managed Microsoft AD use cases\. Each of the use cases in this section start with a basic AWS Managed Microsoft AD and FSx for Windows File Server configuration\. For more information about how to create these configurations, see:
 + [Getting started with AWS Managed Microsoft AD](ms_ad_getting_started.md)
-+ [Getting started with Amazon FSx](docs.aws.amazon.comfsx/latest/WindowsGuide/getting-started.html)
++ [Getting started with Amazon FSx](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started.html)
 
 #### FSx for Windows File Server as persistent storage on Windows containers<a name="usecase1_fsx_common_containers"></a>
 
