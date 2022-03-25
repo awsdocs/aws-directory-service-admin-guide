@@ -23,9 +23,7 @@ You are limited to 5 manual snapshots for each directory\. If you have already r
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, do one of the following:
-   + If you have multiple Regions showing under **Multi\-Region replication**, select the primary Region, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
-   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
+1. On the **Directory details** page, choose the **Maintenance** tab\.
 
 1. In the **Snapshots** section, choose **Actions**, and then select **Create snapshot**\.
 
