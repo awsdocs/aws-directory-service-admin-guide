@@ -46,9 +46,7 @@ To restore your directory from a snapshot, perform the following steps\.
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, do one of the following:
-   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to restore your snapshot, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
-   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
+1. On the **Directory details** page, choose the **Maintenance** tab\.
 
 1. In the **Snapshots** section, select a snapshot in the list, choose **Actions**, and then select **Restore snapshot**\.
 
@@ -64,9 +62,7 @@ For an AWS Managed Microsoft AD directory, it can take from two to three hours f
 
 1. On the **Directories** page, choose your directory ID\.
 
-1. On the **Directory details** page, do one of the following:
-   + If you have multiple Regions showing under **Multi\-Region replication**, select the Region where you want to delete your snapshot, and then choose the **Maintenance** tab\. For more information, see [Primary vs additional Regions](multi-region-global-primary-additional.md)\.
-   + If you do not have any Regions showing under **Multi\-Region replication**, choose the **Networking & security** tab\.
+1. On the **Directory details** page, choose the **Maintenance** tab\.
 
 1. In the **Snapshots** section, choose **Actions**, and then select **Delete snapshot**\.
 

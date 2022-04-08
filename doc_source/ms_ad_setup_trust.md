@@ -7,7 +7,7 @@ When setting up trust relationships, you must ensure that your self\-managed dir
 
 AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your self\-managed Active Directory domain](ms_ad_tutorial_setup_trust.md)\.
 
-A two\-way trust is required for AWS Enterprise Apps such as Amazon Chime, Amazon Connect, Amazon QuickSight, AWS Single Sign\-On, Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, AWS Client VPN, and the AWS Management Console\. AWS Managed Microsoft AD must be able to query the users and groups in your self\-managed AD\.
+A two\-way trust is required for AWS Enterprise Apps such as Amazon Chime, Amazon Connect, Amazon QuickSight, AWS Single Sign\-On, Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, and the AWS Management Console\. AWS Managed Microsoft AD must be able to query the users and groups in your self\-managed AD\.
 
 Amazon EC2, Amazon RDS, and Amazon FSx will work with either a one\-way or two\-way trust\.
 
