@@ -16,7 +16,7 @@ All user accounts are provisioned only in your AWS Managed Microsoft AD to be us
 + Amazon Chime
 + Amazon Connect
 + Amazon QuickSight
-+ AWS Single Sign\-On
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\)
 + Amazon WorkDocs
 + Amazon WorkMail
 + AWS Client VPN
@@ -50,7 +50,7 @@ All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Ac
 + Amazon Chime
 + Amazon Connect
 + Amazon QuickSight
-+ AWS Single Sign\-On
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\)
 + Amazon WorkDocs
 + Amazon WorkMail
 + Amazon WorkSpaces
@@ -113,7 +113,7 @@ User accounts are provisioned only in your AWS Managed Microsoft AD to be used w
 + Amazon RDS for Oracle
 + Amazon RDS for PostgreSQL
 + Amazon RDS for SQL Server
-+ AWS Single Sign\-On
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\)
 + Amazon WorkDocs
 + Amazon WorkMail
 + WorkSpaces
@@ -164,7 +164,7 @@ All user accounts are provisioned in your AWS Managed Microsoft AD or trusted Ac
 + Amazon RDS for Oracle
 + Amazon RDS for PostgreSQL
 + Amazon RDS for SQL Server
-+ AWS Single Sign\-On
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\)
 + Amazon WorkDocs
 + Amazon WorkMail
 + WorkSpaces

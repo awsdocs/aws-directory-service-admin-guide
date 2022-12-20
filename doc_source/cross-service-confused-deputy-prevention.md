@@ -27,8 +27,10 @@ The following example shows how you can use the `aws:SourceArn` and `aws:SourceA
       "arn:aws:logs:YOUR_REGION:YOUR_ACCOUNT_NUMBER:log-group:/aws/directoryservice/YOUR_LOG_GROUP:*"
     ],
     "Condition": {
+      "ArnLike": {
+        "aws:SourceArn": "arn:aws:ds:YOUR_REGION:YOUR_ACCOUNT_NUMBER:directory/YOUR_DIRECTORY_ID" 
+      },
       "StringEquals": {
-        "aws:SourceArn": "arn:aws:ds:YOUR_REGION:YOUR_ACCOUNT_NUMBER:directory/YOUR_DIRECTORY_ID",
         "aws:SourceAccount": "123456789012"
       }
     }
@@ -65,6 +67,32 @@ The following example shows how you can use the `aws:SourceArn` and `aws:SourceA
     "Condition": {
       "ArnLike": {
         "aws:SourceArn": "arn:aws:sns:YOUR_REGION:YOUR_ACCOUNT_NUMBER:directory/YOUR_EXTERNAL_DIRECTORY_ID"
+      },
+      "StringEquals": {
+        "aws:SourceAccount": "123456789012"
+      }
+    }
+  }
+}
+```
+
+The following example shows an IAM trust policy for a role that has been delegated console access\. The value of `aws:SourceArn` must be a directory resource in your account\. For more information, see [Resource types defined by AWS Directory Service](https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdirectoryservice.html#awsdirectoryservice-resources-for-iam-policies)\. For example, you can use `arn:aws:ds:us-east-1:123456789012:directory/d-1234567890` where `123456789012` is your customer ID and `d-1234567890` is your directory ID\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": {
+    "Sid": "ConfusedDeputyPreventionExamplePolicy",
+    "Effect": "Allow",
+    "Principal": {
+      "Service": "ds.amazonaws.com"
+    },
+    "Action": [
+                "sts:AssumeRole"
+            ],
+    "Condition": {
+      "ArnLike": {
+        "aws:SourceArn": "arn:aws:ds:YOUR_REGION:YOUR_ACCOUNT_NUMBER:directory/YOUR_DIRECTORY_ID" 
       },
       "StringEquals": {
         "aws:SourceAccount": "123456789012"

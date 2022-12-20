@@ -2,7 +2,11 @@
 
 Multi\-Region replication can be used to automatically replicate your AWS Managed Microsoft AD directory data across multiple Regions\. This replication can improve performance for users and applications in disperse geographic locations\. AWS Managed Microsoft AD uses native Active Directory replication to replicate your directory’s data securely to the new Region\. 
 
-Multi\-Region replication is only supported for the **Enterprise Edition** of AWS Managed Microsoft AD\. You can use automated multi\-Region replication in all Regions where AWS Managed Microsoft AD is available\.
+Multi\-Region replication is only supported for the **Enterprise Edition** of AWS Managed Microsoft AD\. You can use automated multi\-Region replication in most Regions where AWS Managed Microsoft AD is available\. This feature is unavailable in the following Regions\.
++ Africa \(Cape Town\) af\-south\-1
++ Asia Pacific \(Hong Kong\) ap\-east\-1
++ Europe \(Milan\) eu\-south\-1
++ Middle East \(Bahrain\) me\-south\-1
 
 ## Benefits<a name="multi-region-benefits"></a>
 

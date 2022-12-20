@@ -24,3 +24,4 @@ For more information, see [Reset a user password](ms_ad_manage_users_groups_rese
 + [Active Directory low available storage space](ms_ad_troubleshooting_low_storage_space.md)
 + [Schema extension errors](ms_ad_troubleshooting_schema.md)
 + [Trust creation status reasons](ms_ad_troubleshooting_trusts.md)
++ [Updating your operating system](ms_ad_troubleshooting_update_os.md)

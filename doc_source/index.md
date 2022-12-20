@@ -4,13 +4,13 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
@@ -48,6 +48,7 @@ Amazon's trademarks and trade dress may not be used in
             + [Enable client-side LDAPS using AWS Managed Microsoft AD](ms_ad_ldap_client_side.md)
          + [Manage compliance for AWS Managed Microsoft AD](ms_ad_compliance.md)
          + [Enhance your AWS Managed Microsoft AD network security configuration](ms_ad_network_security.md)
+         + [Configure directory security settings](ms_ad_directory_settings.md)
       + [Monitor your AWS Managed Microsoft AD](ms_ad_monitor.md)
          + [Understanding your directory status](ms_ad_directory_status.md)
          + [Configure directory status notifications](ms_ad_enable_notifications.md)
@@ -107,6 +108,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Rename your directory's site name](ms_ad_rename_site.md)
          + [Snapshot or restore your directory](ms_ad_snapshots.md)
          + [View directory information](ms_ad_view_directory_info.md)
+         + [Update your directory operating system](ms_ad_update_os.md)
       + [Grant users and groups access to AWS resources](ms_ad_manage_roles.md)
          + [Creating a new role](create_role.md)
          + [Editing the trust relationship for an existing role](edit_trust.md)
@@ -140,6 +142,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Active Directory low available storage space](ms_ad_troubleshooting_low_storage_space.md)
       + [Schema extension errors](ms_ad_troubleshooting_schema.md)
       + [Trust creation status reasons](ms_ad_troubleshooting_trusts.md)
+      + [Updating your operating system](ms_ad_troubleshooting_update_os.md)
 + [Active Directory Connector](directory_ad_connector.md)
    + [Getting started with AD Connector](ad_connector_getting_started.md)
       + [AD Connector prerequisites](prereq_connector.md)

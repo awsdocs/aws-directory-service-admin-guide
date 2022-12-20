@@ -8,3 +8,4 @@ This section describes how to maintain common administrative tasks for your AWS 
 + [Rename your directory's site name](ms_ad_rename_site.md)
 + [Snapshot or restore your directory](ms_ad_snapshots.md)
 + [View directory information](ms_ad_view_directory_info.md)
++ [Update your directory operating system](ms_ad_update_os.md)

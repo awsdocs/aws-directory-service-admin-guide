@@ -18,7 +18,7 @@ Simple AD does not support any of the following:
 + Amazon Chime
 + Amazon RDS for SQL Server
 + Amazon RDS for Oracle
-+ AWS Single Sign\-On
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\)
 + Trust relationships with other domains
 + Active Directory Administrative Center
 + PowerShell

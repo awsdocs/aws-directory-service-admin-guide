@@ -11,13 +11,13 @@ AWS Directory Service uses a two VPC structure\. The EC2 instances which make up
 
 The management IP range of your directory's ETH0 network is 198\.18\.0\.0/15\.
 
-## AWS Single Sign\-On prerequisites<a name="prereq_aws_sso_ms_ad"></a>
+## AWS IAM Identity Center \(successor to AWS Single Sign\-On\) prerequisites<a name="prereq_aws_sso_ms_ad"></a>
 
-If you plan to use AWS Single Sign\-On \(AWS SSO\) with AWS Managed Microsoft AD, you need to ensure that the following are true:
+If you plan to use IAM Identity Center with AWS Managed Microsoft AD, you need to ensure that the following are true:
 + Your AWS Managed Microsoft AD directory is set up in your AWS organization’s management account\.
-+ Your instance of AWS SSO is in the same Region where your AWS Managed Microsoft AD directory is set up\. 
++ Your instance of IAM Identity Center is in the same Region where your AWS Managed Microsoft AD directory is set up\. 
 
-For more information, see [AWS SSO prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
+For more information, see [IAM Identity Center prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide\.
 
 ## Multi\-factor authentication prerequisites<a name="prereq_mfa_ad"></a>
 

@@ -57,7 +57,7 @@ The number of times that communication with the RADIUS server is attempted\. Thi
 
 ## Supported Amazon Enterprise applications<a name="supportedamazonapps"></a>
 
-All Amazon Enterprise IT applications including WorkSpaces, Amazon WorkDocs, Amazon WorkMail, Amazon QuickSight, and access to AWS Single Sign\-On and AWS Management Console are supported when using AWS Managed Microsoft AD and AD Connector with MFA\. 
+All Amazon Enterprise IT applications including WorkSpaces, Amazon WorkDocs, Amazon WorkMail, Amazon QuickSight, and access to AWS IAM Identity Center \(successor to AWS Single Sign\-On\) and AWS Management Console are supported when using AWS Managed Microsoft AD and AD Connector with MFA\. 
 
 For information about how to configure basic user access to Amazon Enterprise applications, AWS Single Sign\-On and the AWS Management Console using AWS Directory Service, see [Enable access to AWS applications and services](ms_ad_manage_apps_services.md) and [Enable access to the AWS Management Console with AD credentials](ms_ad_management_console_access.md)\.
 

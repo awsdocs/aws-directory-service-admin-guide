@@ -7,7 +7,7 @@ When setting up trust relationships, you must ensure that your self\-managed dir
 
 AWS Managed Microsoft AD supports both external and forest trusts\. To walk through an example scenario showing how to create a forest trust, see [Tutorial: Create a trust relationship between your AWS Managed Microsoft AD and your self\-managed Active Directory domain](ms_ad_tutorial_setup_trust.md)\.
 
-A two\-way trust is required for AWS Enterprise Apps such as Amazon Chime, Amazon Connect, Amazon QuickSight, AWS Single Sign\-On, Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, and the AWS Management Console\. AWS Managed Microsoft AD must be able to query the users and groups in your self\-managed AD\.
+A two\-way trust is required for AWS Enterprise Apps such as Amazon Chime, Amazon Connect, Amazon QuickSight, AWS IAM Identity Center \(successor to AWS Single Sign\-On\), Amazon WorkDocs, Amazon WorkMail, Amazon WorkSpaces, and the AWS Management Console\. AWS Managed Microsoft AD must be able to query the users and groups in your self\-managed AD\.
 
 Amazon EC2, Amazon RDS, and Amazon FSx will work with either a one\-way or two\-way trust\.
 
@@ -20,15 +20,7 @@ AWS Managed Microsoft AD does not support trust with [Single Label Domains](http
 
 ### Connect to VPC<a name="connect_vpc"></a>
 
-If you are creating a trust relationship with your self\-managed directory, you must first connect your self\-managed network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your self\-managed network must have the following ports open to the CIDRs for both subnets in the VPC\.
-
- 
-+ TCP/UDP 53 \- DNS
-+ TCP/UDP 88 \- Kerberos authentication
-+ TCP/UDP 389 \- LDAP
-+ TCP 445 \- SMB
-**Note**  
-SMBv1 is no longer supported\.
+If you are creating a trust relationship with your self\-managed directory, you must first connect your self\-managed network to the VPC containing your AWS Managed Microsoft AD\. The firewall for your self\-managed and AWS Managed Microsoft AD networks must have the network ports open that are listed in [ Windows Server 2008 and later versions ](https://docs.microsoft.com/en-us/troubleshoot/windows-server/identity/config-firewall-for-ad-domains-and-trusts#windows-server-2008-and-later-versions)\.
 
 These are the minimum ports that are needed to be able to connect to your directory\. Your specific configuration may require additional ports be open\.
 

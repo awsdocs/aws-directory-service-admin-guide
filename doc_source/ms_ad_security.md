@@ -8,3 +8,4 @@ This section describes considerations for securing your AWS Managed Microsoft AD
 + [Enable secure LDAP \(LDAPS\)](ms_ad_ldap.md)
 + [Manage compliance for AWS Managed Microsoft AD](ms_ad_compliance.md)
 + [Enhance your AWS Managed Microsoft AD network security configuration](ms_ad_network_security.md)
++ [Configure directory security settings](ms_ad_directory_settings.md)

@@ -149,11 +149,11 @@ If you manage the Chrome web browsers on the computers in your domain with Chrom
 
    1. From the main menu, choose **Action** and select **New**\.
 
-   1. In the **New GPO** dialog box, enter a descriptive name for the Group Policy object, such as `SSO Policy`, and leave **Source Starter GPO** set to **\(none\)**\. Click **OK**\.
+   1. In the **New GPO** dialog box, enter a descriptive name for the Group Policy object, such as `IAM Identity Center Policy`, and leave **Source Starter GPO** set to **\(none\)**\. Click **OK**\.
 
 1. Add the access URL to the list of approved sites for single sign\-on by performing the following steps:
 
-   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your SSO policy, and choose **Edit**\.
+   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your IAM Identity Center policy, and choose **Edit**\.
 
    1. In the policy tree, navigate to **User Configuration** > **Preferences** > **Windows Settings**\.
 
@@ -176,7 +176,7 @@ The value for *<alias>* is derived from your access URL\. If your access URL is 
 
 1. To enable active scripting, perform the following steps:
 
-   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your SSO policy, and choose **Edit**\.
+   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your IAM Identity Center policy, and choose **Edit**\.
 
    1. In the policy tree, navigate to **Computer Configuration** > **Policies** > **Administrative Templates** > **Windows Components** > **Internet Explorer** > **Internet Control Panel** > **Security Page** > **Intranet Zone**\.
 
@@ -200,7 +200,7 @@ The value for *<alias>* is derived from your access URL\. If your access URL is 
 
 1. To enable integrated authentication, perform the following steps:
 
-   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your SSO policy, and choose **Edit**\.
+   1. In the Group Policy Management tool, navigate to your domain, select **Group Policy Objects**, open the context \(right\-click\) menu for your IAM Identity Center policy, and choose **Edit**\.
 
    1. In the policy tree, navigate to **User Configuration** > **Preferences** > **Windows Settings**\.
 
@@ -226,7 +226,7 @@ The value for *<alias>* is derived from your access URL\. If your access URL is 
 
    1. In the Group Policy Management tree, open the context \(right\-click\) menu for your domain and choose **Link an Existing GPO**\.
 
-   1. In the **Group Policy Objects** list, select your SSO policy and choose **OK**\.
+   1. In the **Group Policy Objects** list, select your IAM Identity Center policy and choose **OK**\.
 
 These changes will take effect after the next Group Policy update on the client, or the next time the user logs in\.
 

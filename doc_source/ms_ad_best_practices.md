@@ -117,6 +117,12 @@ With Amazon Simple Notification Service \(Amazon SNS\), you can receive email or
 
 Also remember that if you have an SNS topic that receives messages from AWS Directory Service, before deleting that topic from the Amazon SNS console, you should associate your directory with a different SNS topic\. Otherwise you risk missing important directory status messages\. For information about how to set up Amazon SNS, see [Configure directory status notifications](ms_ad_enable_notifications.md)\.
 
+### Apply directory service settings<a name="ds-settings"></a>
+
+AWS Managed Microsoft AD allows you to tailor your security configuration to meet your compliance and security requirements\. AWS Managed Microsoft AD deploys and maintains the configuration to all domain controllers in your directory, including when adding new regions or additional domain controllers\. You can configure and apply these security settings for all your new and existing directories\. You can do this in the console by following the steps in [Edit directory security settings](ms_ad_directory_settings.md#edit-ds-settings) or through the [UpdateSettings API](https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_Operations.html)\.
+
+For more information, see [Configure directory security settings](ms_ad_directory_settings.md)\.
+
 ### Remove Amazon Enterprise applications before deleting a directory<a name="remove_rds"></a>
 
 Before deleting a directory that is associated with one or more Amazon Enterprise Applications such as, WorkSpaces, Amazon WorkSpaces Application Manager, Amazon WorkDocs, Amazon WorkMail, AWS Management Console, or Amazon Relational Database Service \(Amazon RDS\), you must first remove each application\. For more information how to remove these applications, see [Delete your directory](ms_ad_delete.md)\.

@@ -12,7 +12,7 @@ The following is a list of compatible AWS applications and services:
 + Amazon RDS for SQL Server \- For more information, see [Using Windows authentication with an Amazon RDS Microsoft SQL Server DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html)\.
 + Amazon RDS for Oracle \- For more information, see [Using Kerberos authentication with Amazon RDS for Oracle](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html)\.
 + Amazon RDS for PostgreSQL \- For more information, see [Using Kerberos authentication with Amazon RDS for PostgreSQL](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/postgresql-kerberos.html)\.
-+ AWS Single Sign\-On \- For detailed instructions, see [Connect AWS SSO to an on\-premises Active Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/connectawsad.html)\.
++ AWS IAM Identity Center \(successor to AWS Single Sign\-On\) \- For detailed instructions, see [Connect IAM Identity Center to an on\-premises Active Directory](https://docs.aws.amazon.com/singlesignon/latest/userguide/connectawsad.html)\.
 + Amazon WorkDocs \- For detailed instructions, see [Connecting to your on\-premises directory with AWS Managed Microsoft AD](https://docs.aws.amazon.com/workdocs/latest/adminguide/connect_directory_microsoft.html)\.
 + Amazon WorkMail \- For detailed instructions, see [Integrate Amazon WorkMail with an existing directory \(standard setup\)](https://docs.aws.amazon.com/workmail/latest/adminguide/premises_directory.html)\.
 + WorkSpaces \- For detailed instructions, see [Launch a WorkSpace using AWS Managed Microsoft AD](https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspace-microsoft-ad.html)\. 

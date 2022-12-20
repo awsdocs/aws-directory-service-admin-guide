@@ -21,9 +21,6 @@ Access to the AWS Management Console is a Regional feature of AWS Managed Micros
 
 By default, console access is not enabled for any directory\. To enable console access for your directory users and groups, perform the following steps:
 
-**Note**  
-You cannot currently use AWS SSO to access the AWS Management Console in opt\-in regions\. For a list of these regions, see [ Regions and Zones ](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html)\.
-
 **To enable console access**
 
 1. In the [AWS Directory Service console](https://console.aws.amazon.com/directoryservicev2/) navigation pane, choose **Directories**\.

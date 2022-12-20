@@ -1,6 +1,6 @@
 # Patching and maintenance for AWS Managed Microsoft AD<a name="ms_ad_key_concepts_maintenance"></a>
 
-AWS Directory Service for Microsoft Active Directory, also known as AWS DS for AWS Managed Microsoft AD, is actually Microsoft Active Directory Domain Services \(AD DS\), delivered as a managed service\. The system uses Microsoft Windows Server 2012 R2 for the domain controllers \(DCs\), and AWS adds software to the DCs for service management purposes\. AWS updates \(patches\) DCs to add new functionality and keep the Microsoft Windows Server software current\. During the patching process, your directory remains available for use\.
+AWS Directory Service for Microsoft Active Directory, also known as AWS DS for AWS Managed Microsoft AD, is actually Microsoft Active Directory Domain Services \(AD DS\), delivered as a managed service\. The system uses Microsoft Windows Server 2019 for the domain controllers \(DCs\), and AWS adds software to the DCs for service management purposes\. AWS updates \(patches\) DCs to add new functionality and keep the Microsoft Windows Server software current\. During the patching process, your directory remains available for use\.
 
 ## Ensuring availability<a name="ensuringavailability"></a>
 

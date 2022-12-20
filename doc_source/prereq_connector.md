@@ -71,13 +71,13 @@ AD Connector supports the following encryption types when authenticating via Ker
 + AES\-128\-HMAC
 + RC4\-HMAC
 
-## AWS Single Sign\-On prerequisites<a name="prereq_aws_sso_ad_connector"></a>
+## AWS IAM Identity Center \(successor to AWS Single Sign\-On\) prerequisites<a name="prereq_aws_sso_ad_connector"></a>
 
-If you plan to use AWS Single Sign\-On \(AWS SSO\) with AD Connector, you need to ensure that the following are true:
+If you plan to use IAM Identity Center with AD Connector, you need to ensure that the following are true:
 + Your AD Connector is set up in your AWS organization’s management account\.
-+ Your instance of AWS SSO is in the same Region where your AD Connector is set up\. 
++ Your instance of IAM Identity Center is in the same Region where your AD Connector is set up\. 
 
-For more information, see [AWS SSO prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS Single Sign\-On User Guide\.
+For more information, see [IAM Identity Center prerequisites](https://docs.aws.amazon.com/singlesignon/latest/userguide/prereqs.html) in the AWS IAM Identity Center \(successor to AWS Single Sign\-On\) User Guide\.
 
 ## Multi\-factor authentication prerequisites<a name="mfa_prereqs"></a>
 

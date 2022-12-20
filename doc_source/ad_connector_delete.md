@@ -23,7 +23,7 @@ When an AD Connector directory is deleted, your on\-premises directory remains i
       + To disable Amazon Connect, you must delete the Amazon Connect Instance\. For more information, see [Deleting an Amazon Connect instance](https://docs.aws.amazon.com/connect/latest/adminguide/gettingstarted.html#delete-instance) in the *Amazon Connect Administration Guide*\.
       + To disable FSx for Windows File Server, you must remove the Amazon FSx file system from the domain\. For more information, see [Working with Active Directory in FSx for Windows File Server](https://docs.aws.amazon.com/fsx/latest/WindowsGuide/aws-ad-integration-fsxW.html) in the *Amazon FSx for Windows File Server User Guide*\.
 **Note**  
-If you are using AWS Single Sign\-On and have previously connected it to the AWS Managed Microsoft AD directory you plan to delete, you must first change the identity source before you can delete it\. For more information, see [Change your identity source ](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-change.html) in the *AWS SSO User Guide*\.
+If you are using AWS IAM Identity Center \(successor to AWS Single Sign\-On\) and have previously connected it to the AWS Managed Microsoft AD directory you plan to delete, you must first change the identity source before you can delete it\. For more information, see [Change your identity source ](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-change.html) in the *IAM Identity Center User Guide*\.
 
 1. In the navigation pane, choose **Directories**\.
 
