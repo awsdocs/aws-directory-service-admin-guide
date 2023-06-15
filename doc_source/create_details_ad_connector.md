@@ -1,8 +1,0 @@
-# What gets created<a name="create_details_ad_connector"></a>
-
-When you create an AD Connector, AWS Directory Service automatically creates and associates an elastic network interface \(ENI\) with each of your AD Connector instances\. Each of these ENIs are essential for connectivity between your VPC and AWS Directory Service AD Connector and should never be deleted\. You can identify all network interfaces reserved for use with AWS Directory Service by the description: "AWS created network interface for directory *directory\-id*"\. For more information, see [Elastic Network Interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html) in the Amazon EC2 User Guide for Windows Instances\.
-
-**Note**  
-AD Connector instances are deployed across two Availability Zones in a Region by default and connected to your Amazon Virtual Private Cloud \(VPC\)\. AD Connector instances that fail are automatically replaced in the same Availability Zone using the same IP address\.
-
-When you sign in to any AWS application or service integrated with an AD Connector \(AWS IAM Identity Center \(successor to AWS Single Sign\-On\) included\), the app or service forwards your authentication request to AD Connector which then forwards the request to a domain controller in your self\-managed AD for authentication\. If you are successfully authenticated to your self\-managed AD, AD Connector then returns an authentication token to the app or service \(similar to a Kerberos token\)\. At this point, you can now access the AWS app or service\.
